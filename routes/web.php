@@ -11,6 +11,23 @@
 |
 */
 
+/**
+ * Back Office
+ */
+Route::get('/administrateur', ['as' => 'administrateur', 'uses' => 'Admin\AdminController@index']);
+
+
+
+/**
+ * Front Office
+ */
+
+
+
+/**
+ * Middle Office
+ */
+
 Route::get('/', function () {
     return view('welcome');
 });
