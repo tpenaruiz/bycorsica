@@ -24,10 +24,6 @@ Route::get('/administrateur', ['as' => 'administrateur', 'uses' => 'Admin\AdminC
 
 
 
-/**
- * Middle Office
- */
-
 Route::get('/', function () {
     return view('welcome');
 });
