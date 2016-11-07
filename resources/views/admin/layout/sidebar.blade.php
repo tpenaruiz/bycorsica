@@ -72,17 +72,6 @@
 
 
 
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-newspaper-o"></i> <span>Actualités</span> <i class="fa fa-angle-left pull-right"></i>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li class="active"><a href="#"><i class="fa fa-list"></i>Liste</a></li>
-                        <li><a href="#"><i class="fa fa-plus-circle"></i>Ajouter</a></li>
-                    </ul>
-                </li>
-
-
                 <!-- Monde Gestion Pays + Villes -->
                 <li class="treeview">
                     <a href="#">
