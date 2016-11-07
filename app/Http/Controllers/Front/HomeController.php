@@ -2,23 +2,24 @@
 
 /**
  * Created by PhpStorm.
- * User: bilel
- * Date: 05/11/2016
- * Time: 12:45
+ * User: thomas
+ * Date: 07/11/2016
+ * Time: 10:00
  */
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class AdminController
+class HomeController
 {
     public function __construct()
     {
+    	// code ...
     }
 
     public function index(){
-        return view('admin.home.index');
+    	return view('front.home.index');
     }
 }

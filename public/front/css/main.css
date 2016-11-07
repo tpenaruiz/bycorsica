@@ -1,0 +1,81 @@
+/*
+|--------------------------------------------------------------------------
+| Body
+|--------------------------------------------------------------------------
+*/
+
+body{
+    background-color: #141414;
+    color: white;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Navbar
+|--------------------------------------------------------------------------
+*/
+
+.navbar-top{
+    border-bottom: 1px solid #E0C868;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color: white;
+}
+.navbar-inverse .navbar-nav>li>a:hover{
+    color: #E0C868;
+}
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color: #101010; 
+    border: solid 1px #E0C868;
+}
+#login-dp a{
+    color: #E0C868;
+}
+#login-dp a:focus, #login-dp a:hover{
+    text-decoration: none;
+}
+#login-dp label{
+    padding-bottom: 5px;
+}
+#login-dp .help-block{
+    font-size:12px;    
+}
+#login-dp .bottom{
+    background-color: #222; 
+    border-top: solid 1px #222;
+    clear:both;
+    padding:14px;
+}
+ #login-dp .form-group{
+    margin-bottom: 10px;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Button
+|--------------------------------------------------------------------------
+*/
+
+.btn-primary{
+    background-color: #E0C868;
+    border-color: #DDBE41;
+}
+.btn-primary:hover{
+    background-color: #DDBE41;
+    border-color: #DDBE41;
+}

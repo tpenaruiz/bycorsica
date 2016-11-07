@@ -17,13 +17,14 @@
 Route::get('/administrateur', ['as' => 'administrateur', 'uses' => 'Admin\AdminController@index']);
 
 
-
 /**
  * Front Office
  */
+Route::get('/', ['as'=>'home', 'uses' => 'Front\HomeController@index']);
 
 
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
