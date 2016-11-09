@@ -61,6 +61,11 @@
 #main-menu > .has-mega-menu .scroll-down {
     margin-left: 0 !important;
 }
+@media (max-width: 767px) {
+    #main-menu > .has-mega-menu ul{
+        padding: 10px 0px;
+    }
+}
 
 /* clear any floats inside the mega menus */
 #main-menu .mega-menu > li {
