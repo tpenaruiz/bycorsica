@@ -8,9 +8,8 @@
  */
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use Symfony\Component\HttpKernel\Tests\Controller;
 
 class AdminController
 {

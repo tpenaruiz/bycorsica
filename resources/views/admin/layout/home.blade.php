@@ -71,5 +71,7 @@
         <script src="{{ asset('lib/AdminLTE-2.3.0/dist/js/pages/dashboard2.js') }}"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="{{ asset('lib/AdminLTE-2.3.0/dist/js/demo.js') }}"></script>
+        <!-- Notification JS -->
+        <script src="{{ asset('plugins/notificationJs/notie.js') }}" type="text/javascript"></script>
     </body>
 </html>

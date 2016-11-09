@@ -27,12 +27,12 @@ class Users extends Model implements AuthenticatableContract, CanResetPasswordCo
     ];
 
 
-    public function role(){
+    public function roles(){
         return $this->belongsTo('\App\Roles', 'id_role');
     }
 
-    public function ville(){
-    	return $this->belongsTo('\App\Villes', 'id_villes');
+    public function villes(){
+    	return $this->belongsTo('\App\Villes', 'id_ville');
     }
 
     public function getCreateddateAttribute(){

@@ -14,8 +14,11 @@
 /**
  * Back Office
  */
-Route::get('/administrateur', ['as' => 'administrateur', 'uses' => 'Admin\AdminController@index']);
-
+Route::get('/administration', ['as' => 'administration', 'uses' => 'Admin\AdminController@index']);
+Route::resource('administration/users', 'Admin\UsersController');
+Route::post('administration/users/search', ['as' => 'users.search', 'uses' => 'Admin\UsersController@search']);
+Route::post('administration/users/statusOff/{users}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
+Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
 
 /**
  * Front Office

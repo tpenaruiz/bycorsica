@@ -6,7 +6,7 @@
 
 
 <!-- Logo -->
-<a href="{{route('administrateur')}}" class="logo">
+<a href="{{route('administration')}}" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>{{\Config::get('constante.nom_code_miniature')}}</b></span>
     <!-- logo for regular state and mobile devices -->
