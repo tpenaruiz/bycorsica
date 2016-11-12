@@ -86,9 +86,9 @@
 			<!-- Tab panes -->
 			<div class="tab-content home-product-content">
 				<div role="tabpanel" class="tab-pane active" id="popular">
-					<div class="col-md-3 border-bloc">
+					<div class="col-md-3 col-xs-6 product-bloc">
 						<div class="product-image">
-							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" class="border-image" alt="" title=""></a>
+							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
 						</div>
 						<div class="product-description">
 							<h3 class="product-title text-center">Tapenade noir</h3>
@@ -97,9 +97,9 @@
 							<div><a href="" class="product-link">Détails</a><a href="" class="product-cart">Ajouter au panier</a></div>
 						</div>
 					</div>
-					<div class="col-md-3 border-bloc">
+					<div class="col-md-3 col-xs-6 product-bloc">
 						<div class="product-image">
-							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" class="border-image" alt="" title=""></a>
+							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
 						</div>
 						<div class="product-description">
 							<h3 class="product-title text-center">Tapenade noir</h3>
@@ -108,9 +108,9 @@
 							<div><a href="" class="product-link">Détails</a><a href="" class="product-cart">Ajouter au panier</a></div>
 						</div>
 					</div>
-					<div class="col-md-3 border-bloc">
+					<div class="col-md-3 col-xs-6 product-bloc">
 						<div class="product-image">
-							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" class="border-image" alt="" title=""></a>
+							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
 						</div>
 						<div class="product-description">
 							<h3 class="product-title text-center">Tapenade noir</h3>
@@ -119,9 +119,9 @@
 							<div><a href="" class="product-link">Détails</a><a href="" class="product-cart">Ajouter au panier</a></div>
 						</div>
 					</div>
-					<div class="col-md-3 border-bloc">
+					<div class="col-md-3 col-xs-6 product-bloc">
 						<div class="product-image">
-							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" class="border-image" alt="" title=""></a>
+							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
 						</div>
 						<div class="product-description">
 							<h3 class="product-title text-center">Tapenade noir</h3>
