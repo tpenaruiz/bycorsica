@@ -21,7 +21,7 @@ Route::get('/administrateur', ['as' => 'administrateur', 'uses' => 'Admin\AdminC
  * Front Office
  */
 Route::get('/', ['as'=>'home', 'uses' => 'Front\HomeController@index']);
-
+Route::get('/registration', ['as'=>'registration', 'uses' => 'Front\RegistrationController@index']);
 
 /*
 Route::get('/', function () {

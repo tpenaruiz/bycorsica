@@ -11,6 +11,7 @@
     4.  Page HOME - Carousel
     5.  Page HOME - Bloc Categorie
     6.  Page HOME - Liste Produits (Populaire / Meilleures ventes)
+    7.  Page Registration - Formulaire
 
 
 /*
@@ -118,6 +119,7 @@ a:hover, a:focus, a:active{
         background: #222;
         height: auto;
         padding-bottom: 10px;
+        margin-top: 40px;
         position: relative;
         width: 100%;
         /*border-bottom: 1px solid #CCCCCC;*/
@@ -324,7 +326,6 @@ a:hover, a:focus, a:active{
 
 .home-product{
     margin-top: 40px;
-    margin-bottom: 40px;
 }
 
 .home-product-tabs {
@@ -427,3 +428,47 @@ a:hover, a:focus, a:active{
 .home-product .home-product-content .product-description .product-cart{
     float: right;
 }
+
+
+/*
+|--------------------------------------------------------------------------
+| 7. Page Registration - Formulaire
+|--------------------------------------------------------------------------
+*/
+
+.breadcrumb{
+        background-color: #222;
+        border-radius: 0px;
+        border-bottom: 1px solid gray;
+    }
+    .breadcrumb a{
+        color: white;
+    }
+    .breadcrumb>.active{
+        color: #E0C868;
+    }
+    .registration{
+        background-color: #222;
+        margin-bottom: 20px;
+    }
+    .registration .panel{
+        background-color: #222;
+        margin-bottom: 0;
+    }
+    .registration .panel-heading{
+        padding: 0;
+    }
+    .registration label{
+        font-weight: 200;
+    }
+    .registration h3{
+        font-weight: 400;
+        font-size: 20px;
+    }
+    .registration .checkbox{
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    .registration .btn{
+        margin-top: 40px;
+    }
