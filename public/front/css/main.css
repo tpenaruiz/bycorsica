@@ -40,6 +40,17 @@ a:hover, a:focus, a:active{
     background-color: #DDBE41;
     border-color: #DDBE41;
 }
+.breadcrumb{
+    background-color: #222;
+    border-radius: 0px;
+    border-bottom: 1px solid gray;
+}
+.breadcrumb a{
+    color: white;
+}
+.breadcrumb>.active{
+    color: #E0C868;
+}
 
 
 /*
@@ -436,39 +447,71 @@ a:hover, a:focus, a:active{
 |--------------------------------------------------------------------------
 */
 
-.breadcrumb{
-        background-color: #222;
-        border-radius: 0px;
-        border-bottom: 1px solid gray;
-    }
-    .breadcrumb a{
-        color: white;
-    }
-    .breadcrumb>.active{
-        color: #E0C868;
-    }
-    .registration{
-        background-color: #222;
-        margin-bottom: 20px;
-    }
-    .registration .panel{
-        background-color: #222;
-        margin-bottom: 0;
-    }
-    .registration .panel-heading{
-        padding: 0;
-    }
-    .registration label{
-        font-weight: 200;
-    }
-    .registration h3{
-        font-weight: 400;
-        font-size: 20px;
-    }
-    .registration .checkbox{
-        margin-bottom: 0;
-        margin-top: 0;
-    }
-    .registration .btn{
-        margin-top: 40px;
-    }
+.registration-breadcrumb, .registration-content{
+    background-color: #222;  
+}
+.registration-content{
+    margin-bottom: 20px;
+}
+.registration-content .panel{
+    background-color: #222;
+    margin-bottom: 0;
+}
+.registration-content .panel-heading{
+    padding: 0;
+}
+.registration-content label{
+    font-weight: 400;
+}
+.registration-content h3{
+    font-weight: 400;
+    font-size: 20px;
+}
+.registration-content .checkbox{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.registration-content .btn{
+    margin-top: 40px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| 7. Page Search 
+|--------------------------------------------------------------------------
+*/
+
+.search{
+    background-color: #222;
+    margin-bottom: 20px;
+}
+.search-breadcrump, .search-heading, .search-sort, .search-content{
+    background-color: #222;
+}
+.search-heading h3{
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 0px;
+}
+.search-heading span{
+    color: #E0C868;
+}
+.search-sort{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.search-sort select{
+    height: 25px;
+    margin-left: 5px;
+}
+.search-sort .form-group{
+    margin-right: 20px;
+}
+.search-sort a{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+
