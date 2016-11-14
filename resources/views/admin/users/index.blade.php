@@ -3,6 +3,11 @@
     <div class="users_page">
         <link href="{{ asset('admin/css/search.css') }}" rel="stylesheet" type="text/css"/>
         <link href="{{ asset('admin/css/table.css') }}" rel="stylesheet" type="text/css"/>
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+        <script src="{{asset('admin/ajax/users/index.js')}}"></script>
 
         <section class="content-header">
             <h1>
@@ -42,7 +47,7 @@
                         <div class="row col-md-10 col-md-offset-0 custyle">
                             <table class="table table-striped custab">
                                 <thead>
-                                <a href="{{route('users.create')}}" class="btn btn-primary btn-xs pull-right"><b>+</b>
+                                <a type="submit" class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#createUser"><b>+</b>
                                     Ajout nouveau utilisateur</a>
                                 <tr>
                                     <th>ID</th>
@@ -63,7 +68,7 @@
                                         <td>{{$row->id}}</td>
                                         <td>{{$row->roles->libelle}}</td>
                                         <td>{{$row->villes->libelle}}</td>
-                                        <td>{{$row->name}}</td>
+                                        <td>{{$row->nom}}</td>
                                         <td>{{$row->email}}</td>
                                         <td>{{$row->prenom}}</td>
                                         <td>{{$row->date_naissance}}</td>
@@ -104,6 +109,44 @@
                                             </div>
                                         </td>
                                     </tr>
+
+                                    {{-- Popup Ajout utilisateur --}}
+                                    <div class="modal fade" id="createUser" tabindex="-1" role="dialog"
+                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-md">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close"><span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    <h4 class="modal-title">Ajout d'un utilisateur</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {!! Form::open(['route'=>['users.store'], 'method' => 'POST', 'id'=>'form-create']) !!}
+
+                                                        {!! Form::label('nom', 'Nom :', array('class' => 'col-md-4 col-md-offset-4 control-label')) !!}
+                                                        {!! Form::text('nom', '', array('class'=>'form-control', 'name'=>'nom', 'placeholder' => 'Nom', 'required'=>'required')) !!}
+
+                                                        {!! Form::label('prenom', 'Prénom :', array('class' => 'col-md-4 col-md-offset-4 control-label')) !!}
+                                                        {!! Form::text('prenom', '', array('class'=>'form-control', 'name'=>'prenom', 'placeholder' => 'Prénom', 'required'=>'required')) !!}
+
+                                                        {!! Form::label('email', 'Email :', array('class' => 'col-md-4 col-md-offset-4 control-label')) !!}
+                                                        {!! Form::email('email', '', array('class'=>'form-control', 'name'=>'email', 'placeholder' => 'Email', 'required'=>'required')) !!}
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default pull-left"
+                                                                    data-dismiss="modal">Close
+                                                            </button>
+                                                            <?=Form::submit('Créer', ['class' => 'btn btn-primary', 'name' => 'create', 'id' => 'create'])?>
+                                                        </div>
+
+                                                    {!! Form::close() !!}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
                                 @endforeach
                             </table>
 

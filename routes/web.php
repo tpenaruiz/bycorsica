@@ -24,6 +24,7 @@ Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 
  * Front Office
  */
 Route::get('/', ['as'=>'home', 'uses' => 'Front\HomeController@index']);
+Route::get('/produit/{produit}', ['as'=>'produit', 'uses' => 'Front\ProduitController@index']);
 
 
 /*

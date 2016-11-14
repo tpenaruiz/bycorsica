@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\UsersRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
-class UsersController
+class UsersController extends Controller
 {
     public function __construct()
     {
@@ -13,7 +15,7 @@ class UsersController
 
     public function index(Request $request){
         $users = \App\Users::with('roles', 'villes')
-            ->where('name', 'LIKE', '%'.$request->search.'%')
+            ->where('nom', 'LIKE', '%'.$request->search.'%')
             ->orWhere('prenom', 'LIKE', '%'.$request->search.'%')
             ->orWhere('email', 'LIKE', '%'.$request->search.'%')
             ->orWhere('id', 'LIKE', '%'.$request->search.'%')
@@ -28,8 +30,39 @@ class UsersController
 
     }
 
-    public function store(){
+    public function store(UsersRequest $request){
+        $users = new \App\Users;
+        $users->id_role = 2; // Administrateur
+        $users->nom = $request->nom;
+        $users->prenom = $request->prenom;
+        $users->email = $request->email;
+        $users->status = 'Actif';
 
+        // TODO Provisoire seulement pour tester
+        $users->id_ville = 2;
+
+        // Générer un password par default
+        $password = "";
+        $charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        for($i = 0; $i < 12; $i++){
+            $random_int = mt_rand();
+            $password .= $charset[$random_int % strlen($charset)];
+        }
+
+        $users->password = \Hash::make($password.\Config::get('constante.salt'));
+        $users->save();
+
+        $message = "Utilisateur Root inscris avec Succès, Un mail à été envoyé à cette personne afin qu'il puisse se connecté avec un mot de passe aléatoire !";
+        $info = \App\Users::with('roles', 'villes')
+                ->orderBy('created_at', 'DESC')
+                ->get();
+        if($request->ajax()){
+            return response()->json([
+                'message' => $message,
+                'info' => $info
+            ]);
+        }
+        return redirect()->route('users.index');
     }
 
     public function update($users){

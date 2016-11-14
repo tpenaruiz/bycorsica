@@ -8,10 +8,9 @@
  */
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests;
-use Symfony\Component\HttpKernel\Tests\Controller;
+use App\Http\Controllers\Controller;
 
-class AdminController
+class AdminController extends Controller
 {
     public function __construct()
     {
