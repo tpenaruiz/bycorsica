@@ -37,10 +37,12 @@
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1; }
+    flex-grow: 1;
+}
 
 .tab-content {
-    overflow: hidden; }
+    overflow: hidden;
+}
 .tab-content .image_product {
     width: 100%;
     -webkit-animation-name: opacity;
@@ -159,7 +161,7 @@
 
 .ajax_panier{
     text-decoration: none;
-    color: #B79332;
+    color: #A1A19D;
     cursor: pointer;
 }
 
@@ -173,11 +175,12 @@
     text-align: center;
     font-size: 1.0em;
     color: #A1A19D;
+    margin-bottom: 15px;
 }
 
 .ajax_cadeau{
     text-decoration: none;
-    color: #B79332;
+    color: #A1A19D;
     cursor: pointer;
 }
 
