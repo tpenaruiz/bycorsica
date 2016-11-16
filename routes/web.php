@@ -25,7 +25,9 @@ Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 
  */
 Route::get('/', ['as'=>'home', 'uses' => 'Front\HomeController@index']);
 Route::get('/produit/{produit}', ['as'=>'produit', 'uses' => 'Front\ProduitController@index']);
+Route::post('/produit/{produit}', ['as'=>'produit.store', 'uses' => 'Front\ProduitController@store']);
 
+Route::get('/registration', ['as'=>'registration', 'uses' => 'Front\RegistrationController@index']);
 
 /*
 Route::get('/', function () {

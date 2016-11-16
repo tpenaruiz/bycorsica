@@ -14,4 +14,8 @@ class ProduitController extends Controller
     public function index(){
         return view('front.produit.index');
     }
+
+    public function store($produit){
+
+    }
 }
