@@ -626,8 +626,7 @@ width: 100%;
 */
 .produit .panel{
     background-color: #222;
-    margin-right: -15px;
-    margin-left: -15px;
+    border-radius: 0;
 }
 
 .produit .panel-body {

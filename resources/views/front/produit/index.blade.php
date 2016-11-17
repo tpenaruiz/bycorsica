@@ -2,13 +2,10 @@
 @section('content')
 
     <div class="container">
+         <!-- Breadcrumbs -->
+        @include('front.blocks.breadcrumbs')
         <div class="row produit">
-
-            <!-- Breadcrumbs -->
-            @include('front.blocks.breadcrumbs')
-
             <div class="panel">
-
                 <div class="panel-body">
                     <div class="card">
                         <div class="wrapper">
