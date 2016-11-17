@@ -52,7 +52,7 @@
                                     </form>
                                 </div>
                                 <div class="bottom text-center">
-                                    <a href="#"><b>Créer votre compte</b></a>
+                                    <a href="#">Créer votre compte</a>
                                 </div>
                             </div>
                         </li>

@@ -86,53 +86,17 @@
 			<!-- Tab panes -->
 			<div class="tab-content home-product-content">
 				<div role="tabpanel" class="tab-pane active" id="popular">
-					<div class="col-md-3 col-xs-6 product-bloc">
-						<div class="product-image">
-							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
-						</div>
-						<div class="product-description">
-							<h3 class="product-title text-center">Tapenade noir</h3>
-							<div class="product-libelle">Toute la méditerranée concentrée dans des saveurs délicieuses ...</div>
-							<div class="product-price" style="">Prix : 4,43 €</div>
-							<div><a href="" class="product-link">Détails</a><a href="" class="product-cart">Ajouter au panier</a></div>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6 product-bloc">
-						<div class="product-image">
-							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
-						</div>
-						<div class="product-description">
-							<h3 class="product-title text-center">Tapenade noir</h3>
-							<div class="product-libelle">Toute la méditerranée concentrée dans des saveurs délicieuses ...</div>
-							<div class="product-price" style="">Prix : 4,43 €</div>
-							<div><a href="" class="product-link">Détails</a><a href="" class="product-cart">Ajouter au panier</a></div>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6 product-bloc">
-						<div class="product-image">
-							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
-						</div>
-						<div class="product-description">
-							<h3 class="product-title text-center">Tapenade noir</h3>
-							<div class="product-libelle">Toute la méditerranée concentrée dans des saveurs délicieuses ...</div>
-							<div class="product-price" style="">Prix : 4,43 €</div>
-							<div><a href="" class="product-link">Détails</a><a href="" class="product-cart">Ajouter au panier</a></div>
-						</div>
-					</div>
-					<div class="col-md-3 col-xs-6 product-bloc">
-						<div class="product-image">
-							<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
-						</div>
-						<div class="product-description">
-							<h3 class="product-title text-center">Tapenade noir</h3>
-							<div class="product-libelle">Toute la méditerranée concentrée dans des saveurs délicieuses ...</div>
-							<div class="product-price" style="">Prix : 4,43 €</div>
-							<div><a href="" class="product-link">Détails</a><a href="" class="product-cart">Ajouter au panier</a></div>
-						</div>
-					</div>
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
 				</div>
 				<div role="tabpanel" class="tab-pane" id="bestsellers">
-					test bestsellers
+					Bestsellers
 				</div>
 			</div>
 		</div>

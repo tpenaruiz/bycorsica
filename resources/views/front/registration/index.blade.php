@@ -19,15 +19,7 @@
 			</div>
 			<div class="panel-body">
 			    <form>
-					<div class="col-md-6 col-sm-6">
-						<div class = "form-group col-md-12 col-sm-12">
-	      					<label for="months">Titre *</label>	      
-	      					<select class="form-control input-sm" id="title">
-								<option>-- Selectionnez le titre --</option>
-								<option>Mr.</option>
-								<option>Mme.</option>
-	      					</select>
-						</div>
+					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
 						<div class="form-group col-md-12 col-sm-12">
 					        <label for="secondname">Prénom *	</label>
 				            <input type="text" class="form-control input-sm" id="secondname" placeholder="">
@@ -41,10 +33,6 @@
 				            <input type="text" class="form-control input-sm" id="email" placeholder="">
 				        </div>
 				        <div class="form-group col-md-12 col-sm-12">
-					        <label for="birthday">Date de naissance *	</label>
-				            <input type="text" class="form-control input-sm" id="birthday" placeholder="">
-				        </div>
-				        <div class="form-group col-md-12 col-sm-12">
 					        <label for="password">Password *	</label>
 				            <input type="password" class="form-control input-sm" id="password" placeholder="">
 				        </div>
@@ -52,35 +40,7 @@
 					        <label for="re-password">Confirmation Password *	</label>
 				            <input type="password" class="form-control input-sm" id="re-password" placeholder="">
 				        </div>
-					
-					</div>
-					<div class="col-md-6 col-sm-6">
-						<div class="form-group col-md-12 col-sm-12">
-					        <label for="address">Adresse *	</label>
-				            <input type="text" class="form-control input-sm" id="address" placeholder="">
-				        </div>
-				        <div class="form-group col-md-12 col-sm-12">
-					        <label for="city">ville *	</label>
-				            <input type="text" class="form-control input-sm" id="city" placeholder="">
-				        </div>
-				        <div class="form-group col-md-12 col-sm-12">
-					        <label for="pincode">Code postal *	</label>
-				            <input type="text" class="form-control input-sm" id="pincode" placeholder="">
-				        </div>
-				        <div class="form-group col-md-12 col-sm-12">
-					        <label for="country">Pays *	</label>
-				            <input type="text" class="form-control input-sm" id="country" placeholder="">
-				        </div>
-				        <div class="form-group col-md-12 col-sm-12">
-					        <label for="phone">Téléphone fix *</label>
-				            <input type="text" class="form-control input-sm" id="phone" placeholder="">
-				        </div>
-
-				        <div class="form-group col-md-12 col-sm-12">
-					        <label for="cellular">Téléphone portable*</label>
-				            <input type="text" class="form-control input-sm" id="cellular" placeholder="">
-				        </div>
-						<div class="form-group col-md-12 col-sm-12">						  	
+				        <div class="form-group col-md-12 col-sm-12">						  	
 					  		<div class="checkbox">
 					    		<label for="newsletter">
 					      			<input type="checkbox" class="newsletter" name="newsletter" id="newsletter" value="1">
