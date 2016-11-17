@@ -69,7 +69,7 @@
                         </div>
                         <div class="row">
                             <div class="bigTitle">
-                                <h3 class="title_bloc">EN SAVOIR PLUS</h3>
+                                <h4 class="title_bloc">EN SAVOIR PLUS</h4>
                             </div>
                             <p class="product_text">
                                 Produit méditerranéen par excellence notre tapenade sera parfaite pour
@@ -82,22 +82,22 @@
                             </p>
 
                             <div class="bigTitle">
-                                <h3 class="title_bloc">IDÉES RECETTES</h3>
+                                <h4 class="title_bloc">IDÉES RECETTES</h4>
                             </div>
                             <p class="product_text">
                                 Nos idées Recettes !!
                             </p>
 
                             <div class="bigTitle">
-                                <h3 class="title_bloc">ACCOMPAGNER AVEC</h3>
+                                <h4 class="title_bloc">ACCOMPAGNER AVEC</h4>
                             </div>
                             <p class="product_text">
                                 Orenga de Gaffory rosé, coppa corse, Cap corse
                             </p>
 
                             <div class="bigTitle">
-                                <h3 class="title_bloc">LES CLIENTS QUI ONT ACHETÉ CE PRODUIT ONT ÉGALEMENT
-                                    ACHETÉ...</h3>
+                                <h4 class="title_bloc">LES CLIENTS QUI ONT ACHETÉ CE PRODUIT ONT ÉGALEMENT
+                                    ACHETÉ...</h4>
                             </div>
 
                             <!-- Tab panes -->
