@@ -52,16 +52,9 @@ class UsersController extends Controller
         $users->password = \Hash::make($password.\Config::get('constante.salt'));
         $users->save();
 
-        $message = "Utilisateur Root inscris avec Succès, Un mail à été envoyé à cette personne afin qu'il puisse se connecté avec un mot de passe aléatoire !";
-        $info = \App\Users::with('roles', 'villes')
-                ->orderBy('created_at', 'DESC')
-                ->get();
-        if($request->ajax()){
-            return response()->json([
-                'message' => $message,
-                'info' => $info
-            ]);
-        }
+        // TODO Faire l'envoie du mail au destinateur
+        // ...
+
         return redirect()->route('users.index');
     }
 
