@@ -28,6 +28,7 @@ Route::get('/produit/{produit}', ['as'=>'produit', 'uses' => 'Front\ProduitContr
 Route::post('/produit/{produit}', ['as'=>'produit.store', 'uses' => 'Front\ProduitController@store']);
 
 Route::get('/registration', ['as'=>'registration', 'uses' => 'Front\RegistrationController@index']);
+Route::get('/search', ['as'=>'search', 'uses' => 'Front\SearchController@index']);
 
 /*
 Route::get('/', function () {
