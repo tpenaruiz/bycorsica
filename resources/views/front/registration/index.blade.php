@@ -3,18 +3,7 @@
 @section('content')
 
 <div class="container">
-<<<<<<< HEAD
-	<div class="row registration">
-=======
-	<div class="row registration-breadcrumb" style="">
->>>>>>> recherche
-		<div class="col-md-12">
-			<ol class="breadcrumb">
-			  	<li><a href="#">Home</a></li>
-			  	<li class="active">Registration</li>
-			</ol>
-		</div>
-	</div>
+	@include('front.blocks.breadcrumbs')
 
 	<div class="row registration-content">
 		<div class="panel">
