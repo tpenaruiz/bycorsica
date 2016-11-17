@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="{{ asset('lib/smartMenus/css/sm-blue/sm-blue.css') }}">
         <link rel="stylesheet" href="{{ asset('lib/smartMenus/css/smartmenus.css') }}">
         <!-- Main -->
-        <link rel="stylesheet" href="{{ asset('front/css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 
 
     <link rel="stylesheet" href="{{ asset('lib/AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css') }}">
