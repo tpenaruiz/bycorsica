@@ -571,10 +571,8 @@ width: 100%;
 |--------------------------------------------------------------------------
 */
 
-.registration-breadcrumb, .registration-content{
-    background-color: #222;
-}
 .registration-content{
+    background-color: #222;
     margin-bottom: 20px;
 }
 .registration-content .panel{
@@ -605,7 +603,7 @@ width: 100%;
 .search-content{
     padding-top: 20px;
 }
-.search-breadcrump, .search-heading, .search-sort, .search-content{
+.breadcrumbs, .search-heading, .search-sort, .search-content{
     background-color: #222;
 }
 .search-heading h3{

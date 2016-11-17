@@ -3,14 +3,7 @@
 @section('content')
 
 <div class="container">
-	<div class="row search-breadcrump">
-		<div class="col-md-12">
-			<ol class="breadcrumb">
-			  	<li><a href="#">Home</a></li>
-			  	<li class="active">Recherche</li>
-			</ol>
-		</div>
-	</div>
+	@include('front.blocks.breadcrumbs')
 
 	<div class="row search-heading"> 	
 		<div class="col-md-12 text-center">
