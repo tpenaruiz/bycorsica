@@ -626,26 +626,23 @@ width: 100%;
 | Page Produit
 |--------------------------------------------------------------------------
 */
-.panel {
+.produit .panel{
     background-color: #222;
-}
-
-.panel{
     margin-right: -15px;
     margin-left: -15px;
 }
 
-.panel-body {
+.produit .panel-body {
     margin-top: -50px;
 }
 
-.image_product {
+.produit .image_product {
     max-width: 100%;
     border: 1px solid #B79332;
     border-radius: 10px 10px 10px 10px;
 }
 
-.preview {
+.produit .preview {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -658,23 +655,23 @@ width: 100%;
 }
 
 @media screen and (max-width: 996px) {
-    .preview {
+    .produit .preview {
         margin-bottom: 20px;
     }
 }
 
-.preview-pic {
+.produit .preview-pic {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
 }
 
-.tab-content {
+.produit .tab-content {
     overflow: hidden;
 }
 
-.tab-content .image_product {
+.produit .tab-content .image_product {
     width: 100%;
     -webkit-animation-name: opacity;
     animation-name: opacity;
@@ -682,54 +679,54 @@ width: 100%;
     animation-duration: .3s;
 }
 
-.card {
+.produit .card {
     margin-top: 50px;
     background: #222222;
     padding: 3em;
     line-height: 1.5em;
 }
 
-.bloc {
+.produit .bloc {
     border: 1px solid #B79332;
     background-color: #323232;
     color: #fff;
 }
 
-.sendFriend {
+.produit .sendFriend {
     text-align: center;
     font-size: 1.0em;
 }
 
-.ajax_sendFriend {
+.produit .ajax_sendFriend {
     text-decoration: none;
     color: #A1A19D;
     cursor: pointer;
 }
 
-.ajax_sendFriend:hover {
+.produit .ajax_sendFriend:hover {
     text-decoration: none;
     color: #B79332;
 }
 
-.print {
+.produit .print {
     text-align: center;
     margin-top: 10px;
     font-size: 1.0em;
 }
 
-.ajax_print {
+.produit .ajax_print {
     text-decoration: none;
     color: #A1A19D;
     cursor: pointer;
 }
 
-.ajax_print:hover {
+.produit .ajax_print:hover {
     text-decoration: none;
     color: #B79332;
 }
 
 @media screen and (min-width: 997px) {
-    .wrapper {
+    .produit .wrapper {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -737,7 +734,7 @@ width: 100%;
     }
 }
 
-.details {
+.produit .details {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -749,24 +746,24 @@ width: 100%;
     flex-direction: column;
 }
 
-.product-title, .price {
+.produit .product-title, .price {
     text-transform: UPPERCASE;
     font-weight: normal;
 }
 
-.produit .price {
+.produit .produit .price {
     color: #fff;
     text-align: center;
     font-size: 1.4em;
     font-weight: normal;
 }
 
-.qte {
+.produit .qte {
     text-align: center;
 }
 
 /*Equivalent => input[type=number]*/
-._inputQte {
+.produit ._inputQte {
     cursor: pointer;
     width: 80px;
     color: #fff;
@@ -775,39 +772,39 @@ width: 100%;
     background-color: #323232;
 }
 
-.del_qte {
+.produit .del_qte {
     height: 30px;
     width: 30px;
     margin-left: 20px;
     background-color: #323232;
 }
 
-.add_qte {
+.produit .add_qte {
     height: 30px;
     width: 30px;
     margin-left: 5px;
     background-color: #323232;
 }
 
-.panier {
+.produit .panier {
     margin-top: 30px;
     text-align: center;
     font-size: 1.0em;
     color: #A1A19D;
 }
 
-.ajax_panier {
+.produit .ajax_panier {
     text-decoration: none;
     color: #A1A19D;
     cursor: pointer;
 }
 
-.ajax_panier:hover {
+.produit .ajax_panier:hover {
     text-decoration: none;
     color: #B79332;
 }
 
-.cadeau {
+.produit .cadeau {
     margin-top: 10px;
     text-align: center;
     font-size: 1.0em;
@@ -815,30 +812,31 @@ width: 100%;
     margin-bottom: 15px;
 }
 
-.ajax_cadeau {
+.produit .ajax_cadeau {
     text-decoration: none;
     color: #A1A19D;
     cursor: pointer;
 }
 
-.ajax_cadeau:hover {
+.produit .ajax_cadeau:hover {
     text-decoration: none;
     color: #B79332;
 }
 
-.product-title, .price {
+.produit .product-title, .price {
+    text-align: center;
     margin-bottom: 10px;
 }
 
-.product-title {
+.produit .product-title {
     margin-top: 0;
 }
 
-.social {
+.produit .social {
     list-style-type: none;
 }
 
-.product_text {
+.produit .product_text {
     margin-top: 30px;
     margin-left: 15px;
 }
@@ -869,18 +867,18 @@ width: 100%;
     }
 }
 
-.bigTitle {
+.produit .bigTitle {
     margin-top: 35px;
     height: 60px;
     border: 1px solid #222222;
     background-color: #323232;
 }
 
-.title_bloc {
+.produit .title_bloc {
     text-align: center;
     color: #fff;
 }
 
-.productSpaceLab{
+.produit .productSpaceLab{
     margin-top: 30px;
 }
