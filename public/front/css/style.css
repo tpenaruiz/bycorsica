@@ -10,11 +10,15 @@
     Blocks Product Sort
     Blocks Product Grille
     Blocks Product Liste
+    Blocks Product Pagination
     Page HOME - Carousel
     Page HOME - Categorie
     Page HOME - Liste Produits (Populaire / Meilleures ventes)
     Page Registration
     Page Search
+    Page Produit
+    Page Categorie
+    Page User
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +55,17 @@ a:hover, a:focus, a:active {
 
 label {
     font-weight: 200;
+}
+
+.breadcrumbs, 
+.search-heading, 
+.search-sort, 
+.search-content, 
+.category-heading,
+.category-sort,
+.category-content,
+.product-pagination {
+    background-color: #222;
 }
 
 .btn-primary {
@@ -480,10 +495,6 @@ label {
     padding-bottom: 15px
 }
 
-.product-liste h3 {
-    font-weight: 400;
-}
-
 .product-liste img {
     width: 100%;
     border: 1px solid #E0C868;
@@ -493,10 +504,31 @@ label {
     -ms-border-radius: 3px;
 }
 
+.product-liste img:hover {
+    filter: brightness(1.5);
+    -webkit-filter: brightness(1.5);
+    -moz-filter: brightness(1.5);
+    -o-filter: brightness(1.5);
+    -ms-filter: brightness(1.5);
+}
+
 .product-liste .left {
     border-right: 1px solid rgba(132, 132, 132, .5);
     height: 112px;
     margin-top: 10px;
+}
+
+.product-liste .left h3 {
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+.product-liste .left .description{
+        margin-bottom: 5px;
+    }
+
+.product-liste .left .link{
+    text-align: left;
 }
 
 .product-liste .right {
@@ -509,8 +541,78 @@ label {
     height: 26px;
 }
 
-.product-liste .right .carte {
+.product-liste .right .cart {
     margin-bottom: 10px;
+}
+
+.product-liste .right .cart i,
+.product-liste .right .gift i
+{
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 1199px) {
+    .product-liste .left {
+        height: 105px;
+        margin-top: 0px;
+    }
+    .product-liste .left h3{
+        margin-top: 0;
+    }
+    .product-liste .right {
+        height: 105px;
+        margin-top: 0px;
+    }
+    .product-liste .price {
+        margin-bottom: 5px;
+    }
+    .product-liste .cart {
+        margin-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .product-liste .left {
+        border: 0;
+    }
+    .product-liste .left h3{
+        margin-top: 20px;
+    }
+    .product-liste .left .description, .product-liste .left .link{
+        text-align: center;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Blocks Product Pagination
+|--------------------------------------------------------------------------
+*/
+
+.product-pagination .result{
+    font-size: 1.3em;
+    height: 76px;
+    line-height: 76px;
+}
+
+.product-pagination .pagination>li>a{
+    color: black;
+}
+
+@media screen and (max-width: 991px) {
+    .product-pagination .result{
+    font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .product-pagination .result{
+    font-size: 1.2em;
+    text-align: center;
+    height: auto;
+    line-height: 0;
+    margin-top: 20px;
+    }
 }
 
 /*
@@ -684,10 +786,6 @@ label {
     padding-top: 20px;
 }
 
-.breadcrumbs, .search-heading, .search-sort, .search-content {
-    background-color: #222;
-}
-
 .search-heading h3 {
     font-size: 1.5em;
     margin-top: 0px;
@@ -839,6 +937,13 @@ label {
     color: #B79332;
 }
 
+.produit .sendFriend i, 
+.produit .print i,
+.produit .panier i,
+.produit .cadeau i{
+    padding-right: 10px;
+}
+
 @media screen and (min-width: 997px) {
     .produit .wrapper {
         display: -webkit-box;
@@ -948,6 +1053,7 @@ label {
 
 .produit .social {
     list-style-type: none;
+    padding-top: 10px;
 }
 
 .produit .product_text {
@@ -994,4 +1100,60 @@ label {
 
 .produit .productSpaceLab {
     margin-top: 30px;
+}
+
+@media screen and (max-width: 991px) {
+    .produit .details{
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Page Categorie
+|--------------------------------------------------------------------------
+*/
+
+.category-heading img{
+    border: 1px solid #B79332;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    width: 100%; 
+}
+
+.category-sort{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Page User
+|--------------------------------------------------------------------------
+*/
+
+.user .nav-tabs>li>a{
+    color: white;
+}
+
+.user .nav-tabs>li>a:hover{
+    border-color: transparent;
+}
+
+.user.nav-tabs>li.active>a:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    color: #E0C868;
+}
+
+.user .nav-tabs>li.active>a, 
+.user .nav-tabs>li.active>a:focus, 
+.user.nav-tabs>li.active>a:hover{
+    background-color: #222;
+    border: 1px solid white;
+    color: #E0C868;
 }

@@ -29,6 +29,8 @@ Route::post('/produit/{produit}', ['as'=>'produit.store', 'uses' => 'Front\Produ
 
 Route::get('/registration', ['as'=>'registration', 'uses' => 'Front\RegistrationController@index']);
 Route::get('/search', ['as'=>'search', 'uses' => 'Front\SearchController@index']);
+Route::get('/category', ['as'=>'category', 'uses' => 'Front\CategoryController@index']);
+Route::get('/user', ['as'=>'account', 'uses' => 'Front\UserController@index']);
 
 /**
  * Authentification
