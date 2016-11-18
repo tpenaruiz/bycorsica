@@ -32,8 +32,12 @@ Route::get('/search', ['as'=>'search', 'uses' => 'Front\SearchController@index']
 Route::get('/category', ['as'=>'category', 'uses' => 'Front\CategoryController@index']);
 Route::get('/user', ['as'=>'account', 'uses' => 'Front\UserController@index']);
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
+/**
+ * Authentification
+ * Login,
+ * Register,
+ * Forgot Pass,
+ * Reset Pass
+ */
+Auth::routes();
+Route::get('/home', 'Auth\AuthController@index');
