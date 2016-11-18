@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-	<div class="row user"> 	
+	<div class="row account"> 	
 		<div class="col-md-12">	
 		  	<!-- Nav tabs -->
 		  	<ul class="nav nav-tabs" role="tablist">			

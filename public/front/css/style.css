@@ -1137,23 +1137,23 @@ label {
 |--------------------------------------------------------------------------
 */
 
-.user .nav-tabs>li>a{
+.account .nav-tabs>li>a{
     color: white;
 }
 
-.user .nav-tabs>li>a:hover{
+.account .nav-tabs>li>a:hover{
     border-color: transparent;
 }
 
-.user.nav-tabs>li.active>a:hover{
+.account.nav-tabs>li.active>a:hover{
     background-color: transparent;
     border: 1px solid white;
     color: #E0C868;
 }
 
-.user .nav-tabs>li.active>a, 
-.user .nav-tabs>li.active>a:focus, 
-.user.nav-tabs>li.active>a:hover{
+.account .nav-tabs>li.active>a, 
+.account .nav-tabs>li.active>a:focus, 
+.account.nav-tabs>li.active>a:hover{
     background-color: #222;
     border: 1px solid white;
     color: #E0C868;
