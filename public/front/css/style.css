@@ -16,9 +16,10 @@
     Page HOME - Liste Produits (Populaire / Meilleures ventes)
     Page Registration
     Page Search
+    Page Forgot Pass
     Page Produit
     Page Categorie
-    Page User
+    Page Account
 
 /*
 |--------------------------------------------------------------------------
@@ -1132,7 +1133,7 @@ label {
 
 /*
 |--------------------------------------------------------------------------
-| Page User
+| Page Account
 |--------------------------------------------------------------------------
 */
 
