@@ -702,6 +702,40 @@ label {
     padding-bottom: 20px;
 }
 
+
+/*
+|--------------------------------------------------------------------------
+| Page Forgot Password
+|--------------------------------------------------------------------------
+*/
+.forgotPass {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.forgotPass .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.forgotPass .panel-heading {
+    padding: 0;
+}
+
+.forgotPass h3 {
+    font-size: 1.5em;
+}
+
+.forgotPass .checkbox {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.forgotPass .btn {
+    margin-top: 40px;
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | Page Produit

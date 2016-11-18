@@ -30,8 +30,12 @@ Route::post('/produit/{produit}', ['as'=>'produit.store', 'uses' => 'Front\Produ
 Route::get('/registration', ['as'=>'registration', 'uses' => 'Front\RegistrationController@index']);
 Route::get('/search', ['as'=>'search', 'uses' => 'Front\SearchController@index']);
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
+/**
+ * Authentification
+ * Login,
+ * Register,
+ * Forgot Pass,
+ * Reset Pass
+ */
+Auth::routes();
+Route::get('/home', 'Auth\AuthController@index');
