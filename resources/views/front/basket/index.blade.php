@@ -58,47 +58,52 @@
                         </table>
                     </div>
 
-                    <div class="table-responsive cart_info">
-                        <table class="table table-condensed">
-                            <thead>
-                            <tr class="cart_menu">
-                                <td class="image">Total produit TTC</td>
-                                <td class="description">Frait de port</td>
-                                <td class="">Total TTC</td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="cart_product">
-                                    <p>4,43$</p>
-                                </td>
-                                <td class="cart_description">
-                                    <p>8,98$</p>
-                                </td>
-                                <td class="cart_price">
-                                    <p>13,41$</p>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                    <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-6 col-sm-offset-6 col-xs-offset-6">
+                        <div class="table-responsive cart_info">
+                            <table class="table table-condensed">
+                                <thead>
+                                <tr class="cart_menu">
+                                    <td class="image">Total produit TTC</td>
+                                    <td class="description">Frait de port</td>
+                                    <td class="">Total TTC</td>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="cart_product">
+                                        <p>4,43$</p>
+                                    </td>
+                                    <td class="cart_description">
+                                        <p>8,98$</p>
+                                    </td>
+                                    <td class="cart_price">
+                                        <p>13,41$</p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
-                    <form>
-                        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                            <div class="form-group col-md-12 col-sm-12">
-                                <label for="secondname">Avez-vous un code promo ? </label>
-                                <input type="text" class="form-control input-sm" id="Basket_codePromo"
-                                       placeholder="Votre code promo" onkeyUp="inputPromoKeyPress()">
-                            </div>
+                    <div class="code_promo col-md-6 col-sm-6 col-xs-6 col-md-offset-0 col-sm-offset-0 col-xs-offset-0">
+                        <form>
+                            <div class="">
+                                <div class="form-group col-md-12 col-sm-12">
+                                    <label for="secondname">Avez-vous un code promo ? </label>
+                                    <input type="text" class="form-control input-sm" id="Basket_codePromo"
+                                           placeholder="Votre code promo" onkeyUp="inputPromoKeyPress()">
+                                </div>
 
-                            <div class="col-md-12 col-sm-12">
-                                <div class="form-group col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
-                                    <input type="submit" class="btn btn-primary btn-block promoBtn"
-                                           value="Je valide mon code promo"/>
+                                <div class="">
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                                        <input type="submit" class="btn btn-primary btn-block promoBtn"
+                                               value="Je valide mon code promo"/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+
 
                     <div class="col-md-12 col-sm-12">
                         <div class="form-group col-md-offset-0 col-md-6 col-sm-offset-0 col-sm-6 col-xs-12">

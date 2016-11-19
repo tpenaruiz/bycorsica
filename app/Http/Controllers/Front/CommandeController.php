@@ -11,7 +11,11 @@ class CommandeController extends Controller
     {
     }
 
-    public function index(){
+    public function stepOne(){
         return view('front.commande.stepOne');
+    }
+
+    public function stepTwo(){
+        return view('front.commande.stepTwo');
     }
 }
