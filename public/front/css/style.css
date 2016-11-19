@@ -18,6 +18,10 @@
     Page Search
     Page Forgot Pass
     Page Basket
+    Page Commande Step 1
+    Page Commande Step 2
+    Page Commande Step 3
+    Page Commande Step 4
     Page Produit
     Page Categorie
     Page Account
@@ -988,6 +992,114 @@ label {
 .basket .cart_info .table.table-condensed.total-result .shipping-cost {
     border-bottom: 1px solid #222;
 }
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande Step 1
+|--------------------------------------------------------------------------
+*/
+.commandeStepOne {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.commandeStepOne .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.commandeStepOne .panel-heading {
+    padding: 0;
+}
+
+.commandeStepOne h3 {
+    font-size: 1.5em;
+}
+
+.commandeStepOne .setup-panel{
+    border: 1px solid #B79332;
+    background-color: #222;
+}
+
+.commandeStepOne .nav-pills > li.active > a,
+.commandeStepOne .nav-pills > li.active > a:hover,
+.commandeStepOne .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #B79332;
+}
+
+.commandeStepOne .commande_login{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+.commandeStepOne .commande_registration{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande Step 2
+|--------------------------------------------------------------------------
+*/
+.commandeStepTwo {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.commandeStepTwo .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.commandeStepTwo .panel-heading {
+    padding: 0;
+}
+
+.commandeStepTwo h3 {
+    font-size: 1.5em;
+}
+
+.commandeStepTwo .setup-panel{
+    border: 1px solid #B79332;
+    background-color: #222;
+}
+
+.commandeStepTwo .nav-pills > li.active > a,
+.commandeStepTwo .nav-pills > li.active > a:hover,
+.commandeStepTwo .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #B79332;
+}
+
+.commandeStepTwo .commande_login{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+.commandeStepTwo .commande_registration{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande Step 3
+|--------------------------------------------------------------------------
+*/
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande Step 4
+|--------------------------------------------------------------------------
+*/
 
 
 
