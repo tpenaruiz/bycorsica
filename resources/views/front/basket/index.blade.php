@@ -9,9 +9,7 @@
                     <h3 class="panel-title text-center">Votre panier</h3>
                 </div>
 
-
                 <div class="panel-body">
-
 
                     <div class="table-responsive cart_info">
                         <table class="table table-condensed">
@@ -60,17 +58,6 @@
                         </table>
                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
                     <div class="table-responsive cart_info">
                         <table class="table table-condensed">
                             <thead>
@@ -96,50 +83,32 @@
                         </table>
                     </div>
 
-
-
-
-
-
                     <form>
                         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
                             <div class="form-group col-md-12 col-sm-12">
                                 <label for="secondname">Avez-vous un code promo ? </label>
-                                <input type="text" class="form-control input-sm" id="Basket_codePromo" placeholder="Votre code promo" onkeyUp="inputPromoKeyPress()">
+                                <input type="text" class="form-control input-sm" id="Basket_codePromo"
+                                       placeholder="Votre code promo" onkeyUp="inputPromoKeyPress()">
                             </div>
 
                             <div class="col-md-12 col-sm-12">
-                                <div class="form-group col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3" >
-                                    <input type="submit" class="btn btn-primary btn-block promoBtn" value="Je valide mon code promo"/>
+                                <div class="form-group col-md-6 col-sm-6 col-xs-12 col-md-offset-3 col-sm-offset-3">
+                                    <input type="submit" class="btn btn-primary btn-block promoBtn"
+                                           value="Je valide mon code promo"/>
                                 </div>
                             </div>
                         </div>
                     </form>
 
-
-
-
-
-
                     <div class="col-md-12 col-sm-12">
-                        <div class="form-group col-md-offset-0 col-md-6 col-sm-offset-0 col-sm-6 col-xs-12" >
-                            <input type="submit" class="btn btn-primary btn-block pull-right" value="Continuer mes Achats"/>
+                        <div class="form-group col-md-offset-0 col-md-6 col-sm-offset-0 col-sm-6 col-xs-12">
+                            <input type="submit" class="btn btn-primary btn-block pull-right"
+                                   value="Continuer mes Achats"/>
                         </div>
-                        <div class="form-group col-md-offset-0 col-md-6 col-sm-offset-0 col-sm-6 col-xs-12" >
+                        <div class="form-group col-md-offset-0 col-md-6 col-sm-offset-0 col-sm-6 col-xs-12">
                             <input type="submit" class="btn btn-primary btn-block" value="Commander"/>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
 
                 </div>
             </div>
