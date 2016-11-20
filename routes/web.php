@@ -99,12 +99,19 @@ Route::get('/cgu', ['as' => 'cgu', 'uses' => 'Front\PageContentController@cgu'])
 Route::get('/cgv', ['as' => 'cgv', 'uses' => 'Front\PageContentController@cgv']);
 Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\PageContentController@mentionsLegal']);
 
-/**
- * Authentification
- * Login,
- * Register,
- * Forgot Pass,
- * Reset Pass
- */
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+|  Authentification
+|  Login,
+|  Register,
+|  Forgot Pass,
+|  Reset Pass
+|
+*/
 Auth::routes();
 Route::get('/home', 'Auth\AuthController@index');
