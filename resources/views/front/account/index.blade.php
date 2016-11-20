@@ -113,14 +113,14 @@
 		    					<div class="row">		    					
 		    						<div class="form-group col-xs-5 col-xs-offset-1">
 		    							<!-- Button trigger modal New Addresse -->
-										<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal-address-update">
-										  	Update
+										<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
+										  	<i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
 										</button>				   
 		    						</div>
 		    						<div class="form-group col-xs-5">
-		    							{!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
-		    							{!! Form::submit('Supprimer', ['class' => 'btn btn-primary btn-block']) !!}
-		    							{!! Form::close() !!}
+		    							<button type="button" class="btn btn-danger btn-block">
+										  	<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> &nbsp Delete
+										</button>
 		    						</div>
 	    						</div>		    					
 	    					</div>
@@ -142,14 +142,14 @@
 		    					<div class="row">		    					
 		    						<div class="form-group col-xs-5 col-xs-offset-1">
 		    							<!-- Button trigger modal New Addresse -->
-										<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal-address-update">
-										  	Update
+										<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
+										  	<i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
 										</button>				   
 		    						</div>
 		    						<div class="form-group col-xs-5">
-		    							{!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
-		    							{!! Form::submit('Supprimer', ['class' => 'btn btn-primary btn-block']) !!}
-		    							{!! Form::close() !!}
+		    							<button type="button" class="btn btn-danger btn-block">
+										  	<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> &nbsp Delete
+										</button>
 		    						</div>
 	    						</div>		    					
 	    					</div>
@@ -171,14 +171,14 @@
 		    					<div class="row">		    					
 		    						<div class="form-group col-xs-5 col-xs-offset-1">
 		    							<!-- Button trigger modal New Addresse -->
-										<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal-address-update">
-										  	Update
+										<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
+										  	<i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
 										</button>				   
 		    						</div>
 		    						<div class="form-group col-xs-5">
-		    							{!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
-		    							{!! Form::submit('Supprimer', ['class' => 'btn btn-primary btn-block']) !!}
-		    							{!! Form::close() !!}
+		    							<button type="button" class="btn btn-danger btn-block">
+										  	<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> &nbsp Delete
+										</button>
 		    						</div>
 	    						</div>		    					
 	    					</div>
@@ -200,14 +200,14 @@
 		    					<div class="row">		    					
 		    						<div class="form-group col-xs-5 col-xs-offset-1">
 		    							<!-- Button trigger modal New Addresse -->
-										<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#modal-address-update">
-										  	Update
+										<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
+										  	<i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
 										</button>				   
 		    						</div>
 		    						<div class="form-group col-xs-5">
-		    							{!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
-		    							{!! Form::submit('Supprimer', ['class' => 'btn btn-primary btn-block']) !!}
-		    							{!! Form::close() !!}
+		    							<button type="button" class="btn btn-danger btn-block">
+										  	<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> &nbsp Delete
+										</button>
 		    						</div>
 	    						</div>		    					
 	    					</div>

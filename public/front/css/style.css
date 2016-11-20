@@ -448,6 +448,7 @@ label {
     border-right: 1px solid #E0C868;
     border-bottom: 1px solid #2A2A2A;
     border-left: 1px solid #E0C868;
+    overflow: hidden;
 }
 
 .product-grille .image:hover {
@@ -460,6 +461,10 @@ label {
 
 .product-grille .image img {
     width: 100%;
+    -webkit-animation-name: opacity;
+    animation-name: opacity;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
 }
 
 .product-grille .description {
@@ -504,21 +509,30 @@ label {
     padding-bottom: 15px
 }
 
-.product-liste img {
-    width: 100%;
+.product-liste .image {
     border: 1px solid #E0C868;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -o-border-radius: 3px;
     -ms-border-radius: 3px;
+    overflow: hidden;
+
 }
 
-.product-liste img:hover {
+.product-liste .image:hover {
     filter: brightness(1.5);
     -webkit-filter: brightness(1.5);
     -moz-filter: brightness(1.5);
     -o-filter: brightness(1.5);
     -ms-filter: brightness(1.5);
+}
+
+.product-liste img {
+    width: 100%;
+    -webkit-animation-name: opacity;
+    animation-name: opacity;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
 }
 
 .product-liste .left {
@@ -872,7 +886,6 @@ label {
     margin-bottom: 50px
 }
 
-
 .basket .cart_info .cart_menu {
     background: #B79332;
     color: #fff;
@@ -883,7 +896,6 @@ label {
 .basket .cart_info .table.table-condensed thead tr {
     height: 51px;
 }
-
 
 .basket .cart_info .table.table-condensed tr {
     border-bottom: 1px solid #B79332
@@ -898,11 +910,9 @@ label {
     vertical-align: inherit;
 }
 
-
 .basket .cart_info .image {
     padding-left: 30px;
 }
-
 
 .basket .cart_info .cart_description h4 {
     margin-bottom: 0
@@ -913,19 +923,16 @@ label {
     font-family: 'Roboto',sans-serif;
     font-size: 20px;
     font-weight: normal;
-
 }
 
 .basket .cart_info .cart_description p {
     color:#fff
 }
 
-
 .basket .cart_info .cart_price p {
     color:#fff;
     font-size: 18px
 }
-
 
 .basket .cart_info .cart_total_price {
     color: #fff;
@@ -1006,6 +1013,7 @@ label {
 | Page Commande Step 1
 |--------------------------------------------------------------------------
 */
+
 .commandeStepOne {
     background-color: #222;
     margin-bottom: 20px;
@@ -1177,6 +1185,32 @@ label {
     animation-duration: .3s;
 }
 
+@-webkit-keyframes opacity {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(3);
+        transform: scale(3);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(3);
+        transform: scale(3);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
 .produit .card {
     margin-top: 50px;
     background: #222222;
@@ -1345,32 +1379,6 @@ label {
 .produit .product_text {
     margin-top: 30px;
     margin-left: 15px;
-}
-
-@-webkit-keyframes opacity {
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(3);
-        transform: scale(3);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
-}
-
-@keyframes opacity {
-    0% {
-        opacity: 0;
-        -webkit-transform: scale(3);
-        transform: scale(3);
-    }
-    100% {
-        opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    }
 }
 
 .produit .bigTitle {
