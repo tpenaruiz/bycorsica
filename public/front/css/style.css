@@ -25,6 +25,9 @@
     Page Produit
     Page Categorie
     Page Account
+    Page CGU
+    Page CGV
+    Page Mentions Legal
 
 /*
 |--------------------------------------------------------------------------
@@ -284,9 +287,97 @@ label {
     box-shadow: 0 1px 0 #B4B3B3;
 }
 
-.social li {
-    background: none repeat scroll 0 0 #B5B5B5;
-    border: 2px solid #B5B5B5;
+.social .icon_facebook {
+    background: none repeat scroll 0 0 #3B5998;
+    border: 2px solid #3B5998;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 8px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 36px;
+    transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+
+.social .icon_twitter {
+    background: none repeat scroll 0 0 #3AAAE1;
+    border: 2px solid #3AAAE1;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 8px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 36px;
+    transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+
+.social .icon_googlePlus {
+    background: none repeat scroll 0 0 #DB4437;
+    border: 2px solid #DB4437;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 8px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 36px;
+    transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+
+.social .icon_pinterest {
+    background: none repeat scroll 0 0 #BD081C;
+    border: 2px solid #BD081C;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 8px 0 0;
+    padding: 0;
+    text-align: center;
+    width: 36px;
+    transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+}
+
+.social .icon_youtube {
+    background: none repeat scroll 0 0 #CC181E;
+    border: 2px solid #CC181E;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -o-border-radius: 50%;
@@ -1526,4 +1617,75 @@ label {
 .account .address .modal-address-new,
 .account .address .modal-address-update{
     color:black;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Page CGU
+|--------------------------------------------------------------------------
+*/
+.cgu {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.cgu .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.cgu .panel-heading {
+    padding: 0;
+}
+
+.cgu h3 {
+    font-size: 1.5em;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Page CGV
+|--------------------------------------------------------------------------
+*/
+.cgv {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.cgv .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.cgv .panel-heading {
+    padding: 0;
+}
+
+.cgv h3 {
+    font-size: 1.5em;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Mentions Légal
+|--------------------------------------------------------------------------
+*/
+.mentionsLegal {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.mentionsLegal .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.mentionsLegal .panel-heading {
+    padding: 0;
+}
+
+.mentionsLegal h3 {
+    font-size: 1.5em;
 }

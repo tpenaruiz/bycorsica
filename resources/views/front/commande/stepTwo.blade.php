@@ -1,6 +1,5 @@
 @extends('front.layout.home')
 @section('content')
-    <script src="{{asset('front/js/stepCommande.js')}}"></script>
     <div class="container">
         @include('front.blocks.breadcrumbs')
 
