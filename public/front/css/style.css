@@ -65,7 +65,8 @@ label {
 .category-heading,
 .category-sort,
 .category-content,
-.product-pagination {
+.product-pagination,
+.account {
     background-color: #222;
 }
 
@@ -74,9 +75,11 @@ label {
     border-color: #DDBE41;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
     background-color: #DDBE41;
     border-color: #DDBE41;
+    outline: none;
 }
 
 .breadcrumb {
@@ -1137,15 +1140,29 @@ label {
 |--------------------------------------------------------------------------
 */
 
-.account .nav-tabs>li>a{
+.account{
+    padding-top: 20px;
+    padding-bottom: 35px;
+}
+
+.account .nav>li>a:focus, 
+.account .nav>li>a:hover {
+    background-color: transparent;
+}
+
+.account .nav>li>a:hover {
+    color: #E0C868;
+}
+
+.account .nav-tabs>li>a {
     color: white;
 }
 
-.account .nav-tabs>li>a:hover{
+.account .nav-tabs>li>a:hover {
     border-color: transparent;
 }
 
-.account.nav-tabs>li.active>a:hover{
+.account.nav-tabs>li.active>a:hover {
     background-color: transparent;
     border: 1px solid white;
     color: #E0C868;
@@ -1153,8 +1170,70 @@ label {
 
 .account .nav-tabs>li.active>a, 
 .account .nav-tabs>li.active>a:focus, 
-.account.nav-tabs>li.active>a:hover{
+.account.nav-tabs>li.active>a:hover {
     background-color: #222;
     border: 1px solid white;
     color: #E0C868;
+}
+
+.account .tab-pane {
+    padding-top: 40px;
+}
+
+.account .checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.account .infos .btn {
+    margin-top: 40px;
+}
+
+.account .address .address-details {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.account .address .address-details .bloc {
+    border: 1px solid #E0C868;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.account .address .address-details .bloc .libelle {
+    text-align: center;
+    background-color: #1E1E1E;
+    text-transform: uppercase;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2A2A2A; 
+
+}
+
+.account .address .firstaddress a:focus{
+    color: #A48226;
+    outline: none;
+}
+
+.account .address .address-details .bloc .bloc-details {
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
+.account .address .address-details .bloc .bloc-btn {
+    padding-top: 10px;
+}
+
+.account .address .address-new {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.account .address .modal-address-new,
+.account .address .modal-address-update{
+    color:black;
 }
