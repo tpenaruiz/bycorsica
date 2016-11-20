@@ -25,6 +25,9 @@
     Page Produit
     Page Categorie
     Page Account
+    Page CGU
+    Page CGV
+    Page Mentions Legal
 
 /*
 |--------------------------------------------------------------------------
@@ -1439,4 +1442,76 @@ label {
     background-color: #222;
     border: 1px solid white;
     color: #E0C868;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Page CGU
+|--------------------------------------------------------------------------
+*/
+.cgu {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.cgu .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.cgu .panel-heading {
+    padding: 0;
+}
+
+.cgu h3 {
+    font-size: 1.5em;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Page CGV
+|--------------------------------------------------------------------------
+*/
+.cgv {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.cgv .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.cgv .panel-heading {
+    padding: 0;
+}
+
+.cgv h3 {
+    font-size: 1.5em;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Mentions Légal
+|--------------------------------------------------------------------------
+*/
+.mentionsLegal {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.mentionsLegal .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.mentionsLegal .panel-heading {
+    padding: 0;
+}
+
+.mentionsLegal h3 {
+    font-size: 1.5em;
 }
