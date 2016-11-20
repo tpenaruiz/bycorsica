@@ -17,6 +17,11 @@
     Page Registration
     Page Search
     Page Forgot Pass
+    Page Basket
+    Page Commande Step 1
+    Page Commande Step 2
+    Page Commande Step 3
+    Page Commande Step 4
     Page Produit
     Page Categorie
     Page Account
@@ -836,6 +841,283 @@ label {
 .forgotPass .btn {
     margin-top: 40px;
 }
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Basket
+|--------------------------------------------------------------------------
+*/
+.basket {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.basket .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.basket .panel-heading {
+    padding: 0;
+}
+
+.basket h3 {
+    font-size: 1.5em;
+}
+
+.basket  .cart_info {
+    border: 1px solid #B79332;
+    margin-bottom: 50px
+}
+
+
+.basket .cart_info .cart_menu {
+    background: #B79332;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.basket .cart_info .table.table-condensed thead tr {
+    height: 51px;
+}
+
+
+.basket .cart_info .table.table-condensed tr {
+    border-bottom: 1px solid #B79332
+}
+
+.basket .cart_info .table.table-condensed tr:last-child {
+    border-bottom: 0
+}
+
+.basket .cart_info table tr td {
+    border-top: 0 none;
+    vertical-align: inherit;
+}
+
+
+.basket .cart_info .image {
+    padding-left: 30px;
+}
+
+
+.basket .cart_info .cart_description h4 {
+    margin-bottom: 0
+}
+
+.basket .cart_info .cart_description h4 a {
+    color: #363432;
+    font-family: 'Roboto',sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+
+}
+
+.basket .cart_info .cart_description p {
+    color:#fff
+}
+
+
+.basket .cart_info .cart_price p {
+    color:#fff;
+    font-size: 18px
+}
+
+
+.basket .cart_info .cart_total_price {
+    color: #fff;
+    font-size: 24px;
+}
+
+.basket .cart_product {
+    display: block;
+    margin: 15px -70px 10px 25px;
+}
+
+.basket .cart_quantity_button a {
+    background:#B79332;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    height: 28px;
+    overflow: hidden;
+    text-align: center;
+    width: 35px;
+    float: left;
+}
+
+.basket .cart_quantity_input {
+    color: #B79332;
+    float: left;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Roboto',sans-serif;
+
+}
+
+.basket .cart_delete  {
+    display: block;
+    margin-right: -12px;
+    overflow: hidden;
+}
+
+.basket .cart_delete a {
+    background:#fff;
+    color: #B79332;
+    padding: 5px 7px;
+    font-size: 16px
+}
+
+.basket .cart_delete a:hover {
+    background:#B79332;
+    color: #fff;
+}
+
+.basket .cart_info .table.table-condensed.total-result {
+    margin-bottom: 10px;
+    margin-top: 35px;
+    color: #fff
+}
+
+.basket .cart_info .table.table-condensed.total-result tr {
+    border-bottom: 0
+}
+
+.basket .cart_info .table.table-condensed.total-result span {
+    color: #222;
+    font-weight: 700;
+    font-size: 16px
+}
+
+.basket .cart_info .table.table-condensed.total-result .shipping-cost {
+    border-bottom: 1px solid #222;
+}
+
+.basket .code_promo{
+    margin-top: -180px;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande Step 1
+|--------------------------------------------------------------------------
+*/
+.commandeStepOne {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.commandeStepOne .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.commandeStepOne .panel-heading {
+    padding: 0;
+}
+
+.commandeStepOne h3 {
+    font-size: 1.5em;
+}
+
+.commandeStepOne .setup-panel{
+    border: 1px solid #B79332;
+    background-color: #222;
+}
+
+.commandeStepOne .nav-pills > li.active > a,
+.commandeStepOne .nav-pills > li.active > a:hover,
+.commandeStepOne .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #B79332;
+}
+
+.commandeStepOne .commande_login{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+.commandeStepOne .commande_registration{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande Step 2
+|--------------------------------------------------------------------------
+*/
+.commandeStepTwo {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.commandeStepTwo .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.commandeStepTwo .panel-heading {
+    padding: 0;
+}
+
+.commandeStepTwo h3 {
+    font-size: 1.5em;
+}
+
+.commandeStepTwo .setup-panel{
+    border: 1px solid #B79332;
+    background-color: #222;
+}
+
+.commandeStepTwo .nav-pills > li.active > a,
+.commandeStepTwo .nav-pills > li.active > a:hover,
+.commandeStepTwo .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #B79332;
+}
+
+.commandeStepTwo .commande_login{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+.commandeStepTwo .commande_registration{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+.commandeStepTwo .commandeAdresseSelected{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+.commandeStepTwo .commandeAdresse{
+    border: 1px solid #B79332;
+    background-color: #323232;
+}
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande Step 3
+|--------------------------------------------------------------------------
+*/
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande Step 4
+|--------------------------------------------------------------------------
+*/
+
 
 
 /*

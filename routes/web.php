@@ -31,6 +31,9 @@ Route::get('/registration', ['as'=>'registration', 'uses' => 'Front\Registration
 Route::get('/search', ['as'=>'search', 'uses' => 'Front\SearchController@index']);
 Route::get('/category', ['as'=>'category', 'uses' => 'Front\CategoryController@index']);
 Route::get('/account', ['as'=>'account', 'uses' => 'Front\AccountController@index']);
+Route::get('/basket', ['as'=>'basket', 'uses' => 'Front\BasketController@index']);
+Route::get('/commande/phase1', ['as'=>'commandePhase1', 'uses' => 'Front\CommandeController@stepOne']);
+Route::get('/commande/phase2', ['as'=>'commandePhase2', 'uses' => 'Front\CommandeController@stepTwo']);
 
 /**
  * Authentification
