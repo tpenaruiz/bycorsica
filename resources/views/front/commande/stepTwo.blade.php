@@ -42,25 +42,127 @@
                     <div class="row commandeStepTwo">
                         <div class="col-xs-12">
                             <div class="panel-heading">
-                                <h3 class="panel-title text-center">Adresse</h3>
+                                <h3 class="panel-title text-center">Adresses</h3>
+                                <br>
                             </div>
                             <form>
-                                <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                                    <div class="form-group col-md-12 col-sm-12">
-                                        <label for="email">Adresse Email</label>
-                                        <input type="email" class="form-control input-sm" id="email" placeholder="">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <div class="col-md-4 col-sm-4 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 commandeAdresseSelected">
+                                        <h3>Vos adresses :</h3>
+                                        <form>
+                                            <div class="form-group col-md-3 col-sm-3">
+                                                <input type="radio" class="" name="adresse1">
+                                            </div>
+                                            <div class="form-group col-md-9 col-sm-9">
+                                                <span>Paris</span>
+                                                <span>9 rue des cuilleres</span>
+                                                <span>75678, France</span>
+                                            </div>
+
+                                            <div class="form-group col-md-3 col-sm-3">
+                                                <input type="radio" class="" name="adresse1">
+                                            </div>
+                                            <div class="form-group col-md-9 col-sm-9">
+                                                <span>Paris</span>
+                                                <span>9 rue des cuilleres</span>
+                                                <span>75678, France</span>
+                                            </div>
+
+                                            <div class="form-group col-md-3 col-sm-3">
+                                                <input type="radio" class="" name="adresse1">
+                                            </div>
+                                            <div class="form-group col-md-9 col-sm-9">
+                                                <span>Paris</span>
+                                                <span>9 rue des cuilleres</span>
+                                                <span>75678, France</span>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <div class="form-group col-md-12 col-sm-12">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control input-sm" id="password"
-                                               placeholder="">
+
+                                    <div class="col-md-5 col-sm-5 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 commandeAdresse">
+                                        <h3>Ou souhaitez-vous être livrer ?</h3>
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="secondname">Prénom *	</label>
+                                            <input type="text" class="form-control input-sm" id="prenom" name="prenom" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="firstname">Nom *	</label>
+                                            <input type="text" class="form-control input-sm" id="nom" name="nom" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="email">Société *	</label>
+                                            <input type="text" class="form-control input-sm" id="societe" name="societe" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="secondname">Adresse *	</label>
+                                            <input type="text" class="form-control input-sm" id="adresse" name="adresse" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="firstname">Adresse Supplémentaire *	</label>
+                                            <textarea class="form-control input-sm" name="adresseSupp" id="adresseSupp" cols="30" rows="10">Adresse supplémentaires</textarea>
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="email">Code Postal *	</label>
+                                            <input type="number" class="form-control input-sm" id="codePostal" name="codePostal" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="secondname">Pays *	</label>
+                                            <select class="form-control input-sm" name="pays" id="pays">
+                                                <option value="Paris">France</option>
+                                                <option value="Paris">Etas-Unis</option>
+                                                <option value="Paris">Anglettere</option>
+                                                <option value="Paris">Chine</option>
+                                                <option value="Paris">Brazil</option>
+                                                <option value="Paris">Espagne</option>
+                                                <option value="Paris">Allemagne</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="firstname">Ville *	</label>
+                                            <select class="form-control input-sm" name="ville" id="ville">
+                                                <option value="Paris">Paris</option>
+                                                <option value="Paris">Dijon</option>
+                                                <option value="Paris">Lyon</option>
+                                                <option value="Paris">Marseille</option>
+                                                <option value="Paris">Vincennes</option>
+                                                <option value="Paris">Lille</option>
+                                                <option value="Paris">Monaco</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="email">Téléphone Fixe *	</label>
+                                            <input type="number" class="form-control input-sm" id="telephoneF" name="telephoneF" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="email">Téléphone Mobile *	</label>
+                                            <input type="number" class="form-control input-sm" id="telephoneM" name="telephoneM" placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-12 col-sm-12">
+                                            <label for="email">Information Supplémentaires *	</label>
+                                            <textarea class="form-control input-sm" name="information" id="information" cols="30" rows="10">Vos Informations</textarea>
+                                        </div>
+
+                                        <div class="col-md-12 col-sm-12">
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-6" >
+                                                <input type="submit" class="btn btn-primary btn-block pull-right" value="Annuler"/>
+                                            </div>
+                                            <div class="form-group col-md-6 col-sm-6 col-xs-6" >
+                                                <input type="submit" class="btn btn-primary btn-block" value="Valider"/>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-12 col-sm-12">
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
-                                        <input type="submit" class="btn btn-primary btn-block" value="Connection"/>
-                                    </div>
-                                </div>
+
                             </form>
                         </div>
                     </div>
