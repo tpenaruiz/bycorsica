@@ -28,7 +28,7 @@
                                     </td>
                                     <td class="cart_description">
                                         <h4><a href="">TAPENADE NOIRE</a></h4>
-                                        <p>Référence : BC_AP_0002</p>
+                                        <p class="refPr">Référence : BC_AP_0002</p>
                                     </td>
                                     <td class="cart_price">
                                         <p>$59</p>
@@ -108,10 +108,10 @@
                                         <td class="cart_product">
                                             <p>4,43$</p>
                                         </td>
-                                        <td class="cart_description">
+                                        <td class="cart_price">
                                             <p>8,98$</p>
                                         </td>
-                                        <td class="cart_price">
+                                        <td class="cart_total">
                                             <p>13,41$</p>
                                         </td>
                                     </tr>

@@ -944,6 +944,10 @@ label {
     margin-bottom: 20px;
 }
 
+.basket .refPr{
+    margin-top: 10px;
+}
+
 .basket  .cart_info {
     border: 1px solid #B79332;
     padding: 0;
@@ -1005,12 +1009,13 @@ label {
 
 .basket .cart_info .cart_total p{
     color:#fff;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    font-weight: bold;
 }
 
 .basket .cart_product {
     display: block;
-    font-size: 1.2em;
+    font-size: 1.4em;
 }
 
 .basket .cart_quantity_button a {
@@ -1028,7 +1033,7 @@ label {
 .basket .cart_quantity_input {
     color: #B79332;
     float: left;
-    font-size: 16px;
+    font-size: 16px; /* Input text */
     text-align: center;
     font-family: 'Roboto',sans-serif;
 
@@ -1065,7 +1070,7 @@ label {
 .basket .cart_info .table.table-condensed.total-result span {
     color: #222;
     font-weight: 700;
-    font-size: 16px
+    font-size: 16px;
 }
 
 .basket .cart_info .table.table-condensed.total-result .shipping-cost {
