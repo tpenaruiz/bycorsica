@@ -17,7 +17,7 @@
 	@include('front.blocks.breadcrumbs')
 
 	<div class="row account">
-		<div class="col-md-12">
+		<div class="col-md-12 title">
 			<h3 class="text-center">Gestion de mon compte</h3>	
 		</div>
 	  	<!-- Nav tabs -->
@@ -33,6 +33,7 @@
 
 	  	<!-- Tab panes -->
 	  	<div class="tab-content">
+	  		<!-- Debut Panel Info -->
 	    	<div role="tabpanel" class="tab-pane infos active" id="infos">
 	    		{!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
 					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
@@ -85,7 +86,9 @@
 					</div>
 				{!! Form::close() !!}
 	    	</div>
+	    	<!-- Fin Panesl Info -->
 
+	    	<!-- Debut Panel Adresse -->
 	    	<div role="tabpanel" class="tab-pane address" id="address">
 	    		<div class="col-md-12 libelle">
 	    			<p>Choisissez vos adresses de facturation. Ces dernières seront présélectionnées lors de vos commandes. Vous pouvez également ajouter d'autres adresses, ce qui est particulièrement intéressant pour envoyer des cadeaux ou recevoir votre commande au bureau.</p>
@@ -381,6 +384,7 @@
 				</div>
 				<!-- Fin Modal New Addresse -->
 	    	</div>
+	    	<!-- Fin Panel Addresse -->
 	    	<div role="tabpanel" class="tab-pane" id="messages">...</div>
 	    	<div role="tabpanel" class="tab-pane" id="settings">...</div>
 	  	</div>	

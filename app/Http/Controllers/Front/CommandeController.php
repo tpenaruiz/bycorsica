@@ -18,4 +18,12 @@ class CommandeController extends Controller
     public function stepTwo(){
         return view('front.commande.stepTwo');
     }
+
+    public function stepThree(){
+        return view('front.commande.stepThree');
+    }
+
+    public function stepFour(){
+        return view('front.commande.stepFour');
+    }
 }

@@ -37,7 +37,6 @@
                 </div>
 
                 <div class="panel-body">
-
                     <div class="row commandeStepOne">
                         <div class="col-xs-12">
                             <div class="col-md-5 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 commande_login">
@@ -65,8 +64,6 @@
                                     </div>
                                 </form>
                             </div>
-
-
                             <div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1 commande_registration">
                                 <br>
                                 <div class="panel-heading">
@@ -131,7 +128,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
