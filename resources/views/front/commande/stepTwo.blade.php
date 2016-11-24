@@ -1,173 +1,256 @@
 @extends('front.layout.home')
 @section('content')
-    <div class="container">
-        @include('front.blocks.breadcrumbs')
+<div class="container">
+    @include('front.blocks.breadcrumbs')
 
-        <div class="row commandeStepTwo">
-            <div class="panel">
+    <div class="row commandeStepTwo-heading">
+        <div class="col-md-12">
+            <ul class="nav nav-pills nav-justified thumbnail setup-panel">
+                <li>
+                    <a href="">
+                        <h4 class="list-group-item-heading">Etape 1</h4>
+                        <p class="list-group-item-text">Connection</p>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="">
+                        <h4 class="list-group-item-heading">Etapes 2</h4>
+                        <p class="list-group-item-text">Adresse</p>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="">
+                        <h4 class="list-group-item-heading">Etapes 3</h4>
+                        <p class="list-group-item-text">Livraison</p>
+                    </a>
+                </li>
+                <li class="disabled">
+                    <a href="">
+                        <h4 class="list-group-item-heading">Etapes 4</h4>
+                        <p class="list-group-item-text">Paiement</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Selectionn d'une addresse -->
+    <div class="row commandeStepTwo-address-select">
+        <div class="col-md-10 col-md-offset-1">
+            <h4>Veuillez choisir une adresse parmi vos adresses existantes :</h4>
+            <div class="panel panel-default">
                 <div class="panel-heading">
-                    <div class="col-xs-12">
-                        <ul class="nav nav-pills nav-justified thumbnail setup-panel">
-                            <li class="">
-                                <a href="">
-                                    <h4 class="list-group-item-heading">Etape 1</h4>
-                                    <p class="list-group-item-text">Connection</p>
-                                </a>
-                            </li>
-                            <li class="active">
-                                <a href="">
-                                    <h4 class="list-group-item-heading">Etapes 2</h4>
-                                    <p class="list-group-item-text">Adresse</p>
-                                </a>
-                            </li>
-                            <li class="disabled">
-                                <a href="">
-                                    <h4 class="list-group-item-heading">Etapes 3</h4>
-                                    <p class="list-group-item-text">Livraison</p>
-                                </a>
-                            </li>
-                            <li class="disabled">
-                                <a href="">
-                                    <h4 class="list-group-item-heading">Etapes 4</h4>
-                                    <p class="list-group-item-text">Paiement</p>
-                                </a>
-                            </li>
-                        </ul>
+                    <h3 class="panel-title">Addresse 1</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-8">Mr David VINCENT - 12, rue des Bacs - 75009 Paris</div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
+                            <i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary btn-block">
+                            <i class="fa fa-check-square fa-lg" aria-hidden="true"></i> &nbsp Choisir
+                        </button>
                     </div>
                 </div>
-
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Addresse 1</h3>
+                </div>
                 <div class="panel-body">
-
-                    <div class="row commandeStepTwo">
-                        <div class="col-xs-12">
-                            <div class="panel-heading">
-                                <h3 class="panel-title text-center">Adresses</h3>
-                                <br>
-                            </div>
-                            <form>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <div class="col-md-4 col-sm-4 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 commandeAdresseSelected">
-                                        <h3>Vos adresses :</h3>
-                                        <form>
-                                            <div class="form-group col-md-3 col-sm-3">
-                                                <input type="radio" class="" name="adresse1">
-                                            </div>
-                                            <div class="form-group col-md-9 col-sm-9">
-                                                <span>Paris</span>
-                                                <span>9 rue des cuilleres</span>
-                                                <span>75678, France</span>
-                                            </div>
-
-                                            <div class="form-group col-md-3 col-sm-3">
-                                                <input type="radio" class="" name="adresse1">
-                                            </div>
-                                            <div class="form-group col-md-9 col-sm-9">
-                                                <span>Paris</span>
-                                                <span>9 rue des cuilleres</span>
-                                                <span>75678, France</span>
-                                            </div>
-
-                                            <div class="form-group col-md-3 col-sm-3">
-                                                <input type="radio" class="" name="adresse1">
-                                            </div>
-                                            <div class="form-group col-md-9 col-sm-9">
-                                                <span>Paris</span>
-                                                <span>9 rue des cuilleres</span>
-                                                <span>75678, France</span>
-                                            </div>
-                                        </form>
-                                    </div>
-
-                                    <div class="col-md-5 col-sm-5 col-xs-12 col-md-offset-1 col-sm-offset-1 col-xs-offset-0 commandeAdresse">
-                                        <h3>Ou souhaitez-vous être livrer ?</h3>
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="secondname">Prénom *	</label>
-                                            <input type="text" class="form-control input-sm" id="prenom" name="prenom" placeholder="">
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="firstname">Nom *	</label>
-                                            <input type="text" class="form-control input-sm" id="nom" name="nom" placeholder="">
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="email">Société *	</label>
-                                            <input type="text" class="form-control input-sm" id="societe" name="societe" placeholder="">
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="secondname">Adresse *	</label>
-                                            <input type="text" class="form-control input-sm" id="adresse" name="adresse" placeholder="">
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="firstname">Adresse Supplémentaire *	</label>
-                                            <textarea class="form-control input-sm" name="adresseSupp" id="adresseSupp" cols="30" rows="10">Adresse supplémentaires</textarea>
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="email">Code Postal *	</label>
-                                            <input type="number" class="form-control input-sm" id="codePostal" name="codePostal" placeholder="">
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="secondname">Pays *	</label>
-                                            <select class="form-control input-sm" name="pays" id="pays">
-                                                <option value="Paris">France</option>
-                                                <option value="Paris">Etas-Unis</option>
-                                                <option value="Paris">Anglettere</option>
-                                                <option value="Paris">Chine</option>
-                                                <option value="Paris">Brazil</option>
-                                                <option value="Paris">Espagne</option>
-                                                <option value="Paris">Allemagne</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="firstname">Ville *	</label>
-                                            <select class="form-control input-sm" name="ville" id="ville">
-                                                <option value="Paris">Paris</option>
-                                                <option value="Paris">Dijon</option>
-                                                <option value="Paris">Lyon</option>
-                                                <option value="Paris">Marseille</option>
-                                                <option value="Paris">Vincennes</option>
-                                                <option value="Paris">Lille</option>
-                                                <option value="Paris">Monaco</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="email">Téléphone Fixe *	</label>
-                                            <input type="number" class="form-control input-sm" id="telephoneF" name="telephoneF" placeholder="">
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="email">Téléphone Mobile *	</label>
-                                            <input type="number" class="form-control input-sm" id="telephoneM" name="telephoneM" placeholder="">
-                                        </div>
-
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="email">Information Supplémentaires *	</label>
-                                            <textarea class="form-control input-sm" name="information" id="information" cols="30" rows="10">Vos Informations</textarea>
-                                        </div>
-
-                                        <div class="col-md-12 col-sm-12">
-                                            <div class="form-group col-md-6 col-sm-6 col-xs-6" >
-                                                <input type="submit" class="btn btn-primary btn-block pull-right" value="Annuler"/>
-                                            </div>
-                                            <div class="form-group col-md-6 col-sm-6 col-xs-6" >
-                                                <input type="submit" class="btn btn-primary btn-block" value="Valider"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
+                    <div class="col-md-8">Mr David VINCENT - 12, rue des Bacs - 75009 Paris</div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
+                            <i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
+                        </button>
                     </div>
-
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary btn-block">
+                            <i class="fa fa-check-square fa-lg" aria-hidden="true"></i> &nbsp Choisir
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Addresse 1</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="col-md-8">Mr David VINCENT - 12, rue des Bacs - 75009 Paris</div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
+                            <i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary btn-block">
+                            <i class="fa fa-check-square fa-lg" aria-hidden="true"></i> &nbsp Choisir
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal New Addresse -->
+    <div class="modal fade modal-address-update" id="modal-address-update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Nouvelle addresse</h4>
+                </div>
+                {!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
+                <div class="modal-body">
+                    <div class="row">   
+                        <div class="col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('addresslibelle', 'Libellé *') !!}
+                                    {!! Form::text('addresslibelle', null, ['class' => 'form-control input-sm', 'placeholder' => 'libellé', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('addressname', 'Prénom *') !!}
+                                    {!! Form::text('addressname', null, ['class' => 'form-control input-sm', 'placeholder' => 'prénom', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('firstname', 'Nom *') !!}
+                                    {!! Form::text('firstname', null, ['class' => 'form-control input-sm', 'placeholder' => 'nom', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('company', 'Société *') !!}
+                                    {!! Form::text('company', null, ['class' => 'form-control input-sm', 'placeholder' => 'société', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('address', 'Addresse *') !!}
+                                    {!! Form::text('address', null, ['class' => 'form-control input-sm', 'placeholder' => 'addresse', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('address2 ', 'Addresse complémentaire *') !!}
+                                    {!! Form::text('address2', null, ['class' => 'form-control input-sm', 'placeholder' => 'addresse complémantaire', 'required' => 'required']) !!}
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6 col-sm-6">
+                            <div class="row">
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('codepostal ', 'Code postal *') !!}
+                                    {!! Form::text('codepostal', null, ['class' => 'form-control input-sm', 'placeholder' => 'code postal', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('city ', 'Ville *') !!}
+                                    {!! Form::text('city', null, ['class' => 'form-control input-sm', 'placeholder' => 'ville', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('country ', 'Pays *') !!}
+                                    {!! Form::text('country', null, ['class' => 'form-control input-sm', 'placeholder' => 'pays', 'required' => 'required']) !!}
+                                </div>
+
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('phone ', 'Téléphone fixe *') !!}
+                                    {!! Form::text('phone', null, ['class' => 'form-control input-sm', 'placeholder' => 'téléphone fixe', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('cellular ', 'Téléphone portable *') !!}
+                                    {!! Form::text('city', null, ['class' => 'form-control input-sm', 'placeholder' => 'téléphone portable', 'required' => 'required']) !!}
+                                </div>
+                                <div class="form-group col-md-12 col-sm-12">
+                                    {!! Form::label('infosupp ', 'Information supplémentaire *') !!}
+                                    {!! Form::text('infosupp', null, ['class' => 'form-control input-sm', 'placeholder' => 'informations supplémentaire', 'required' => 'required']) !!}
+                                </div>
+                            </div>
+                        </div>                                  
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    {!! Form::button('Close', ['class' => 'btn btn-default', 'data-dismiss' => 'modal']) !!}                   
+                    {!! Form::submit('Valider', ['class' => 'btn btn-primary']) !!}
+                </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+    <!-- Fin Modal New Addresse -->
+
+    <!-- Ajout d'une adresse -->
+    <div class="row commandeStepTwo-address-add">
+        <div class="col-md-10 col-md-offset-1">
+            <h4>Ou ajouter une nouvelle adresse pour la livraison :</h4>
+        </div>
+
+        <div class="col-md-5 col-md-offset-1">
+            {!! Form::open(['method' => 'post', 'url' => route('account')]) !!}          
+            <div class="row">
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('addresslibelle', 'Libellé *') !!}
+                    {!! Form::text('addresslibelle', null, ['class' => 'form-control input-sm', 'placeholder' => 'libellé', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('addressname', 'Prénom *') !!}
+                    {!! Form::text('addressname', null, ['class' => 'form-control input-sm', 'placeholder' => 'prénom', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('firstname', 'Nom *') !!}
+                    {!! Form::text('firstname', null, ['class' => 'form-control input-sm', 'placeholder' => 'nom', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('company', 'Société *') !!}
+                    {!! Form::text('company', null, ['class' => 'form-control input-sm', 'placeholder' => 'société', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('address', 'Addresse *') !!}
+                    {!! Form::text('address', null, ['class' => 'form-control input-sm', 'placeholder' => 'addresse', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('address2 ', 'Addresse complémentaire *') !!}
+                    {!! Form::text('address2', null, ['class' => 'form-control input-sm', 'placeholder' => 'addresse complémantaire', 'required' => 'required']) !!}
+                </div>
+            </div>
+        </div>
+                  
+        <div class="col-md-5">
+            <div class="row">
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('codepostal ', 'Code postal *') !!}
+                    {!! Form::text('codepostal', null, ['class' => 'form-control input-sm', 'placeholder' => 'code postal', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('city ', 'Ville *') !!}
+                    {!! Form::text('city', null, ['class' => 'form-control input-sm', 'placeholder' => 'ville', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('country ', 'Pays *') !!}
+                    {!! Form::text('country', null, ['class' => 'form-control input-sm', 'placeholder' => 'pays', 'required' => 'required']) !!}
+                </div>
+
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('phone ', 'Téléphone fixe *') !!}
+                    {!! Form::text('phone', null, ['class' => 'form-control input-sm', 'placeholder' => 'téléphone fixe', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('cellular ', 'Téléphone portable *') !!}
+                    {!! Form::text('city', null, ['class' => 'form-control input-sm', 'placeholder' => 'téléphone portable', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group col-md-12 col-sm-12">
+                    {!! Form::label('infosupp ', 'Information supplémentaire *') !!}
+                    {!! Form::text('infosupp', null, ['class' => 'form-control input-sm', 'placeholder' => 'informations supplémentaire', 'required' => 'required']) !!}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 btn-address-add">
+            <div class="form-group col-md-offset-3 col-md-3 col-sm-offset-3 col-sm-3 col-xs-6" >
+                {!! Form::submit('Annuler!', ['class' => 'btn btn-primary btn-block']) !!}
+            </div>
+            <div class="form-group col-md-3 col-sm-3 col-xs-6" >
+                {!! Form::submit('Valider!', ['class' => 'btn btn-primary btn-block']) !!}
+            </div>
+        </div>                                        
+        {!! Form::close() !!}
+    </div>           
+</div>
 @stop
