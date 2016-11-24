@@ -1,9 +1,8 @@
 @extends('admin.layout.home')
 @section('content')
-    <div class="users_page">
-        <link href="{{ asset('admin/css/search.css') }}" rel="stylesheet" type="text/css"/>
-        <link href="{{ asset('admin/css/table.css') }}" rel="stylesheet" type="text/css"/>
+    <script src="{{ asset('admin/ajax/users/users.js') }}" type="text/javascript"></script>
 
+    <div class="users_page">
         <section class="content-header">
             <h1>
                 Users
@@ -42,8 +41,6 @@
                         <div class="row col-md-10 col-md-offset-0 custyle">
                             <table class="table table-striped custab">
                                 <thead>
-                                <a type="submit" class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#createUser"><b>+</b>
-                                    Ajout nouveau utilisateur</a>
                                 <tr>
                                     <th>ID</th>
                                     <th>Rôle</th>
@@ -70,17 +67,17 @@
 
                                         <td>
                                             <div id="innactif_<?=$row->id?>" style="display: none;">
-                                                {!! Form::open(['route'=>['users.statusOff', ':PARAMS_ID'], 'method' => 'INNACTIF', 'id'=>'form-innactif']) !!}
+                                                {!! Form::open(['route'=>['users.statusOff', ':USERS_ID'], 'method' => 'INNACTIF', 'id'=>'form-innactif']) !!}
                                                 <a href="#" class="btn_innactif">
-                                                    <span class="label label-success">Innactif</span>
+                                                    <span class="label label-success">Actif</span>
                                                 </a>
                                                 {!! Form::close() !!}
                                             </div>
 
                                             <div id="actif_<?=$row->id?>" style="display: none;">
-                                                {!! Form::open(['route'=>['users.statusOn', ':PARAMS_ID'], 'method' => 'ACTIF', 'id'=>'form-actif']) !!}
+                                                {!! Form::open(['route'=>['users.statusOn', ':USERS_ID'], 'method' => 'ACTIF', 'id'=>'form-actif']) !!}
                                                 <a href="#" class="btn_actif">
-                                                    <span class="label label-danger">Actif</span>
+                                                    <span class="label label-danger">Innactif</span>
                                                 </a>
                                                 {!! Form::close() !!}
                                             </div>
@@ -95,7 +92,7 @@
                                                         class="glyphicon glyphicon-edit"></span> Edit</a>
 
                                             <div id="del_<?=$row->id?>">
-                                                {!! Form::open(['route'=>['users.destroy', ':PARAMS_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}
+                                                {!! Form::open(['route'=>['users.destroy', ':USERS_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}
                                                 <a href="#" class="btn_del btn btn-danger btn-xs">
                                                     <span class="glyphicon glyphicon-remove"></span>
                                                     Del
@@ -104,44 +101,6 @@
                                             </div>
                                         </td>
                                     </tr>
-
-                                    {{-- Popup Ajout utilisateur --}}
-                                    <div class="modal fade" id="createUser" tabindex="-1" role="dialog"
-                                         aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-md">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                            aria-label="Close"><span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                    <h4 class="modal-title">Ajout d'un utilisateur</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    {!! Form::open(['route'=>['users.store'], 'method' => 'POST', 'id'=>'form-create']) !!}
-
-                                                        {!! Form::label('nom', 'Nom :', array('class' => 'col-md-4 col-md-offset-4 control-label')) !!}
-                                                        {!! Form::text('nom', '', array('class'=>'form-control', 'name'=>'nom', 'placeholder' => 'Nom', 'required'=>'required')) !!}
-
-                                                        {!! Form::label('prenom', 'Prénom :', array('class' => 'col-md-4 col-md-offset-4 control-label')) !!}
-                                                        {!! Form::text('prenom', '', array('class'=>'form-control', 'name'=>'prenom', 'placeholder' => 'Prénom', 'required'=>'required')) !!}
-
-                                                        {!! Form::label('email', 'Email :', array('class' => 'col-md-4 col-md-offset-4 control-label')) !!}
-                                                        {!! Form::email('email', '', array('class'=>'form-control', 'name'=>'email', 'placeholder' => 'Email', 'required'=>'required')) !!}
-
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-default pull-left"
-                                                                    data-dismiss="modal">Close
-                                                            </button>
-                                                            <?=Form::submit('Créer', ['class' => 'btn btn-primary', 'name' => 'create', 'id' => 'create'])?>
-                                                        </div>
-
-                                                    {!! Form::close() !!}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
                                 @endforeach
                             </table>
 

@@ -9,11 +9,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Ficelle;
 
 class AdminController extends Controller
 {
     public function __construct()
     {
+    }
+
+    public static function ficelle(){
+        $ficelle = new Ficelle();
+        return $ficelle;
     }
 
     public function index(){
