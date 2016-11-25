@@ -1172,6 +1172,11 @@ label {
     margin-bottom: 20px;
 }
 
+.commandeStepOne .commande_login,
+.commandeStepOne .commande_registration {
+    margin-bottom: 20px;
+}
+
 .commandeStepOne .panel {
     background-color: #222;
     margin-bottom: 0;
@@ -1205,6 +1210,15 @@ label {
 .commandeStepOne .commande_registration{
     border: 1px solid #B79332;
     background-color: #323232;
+}
+
+.commandeStepOne .check-newsletter,
+.commandeStepOne .newsletter {
+    margin-bottom: 0;
+}
+
+.commandeStepOne .check-offers {
+    margin-top: 0;
 }
 
 
