@@ -1285,7 +1285,7 @@ label {
 
 .commandeStepThree-heading {
     background-color: #222;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .commandeStepThree-heading .setup-panel{
@@ -1298,6 +1298,11 @@ label {
 .commandeStepThree-heading .nav-pills > li.active > a:focus {
     color: #fff;
     background-color: #B79332;
+}
+
+.commandeStepThree-content {
+    background-color: #222;
+    padding-bottom: 20px;
 }
 
 .commandeStepThree-content .libelle {
