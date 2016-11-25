@@ -1364,6 +1364,91 @@ label {
     background-color: #B79332;
 }
 
+.commandeStepFour-content .libelle {
+    font-size: 1.4em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.commandeStepFour-content .paiement td {
+    border-bottom: 1px solid gray;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.commandeStepFour-content .paiement img {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    width: 100%; 
+
+}
+
+.commandeStepFour-content  .cart_info2 {
+    border: 1px solid #B79332;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.commandeStepFour-content .cart_info2 .cart_menu {
+    background: #B79332;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.commandeStepFour-content .cart_info2 .table { 
+    margin-bottom: 0;
+}
+
+.commandeStepFour-content .cart_info2 .table.table-condensed tr:last-child {
+    border-bottom: 0
+}
+
+.commandeStepFour-content .cart_info2 table tr td {
+    border-top: 0 none;
+    vertical-align: inherit;
+}
+
+.commandeStepFour-content .cart_info2 table td {
+    text-align: center;
+}
+
+.commandeStepFour-content .cart_info2 .cart_product p,
+.commandeStepFour-content .cart_info2 .cart_price p,
+.commandeStepFour-content .cart_info2 .cart_total p {
+    color:#fff;
+    font-size: 1.4em;
+}
+
+.commandeStepFour-content .mode-paiement .panel-body {
+    background-color: #323232;
+}
+
+.commandeStepFour-content .mode-paiement {
+    margin-bottom: 20px;
+}
+
+.commandeStepFour-content .mode-paiement .panel-body .check,
+.commandeStepFour-content .mode-paiement .panel-body .image  {
+    padding-right: 10px;
+}
+
+.commandeStepFour-content .mode-paiement .panel-body img {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;   
+}
+
+.commandeStepFour-content .mode-paiement .panel-body label {
+    font-size: 1.1em;
+}
+
 
 /*
 |--------------------------------------------------------------------------
