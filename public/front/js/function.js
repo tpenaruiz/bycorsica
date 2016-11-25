@@ -41,6 +41,17 @@ $(document).ready(function(){
     if($('#Basket_codePromo').val().length === 0){
         $('.promoBtn').hide();
     }
+
+    /**
+     * Header Icone Panier au survol apparision d'une tooltip + animation
+     */
+    $('#basket').on('mouseover', function(){
+        $('.tooltip_basket').toggle();
+    });
+
+    $('#basket').on('mouseout', function () {
+        $('.tooltip_basket').toggle();
+    });
 });
 
 /**
