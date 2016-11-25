@@ -88,6 +88,8 @@ Route::get('/basket', ['as' => 'basket', 'uses' => 'Front\BasketController@index
  */
 Route::get('/commande/phase1', ['as' => 'commandePhase1', 'uses' => 'Front\CommandeController@stepOne']);
 Route::get('/commande/phase2', ['as' => 'commandePhase2', 'uses' => 'Front\CommandeController@stepTwo']);
+Route::get('/commande/phase3', ['as' => 'commandePhase3', 'uses' => 'Front\CommandeController@stepThree']);
+Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\CommandeController@stepFour']);
 
 /**
  * Page Content

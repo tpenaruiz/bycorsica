@@ -37,101 +37,95 @@
                 </div>
 
                 <div class="panel-body">
-
-                    <div class="row commandeStepOne">
-                        <div class="col-xs-12">
-                            <div class="col-md-5 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 commande_login">
-                                <br>
-                                <div class="panel-heading">
-                                    <h3 class="panel-title text-center">Connection</h3>
-                                </div>
-                                <hr>
-                                <form>
-                                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="email">Adresse Email</label>
-                                            <input type="email" class="form-control input-sm" id="email" placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="password">Password</label>
-                                            <input type="password" class="form-control input-sm" id="password"
-                                                   placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="form-group col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
-                                            <input type="submit" class="btn btn-primary btn-block" value="Connection"/>
-                                        </div>
-                                    </div>
-                                </form>
+                    <div class="commandeStepOne">   
+                        <div class="col-md-5 col-md-offset-0 col-sm-5 col-sm-offset-0 col-xs-10 col-xs-offset-1 commande_login">
+                            <br>
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center">Connection</h3>
                             </div>
-
-
-                            <div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1 commande_registration">
-                                <br>
-                                <div class="panel-heading">
-                                    <h3 class="panel-title text-center">Créer votre compte</h3>
+                            <hr>
+                            <form>
+                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label for="email">Adresse Email</label>
+                                        <input type="email" class="form-control input-sm" id="email" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control input-sm" id="password"
+                                               placeholder="">
+                                    </div>
                                 </div>
-                                <hr>
-                                <form>
-                                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="secondname">Prénom * </label>
-                                            <input type="text" class="form-control input-sm" id="secondname"
-                                                   placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="firstname">Nom * </label>
-                                            <input type="text" class="form-control input-sm" id="firstname"
-                                                   placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="email">Adresse Email * </label>
-                                            <input type="text" class="form-control input-sm" id="email" placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="password">Password * </label>
-                                            <input type="password" class="form-control input-sm" id="password"
-                                                   placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <label for="re-password">Confirmation Password * </label>
-                                            <input type="password" class="form-control input-sm" id="re-password"
-                                                   placeholder="">
-                                        </div>
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <div class="checkbox">
-                                                <label for="newsletter">
-                                                    <input type="checkbox" class="newsletter" name="newsletter"
-                                                           id="newsletter" value="1">
-                                                    S'inscrire à la newsletter
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-md-12 col-sm-12">
-                                            <div class="checkbox">
-                                                <label for="offers">
-                                                    <input type="checkbox" class="offers" name="offers" id="offers"
-                                                           value="1">
-                                                    Recevez les offres spéciales de nos partenaires
-                                                </label>
-                                            </div>
-                                        </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                                        <input type="submit" class="btn btn-primary btn-block" value="Connection"/>
                                     </div>
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="form-group col-md-offset-3 col-md-3 col-sm-offset-3 col-sm-3 col-xs-6">
-                                            <input type="submit" class="btn btn-primary btn-block pull-right"
-                                                   value="Annuler"/>
-                                        </div>
-                                        <div class="form-group col-md-3 col-sm-3 col-xs-6">
-                                            <input type="submit" class="btn btn-primary btn-block" value="Valider"/>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
+                        <div class="col-md-6 col-md-offset-1 col-sm-6 col-sm-offset-1 col-xs-10 col-xs-offset-1 commande_registration">
+                            <br>
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-center">Créer votre compte</h3>
+                            </div>
+                            <hr>
+                            <form>
+                                <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label for="secondname">Prénom * </label>
+                                        <input type="text" class="form-control input-sm" id="secondname"
+                                               placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label for="firstname">Nom * </label>
+                                        <input type="text" class="form-control input-sm" id="firstname"
+                                               placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label for="email">Adresse Email * </label>
+                                        <input type="text" class="form-control input-sm" id="email" placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label for="password">Password * </label>
+                                        <input type="password" class="form-control input-sm" id="password"
+                                               placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <label for="re-password">Confirmation Password * </label>
+                                        <input type="password" class="form-control input-sm" id="re-password"
+                                               placeholder="">
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <div class="checkbox check-newsletter">
+                                            <label for="newsletter">
+                                                <input type="checkbox" class="newsletter" name="newsletter"
+                                                       id="newsletter" value="1">
+                                                S'inscrire à la newsletter
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12">
+                                        <div class="checkbox check-offers">
+                                            <label for="offers">
+                                                <input type="checkbox" class="offers" name="offers" id="offers"
+                                                       value="1">
+                                                Recevez les offres spéciales de nos partenaires
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                    <div class="form-group col-md-4 col-md-offset-2 col-sm-5 col-sm-offset-1 col-xs-6">
+                                        <input type="submit" class="btn btn-primary btn-block pull-right"
+                                               value="Annuler"/>
+                                    </div>
+                                    <div class="form-group col-md-4 col-sm-5 col-xs-6">
+                                        <input type="submit" class="btn btn-primary btn-block" value="Valider"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>   
                     </div>
-
                 </div>
             </div>
         </div>

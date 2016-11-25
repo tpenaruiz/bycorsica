@@ -58,7 +58,14 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="">Panier <span class="badge">O</span></a></li>
+
+                <!-- TODO PROVISOIR -->
+                <!-- Panier au survol faire apparaitre une tooltip inspiré de la plupart des site web -->
+                <li><a href="" id="basket">Panier <span class="badge">O</span></a></li>
+
+                <div class="tooltip_basket" style="display: none;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque cumque cupiditate</p>
+                </div>
             </ul>
         </div>
     </div>

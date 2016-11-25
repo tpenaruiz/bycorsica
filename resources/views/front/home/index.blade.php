@@ -96,7 +96,14 @@
 					@include('front.blocks.product_grille')
 				</div>
 				<div role="tabpanel" class="tab-pane" id="bestsellers">
-					Bestsellers
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille')
 				</div>
 			</div>
 		</div>
