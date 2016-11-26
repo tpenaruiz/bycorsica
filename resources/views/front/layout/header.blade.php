@@ -63,8 +63,40 @@
                 <!-- Panier au survol faire apparaitre une tooltip inspiré de la plupart des site web -->
                 <li><a href="" id="basket">Panier <span class="badge">O</span></a></li>
 
-                <div class="tooltip_basket" style="display: none;">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque cumque cupiditate</p>
+                <div class="tooltip_basket">
+                    <div class="table-responsive">
+                        <table class="table table-condensed">
+                            <tbody>
+                                <tr>
+                                    <td class="image"><a href=""><img src="http://bycorsica.fr/364-tm_cart_default/lonzo-lonzu.jpg" alt="" title=""></a></td>
+                                    <td>
+                                        <div>Tapenade Noir</div>
+                                        <div>3,50 Euros</div>
+                                    </td>
+                                    <td><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="image"><a href=""><img src="http://bycorsica.fr/364-tm_cart_default/lonzo-lonzu.jpg" alt="" title=""></a></td>
+                                    <td>
+                                        <div>Tapenade Noir</div>
+                                        <div>3,50 Euros</div>
+                                    </td>
+                                    <td><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="image"><a href=""><img src="http://bycorsica.fr/364-tm_cart_default/lonzo-lonzu.jpg" alt="" title=""></a></td>
+                                    <td>
+                                        <div>Tapenade Noir</div>
+                                        <div>3,50 Euros</div>
+                                    </td>
+                                    <td><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tooltip_basket_footer" style="text-align: center;">Livraison : 5,40 euros</div>
+                        <div class="tooltip_basket_footer" style="text-align: center;">Total : 10,20 euros</div>
+                        <div class="tooltip_basket_footer" style="text-align: center;"><button class="btn btn-primary" type="submit">Commander</button></div>
+                    </div>
                 </div>
             </ul>
         </div>
