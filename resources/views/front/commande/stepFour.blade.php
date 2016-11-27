@@ -42,24 +42,24 @@
                 <div class="table-responsive cart_info2">
                     <table class="table table-condensed">
                         <thead>
-                        <tr class="cart_menu">
-                            <td class="description">Total produit TTC</td>
-                            <td class="description">Frait de port</td>
-                            <td class="description">Total TTC</td>
-                        </tr>
+                            <tr class="cart_menu">
+                                <td class="description">Total produit TTC</td>
+                                <td class="description">Frait de port</td>
+                                <td class="description">Total TTC</td>
+                            </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class="cart_product">
-                                <p>4,43$</p>
-                            </td>
-                            <td class="cart_price">
-                                <p>8,98$</p>
-                            </td>
-                            <td class="cart_total">
-                                <p>13,41$</p>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td class="cart_product">
+                                    <p>4,43$</p>
+                                </td>
+                                <td class="cart_price">
+                                    <p>8,98$</p>
+                                </td>
+                                <td class="cart_total">
+                                    <p>13,41$</p>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

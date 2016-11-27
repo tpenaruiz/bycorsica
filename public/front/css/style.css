@@ -178,6 +178,63 @@ label {
     }
 }
 
+.tooltip_basket {
+    z-index: 1;
+    display: none;
+    position: absolute;
+    width: 350px; 
+    top: 50px; 
+    right: 25px; 
+    border: 1px solid #E0C868;
+    background-color: #222; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; 
+}
+
+.tooltip_basket_content {
+    padding: 10px;
+}
+
+.tooltip_basket .table-condensed>tbody>tr>td {
+    vertical-align: middle;
+    font-size: 1.1em;
+    border-top: 1px solid gray;
+}
+
+.tooltip_basket .table>tbody>tr:first-child>td {
+    border-top: 0;
+}
+
+.tooltip_basket .table>tbody>tr:last-child>td {
+    border-bottom: 1px solid gray;
+}
+
+.tooltip_basket .table .image {
+    width: 80px;
+}
+
+.tooltip_basket .table img {
+    width: 60px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.tooltip_basket_footer {
+    text-align: center;
+}
+
+.tooltip_basket_footer button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
 /*
 |--------------------------------------------------------------------------
 | TEMPLATE - Footer
