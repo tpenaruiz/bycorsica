@@ -1,11 +1,9 @@
 $(document).ready(function(){
     /**
-     * Block Produit Grille
-     * Alignement vertical Modal Ajout Article Panier
+     * Alignement Vertical Modal Bootstrap 
      */
     $(window).on('resize', centerModals);
     $(modalVerticalCenterClass).on('show.bs.modal', function(e) {
-        console.log("test top");
         centerModals($(this));
     });
 
@@ -90,8 +88,7 @@ function inputPromoKeyPress()
 }
 
 /**
- * Page Block Produit Grille
- * Alignement vertical Modal Ajout Article Panier
+ * Alignement Vertical Modal Bootstrap
  */
 var modalVerticalCenterClass = ".modal";
 function centerModals($element) {
