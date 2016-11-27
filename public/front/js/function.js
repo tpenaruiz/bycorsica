@@ -45,12 +45,21 @@ $(document).ready(function(){
     /**
      * Header Icone Panier au survol apparision d'une tooltip + animation
      */
-    $('#basket').on('mouseover', function(){
-        $('.tooltip_basket').toggle();
-    });
+    $(document).mouseover(function(e){
+        let icoPanier = $('#basket');
+        let blockPopHover = $('.tooltip_basket');
 
-    $('#basket').on('mouseout', function () {
-        $('.tooltip_basket').toggle();
+        if(icoPanier.has(e.target).length === 1){
+            blockPopHover.fadeIn();
+        }
+
+        if(blockPopHover.has(e.target).length === 1){
+            blockPopHover.fadeIn();
+        }
+
+        if(blockPopHover.has(e.target).length === 0 && icoPanier.has(e.target).length === 0){
+            blockPopHover.fadeOut();
+        }
     });
 });
 
