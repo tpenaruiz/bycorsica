@@ -59,8 +59,7 @@
                     </ul>
                 </li>
 
-                <!-- TODO PROVISOIR -->
-                <!-- Panier au survol faire apparaitre une tooltip inspiré de la plupart des site web -->
+                <!-- Panier au survol faire apparaitre une tooltip -->
                 <li id="icoPanierAjax"><a href="">Panier <span class="badge">O</span></a></li>
 
                 <div class="tooltip_basket">
