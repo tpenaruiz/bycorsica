@@ -92,7 +92,6 @@ function inputPromoKeyPress()
  */
 var modalVerticalCenterClass = ".modal";
 function centerModals($element) {
-    console.log("test");
     var $modals;
     if ($element.length) {
         $modals = $element;
