@@ -113,4 +113,5 @@ Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\LegalsCo
 |
 */
 Auth::routes();
-Route::get('/home', 'Auth\AuthController@index');
+
+Route::get('/home', 'HomeController@index');
