@@ -33,7 +33,6 @@ Route::post('administration/users/search', ['as' => 'users.search', 'uses' => 'A
 Route::post('administration/users/statusOff/{users}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
 Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -97,11 +96,9 @@ Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\Comma
  * CGV
  * Mentions Legal
  */
-Route::get('/cgu', ['as' => 'cgu', 'uses' => 'Front\PageContentController@cgu']);
-Route::get('/cgv', ['as' => 'cgv', 'uses' => 'Front\PageContentController@cgv']);
-Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\PageContentController@mentionsLegal']);
-
-
+Route::get('/cgu', ['as' => 'cgu', 'uses' => 'Front\LegalsController@cgu']);
+Route::get('/cgv', ['as' => 'cgv', 'uses' => 'Front\LegalsController@cgv']);
+Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\LegalsController@mentionsLegal']);
 
 /*
 |--------------------------------------------------------------------------

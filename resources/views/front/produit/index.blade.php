@@ -1,4 +1,4 @@
-@extends('front.layout.home')
+@extends('front.layout.default')
 @section('content')
 
 <div class="container">

@@ -1,16 +1,16 @@
-@extends('front.layout.home')
+@extends('front.layout.default')
 @section('content')
     <div class="container">
         @include('front.blocks.breadcrumbs')
 
-        <div class="row mentionsLegal">
+        <div class="row cgu">
             <div class="panel">
                 <div class="panel-heading">
-                    <h3 class="panel-title text-center">Mentions Légal</h3>
+                    <h3 class="panel-title text-center">Condition général d'utilisateurs</h3>
                 </div>
 
                 <div class="panel-body">
-                    <div class="row mentionsLegal">
+                    <div class="row cgu">
                         <div class="col-xs-12">
                             <p>Présentation des CGU Etc ... Etc ... Etc ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt illo laudantium magnam mollitia pariatur praesentium quaerat quasi voluptatem. Animi aspernatur blanditiis error excepturi impedit natus sapiente vitae voluptates? Necessitatibus, rem!</p>
 
