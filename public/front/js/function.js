@@ -41,26 +41,26 @@ $(document).ready(function(){
     if($('#Basket_codePromo').val().length === 0){
         $('.promoBtn').hide();
     }
+});
 
-    /**
-     * Header Icone Panier au survol apparision d'une tooltip + animation
-     */
-    $(document).mouseover(function(e){
-        let icoPanier = $('#basket');
-        let blockPopHover = $('.tooltip_basket');
+/**
+ * Header Icone Panier au survol apparision d'une tooltip + animation
+ */
+$(document).mouseover(function(e){
+    let icoPanier = $('#icoPanierAjax');
+    let blockPopHover = $('.tooltip_basket');
 
-        if(icoPanier.has(e.target).length === 1){
-            blockPopHover.fadeIn();
-        }
+    if(icoPanier.has(e.target).length === 1){
+        blockPopHover.fadeIn();
+    }
 
-        if(blockPopHover.has(e.target).length === 1){
-            blockPopHover.fadeIn();
-        }
+    if(blockPopHover.has(e.target).length === 1){
+        blockPopHover.fadeIn();
+    }
 
-        if(blockPopHover.has(e.target).length === 0 && icoPanier.has(e.target).length === 0){
-            blockPopHover.fadeOut();
-        }
-    });
+    if(blockPopHover.has(e.target).length === 0 && icoPanier.has(e.target).length === 0){
+        blockPopHover.fadeOut();
+    }
 });
 
 /**
