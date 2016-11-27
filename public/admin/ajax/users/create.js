@@ -20,7 +20,6 @@ $(document).ready(function(){
             lpays.append('<option value="'+ this.id +'">'+ this.nom_fr_fr +'</option>');
         });
     }).fail(function(){
-        // TODO Attention debuger pour savoir pourquoid la librairie SweetAlert ne fonctionne pas actuellement fichier non pris en charge (layout/home.blade.php)
         sweetAlert('Oups...', 'Une erreur est survenue', 'error');
     });
 
@@ -47,7 +46,6 @@ $(document).ready(function(){
             });
             $('#id_ville').trigger("change");
         }).fail(function(){
-            // TODO Attention debuger pour savoir pourquoid la librairie SweetAlert ne fonctionne pas actuellement fichier non pris en charge (layout/home.blade.php)
             sweetAlert('Oups...', 'Une erreur est survenue', 'error');
         });
     });
