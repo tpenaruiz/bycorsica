@@ -74,58 +74,57 @@ class UsersController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function show($users)
+    public function show($user)
+    {
+        dd($user);
+    }
+
+    public function edit($user)
     {
 
     }
 
-    public function edit($users)
+    public function update(Request $request, $user)
     {
 
     }
 
-    public function update(Request $request, $users)
+    public function statusOff(Request $request, $user)
     {
-
-    }
-
-    public function statusOff(Request $request, $users)
-    {
-        dd($users);
-        $users->status = 'Archivé';
-        $users->save();
+        dd($user);
+        $user->status = 'Archivé';
+        $user->save();
 
         // AJAX
-        $info = \App\Users::with('roles', 'villes')->where('id', '=', $users->id)->get();
+        $info = \App\Users::with('roles', 'villes')->where('id', '=', $user->id)->get();
         if ($request->ajax()) {
             return response()->json([
-                'id' => $users->id,
+                'id' => $user->id,
                 'info' => $info
             ]);
         }
         return redirect()->route('users');
     }
 
-    public function statusOn(Request $request, $users)
+    public function statusOn(Request $request, $user)
     {
-        $users->status = 'Actif';
-        $users->save();
+        $user->status = 'Actif';
+        $user->save();
 
         // AJAX
-        $info = \App\Users::with('roles', 'villes')->where('id', '=', $users->id)->get();
+        $info = \App\Users::with('roles', 'villes')->where('id', '=', $user->id)->get();
         if ($request->ajax()) {
             return response()->json([
-                'id' => $users->id,
+                'id' => $user->id,
                 'info' => $info
             ]);
         }
         return redirect()->route('users');
     }
 
-    public function destroy(Request $request, $users)
+    public function destroy(Request $request, $user)
     {
-        dd($users);
-        $users->delete();
+        $user->delete();
 
         // AJAX
         // TODO Mettre en traduction les chaine de caractère ci-dessous !

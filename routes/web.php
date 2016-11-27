@@ -30,8 +30,8 @@ Route::get('/administration', ['as' => 'administration', 'uses' => 'Admin\AdminC
  */
 Route::resource('administration/users', 'Admin\UsersController');
 Route::post('administration/users/search', ['as' => 'users.search', 'uses' => 'Admin\UsersController@search']);
-Route::post('administration/users/statusOff/{users}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
-Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
+Route::post('administration/users/statusOff/{user}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
+Route::post('administration/users/statusOn/{user}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
 
 
 /*
@@ -116,4 +116,4 @@ Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\PageCont
 |
 */
 Auth::routes();
-Route::get('/home', 'Auth\AuthController@index');
+Route::get('/log', 'LogController@index');
