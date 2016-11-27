@@ -61,7 +61,7 @@
 
                 <!-- TODO PROVISOIR -->
                 <!-- Panier au survol faire apparaitre une tooltip inspiré de la plupart des site web -->
-                <li><a href="" id="basket">Panier <span class="badge">O</span></a></li>
+                <li id="basket"><a href="">Panier <span class="badge">O</span></a></li>
 
                 <div class="tooltip_basket">
                     <div class="table-responsive">
