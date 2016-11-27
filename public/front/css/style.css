@@ -655,11 +655,13 @@ label {
 }
 
 
-.product-grille-modal {
+.product-grille-modal,
+.product-liste-modal {
     color: black;
 }
 
-.product-grille-modal img {
+.product-grille-modal img,
+.product-liste-modal img {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -o-border-radius: 3px;
@@ -667,7 +669,8 @@ label {
     border-radius: 3px;
 }
 
-.product-grille-modal .modal-body .row {
+.product-grille-modal .modal-body .row,
+.product-liste-modal .modal-body .row {
     display: flex;
     align-items: center;
 }
