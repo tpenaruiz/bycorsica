@@ -91,7 +91,6 @@ class UsersController extends Controller
 
     public function statusOff(Request $request, $user)
     {
-        dd($user);
         $user->status = 'Archivé';
         $user->save();
 
