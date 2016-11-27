@@ -66,6 +66,13 @@ label {
     font-weight: 200;
 }
 
+/* scroll fixes */
+.modal-open .modal {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    overflow-y: scroll;
+}
+
 .breadcrumbs, 
 .search-heading, 
 .search-sort, 
@@ -645,6 +652,24 @@ label {
 
 .product-grille .cart {
     float: right;
+}
+
+
+.product-grille-modal {
+    color: black;
+}
+
+.product-grille-modal img {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.product-grille-modal .modal-body .row {
+    display: flex;
+    align-items: center;
 }
 
 
