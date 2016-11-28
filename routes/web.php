@@ -42,6 +42,11 @@ Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 
 |
 */
 /**
+ * Choix Languages
+ */
+Route::get('language', ['as' => 'language', 'uses' => 'Front\HomeController@language']);
+
+/**
  * La Home Page
  */
 Route::get('/', ['as' => 'home', 'uses' => 'Front\HomeController@index']);
@@ -91,7 +96,7 @@ Route::get('/commande/phase3', ['as' => 'commandePhase3', 'uses' => 'Front\Comma
 Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\CommandeController@stepFour']);
 
 /**
- * Page Content
+ * Legals
  * CGU
  * CGV
  * Mentions Legal
