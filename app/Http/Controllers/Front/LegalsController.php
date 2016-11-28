@@ -11,17 +11,17 @@ class LegalsController extends Controller
     }
 
     public function cgu(){
-        $cgu = \App\Cgu::with('langues')->get();
+        $cgu = \App\Cgu::with('langues')->limit(1)->get();
         return view('front.legals.cgu', compact('cgu'));
     }
 
     public function cgv(){
-        $cgv = \App\Cgv::with('langues')->get();
+        $cgv = \App\Cgv::with('langues')->limit(1)->get();
         return view('front.legals.cgv', compact('cgv'));
     }
 
     public function mentionsLegal(){
-        $mention = \App\CharteQ::with('langues')->get();
+        $mention = \App\CharteQ::with('langues')->limit(1)->get();
         return view('front.legals.mentionsLegal', compact('mention'));
     }
 }

@@ -42,6 +42,11 @@ Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 
 |
 */
 /**
+ * Choix Languages
+ */
+Route::get('language', ['as' => 'language', 'uses' => 'Front\HomeController@language']);
+
+/**
  * La Home Page
  */
 Route::get('/', ['as' => 'home', 'uses' => 'Front\HomeController@index']);
