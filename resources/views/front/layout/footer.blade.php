@@ -27,9 +27,9 @@
                 <h4> Informations </h4>
                 <ul>
                     <li> <a href="#"> Livraisons </a> </li>
-                    <li> <a href="#"> Mentions légales </a> </li>
-                    <li> <a href="#"> Conditions d'utilisation </a> </li>
-                    <li> <a href="#"> Service client </a> </li>
+                    <li> <a href="{{route('mentionsLegal')}}"> Mentions légales </a> </li>
+                    <li> <a href="{{route('cgu')}}"> Conditions d'utilisation </a> </li>
+                    <li> <a href="{{route('cgv')}}"> Service client </a> </li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6">

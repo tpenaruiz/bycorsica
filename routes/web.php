@@ -91,7 +91,7 @@ Route::get('/commande/phase3', ['as' => 'commandePhase3', 'uses' => 'Front\Comma
 Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\CommandeController@stepFour']);
 
 /**
- * Page Content
+ * Legals
  * CGU
  * CGV
  * Mentions Legal
