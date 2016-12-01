@@ -7,7 +7,7 @@
 
 	<div class="row search-heading"> 	
 		<div class="col-md-12 text-center">
-			<h3>Recherche <span>"Vin"</span> - <span>10</span> résultat trouvés</h3>
+			<h3>Recherche <span>"{{$inputSearch}}"</span> - <span>{{count($searchEngine)}}</span> résultat trouvés</h3>
 		</div>
 	</div>
 

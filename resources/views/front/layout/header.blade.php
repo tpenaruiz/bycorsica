@@ -17,14 +17,14 @@
                 <li><a href="#"><i class="fa fa-truck" aria-hidden="true"></i> Livraison <span class="sr-only">(current)</span></a></li>
                 <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contactez-nous</a></li>
             </ul>
-            <form class="navbar-form navbar-left">
+            {!! Form::open(['method' => 'post', 'url' => route('searchPost.searchEngine'), 'class' => 'navbar-form navbar-left']) !!}
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Recherchez un produit ...">
+                    <input type="text" class="form-control" name="search" id="search" placeholder="Recherchez un produit ...">
                     <span class="input-group-btn">
                         <button type="submit" class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </span>
                 </div><!-- /input-group -->
-            </form>
+            {!! Form::close() !!}
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mon Compte <span class="caret"></span></a>
