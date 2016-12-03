@@ -27,6 +27,7 @@ class AdressesSeeder extends Seeder
         }
 
         DB::table('adresses')->delete();
+        DB::table('adresses')->truncate();
         foreach($adresses as $row){
             \App\Adresses::create($row);
         }

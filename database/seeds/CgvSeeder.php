@@ -23,6 +23,7 @@ class CgvSeeder extends Seeder
         }
 
         DB::table('cgv')->delete();
+        DB::table('cgv')->truncate();
         foreach($legals as $row){
             \App\Cgv::create($row);
         }

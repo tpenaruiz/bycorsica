@@ -15,13 +15,14 @@ class StockSeeder extends Seeder
         for($i=1; $i<=10; $i++){
             $stock = [
                 [
-                    'id_produit' => $i,
+                    'id_produit' => '1',
                     'stock' => $i
                 ]
             ];
         }
 
         DB::table('stock')->delete();
+        DB::table('stock')->truncate();
         foreach($stock as $row){
             \App\Stock::create($row);
         }

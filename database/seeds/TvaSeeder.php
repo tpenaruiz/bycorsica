@@ -24,6 +24,7 @@ class TvaSeeder extends Seeder
         }
 
         DB::table('tva')->delete();
+        DB::table('tva')->truncate();
         foreach($tva as $row){
             \App\Tva::create($row);
         }

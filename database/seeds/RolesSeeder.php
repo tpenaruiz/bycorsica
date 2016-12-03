@@ -24,6 +24,7 @@ class RolesSeeder extends Seeder
         ];
 
         DB::table('roles')->delete();
+        DB::table('roles')->truncate();
         foreach($roles as $row){
             \App\Roles::create($row);
         }

@@ -23,6 +23,7 @@ class CguSeeder extends Seeder
         }
 
         DB::table('cgu')->delete();
+        DB::table('cgu')->truncate();
         foreach($legals as $row){
             \App\Cgu::create($row);
         }

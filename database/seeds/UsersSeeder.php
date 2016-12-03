@@ -15,7 +15,7 @@ class UsersSeeder extends Seeder
             $users = [
                 [
                     'id_role' => '1',
-                    'id_ville' => '2',
+                    'id_ville' => '1',
                     'nom' => 'users'.$i,
                     'email' => 'users'.$i.'@users.fr',
                     'prenom' => 'users'.$i,
@@ -27,6 +27,7 @@ class UsersSeeder extends Seeder
         }
 
         DB::table('users')->delete();
+        DB::table('users')->truncate();
         foreach($users as $row){
             \App\Users::create($row);
         }

@@ -1,5 +1,4 @@
-{{dd($searchEngine)}}
-@foreach($searchEngine as $row)
+
 	<div class="col-md-3 col-xs-6 product-grille">
 		<div class="image">
 			<a href=""><img src="{{ asset('front/img/tapenade-noire-olives-noires-apero.jpg') }}" alt="" title=""></a>
@@ -33,4 +32,3 @@
 			</div>
 		</div>
 	</div>
-@endforeach

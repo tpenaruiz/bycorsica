@@ -24,6 +24,7 @@ class MediasSeeder extends Seeder
         }
 
         DB::table('medias')->delete();
+        DB::table('medias')->truncate();
         foreach($medias as $row){
             \App\Medias::create($row);
         }

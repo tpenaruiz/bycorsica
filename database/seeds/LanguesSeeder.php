@@ -24,6 +24,7 @@ class LanguesSeeder extends Seeder
         ];
 
         DB::table('langues')->delete();
+        DB::table('langues')->truncate();
         foreach($langues as $row){
             \App\Langues::create($row);
         }

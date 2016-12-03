@@ -15,7 +15,7 @@ class PromotionsSeeder extends Seeder
         for($i=1;$i<=10;$i++){
             $promotion = [
                 [
-                    'id_produit' => $i,
+                    'id_produit' => '1',
                     'id_langue' => '1',
                     'pourcentage' => $i,
                     'description' => 'Description'.$i
@@ -24,6 +24,7 @@ class PromotionsSeeder extends Seeder
         }
 
         DB::table('promotions')->delete();
+        DB::table('promotions')->truncate();
         foreach($promotion as $row){
             \App\Promotions::create($row);
         }

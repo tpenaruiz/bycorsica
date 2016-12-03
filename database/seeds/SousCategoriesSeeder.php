@@ -26,6 +26,7 @@ class SousCategoriesSeeder extends Seeder
         }
 
         DB::table('sousCategories')->delete();
+        DB::table('sousCategories')->truncate();
         foreach($sousCategories as $row){
             \App\SousCategories::create($row);
         }

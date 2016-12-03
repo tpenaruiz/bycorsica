@@ -23,6 +23,7 @@ class CharteQSeeder extends Seeder
         }
 
         DB::table('charteQ')->delete();
+        DB::table('charteQ')->truncate();
         foreach($legals as $row){
             \App\CharteQ::create($row);
         }

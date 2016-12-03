@@ -24,6 +24,7 @@ class CategoriesSeeder extends Seeder
         }
 
         DB::table('categories')->delete();
+        DB::table('categories')->truncate();
         foreach($categories as $row){
             \App\Categories::create($row);
         }

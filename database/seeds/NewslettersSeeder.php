@@ -23,6 +23,7 @@ class NewslettersSeeder extends Seeder
         }
 
         DB::table('newsletters')->delete();
+        DB::table('newsletters')->truncate();
         foreach($newsletters as $row){
             \App\Newsletters::create($row);
         }

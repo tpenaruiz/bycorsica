@@ -24,6 +24,7 @@ class FaqSeeder extends Seeder
         }
 
         DB::table('faq')->delete();
+        DB::table('faq')->truncate();
         foreach($faq as $row){
             \App\Faq::create($row);
         }
