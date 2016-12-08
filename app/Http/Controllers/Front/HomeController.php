@@ -21,4 +21,13 @@ class HomeController extends Controller
     public function index(){
     	return view('front.home.index');
     }
+
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     * return Lang
+     */
+    public function language(){
+        session()->set('locale', session('locale') == 'fr' ? 'en' : 'fr');
+        return redirect()->back();
+    }
 }

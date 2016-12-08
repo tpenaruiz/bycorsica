@@ -30,8 +30,8 @@ Route::get('/administration', ['as' => 'administration', 'uses' => 'Admin\AdminC
  */
 Route::resource('administration/users', 'Admin\UsersController');
 Route::post('administration/users/search', ['as' => 'users.search', 'uses' => 'Admin\UsersController@search']);
-Route::post('administration/users/statusOff/{user}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
-Route::post('administration/users/statusOn/{user}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
+Route::post('administration/users/statusOff/{users}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
+Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
 
 
 /*
@@ -42,6 +42,11 @@ Route::post('administration/users/statusOn/{user}', ['as' => 'users.statusOn', '
 | FRONTS OFFICES
 |
 */
+/**
+ * Choix Languages
+ */
+Route::get('language', ['as' => 'language', 'uses' => 'Front\HomeController@language']);
+
 /**
  * La Home Page
  */
@@ -92,16 +97,14 @@ Route::get('/commande/phase3', ['as' => 'commandePhase3', 'uses' => 'Front\Comma
 Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\CommandeController@stepFour']);
 
 /**
- * Page Content
+ * Legals
  * CGU
  * CGV
  * Mentions Legal
  */
-Route::get('/cgu', ['as' => 'cgu', 'uses' => 'Front\PageContentController@cgu']);
-Route::get('/cgv', ['as' => 'cgv', 'uses' => 'Front\PageContentController@cgv']);
-Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\PageContentController@mentionsLegal']);
-
-
+Route::get('/cgu', ['as' => 'cgu', 'uses' => 'Front\LegalsController@cgu']);
+Route::get('/cgv', ['as' => 'cgv', 'uses' => 'Front\LegalsController@cgv']);
+Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\LegalsController@mentionsLegal']);
 
 /*
 |--------------------------------------------------------------------------
@@ -116,4 +119,6 @@ Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\PageCont
 |
 */
 Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 Route::get('/log', 'LogController@index');
