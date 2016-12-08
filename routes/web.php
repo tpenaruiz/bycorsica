@@ -33,6 +33,7 @@ Route::post('administration/users/search', ['as' => 'users.search', 'uses' => 'A
 Route::post('administration/users/statusOff/{users}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
 Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -120,3 +121,4 @@ Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\LegalsCo
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/log', 'LogController@index');
