@@ -8,6 +8,30 @@ $(document).ready(function(){
     });
 
     /**
+     * Add Basket (Ajax - Php)
+     */
+    $('#addBasket').on('click', function(e){
+        e.preventDefault();
+        let id = $(this).val();
+        let form = $('#form-add-basket');
+        let url = window.location.href;
+
+        console.log(url);
+        console.log(id);
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            success: function(result){
+                console.log(result);
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
+
+    /**
      * Page Produit
      * Button (-) and Button (+)
      * Add or delete quantity
@@ -49,6 +73,7 @@ $(document).ready(function(){
     if($('#Basket_codePromo').val().length === 0){
         $('.promoBtn').hide();
     }
+
 });
 
 /**

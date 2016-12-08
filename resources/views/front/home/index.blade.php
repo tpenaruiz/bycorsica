@@ -86,24 +86,24 @@
 			<!-- Tab panes -->
 			<div class="tab-content home-product-content">
 				<div role="tabpanel" class="tab-pane active" id="popular">
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
 				</div>
 				<div role="tabpanel" class="tab-pane" id="bestsellers">
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
-					@include('front.blocks.product_grille')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home')
 				</div>
 			</div>
 		</div>

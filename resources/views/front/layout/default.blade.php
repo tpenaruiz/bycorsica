@@ -15,6 +15,7 @@
         <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQuery/jQuery2.1.3.min.js') }}"></script>
         <!-- jQueryUI 1.11.4 -->
         <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQueryUI/jQueryUi1.11.4.min.js') }}"></script>
+        <script src="{{ asset('lib/sweetalert/dist/sweetalert.min.js') }}"></script>
 
         <!-- Bootstrap -->
         <script src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -37,6 +38,7 @@
         <link rel="stylesheet" href="{{ asset('lib/smartMenus/css/sm-core-css.css') }}">
         <link rel="stylesheet" href="{{ asset('lib/smartMenus/css/sm-blue/sm-blue.css') }}">
         <link rel="stylesheet" href="{{ asset('lib/smartMenus/css/smartmenus.css') }}">
+        <link rel="stylesheet" href="{{ asset('lib/sweetalert/dist/sweetalert.css') }}">
         <!-- Main -->
         <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 

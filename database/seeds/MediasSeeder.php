@@ -18,7 +18,7 @@ class MediasSeeder extends Seeder
                     'type' => 'photo',
                     'libelle' => 'libelle '.$i,
                     'description' => 'description '.$i,
-                    'chemin' => 'projet/public/img/random'.$i
+                    'chemin' => 'front/img/tapenade-noire-olives-noires-apero.jpg'
                 ]
             ];
         }

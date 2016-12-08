@@ -67,6 +67,7 @@ Route::get('/registration', ['as' => 'registration', 'uses' => 'Front\Registrati
  */
 Route::get('/search', ['as' => 'search', 'uses' => 'Front\SearchController@index']);
 Route::post('/search', ['as' => 'searchPost.searchEngine', 'uses' => 'Front\SearchController@searchEngine']);
+Route::post('/search/{produit}', ['as' => 'searchPost.addBasket', 'uses' => 'Front\SearchController@addBasket']);
 
 /**
  * Catégorie
