@@ -1,19 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+use App\Helpers\ActivationService;
+
+class AuthController extends Controller
 {
-    /**
+	protected $redirectTo = '/';
+	protected $activation_service;
+
+     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(ActivationService $activation_service)
     {
-        $this->middleware('auth');
+        $this->activation_service = $activation_service; 
     }
 
     /**
@@ -23,6 +29,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //   
+    }
+
+    public function activateUser($token){
+       	if($user = $this->activation_service->activateUser($token)){
+       		auth()->login($user);
+       		return redirect($this->redirectTo)->with('status', \Lang::get('auth.activate_account'));
+       	}
+       	abord(404);
     }
 }
