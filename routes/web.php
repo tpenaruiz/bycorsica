@@ -33,6 +33,7 @@ Route::post('administration/users/search', ['as' => 'users.search', 'uses' => 'A
 Route::post('administration/users/statusOff/{users}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
 Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,6 +42,11 @@ Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 
 | FRONTS OFFICES
 |
 */
+/**
+ * Choix Languages
+ */
+Route::get('language', ['as' => 'language', 'uses' => 'Front\HomeController@language']);
+
 /**
  * La Home Page
  */
@@ -91,7 +97,7 @@ Route::get('/commande/phase3', ['as' => 'commandePhase3', 'uses' => 'Front\Comma
 Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\CommandeController@stepFour']);
 
 /**
- * Page Content
+ * Legals
  * CGU
  * CGV
  * Mentions Legal
@@ -118,10 +124,4 @@ Auth::routes();
 Route::get('/user/activation/{token}', ['as' => 'user/activation', 'uses' => 'Auth\AuthController@activateUser']);
 Route::get('/home', 'HomeController@index');
 
-
-
-
-
-Route::get('test', function () {
-    return 'Hello World';
-});
+Route::get('/log', 'LogController@index');

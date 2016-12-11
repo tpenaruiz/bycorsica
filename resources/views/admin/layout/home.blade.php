@@ -17,12 +17,20 @@
         <!-- AdminLTE Skins. Choose a skin from the css/skins
              folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{ asset('lib/AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('lib/sweetalert/dist/sweetalert.css') }}">
+
+        <link href="{{ asset('admin/css/style.css') }}" rel="stylesheet" type="text/css"/>
+
+        <!-- jQuery 2.1.3 -->
+        <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQuery/jQuery2.1.3.min.js') }}"></script>
+        <!-- jQueryUI 1.11.4 -->
+        <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQueryUI/jQueryUi1.11.4.min.js') }}"></script>
+        <!-- Sweet Alert -->
+        <script src="{{ asset('lib/sweetalert/dist/sweetalert.min.js') }}"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-        <script src="{{ asset('lib/html5shiv.min.js') }}"></script>
-        <script src="{{ asset('lib/respond.min.js') }}"></script>
         <![endif]-->
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
@@ -48,12 +56,10 @@
             </footer>
         </div>
 
-        <!-- jQuery 2.1.3 -->
-        <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQuery/jQuery2.1.3.min.js') }}"></script>
-        <!-- jQueryUI 1.11.4 -->
-        <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQueryUI/jQueryUi1.11.4.min.js') }}"></script>
         <!-- Bootstrap 3.3.5 -->
         <script src="{{ asset('lib/AdminLTE-2.3.0/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('lib/html5shiv.min.js') }}"></script>
+        <script src="{{ asset('lib/respond.min.js') }}"></script>
         <!-- FastClick -->
         <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/fastclick/fastclick.min.js') }}"></script>
         <!-- AdminLTE App -->

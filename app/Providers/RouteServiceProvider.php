@@ -30,6 +30,18 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('user', 'App\Users', function(){
             App::abort(500);
         });
+
+        Route::model('cgu', 'App\Cgu', function(){
+            App::abort(500);
+        });
+
+        Route::model('cgv', 'App\Cgv', function(){
+            App::abort(500);
+        });
+
+        Route::model('charteQ', 'App\CharteQ', function(){
+            App::abort(500);
+        });
     }
 
     /**
