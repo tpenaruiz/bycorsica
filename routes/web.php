@@ -108,10 +108,20 @@ Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\LegalsCo
 |  Authentification
 |  Login,
 |  Register,
+|  Activation,
 |  Forgot Pass,
 |  Reset Pass
 |
 */
 Auth::routes();
 
+Route::get('/user/activation/{token}', ['as' => 'user/activation', 'uses' => 'Auth\AuthController@activateUser']);
 Route::get('/home', 'HomeController@index');
+
+
+
+
+
+Route::get('test', function () {
+    return 'Hello World';
+});

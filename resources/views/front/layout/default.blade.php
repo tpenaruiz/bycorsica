@@ -29,14 +29,27 @@
         <!-- Function JS Personnel -->
         <script src="{{asset('front/js/function.js')}}"></script>
 
+        <!-- .Validate JS -->
+        <script src="{{ asset('lib/jquery.js') }}"></script>
+        <script src="{{ asset('plugins/jquery-validation-1.15.0/dist/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('plugins/jquery-validation-1.15.0/dist/additional-methods.min.js') }}"></script>
+        <script src="{{ asset('plugins/jquery-validation-1.15.0/dist/localization/messages_fr.min.js') }}"></script>
+        <script src="{{ asset('front/js/validateForm.js') }}"></script>
+
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
+
         <!-- Font Awesome -->
         <link rel="stylesheet" href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}">
+
         <!-- SmartMenus core CSS (required) -->
         <link rel="stylesheet" href="{{ asset('lib/smartMenus/css/sm-core-css.css') }}">
         <link rel="stylesheet" href="{{ asset('lib/smartMenus/css/sm-blue/sm-blue.css') }}">
         <link rel="stylesheet" href="{{ asset('lib/smartMenus/css/smartmenus.css') }}">
+
+        <!-- Notification Jaredreich Notie.js -->
+        <link rel="stylesheet" href="{{ asset('plugins/notificationJs/notie.css') }}">
+
         <!-- Main -->
         <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 
@@ -44,6 +57,19 @@
     <link rel="stylesheet" href="{{ asset('lib/AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css') }}">
     </head>
     <body>
+        <!-- Notification Jaredreich Notie.js -->
+        <script src="{{ asset('plugins/notificationJs/notie.js') }}"></script>
+        <script type="text/javascript">
+            if("{{ session('status') }}" != 0){ notie.alert(1, '{{ session('status') }}');}
+            if("{{ session('warning') }}" != 0){ notie.alert(2, '{{ session('warning') }}');}
+            /* Bloc d'authentification disparait à la validation du formulaire à cause du traitement en PHP
+            Si erreur d'authentification redirection sur la page d'accueil avec message d'erreurs non visible
+            Utilisation du plugin de notification pour signaler erreur de connexion */
+            if(("{{ $errors->has('email') }}" != 0) && ("{{ $errors->has('password') }}" == 0)){ notie.alert(3, '{{ $errors->first('email') }}');}
+            if(("{{ $errors->has('email') }}" == 0) && ("{{ $errors->has('password') }}" != 0)){ notie.alert(3, '{{ $errors->first('password') }}');}
+            if(("{{ $errors->has('email') }}" != 0) && ("{{ $errors->has('password') }}" != 0)){ notie.alert(3, '{{ $errors->first('email') }} {{ $errors->first('password') }}');}
+        </script>
+
         <!-- Header Haut -->
         <header>
             @include('front.layout.header')

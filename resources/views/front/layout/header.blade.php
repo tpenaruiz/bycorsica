@@ -27,36 +27,56 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mon Compte <span class="caret"></span></a>
+                    @if(Auth::check())
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login-connect">Mon Compte <i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    @else
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login-deconnect">Mon Compte <span class="caret"></span></a>
                     <ul class="dropdown-menu" id="login-dp">
                         <li>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <!-- <label>Connexion :</label> -->
-                                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                        <div class="form-group">
-                                            <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                                    {!! Form::open(['role' => 'form', 'class'=> 'form', 'id' => 'login_nav', 'method' => 'post',  'url' => '/login']) !!}    
+                                        {{ csrf_field() }}
+
+                                        <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+                                            {!! Form::label('email', 'Email address', ['class' => 'sr-only']) !!}
+                                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email addresse', 'required' => 'required']) !!}                                   
+                                        
+                                            @if ($errors->has('email'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                        <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
+                                            {!! Form::label('password', 'Password', ['class' => 'sr-only']) !!}
+                                            {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required']) !!}
+                                    
+                                            @if ($errors->has('password'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
+                                            <div class="help-block text-right"><a href="{{ url('/password/reset') }}">Mot de passe oublié ?</a></div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                            <div class="help-block text-right"><a href="">Mot de passe oublié ?</a></div>
-                                        </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-primary btn-block" >Se connecter</button>
+                                            {!! Form::submit('Se connecter', ['class' => 'btn btn-primary btn-block']) !!}
                                         </div>
                                         <div class="checkbox">
-                                            <label><input type="checkbox"> Se souvenir de moi</label>
+                                            <label for="newsletter">
+                                                {!! Form::checkbox('remember', '1', true) !!}
+                                                Se souvenir de moi
+                                            </label>
                                         </div>
-                                    </form>
+                                    {!! Form::close() !!}
                                 </div>
                                 <div class="bottom text-center">
-                                    <a href="#">Créer votre compte</a>
+                                    <a href="{{ url('/register') }}">Créer votre compte</a>
                                 </div>
                             </div>
                         </li>
                     </ul>
+                    @endif
                 </li>
 
                 <!-- Panier au survol faire apparaitre une tooltip -->
