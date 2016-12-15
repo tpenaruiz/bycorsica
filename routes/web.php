@@ -68,7 +68,14 @@ Route::get('/registration', ['as' => 'registration', 'uses' => 'Front\Registrati
  */
 Route::get('/search', ['as' => 'search', 'uses' => 'Front\SearchController@index']);
 Route::post('/search', ['as' => 'searchPost.searchEngine', 'uses' => 'Front\SearchController@searchEngine']);
-Route::post('/search/{produit}', ['as' => 'searchPost.addBasket', 'uses' => 'Front\SearchController@addBasket']);
+Route::post('/search/addBasket/{produit}', ['as' => 'searchPost.addBasketInRedirectBasket', 'uses' => 'Front\SearchController@addBasketInRedirectBasket']);
+Route::post('/search/myPurchase/{produit}', ['as' => 'searchPost.addBasketInRedirectHome', 'uses' => 'Front\SearchController@addBasketInRedirectHome']);
+Route::post('/search/listSurprise/{produit}', ['as' => 'searchPost.addProductForSurprise', 'uses' => 'Front\SearchController@addProductForSurprise']);
+
+/**
+ * Mes Achat, MyPurchase
+ */
+Route::post('/myPurchase/{myPurchase}', ['as' => 'myPurchase.destroy', 'uses' => 'Front\MyPurchaseController@destroy']);
 
 /**
  * Catégorie

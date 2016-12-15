@@ -9,4 +9,5 @@ return [
     'continueAchat' => 'Continuer vos achats',
     'commander' => 'Commander',
     'addListCadeaux' => 'Add list for surpise',
+    'basket' => 'Basket'
 ];

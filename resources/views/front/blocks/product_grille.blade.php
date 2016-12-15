@@ -26,13 +26,13 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-
-					{!! Form::open(['route'=>['searchPost.addBasket', $row->id], 'id'=>'form-add-basket']) !!}
-						<button type="submit" class="btn btn-default" id="addBasket" value="{{$row->id}}">{{Lang::get('general.continueAchat')}}</button>
+					{!! Form::open(['route'=>['searchPost.addBasketInRedirectHome', $row->id]]) !!}
+					<button type="submit" style="float: right;" class="btn btn-default" value="{{$row->id}}">{{Lang::get('general.continueAchat')}}</button>
 					{!! Form::close() !!}
 
-					<!--button type="button" class="btn btn-default" id="addBasket" data-dismiss="modal">{{Lang::get('general.continueAchat')}}</button-->
-					<button type="submit" class="btn btn-primary">{{Lang::get('general.commander')}}</button>
+					{!! Form::open(['route'=>['searchPost.addBasketInRedirectBasket', $row->id]]) !!}
+					<button type="submit" style="float: left;" class="btn btn-primary" value="{{$row->id}}">{{Lang::get('general.commander')}}</button>
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>

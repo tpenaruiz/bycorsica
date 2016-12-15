@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePanierTable extends Migration
+class CreateMyPurchaseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreatePanierTable extends Migration
      */
     public function up()
     {
-        Schema::create('panier', function (Blueprint $table) {
+        Schema::create('myPurchase', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->integer('id_commande')->unsigned();
             $table->integer('id_produit')->unsigned();
+            $table->string('ip');
             $table->integer('quantite');
             $table->timestamps();
 
-            $table->foreign('id_commande')->references('id')->on('commandes');
             $table->foreign('id_produit')->references('id')->on('produits');
         });
     }
@@ -32,6 +31,6 @@ class CreatePanierTable extends Migration
      */
     public function down()
     {
-        Schema::drop('panier');
+        Schema::drop('myPurchase');
     }
 }

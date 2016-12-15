@@ -8,8 +8,6 @@
  */
 class MyFunction
 {
-
-
     // Une fonction qui determine l'extention de n'importe-quel fichier / url...
     function extention($ext)
     {
@@ -57,4 +55,3 @@ class MyFunction
         return $var;
     }
 }
-

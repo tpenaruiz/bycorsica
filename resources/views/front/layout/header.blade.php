@@ -60,47 +60,47 @@
                 </li>
 
                 <!-- Panier au survol faire apparaitre une tooltip -->
-                <li id="icoPanierAjax"><a href="">Panier <span class="badge">O</span></a></li>
+                <li id="icoPanierAjax"><a href="">{{Lang::get('general.basket')}}<span class="badge">{{count($myPurchase)}}</span></a></li>
 
-                <div class="tooltip_basket">
-                    <div class="table-responsive">
-                        <table class="table table-condensed">
-                            <tbody>
-                                <tr>
-                                    <td class="image"><a href=""><img src="http://bycorsica.fr/364-tm_cart_default/lonzo-lonzu.jpg" alt="" title=""></a></td>
-                                    <td>
-                                        <div>Tapenade Noir</div>
-                                        <div>3,50 Euros</div>
-                                    </td>
-                                    <td><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="image"><a href=""><img src="http://bycorsica.fr/364-tm_cart_default/lonzo-lonzu.jpg" alt="" title=""></a></td>
-                                    <td>
-                                        <div>Tapenade Noir</div>
-                                        <div>3,50 Euros</div>
-                                    </td>
-                                    <td><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="image"><a href=""><img src="http://bycorsica.fr/364-tm_cart_default/lonzo-lonzu.jpg" alt="" title=""></a></td>
-                                    <td>
-                                        <div>Tapenade Noir</div>
-                                        <div>3,50 Euros</div>
-                                    </td>
-                                    <td><i class="fa fa-trash-o fa-2x" aria-hidden="true"></i></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="tooltip_basket_footer" style="text-align: center;">Livraison : 5,40 euros</div>
-                        <div class="tooltip_basket_footer" style="text-align: center;">Total : 10,20 euros</div>
-                        <div class="tooltip_basket_footer" style="text-align: center;"><button class="btn btn-primary" type="submit">Commander</button></div>
+                @if(count($myPurchase) > 0)
+                    <div class="toolt_basket">
+                        <div class="tooltip_basket">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <tbody>
+                                        @foreach($myPurchase as $row)
+                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}">
+                                                <td class="image"><a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->mediaLibelle}}" title="{{$row->mediaLibelle}}"></a></td>
+                                                <td>
+                                                    <div>{{$row->nom}}</div>
+                                                    <div>{{$row->prix}} &euro;</div>
+                                                </td>
+                                                {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}
+                                                    <td>
+                                                        <a href="#" class="btn_del">
+                                                            <i class="delete_purchase fa fa-trash-o fa-2x" aria-hidden="true"></i>
+                                                        </a>
+                                                    </td>
+                                                {!! Form::close() !!}
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                @endif
             </ul>
         </div>
     </div>
 </nav>
+
+<div>
+    @include('front.layout.error')
+    @include('front.layout.errors_request')
+    @include('front.layout.success')
+    <div id="message_info"></div>
+</div>
 
 <div class="container">
     <div class="row">

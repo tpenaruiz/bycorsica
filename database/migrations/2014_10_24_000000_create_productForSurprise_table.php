@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMyPurchaseTable extends Migration
+class CreateProductForSurpriseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateMyPurchaseTable extends Migration
      */
     public function up()
     {
-        Schema::create('myPurchase', function (Blueprint $table) {
+        Schema::create('productForSurprise', function (Blueprint $table) {
             $table->increments('id')->unsigned();
+            $table->integer('id_user')->unsigned();
             $table->integer('id_produit')->unsigned();
-            $table->string('ip');
-            $table->integer('quantite');
             $table->timestamps();
 
+            $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_produit')->references('id')->on('produits');
         });
     }
@@ -31,6 +31,6 @@ class CreateMyPurchaseTable extends Migration
      */
     public function down()
     {
-        Schema::drop('myPurchase');
+        Schema::drop('productForSurprise');
     }
 }

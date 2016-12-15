@@ -41,6 +41,8 @@ class DatabaseSeeder extends Seeder
         $this->call(StockSeeder::class);
         $this->call(PanierSeeder::class);
         $this->call(PromotionsSeeder::class);
+        $this->call(MyPurchaseSeeder::class);
+        $this->call(ProductForSurpriseSeeder::class);
 
         /**
          * RESET : Foreign Key and Primary Key

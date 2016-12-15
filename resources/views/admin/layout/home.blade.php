@@ -27,6 +27,8 @@
         <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQueryUI/jQueryUi1.11.4.min.js') }}"></script>
         <!-- Sweet Alert -->
         <script src="{{ asset('lib/sweetalert/dist/sweetalert.min.js') }}"></script>
+        <!-- Notification JS -->
+        <script src="{{ asset('plugins/notificationJs/notie.js') }}" type="text/javascript"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -77,7 +79,5 @@
         <script src="{{ asset('lib/AdminLTE-2.3.0/dist/js/pages/dashboard2.js') }}"></script>
         <!-- AdminLTE for demo purposes -->
         <script src="{{ asset('lib/AdminLTE-2.3.0/dist/js/demo.js') }}"></script>
-        <!-- Notification JS -->
-        <script src="{{ asset('plugins/notificationJs/notie.js') }}" type="text/javascript"></script>
     </body>
 </html>

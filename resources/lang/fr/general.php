@@ -9,4 +9,5 @@ return [
     'continueAchat' => 'Continuer vos achats',
     'commander' => 'Commander',
     'addListCadeaux' => 'Ajouter à ma liste de cadeaux',
+    'basket' => 'Panier'
 ];

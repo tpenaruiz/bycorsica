@@ -2,7 +2,7 @@
 	<div class="row product-liste">
 		<table class="table">
 			<tbody>
-				<tr>
+				<tr class="surpriseLinter_{{$row->id}}" data-id="{{$row->id}}">
 					<td class="col-xs-2">
 						<div class="image"><a href=""><img src="{{ asset($row->medias->chemin) }}" alt="{{$row->medias->libelle}}" title="{{$row->medias->libelle}}"></a></div>
 					</td>
@@ -14,7 +14,14 @@
 					<td class="col-xs-5 right">
 						<h4 class="price">{{Lang::get('general.price')}} {{$row->prix}} &euro;</h4>
 						<div class="cart"><a href="" data-toggle="modal" data-target="#add_produc_cart_liste"><i class="fa fa-shopping-cart fa-lg"></i>{{Lang::get('general.addBasket')}}</a></div>
-						<div class="gift"><a href=""><i class="fa fa-heart-o fa-lg"></i>{{Lang::get('general.addListCadeaux')}}</a></div>
+
+						{!! Form::open(['route'=>['searchPost.addProductForSurprise', ':PRODUCT_ID'], 'method' => 'POST', 'id' => 'form-add-surprise']) !!}
+							<div class="gift">
+								<a href="#" class="btn_surpise">
+									<i class="fa fa-heart-o fa-lg"></i>{{Lang::get('general.addListCadeaux')}}
+								</a>
+							</div>
+						{!! Form::close() !!}
 					</td>
 				</tr>
 			</tbody>
@@ -36,8 +43,13 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">{{Lang::get('general.continueAchat')}}</button>
-					<button type="button" class="btn btn-primary">{{Lang::get('general.commander')}}</button>
+					{!! Form::open(['route'=>['searchPost.addBasketInRedirectHome', $row->id]]) !!}
+					<button type="submit" style="float: right;" class="btn btn-default" value="{{$row->id}}">{{Lang::get('general.continueAchat')}}</button>
+					{!! Form::close() !!}
+
+					{!! Form::open(['route'=>['searchPost.addBasketInRedirectBasket', $row->id]]) !!}
+					<button type="submit" style="float: left;" class="btn btn-primary" value="{{$row->id}}">{{Lang::get('general.commander')}}</button>
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PanierSeeder extends Seeder
+class MyPurchaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,19 +13,19 @@ class PanierSeeder extends Seeder
     public function run()
     {
         for($i=1;$i<=10;$i++){
-            $panier = [
+            $myPurchase = [
                 [
-                    'id_commande' => '1',
+                    'ip' => '192.168.1.15',
                     'id_produit' => '1',
                     'quantite' => $i
                 ]
             ];
         }
 
-        DB::table('panier')->delete();
-        DB::table('panier')->truncate();
-        foreach($panier as $row){
-            \App\Panier::create($row);
+        DB::table('myPurchase')->delete();
+        DB::table('myPurchase')->truncate();
+        foreach($myPurchase as $row){
+            \App\MyPurchase::create($row);
         }
     }
 }
