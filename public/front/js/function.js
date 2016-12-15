@@ -8,6 +8,75 @@ $(document).ready(function(){
     });
 
     /**
+     * Visualisation du compteur purchase en temps réel PHP / JS
+     */
+    //Parsing du string en Int
+    let compteurPurchase = parseInt($('.badge').text());
+    // Au clique création de l'événément
+    $('.btn_del').on('click', function(e){
+        e.preventDefault();
+        $('.badge').text(compteurPurchase -1);
+
+        compteurPurchase = compteurPurchase -1;
+        if(compteurPurchase === 0){
+            $('.toolt_basket').hide();
+        }
+    });
+
+    /**
+     * Add Product For Surprise AJAX
+     */
+    $('.btn_surpise').on('click', function(e){
+        e.preventDefault();
+        let row = $(this).parents('tr');
+        let id = row.data('id');
+        let form = $('#form-add-surprise');
+        let url = form.attr('action').replace(':PRODUCT_ID', id);
+        let data = form.serialize();
+
+        $.ajax({
+            url:url,
+            type:'POST',
+            data:data,
+            success: function(result){
+                // Affichage du message avec lib Notif.js
+                $('#message_info').append(notie.alert(1, result.message, 5));
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
+
+    /**
+     * Delete purchase table raw AJAX
+     */
+    $('.btn_del').on('click', function(e){
+        e.preventDefault();
+        let row = $(this).parents('tr');
+        let id = row.data('id');
+        let form = $('#form-del');
+        let url = form.attr('action').replace(':PURCHASE_ID', id);
+        let data = form.serialize();
+
+        $.ajax({
+            url:url,
+            type:'POST',
+            data:data,
+            success: function(result){
+                // Efface ligne du tableau
+                $('.purchaseLinter_'+id).fadeOut();
+
+                // Affichage du message avec lib Notif.js
+                $('#message_info').append(notie.alert(3, result.message, 5));
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
+
+    /**
      * Page Produit
      * Button (-) and Button (+)
      * Add or delete quantity
@@ -49,6 +118,7 @@ $(document).ready(function(){
     if($('#Basket_codePromo').val().length === 0){
         $('.promoBtn').hide();
     }
+
 });
 
 /**

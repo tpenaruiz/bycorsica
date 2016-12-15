@@ -8,8 +8,10 @@
  */
 namespace App\Http\Controllers\Front;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\SearchEngine;
 use App\Http\Controllers\Controller;
+use App\Produits;
+use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
@@ -18,7 +20,80 @@ class SearchController extends Controller
     	// code ...
     }
 
+    /**
+     * @param SearchEngine $request
+     * @return string
+     * @throws \Exception
+     * @throws \Throwable
+     */
+    public function searchEngine(SearchEngine $request){
+        $searchEngine = \App\Produits::with('medias', 'categories', 'tva', 'fournisseurs', 'langues')
+            ->where('nom', 'like', '%'.$request->search.'%')
+            ->orWhere('id', 'like', $request->search)
+            ->orWhere('prix', 'like', '%'.$request->search.'%')
+            ->orderBy('created_at', 'desc')
+            ->paginate(12);
+        $searchEngine->setPath('search');
+        $inputSearch = $request->search;
+
+        return view('front.search.index', compact('searchEngine', 'inputSearch'))->render();
+    }
+
+    /**
+     * @param Produits $produit
+     * @return $this
+     */
+    public function addBasketInRedirectHome(Request $request, Produits $produit){
+        // Save Table MyPurchase
+        $myPurchase = new \App\MyPurchase;
+        if($request->ip() === "::1"){
+            $myPurchase->ip = "127.0.0.1";
+        }else{
+            $myPurchase->ip = $request->ip();
+        }
+        $myPurchase->id_produit = $produit->id;
+        $myPurchase->quantite = 1;
+        $myPurchase->save();
+
+        return redirect()->route('home');
+    }
+
+    /**
+     * @param Produits $produit
+     * @return $this
+     */
+    public function addBasketInRedirectBasket(Request $request, Produits $produit){
+        // Save Table MyPurchase
+        $myPurchase = new \App\MyPurchase;
+        if($request->ip() === "::1"){
+            $myPurchase->ip = "127.0.0.1";
+        }else{
+            $myPurchase->ip = $request->ip();
+        }
+        $myPurchase->id_produit = $produit->id;
+        $myPurchase->quantite = 1;
+        $myPurchase->save();
+
+        return redirect()->route('basket');
+    }
+
     public function index(){
     	return view('front.search.index');
+    }
+
+    public function addProductForSurprise(Request $request, Produits $produit){
+        $produitForSurprise = new \App\ProductForSurprise;
+        $produitForSurprise->id_user = 1; //\Auth::user()->id;
+        $produitForSurprise->id_produit = $produit->id;
+        $produitForSurprise->save();
+
+        // AJAX
+        $message = 'Votre produit à bien été ajouté sur la liste des produits à offrir !';
+        if($request->ajax()){
+            return response()->json([
+               'message' => $message
+            ]);
+        }
+        return redirect()->route('search');
     }
 }
