@@ -35,30 +35,27 @@
 	  	<div class="tab-content">
 	  		<!-- Debut Panel Info -->
 	    	<div role="tabpanel" class="tab-pane infos active" id="infos">
-	    		{!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
+	    		{!! Form::open(['method' => 'post']) !!}
 					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
 						<div class="form-group col-md-12 col-sm-12">
 							{!! Form::label('secondname', 'Prénom *') !!}
-							{!! Form::text('secondname', null, ['class' => 'form-control input-sm', 'placeholder' => 'prénom', 'required' => 'required']) !!}
+							{!! Form::text('secondname', $user->nom, ['class' => 'form-control input-sm', 'placeholder' => 'prénom', 'required' => 'required']) !!}
 				        </div>
 				        <div class="form-group col-md-12 col-sm-12">
 				        	{!! Form::label('firstname', 'Nom *') !!}
-				        	{!! Form::text('firstname', null, ['class' => 'form-control input-sm', 'placeholder' => 'nom', 'required' => 'required']) !!}
+				        	{!! Form::text('firstname', $user->prenom, ['class' => 'form-control input-sm', 'placeholder' => 'nom', 'required' => 'required']) !!}
 				        </div>
 
 				        <div class="form-group col-md-12 col-sm-12">
 				        	{!! Form::label('birthday', 'Date de naissance *') !!}
-				        	{!! Form::text('birthday', null, ['class' => 'form-control input-sm', 'required' => 'required']) !!}
+				        	{!! Form::text('birthday', $user->date_naissance, ['class' => 'form-control input-sm', 'required' => 'required']) !!}
 				        </div>
 
 				        <div class="form-group col-md-12 col-sm-12">
 				        	{!! Form::label('email', 'Adresse Email *') !!}
-				        	{!! Form::email('email', null, ['class' => 'form-control input-sm', 'placeholder' => 'email', 'required' => 'required']) !!}
+				        	{!! Form::email('email', $user->email, ['class' => 'form-control input-sm', 'placeholder' => 'email', 'required' => 'required']) !!}
 				        </div>
-				        <div class="form-group col-md-12 col-sm-12">
-				        	{!! Form::label('password', 'Password *') !!}
-				        	{!! Form::password('password', ['class' => 'form-control input-sm', 'placeholder' => 'password', 'required' => 'required']) !!}
-				        </div>
+				 		
 				        <div class="form-group col-md-12 col-sm-12">						  	
 					  		<div class="checkbox">
 					    		<label for="newsletter">
@@ -97,111 +94,26 @@
 	    		<div class="col-md-12 firstaddress">
 	    			<p>Veuillez ajouter une <a href="" data-toggle="modal" data-target="#modal-address-new">première adresse</a></p>
 	    		</div>
+   		
+    			@foreach ($adresses as $ad)
+    			<div class="col-md-4  col-sm-6 address-details">
+    				<div class="bloc">
+	    				<h5 class="libelle">{{ $ad->libelle }}</h5>
+	    				<div class="bloc-details">
+	    					<div class="name">Nom : {{ $ad->users->prenom }} {{ $ad->users->nom }} </div>
+		    				<div class="addres">Addresee : {{ $ad->adresse }}</div>
+		    				<div class="adress2">Adresse 2 : @if (isset($ad->adresse_suppl)) {{ $ad->adresse_suppl }} @else  Non renseigné @endif</div>
+		    				<div class="cpville">CP Ville : {{ $ad->villes->code_postal }} {{ $ad->villes->libelle }}</div>
+		    				<div class="country">Pays : {{ $ad->pays->nom_fr_fr }}</div>
+		    				<div class="phone">Téléphone : {{ $ad->telephone }}</div>
+		    				<div class="infosupp">Complement : @if (isset($ad->complement)) {{ $ad->complement }} @else Non renseigné @endif</div>
 
-    			<div class="col-md-4  col-sm-6 address-details">
-    				<div class="bloc">
-	    				<h5 class="libelle">Adresse</h5>
-	    				<div class="bloc-details">
-	    					<div class="name">Nom : David Vincent</div>
-		    				<div class="addres">Addresee : rue des Bacs</div>
-		    				<div class="adress2">Adresse 2 :Adresse 2</div>
-		    				<div class="cpville">CP Ville : 75009 Paris</div>
-		    				<div class="country">Pays : France</div>
-		    				<div class="phone">Téléphone fixe : 0122334455</div>
-		    				<div class="cellular">Téléphone portable : 0622334455</div>
 	    				</div>
 	    				<div class="bloc-btn">
 	    					<div class="row">		    					
 	    						<div class="form-group col-xs-5 col-xs-offset-1">
 	    							<!-- Button trigger modal New Addresse -->
-									<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
-									  	<i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
-									</button>				   
-	    						</div>
-	    						<div class="form-group col-xs-5">
-	    							<button type="button" class="btn btn-danger btn-block">
-									  	<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> &nbsp Delete
-									</button>
-	    						</div>
-    						</div>		    					
-    					</div>
-	    			</div>
-    			</div>
-    			<div class="col-md-4  col-sm-6 address-details">
-    				<div class="bloc">
-	    				<h5 class="libelle">Adresse</h5>
-	    				<div class="bloc-details">
-	    					<div class="name">Nom : David Vincent</div>
-		    				<div class="addres">Addresee : rue des Bacs</div>
-		    				<div class="adress2">Adresse 2 :Adresse 2</div>
-		    				<div class="cpville">CP Ville : 75009 Paris</div>
-		    				<div class="country">Pays : France</div>
-		    				<div class="phone">Téléphone fixe : 0122334455</div>
-		    				<div class="cellular">Téléphone portable : 0622334455</div>
-	    				</div>
-	    				<div class="bloc-btn">
-	    					<div class="row">		    					
-	    						<div class="form-group col-xs-5 col-xs-offset-1">
-	    							<!-- Button trigger modal New Addresse -->
-									<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
-									  	<i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
-									</button>				   
-	    						</div>
-	    						<div class="form-group col-xs-5">
-	    							<button type="button" class="btn btn-danger btn-block">
-									  	<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> &nbsp Delete
-									</button>
-	    						</div>
-    						</div>		    					
-    					</div>
-	    			</div>
-    			</div>
-    			<div class="col-md-4  col-sm-6 address-details">
-    				<div class="bloc">
-	    				<h5 class="libelle">Adresse</h5>
-	    				<div class="bloc-details">
-	    					<div class="name">Nom : David Vincent</div>
-		    				<div class="addres">Addresee : rue des Bacs</div>
-		    				<div class="adress2">Adresse 2 :Adresse 2</div>
-		    				<div class="cpville">CP Ville : 75009 Paris</div>
-		    				<div class="country">Pays : France</div>
-		    				<div class="phone">Téléphone fixe : 0122334455</div>
-		    				<div class="cellular">Téléphone portable : 0622334455</div>
-	    				</div>
-	    				<div class="bloc-btn">
-	    					<div class="row">		    					
-	    						<div class="form-group col-xs-5 col-xs-offset-1">
-	    							<!-- Button trigger modal New Addresse -->
-									<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
-									  	<i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
-									</button>				   
-	    						</div>
-	    						<div class="form-group col-xs-5">
-	    							<button type="button" class="btn btn-danger btn-block">
-									  	<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> &nbsp Delete
-									</button>
-	    						</div>
-    						</div>		    					
-    					</div>
-	    			</div>
-    			</div>
-    			<div class="col-md-4  col-sm-6 address-details">
-    				<div class="bloc">
-	    				<h5 class="libelle">Adresse</h5>
-	    				<div class="bloc-details">
-	    					<div class="name">Nom : David Vincent</div>
-		    				<div class="addres">Addresee : rue des Bacs</div>
-		    				<div class="adress2">Adresse 2 :Adresse 2</div>
-		    				<div class="cpville">CP Ville : 75009 Paris</div>
-		    				<div class="country">Pays : France</div>
-		    				<div class="phone">Téléphone fixe : 0122334455</div>
-		    				<div class="cellular">Téléphone portable : 0622334455</div>
-	    				</div>
-	    				<div class="bloc-btn">
-	    					<div class="row">		    					
-	    						<div class="form-group col-xs-5 col-xs-offset-1">
-	    							<!-- Button trigger modal New Addresse -->
-									<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal-address-update">
+									<button type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#modal_address_update_{{ $ad->id }}">
 									  	<i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
 									</button>				   
 	    						</div>
@@ -215,49 +127,42 @@
 	    			</div>
     			</div>
 
-    			<div class="col-md-12 col-sm-12 address-new">
-	    			<!-- Button trigger modal New Addresse -->
-					<button type="button" class="btn btn-primary .btn-block" data-toggle="modal" data-target="#modal-address-new">
-					  	Ajouter une première adresse
-					</button>
-	    		</div>
-
-	    		<!-- Modal Update Addresse -->
-				<div class="modal fade modal-address-update" id="modal-address-update" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    			<!-- Modal Update Addresse -->
+				<div class="modal fade modal-address-update" id="modal_address_update_{{ $ad->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				  	<div class="modal-dialog" role="document">
 				    	<div class="modal-content">
 				      		<div class="modal-header">
 				        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				        		<h4 class="modal-title" id="myModalLabel">Mise à jour de l'addresse</h4>
+				        		<h4 class="modal-title" id="myModalLabel">Mise à jour Addresse</h4>
 				      		</div>
-				      		{!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
+				      		{!! Form::open(['method' => 'post']) !!}
 				      		<div class="modal-body">
 				      			<div class="row">	
 			      					<div class="col-md-6 col-sm-6">
 			      						<div class="row">
 			      							<div class="form-group col-md-12 col-sm-12">
 												{!! Form::label('addresslibelle', 'Libellé *') !!}
-												{!! Form::text('addresslibelle', null, ['class' => 'form-control input-sm', 'placeholder' => 'libellé', 'required' => 'required']) !!}
+												{!! Form::text('addresslibelle', $ad->libelle, ['class' => 'form-control input-sm', 'placeholder' => 'libellé', 'required' => 'required']) !!}
 									        </div>
 				      						<div class="form-group col-md-12 col-sm-12">
 												{!! Form::label('addressname', 'Prénom *') !!}
-												{!! Form::text('addressname', null, ['class' => 'form-control input-sm', 'placeholder' => 'prénom', 'required' => 'required']) !!}
+												{!! Form::text('addressname', $ad->users->prenom, ['class' => 'form-control input-sm', 'placeholder' => 'prénom', 'required' => 'required']) !!}
 									        </div>
 									        <div class="form-group col-md-12 col-sm-12">
 									        	{!! Form::label('firstname', 'Nom *') !!}
-									        	{!! Form::text('firstname', null, ['class' => 'form-control input-sm', 'placeholder' => 'nom', 'required' => 'required']) !!}
+									        	{!! Form::text('firstname', $ad->users->nom, ['class' => 'form-control input-sm', 'placeholder' => 'nom', 'required' => 'required']) !!}
 									        </div>
-									        <div class="form-group col-md-12 col-sm-12">
+									        <!-- <div class="form-group col-md-12 col-sm-12">
 									        	{!! Form::label('company', 'Société *') !!}
 									        	{!! Form::text('company', null, ['class' => 'form-control input-sm', 'placeholder' => 'société', 'required' => 'required']) !!}
-									        </div>
+									        </div> -->
 									        <div class="form-group col-md-12 col-sm-12">
 									        	{!! Form::label('address', 'Addresse *') !!}
-									        	{!! Form::text('address', null, ['class' => 'form-control input-sm', 'placeholder' => 'addresse', 'required' => 'required']) !!}
+									        	{!! Form::text('address', $ad->adresse, ['class' => 'form-control input-sm', 'placeholder' => 'addresse', 'required' => 'required']) !!}
 									        </div>
 									        <div class="form-group col-md-12 col-sm-12">
-									        	{!! Form::label('address2 ', 'Addresse complémentaire *') !!}
-									        	{!! Form::text('address2', null, ['class' => 'form-control input-sm', 'placeholder' => 'addresse complémantaire', 'required' => 'required']) !!}
+									        	{!! Form::label('address2 ', 'Addresse complémentaire') !!}
+									        	{!! Form::text('address2', $ad->adresse_suppl, ['class' => 'form-control input-sm', 'placeholder' => 'addresse complémantaire', 'required' => 'required']) !!}
 									        </div>
 			      						</div>
 			      					</div>
@@ -266,28 +171,28 @@
 			      						<div class="row">
 			      							<div class="form-group col-md-12 col-sm-12">
 									        	{!! Form::label('codepostal ', 'Code postal *') !!}
-									        	{!! Form::text('codepostal', null, ['class' => 'form-control input-sm', 'placeholder' => 'code postal', 'required' => 'required']) !!}
+									        	{!! Form::text('codepostal', $ad->villes->code_postal, ['class' => 'form-control input-sm', 'placeholder' => 'code postal', 'required' => 'required']) !!}
 									        </div>
 									        <div class="form-group col-md-12 col-sm-12">
 									        	{!! Form::label('city ', 'Ville *') !!}
-									        	{!! Form::text('city', null, ['class' => 'form-control input-sm', 'placeholder' => 'ville', 'required' => 'required']) !!}
+									        	{!! Form::text('city', $ad->villes->libelle, ['class' => 'form-control input-sm', 'placeholder' => 'ville', 'required' => 'required']) !!}
 									        </div>
 									        <div class="form-group col-md-12 col-sm-12">
 									        	{!! Form::label('country ', 'Pays *') !!}
-									        	{!! Form::text('country', null, ['class' => 'form-control input-sm', 'placeholder' => 'pays', 'required' => 'required']) !!}
+									        	{!! Form::text('country', $ad->pays->nom_fr_fr, ['class' => 'form-control input-sm', 'placeholder' => 'pays', 'required' => 'required']) !!}
 									        </div>
 
 									        <div class="form-group col-md-12 col-sm-12">
-									        	{!! Form::label('phone ', 'Téléphone fixe *') !!}
-									        	{!! Form::text('phone', null, ['class' => 'form-control input-sm', 'placeholder' => 'téléphone fixe', 'required' => 'required']) !!}
+									        	{!! Form::label('phone ', 'Téléphone *') !!}
+									        	{!! Form::text('phone', $ad->telephone, ['class' => 'form-control input-sm', 'placeholder' => 'téléphone', 'required' => 'required']) !!}
 									        </div>
-									        <div class="form-group col-md-12 col-sm-12">
+									        <!-- <div class="form-group col-md-12 col-sm-12">
 									        	{!! Form::label('cellular ', 'Téléphone portable *') !!}
-									        	{!! Form::text('city', null, ['class' => 'form-control input-sm', 'placeholder' => 'téléphone portable', 'required' => 'required']) !!}
-									        </div>
+									        	{!! Form::text('city', $ad->villes->libelle, ['class' => 'form-control input-sm', 'placeholder' => 'téléphone portable', 'required' => 'required']) !!}
+									        </div> -->
 									        <div class="form-group col-md-12 col-sm-12">
-									        	{!! Form::label('infosupp ', 'Information supplémentaire *') !!}
-									        	{!! Form::text('infosupp', null, ['class' => 'form-control input-sm', 'placeholder' => 'informations supplémentaire', 'required' => 'required']) !!}
+									        	{!! Form::label('infocomplement ', 'Information supplémentaire') !!}
+									        	{!! Form::text('infocomplement', $ad->complement, ['class' => 'form-control input-sm', 'placeholder' => 'informations supplémentaire', 'required' => 'required']) !!}
 									        </div>
 			      						</div>
 			      					</div>				      				
@@ -302,6 +207,14 @@
 				  	</div>
 				</div>
 				<!-- Fin Modal Update Addresse -->
+	    		@endforeach
+
+    			<div class="col-md-12 col-sm-12 address-new">
+	    			<!-- Button trigger modal New Addresse -->
+					<button type="button" class="btn btn-primary .btn-block" data-toggle="modal" data-target="#modal-address-new">
+					  	Ajouter une première adresse
+					</button>
+	    		</div>
 
 				<!-- Modal New Addresse -->
 				<div class="modal fade modal-address-new" id="modal-address-new" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -311,7 +224,7 @@
 				        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				        		<h4 class="modal-title" id="myModalLabel">Nouvelle addresse</h4>
 				      		</div>
-				      		{!! Form::open(['method' => 'post', 'url' => route('account')]) !!}
+				      		{!! Form::open(['method' => 'post']) !!}
 				      		<div class="modal-body">
 				      			<div class="row">	
 			      					<div class="col-md-6 col-sm-6">

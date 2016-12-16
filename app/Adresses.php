@@ -13,9 +13,11 @@ class Adresses extends Model
         'id_user',
         'id_pays',
         'id_ville',
+        'libelle',
         'adresse',
         'adresse_suppl',
         'complement',
+        'telephone',
         'status'
     ];
 

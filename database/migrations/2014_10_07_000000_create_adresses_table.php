@@ -18,9 +18,11 @@ class CreateAdressesTable extends Migration
             $table->integer('id_user')->unsigned();
             $table->integer('id_pays')->unsigned();
             $table->integer('id_ville')->unsigned();
+            $table->string('libelle');
             $table->string('adresse');
             $table->string('adresse_suppl')->nullable();
             $table->string('complement')->nullable();
+            $table->integer('telephone');
             $table->enum('status', array('Actif', 'Archivé'));
             $table->timestamps();
 
