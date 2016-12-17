@@ -21,10 +21,9 @@ class CreateAdressesTable extends Migration
             $table->string('libelle');
             $table->string('adresse');
             $table->string('adresse_suppl')->nullable();
-            $table->varchar('telephone_port')->nullable();
-            $table->varchar('telephone_fixe')->nullable();
+            $table->string('telephone_port')->nullable();
+            $table->string('telephone_fixe')->nullable();
             $table->string('complement')->nullable();
-            $table->integer('telephone');
             $table->enum('status', array('Actif', 'Archivé'));
             $table->timestamps();
 
