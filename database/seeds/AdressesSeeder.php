@@ -21,6 +21,8 @@ class AdressesSeeder extends Seeder
                     'libelle' => 'Lorem Ipsum',
                     'adresse' => 'Adresse '.$i,
                     'adresse_suppl' => 'Adresse suppl '.$i,
+                    'telephone_port' => '0612345789',
+                    'telephone_fixe' => '0112345789',
                     'complement' => 'Complement '.$i,
                     'status' => 'Actif'
                 ]

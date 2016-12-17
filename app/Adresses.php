@@ -16,6 +16,8 @@ class Adresses extends Model
         'libelle',
         'adresse',
         'adresse_suppl',
+        'telephone_port',
+        'telephone_fixe',
         'complement',
         'telephone',
         'status'
