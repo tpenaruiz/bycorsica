@@ -15,13 +15,15 @@
 						<h4 class="price">{{Lang::get('general.price')}} {{$row->prix}} &euro;</h4>
 						<div class="cart"><a href="" data-toggle="modal" data-target="#add_produc_cart_liste"><i class="fa fa-shopping-cart fa-lg"></i>{{Lang::get('general.addBasket')}}</a></div>
 
-						{!! Form::open(['route'=>['searchPost.addProductForSurprise', ':PRODUCT_ID'], 'method' => 'POST', 'id' => 'form-add-surprise']) !!}
-							<div class="gift">
-								<a href="#" class="btn_surpise">
-									<i class="fa fa-heart-o fa-lg"></i>{{Lang::get('general.addListCadeaux')}}
-								</a>
-							</div>
-						{!! Form::close() !!}
+						@if(Auth::user() !== NULL)
+							{!! Form::open(['route'=>['searchPost.addProductForSurprise', ':PRODUCT_ID'], 'method' => 'POST', 'id' => 'form-add-surprise']) !!}
+								<div class="gift">
+									<a href="#" class="btn_surpise">
+										<i class="fa fa-heart-o fa-lg"></i>{{Lang::get('general.addListCadeaux')}}
+									</a>
+								</div>
+							{!! Form::close() !!}
+						@endif
 					</td>
 				</tr>
 			</tbody>
