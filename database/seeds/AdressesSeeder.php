@@ -18,6 +18,7 @@ class AdressesSeeder extends Seeder
                     'id_user' => '1',
                     'id_pays' => '1',
                     'id_ville' => '1',
+                    'libelle' => 'Lorem Ipsum',
                     'adresse' => 'Adresse '.$i,
                     'adresse_suppl' => 'Adresse suppl '.$i,
                     'complement' => 'Complement '.$i,
