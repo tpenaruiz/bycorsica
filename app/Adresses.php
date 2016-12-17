@@ -15,6 +15,8 @@ class Adresses extends Model
         'id_ville',
         'adresse',
         'adresse_suppl',
+        'telephone_port',
+        'telephone_fixe',
         'complement',
         'status'
     ];

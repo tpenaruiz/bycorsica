@@ -20,6 +20,8 @@ class CreateAdressesTable extends Migration
             $table->integer('id_ville')->unsigned();
             $table->string('adresse');
             $table->string('adresse_suppl')->nullable();
+            $table->varchar('telephone_port')->nullable();
+            $table->varchar('telephone_fixe')->nullable();
             $table->string('complement')->nullable();
             $table->enum('status', array('Actif', 'Archivé'));
             $table->timestamps();
