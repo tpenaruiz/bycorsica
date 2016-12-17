@@ -48,7 +48,7 @@
 
 				        <div class="form-group col-md-12 col-sm-12">
 				        	{!! Form::label('birthday', 'Date de naissance *') !!}
-				        	{!! Form::text('birthday', $user->date_naissance, ['class' => 'form-control input-sm', 'required' => 'required']) !!}
+				        	{!! Form::date('birthday', $user->date_naissance, ['class' => 'form-control input-sm', 'required' => 'required']) !!}
 				        </div>
 
 				        <div class="form-group col-md-12 col-sm-12">
