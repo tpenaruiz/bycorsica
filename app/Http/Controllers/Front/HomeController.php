@@ -19,6 +19,12 @@ class HomeController extends Controller
     }
 
     public function index(){
+
+        // Populaire
+
+
+        // Meilleures ventes
+
         return view('front.home.index');
     }
 

@@ -1,6 +1,6 @@
 $(document).ready(function(){
     /**
-     * Alignement Vertical Modal Bootstrap 
+     * Alignement Vertical Modal Bootstrap
      */
     $(window).on('resize', centerModals);
     $(modalVerticalCenterClass).on('show.bs.modal', function(e) {

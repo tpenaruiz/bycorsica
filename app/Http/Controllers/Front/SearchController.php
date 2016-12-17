@@ -17,7 +17,6 @@ class SearchController extends Controller
 {
     public function __construct()
     {
-    	// code ...
     }
 
     /**
@@ -77,18 +76,32 @@ class SearchController extends Controller
         return redirect()->route('basket');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(){
     	return view('front.search.index');
     }
 
+    /**
+     * @param Request $request
+     * @param Produits $produit
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse
+     */
     public function addProductForSurprise(Request $request, Produits $produit){
-        $produitForSurprise = new \App\ProductForSurprise;
-        $produitForSurprise->id_user = 1; //\Auth::user()->id;
-        $produitForSurprise->id_produit = $produit->id;
-        $produitForSurprise->save();
+        $mesList = \App\ProductForSurprise::where('id_user', '=', \Auth::user()->id)->where('id_produit', '=', $produit->id)->count();
+        if($mesList === 0){
+            $produitForSurprise = new \App\ProductForSurprise;
+            $produitForSurprise->id_user = \Auth::user()->id;
+            $produitForSurprise->id_produit = $produit->id;
+            $produitForSurprise->save();
+
+            $message = '1.Votre produit à bien été ajouté sur la liste des produits à offrir !';
+        }else{
+            $message = '2.Houlaaa, il se trouve que vous posséder déjà ce produit dans votre list de cadeaux';
+        }
 
         // AJAX
-        $message = 'Votre produit à bien été ajouté sur la liste des produits à offrir !';
         if($request->ajax()){
             return response()->json([
                'message' => $message

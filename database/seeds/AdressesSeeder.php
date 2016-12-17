@@ -15,7 +15,7 @@ class AdressesSeeder extends Seeder
         for($i=1;$i<=10;$i++){
             $adresses = [
                 [
-                    'id_user' => $i,
+                    'id_user' => '1',
                     'id_pays' => '1',
                     'id_ville' => '1',
                     'adresse' => 'Adresse '.$i,

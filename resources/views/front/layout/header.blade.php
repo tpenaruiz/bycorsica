@@ -115,13 +115,6 @@
     </div>
 </nav>
 
-<div>
-    @include('front.layout.error')
-    @include('front.layout.errors_request')
-    @include('front.layout.success')
-    <div id="message_info"></div>
-</div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-3 text-center">
