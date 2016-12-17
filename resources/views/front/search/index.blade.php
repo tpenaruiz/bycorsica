@@ -7,7 +7,7 @@
 
 	<div class="row search-heading"> 	
 		<div class="col-md-12 text-center">
-			<h3>Recherche <span>"Vin"</span> - <span>10</span> résultat trouvés</h3>
+			<h3>{{Lang::get('general.search')}} <span>"{{$inputSearch}}"</span> - <span>{{count($searchEngine)}}</span> {{Lang::get('general.findResult')}}</h3>
 		</div>
 	</div>
 
@@ -19,32 +19,30 @@
 		<!-- Tab panes -->
 		<div class="tab-content home-product-content">
 			<div role="tabpanel" class="tab-pane active" id="grille">
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
+				@foreach($searchEngine as $row)
+					@include('front.blocks.product_grille')
+				@endforeach
 			</div>
 
 			<div role="tabpanel" class="tab-pane" id="liste">
 				<div class="col-md-10 col-md-offset-1">
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
+					@foreach($searchEngine as $row)
+						@include('front.blocks.product_liste')
+					@endforeach
 				</div>		
 			</div>
 		</div>	
 	</div>
 
-	@include('front.blocks.product_pagination')
+	<div class="row product-pagination">
+		<div class="col-md-3 col-sm-3">
+		</div>
+		<div class="col-md-6  col-sm-6 text-center">
+			<div class="paginate">
+				{!! $searchEngine->render() !!}
+			</div>
+		</div>
+	</div>
 </div>
 
 @stop

@@ -8,7 +8,7 @@ class Commandes extends Model
     /**
      * @var string
      */
-    protected $table = 'villes';
+    protected $table = 'commandes';
     protected $fillable = [
         'id_user',
         'id_tva',

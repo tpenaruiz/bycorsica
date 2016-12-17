@@ -10,16 +10,22 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use MyFunction;
 
 class HomeController extends Controller
 {
     public function __construct()
     {
-    	// code ...
     }
 
     public function index(){
-    	return view('front.home.index');
+
+        // Populaire
+
+
+        // Meilleures ventes
+
+        return view('front.home.index');
     }
 
     /**

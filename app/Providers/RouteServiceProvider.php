@@ -23,8 +23,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
 
         Route::model('user', 'App\Users', function(){
@@ -40,6 +38,14 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         Route::model('charteQ', 'App\CharteQ', function(){
+            App::abort(500);
+        });
+
+        Route::model('myPurchase', 'App\MyPurchase', function(){
+            App::abort(500);
+        });
+
+        Route::model('productForSurprise', 'App\ProductForSurprise', function(){
             App::abort(500);
         });
     }

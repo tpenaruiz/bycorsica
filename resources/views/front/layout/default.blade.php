@@ -15,6 +15,8 @@
         <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQuery/jQuery2.1.3.min.js') }}"></script>
         <!-- jQueryUI 1.11.4 -->
         <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQueryUI/jQueryUi1.11.4.min.js') }}"></script>
+        <script src="{{ asset('lib/sweetalert/dist/sweetalert.min.js') }}"></script>
+
 
         <!-- Bootstrap -->
         <script src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -22,9 +24,6 @@
         <script src="{{ asset('lib/html5shiv.min.js') }}"></script>
         <script src="{{ asset('lib/respond.min.js') }}"></script>
 
-        <!-- SmartMenus -->
-        <script src="{{ asset('lib/smartMenus/js/jquery.smartmenus.min.js') }}"></script>
-        <script src="{{ asset('lib/smartMenus/js/smartmenus.js') }}"></script>
 
         <!-- Function JS Personnel -->
         <script src="{{asset('front/js/function.js')}}"></script>
@@ -35,6 +34,10 @@
         <script src="{{ asset('plugins/jquery-validation-1.15.0/dist/additional-methods.min.js') }}"></script>
         <script src="{{ asset('plugins/jquery-validation-1.15.0/dist/localization/messages_fr.min.js') }}"></script>
         <script src="{{ asset('front/js/validateForm.js') }}"></script>
+
+        <!-- SmartMenus -->
+        <script src="{{ asset('lib/smartMenus/js/jquery.smartmenus.min.js') }}"></script>
+        <script src="{{ asset('lib/smartMenus/js/smartmenus.js') }}"></script>
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
@@ -57,6 +60,14 @@
     <link rel="stylesheet" href="{{ asset('lib/AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css') }}">
     </head>
     <body>
+        <div>
+            @include('front.layout.authentification_request_message')
+            @include('front.layout.error')
+            @include('front.layout.errors_request')
+            @include('front.layout.success')
+            <div id="message_info"></div>
+        </div>
+
         <!-- Header Haut -->
         <header>
             @include('front.layout.header')
