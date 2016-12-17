@@ -77,8 +77,8 @@ Route::get('/category', ['as' => 'category', 'uses' => 'Front\CategoryController
  * Profil
  * Gestion du compte
  */
-Route::get('/account/{user}', ['as' => 'account', 'uses' => 'Front\AccountController@index']);
-// Route::post('/account/updateUser', ['as' => 'account.updateUser', 'uses' => 'Front\AccountController@updateUser']);
+Route::get('/account', ['as' => 'account', 'uses' => 'Front\AccountController@index']);
+Route::post('/account/updateInfos', ['as' => 'account.updateInfos', 'uses' => 'Front\AccountController@updateInfos']);
 // Route::post('/account/updateAddress', ['as' => 'account.updateAddress', 'uses' => 'Front\AccountController@updateAddress']);
 				
 /**

@@ -12,9 +12,17 @@ class AccountController extends Controller
     	//code
     }
 
-    public function index($user){
+    public function index(){
 
-    	$adresses = \App\Adresses::where('id_user', '=', $user->id)->get();    
+    	$user = Auth::user();
+    	$adresses = \App\Adresses::where('id_user', '=', Auth::user()->id)->get();    
         return view('front.account.index', compact('user', 'adresses'));
+    }
+
+    public function updateInfos(Request $request){
+
+        if($request->ajax()){
+            return response()->json(['test' => "ok"]);
+        }
     }
 }

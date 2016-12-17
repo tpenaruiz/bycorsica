@@ -35,7 +35,7 @@
 	  	<div class="tab-content">
 	  		<!-- Debut Panel Info -->
 	    	<div role="tabpanel" class="tab-pane infos active" id="infos">
-	    		{!! Form::open(['method' => 'post']) !!}
+	    		{!! Form::open(['method' => 'post','id' => 'account_infos', 'url' => route('account.updateInfos')]) !!}
 					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
 						<div class="form-group col-md-12 col-sm-12">
 							{!! Form::label('secondname', 'Prénom *') !!}
