@@ -16,7 +16,7 @@ class CreateUserActivationsTable extends Migration
         Schema::create('user_activations', function (Blueprint $table) {
             $table->integer('users_id')->unsigned();
             $table->string('token')->index();
-            $table->timestamp();
+            $table->timestamp(); // TODO Pourquoi timestamp() ne fonctionne pas ? et timestamp(created_at) fonctionne !
         });
     }
 

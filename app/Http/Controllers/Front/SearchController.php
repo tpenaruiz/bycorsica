@@ -96,9 +96,9 @@ class SearchController extends Controller
             $produitForSurprise->id_produit = $produit->id;
             $produitForSurprise->save();
 
-            $message = '1.Votre produit à bien été ajouté sur la liste des produits à offrir !';
+            $message = \Lang::get('general.addSurpise');
         }else{
-            $message = '2.Houlaaa, il se trouve que vous posséder déjà ce produit dans votre list de cadeaux';
+            $message = \Lang::get('general.WarningSurpise');
         }
 
         // AJAX

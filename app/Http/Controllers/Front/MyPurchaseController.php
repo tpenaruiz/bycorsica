@@ -15,7 +15,7 @@ class MyPurchaseController extends Controller
         $myPurchase->delete();
 
         // AJAX
-        $message = 'Element Supprimer avec succès !';
+        $message = \Lang::get('general.deletePurchase');
         if($request->ajax()){
             return response()->json([
                 'message' => $message

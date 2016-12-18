@@ -16,12 +16,15 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('id_langue')->unsigned()->nullable();
+            $table->integer('id_media')->unsigned();
             $table->string('libelle');
             $table->string('description')->nullable();
             $table->enum('status', array('Actif', 'Archivé'));
             $table->timestamps();
 
             $table->foreign('id_langue')->references('id')->on('langues');
+            $table->foreign('id_media')->references('id')->on('medias');
+
         });
     }
 

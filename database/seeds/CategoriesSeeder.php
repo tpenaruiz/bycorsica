@@ -16,6 +16,7 @@ class CategoriesSeeder extends Seeder
             $categories = [
                 [
                     'id_langue' => '1',
+                    'id_media' => '1',
                     'libelle' => 'libelle '.$i,
                     'description' => 'Description '.$i,
                     'status' => 'Actif'
