@@ -12,6 +12,7 @@ use App\Http\Requests\SearchEngine;
 use App\Http\Controllers\Controller;
 use App\Produits;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class SearchController extends Controller
 {
@@ -33,9 +34,8 @@ class SearchController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(12);
         $searchEngine->setPath('search');
-        $inputSearch = $request->search;
 
-        return view('front.search.index', compact('searchEngine', 'inputSearch'))->render();
+        return view('front.search.index', compact('searchEngine'))->render();
     }
 
     /**

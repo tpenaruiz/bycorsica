@@ -5,9 +5,9 @@
 <div class="container">
 	@include('front.blocks.breadcrumbs')
 
-	<div class="row search-heading"> 	
+	<div class="row search-heading">
 		<div class="col-md-12 text-center">
-			<h3>{{Lang::get('general.search')}} <span>"{{$inputSearch}}"</span> - <span>{{count($searchEngine)}}</span> {{Lang::get('general.findResult')}}</h3>
+			<h3>{{Lang::get('general.search')}} <span>"{{\Request::get('search')}}"</span> - <span>{{count($searchEngine)}}</span> {{Lang::get('general.findResult')}}</h3>
 		</div>
 	</div>
 
