@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
         /**
          * Function appeler à chaque fois, qui permet de manipuler la vue
          */
+        // Purchase Product
         view()->composer('front.layout.header', function($view){
             $myIp = $_SERVER['REMOTE_ADDR'];
             if($myIp === "::1"){
@@ -37,6 +38,13 @@ class AppServiceProvider extends ServiceProvider
                 ->get();
 
             $view->with('myPurchase', $myPurchase);
+        });
+
+        // Categories And SubCategories
+        view()->composer('front.layout.header', function($view){
+            $categories = \App\SousCategories::with('langues', 'categories', 'medias')->get();
+
+            $view->with('categories', $categories);
         });
     }
 

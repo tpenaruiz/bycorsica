@@ -131,6 +131,7 @@
                 <!-- <h2 class="nav-brand"><a href="#">Brand</a></h2> -->
 
                 <!-- Sample menu definition -->
+                {{dump($categories)}}
                 <ul id="main-menu" class="sm sm-blue">
                     <li class="has-mega-menu"><a href="#">CAVE</a>
                         <ul class="mega-menu">

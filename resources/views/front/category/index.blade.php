@@ -30,26 +30,26 @@
 		<!-- Tab panes -->
 		<div class="tab-content home-product-content">
 			<div role="tabpanel" class="tab-pane active" id="grille">
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
-				@include('front.blocks.product_grille')
+				@include('front.blocks.product_grille_home')
+				@include('front.blocks.product_grille_home')
+				@include('front.blocks.product_grille_home')
+				@include('front.blocks.product_grille_home')
+				@include('front.blocks.product_grille_home')
+				@include('front.blocks.product_grille_home')
+				@include('front.blocks.product_grille_home')
+				@include('front.blocks.product_grille_home')
 			</div>
 
 			<div role="tabpanel" class="tab-pane" id="liste">
 				<div class="col-md-10 col-md-offset-1">
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
-					@include('front.blocks.product_liste')
+					@include('front.blocks.product_liste_home')
+					@include('front.blocks.product_liste_home')
+					@include('front.blocks.product_liste_home')
+					@include('front.blocks.product_liste_home')
+					@include('front.blocks.product_liste_home')
+					@include('front.blocks.product_liste_home')
+					@include('front.blocks.product_liste_home')
+					@include('front.blocks.product_liste_home')
 				</div>		
 			</div>
 		</div>
