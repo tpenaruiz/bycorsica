@@ -12,6 +12,7 @@ use App\Http\Requests\SearchEngine;
 use App\Http\Controllers\Controller;
 use App\Produits;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class SearchController extends Controller
 {
@@ -33,9 +34,8 @@ class SearchController extends Controller
             ->orderBy('created_at', 'desc')
             ->paginate(12);
         $searchEngine->setPath('search');
-        $inputSearch = $request->search;
 
-        return view('front.search.index', compact('searchEngine', 'inputSearch'))->render();
+        return view('front.search.index', compact('searchEngine'))->render();
     }
 
     /**
@@ -80,7 +80,7 @@ class SearchController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(){
-    	return view('front.search.index');
+        return view('front.search.index');
     }
 
     /**
@@ -95,18 +95,17 @@ class SearchController extends Controller
             $produitForSurprise->id_user = \Auth::user()->id;
             $produitForSurprise->id_produit = $produit->id;
             $produitForSurprise->save();
-
-            $message = '1.Votre produit à bien été ajouté sur la liste des produits à offrir !';
+            $message = \Lang::get('general.addSurpise');
         }else{
-            $message = '2.Houlaaa, il se trouve que vous posséder déjà ce produit dans votre list de cadeaux';
+            $message = \Lang::get('general.WarningSurpise');
         }
-
         // AJAX
         if($request->ajax()){
             return response()->json([
-               'message' => $message
+                'message' => $message
             ]);
         }
         return redirect()->route('search');
     }
+
 }

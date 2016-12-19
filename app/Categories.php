@@ -11,6 +11,7 @@ class Categories extends Model
     protected $table = 'categories';
     protected $fillable = [
         'id_langue',
+        'id_media',
         'libelle',
         'description',
         'status'
@@ -22,6 +23,13 @@ class Categories extends Model
      */
     public function langues(){
         return $this->belongsTo('\App\Langues', 'id_langue');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function medias(){
+        return $this->belongsTo('\App\Medias', 'id_media');
     }
 
     /**

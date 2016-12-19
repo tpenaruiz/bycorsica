@@ -12,6 +12,7 @@ class Commandes extends Model
     protected $fillable = [
         'id_user',
         'id_tva',
+        'id_produit',
         'reference',
         'montant',
         'status'
@@ -30,6 +31,13 @@ class Commandes extends Model
      */
     public function tva(){
         return $this->belongsTo('\App\Tva', 'id_tva');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function produits(){
+        return $this->belongsTo('\App\Produits', 'id_produit');
     }
 
     /**

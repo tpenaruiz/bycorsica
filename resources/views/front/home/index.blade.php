@@ -43,67 +43,29 @@
 		<div class="row separation"></div>
 
 		<div class="row home-category">
-			<div class="col-xs-4 bloc">
-				<a href="#">
-					<div><img src="{{ asset('front/img/category_01.jpg') }}"></div>
-					<div class="libelle">CAVE</div>
-				</a>
-			</div>
-			<div class="col-xs-4 bloc">
-				<a href="#">
-					<div><img src="{{ asset('front/img/category_02.jpg') }}"></div>
-					<div class="libelle">ÉPICERIE FINE</div>
-				</a>
-			</div>
-			<div class="col-xs-4 bloc">
-				<a href="#">
-					<div><img src="{{ asset('front/img/category_03.jpg') }}"></div>
-					<div class="libelle">CHARCUTERIE & FROMAGES</div>
-				</a>
-			</div>
-			<div class="col-xs-4 bloc">
-				<a href="#">
-					<div><img src="{{ asset('front/img/category_04.jpg') }}"></div>
-					<div class="libelle">SOINS & RITUELS DE BEAUTÉ</div>
-				</a>
-			</div>
-			<div class="col-xs-4 bloc">
-				<div><img src="{{ asset('front/img/category_05.jpg') }}"></div>
-				<div class="libelle">BY CORSICA</div>
-			</div>
-			<div class="col-xs-4 bloc">
-				<div><img src="{{ asset('front/img/category_06.jpg') }}"></div>
-				<div class="libelle">L'ART D'OFFRIR</div>
-			</div>
+			@foreach($categ as $row)
+				<div class="col-xs-4 bloc">
+					<a href="#">
+						<div><img src="{{ asset($row->medias->chemin) }}"></div>
+						<div class="libelle">{{$row->medias->libelle}}</div>
+					</a>
+				</div>
+			@endforeach
 		</div>
 
 		<div class="row home-product">
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs home-product-tabs" role="tablist">
-			  	<li role="presentation" class="active"><h4><a href="#popular" role="tab" data-toggle="tab">POPULAIRE</a></h4></li>
-			  	<li role="presentation"><h4><a href="#bestsellers" role="tab" data-toggle="tab">MEILLEURES VENTES</a></h4></li>
+			  	<li role="presentation" class="active"><h4><a href="#popular" role="tab" data-toggle="tab">{{\Lang::get('general.populaire')}}</a></h4></li>
+			  	<li role="presentation"><h4><a href="#bestsellers" role="tab" data-toggle="tab">{{\Lang::get('general.meilleuresVentes')}}</a></h4></li>
 			</ul>
 			<!-- Tab panes -->
 			<div class="tab-content home-product-content">
 				<div role="tabpanel" class="tab-pane active" id="popular">
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home_populaire')
 				</div>
 				<div role="tabpanel" class="tab-pane" id="bestsellers">
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
-					@include('front.blocks.product_grille_home')
+					@include('front.blocks.product_grille_home_bestSellers')
 				</div>
 			</div>
 		</div>

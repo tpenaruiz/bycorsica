@@ -34,13 +34,23 @@ $(document).ready(function(){
         let url = form.attr('action').replace(':PRODUCT_ID', id);
         let data = form.serialize();
 
+        console.log(id);
+        console.log(form);
+        console.log(url);
+        console.log(data);
+
         $.ajax({
             url:url,
             type:'POST',
             data:data,
             success: function(result){
-                // Affichage du message avec lib Notif.js
-                $('#message_info').append(notie.alert(1, result.message, 5));
+                if(result.message.substring(0, 1) === '1'){
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(1, result.message.substring(2), 5));
+                }else{
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(2, result.message.substring(2), 5));
+                }
             },
             error: function(){
                 sweetAlert('Oups...', 'Une erreur est survenue', 'error');

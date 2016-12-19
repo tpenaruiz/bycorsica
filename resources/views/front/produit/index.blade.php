@@ -96,24 +96,24 @@
                         <div class="productSpaceLab tab-content home-product-content">
 
                             <div role="tabpanel" class="tab-pane active" id="popular">
-                                @include('front.blocks.product_grille')
+                                @include('front.blocks.product_grille_home')
                             </div>
 
                             <div role="tabpanel" class="tab-pane active" id="popular">
                                 <div role="tabpanel" class="tab-pane active" id="popular">
-                                    @include('front.blocks.product_grille')
+                                    @include('front.blocks.product_grille_home')
                                 </div>
                             </div>
 
                             <div role="tabpanel" class="tab-pane active" id="popular">
                                 <div role="tabpanel" class="tab-pane active" id="popular">
-                                    @include('front.blocks.product_grille')
+                                    @include('front.blocks.product_grille_home')
                                 </div>
                             </div>
 
                             <div role="tabpanel" class="tab-pane active" id="popular">
                                 <div role="tabpanel" class="tab-pane active" id="popular">
-                                    @include('front.blocks.product_grille')
+                                    @include('front.blocks.product_grille_home')
                                 </div>
                             </div>
                         </div>
@@ -128,25 +128,25 @@
 
                             <div role="tabpanel" class="tab-pane active" id="popular">
                                 <div role="tabpanel" class="tab-pane active" id="popular">
-                                    @include('front.blocks.product_grille')
+                                    @include('front.blocks.product_grille_home')
                                 </div>
                             </div>
 
                             <div role="tabpanel" class="tab-pane active" id="popular">
                                 <div role="tabpanel" class="tab-pane active" id="popular">
-                                    @include('front.blocks.product_grille')
+                                    @include('front.blocks.product_grille_home')
                                 </div>
                             </div>
 
                             <div role="tabpanel" class="tab-pane active" id="popular">
                                 <div role="tabpanel" class="tab-pane active" id="popular">
-                                    @include('front.blocks.product_grille')
+                                    @include('front.blocks.product_grille_home')
                                 </div>
                             </div>
 
                             <div role="tabpanel" class="tab-pane active" id="popular">
                                 <div role="tabpanel" class="tab-pane active" id="popular">
-                                    @include('front.blocks.product_grille')
+                                    @include('front.blocks.product_grille_home')
                                 </div>
                             </div>
                         </div>
