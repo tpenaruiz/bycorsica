@@ -34,11 +34,6 @@ $(document).ready(function(){
         let url = form.attr('action').replace(':PRODUCT_ID', id);
         let data = form.serialize();
 
-        console.log(id);
-        console.log(form);
-        console.log(url);
-        console.log(data);
-
         $.ajax({
             url:url,
             type:'POST',
