@@ -27,7 +27,7 @@ class SearchController extends Controller
      * @throws \Throwable
      */
     public function searchEngine(SearchEngine $request){
-        $searchEngine = \App\Produits::with('medias', 'categories', 'tva', 'fournisseurs', 'langues')
+        $searchEngine = \App\Produits::with('medias', 'sousCategories', 'tva', 'fournisseurs', 'langues')
             ->where('nom', 'like', '%'.$request->search.'%')
             ->orWhere('id', 'like', $request->search)
             ->orWhere('prix', 'like', '%'.$request->search.'%')

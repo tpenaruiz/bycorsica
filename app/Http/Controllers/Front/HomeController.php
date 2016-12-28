@@ -20,7 +20,10 @@ class HomeController extends Controller
 
     public function index(){
         // Récupération des catégories + médias pour la home
-        $categ = \App\Categories::with('langues', 'medias')->get();
+        $categ = \App\Categories::with('langues', 'medias')
+            ->where('status', '=', 'Actif')
+            ->get();
+
         $populaire = \DB::table('commandes')
             ->join('users', 'commandes.id_user', '=', 'users.id')
             ->join('tva', 'commandes.id_tva', '=', 'tva.id')

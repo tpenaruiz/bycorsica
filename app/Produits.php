@@ -11,7 +11,7 @@ class Produits extends Model
     protected $table = 'produits';
     protected $fillable = [
         'id_media',
-        'id_categorie',
+        'id_sousCategorie',
         'id_tva',
         'id_fournisseur',
         'id_langue',
@@ -33,8 +33,8 @@ class Produits extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function categories(){
-        return $this->belongsTo('\App\Categories', 'id_categorie');
+    public function sousCategories(){
+        return $this->belongsTo('\App\SousCategories', 'id_sousCategorie');
     }
 
     /**

@@ -17,4 +17,5 @@ return [
     'meilleuresVentes' => 'MEILLEURES VENTES',
     'aucune_meilleuresVentes' => 'Aucune meilleures ventes pour l\'instant !',
     'aucune_ventePopulaire' => 'Aucune vente populaire pour l\'instant !',
+    'sousCategorieDescNull' => 'Aucune description disponible pour l\'instant',
 ];

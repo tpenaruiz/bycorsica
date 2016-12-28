@@ -16,7 +16,7 @@ class CreateProduitsTable extends Migration
         Schema::create('produits', function (Blueprint $table) {
             $table->increments('id')->unsigned();
             $table->integer('id_media')->unsigned();
-            $table->integer('id_categorie')->unsigned();
+            $table->integer('id_sousCategorie')->unsigned();
             $table->integer('id_tva')->unsigned();
             $table->integer('id_fournisseur')->unsigned();
             $table->integer('id_langue')->unsigned();
@@ -28,7 +28,7 @@ class CreateProduitsTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_media')->references('id')->on('medias');
-            $table->foreign('id_categorie')->references('id')->on('categories');
+            $table->foreign('id_sousCategorie')->references('id')->on('sousCategories');
             $table->foreign('id_tva')->references('id')->on('tva');
             $table->foreign('id_fournisseur')->references('id')->on('fournisseurs');
             $table->foreign('id_langue')->references('id')->on('langues');
