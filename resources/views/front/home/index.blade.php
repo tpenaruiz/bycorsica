@@ -45,9 +45,9 @@
 		<div class="row home-category">
 			@foreach($categ as $row)
 				<div class="col-xs-4 bloc">
-					<a href="#">
+					<a href="{{route('category', $row->id)}}">
 						<div><img src="{{ asset($row->medias->chemin) }}"></div>
-						<div class="libelle">{{$row->medias->libelle}}</div>
+						<div class="libelle">{{$row->libelle}}</div>
 					</a>
 				</div>
 			@endforeach

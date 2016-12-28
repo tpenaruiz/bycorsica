@@ -16,7 +16,7 @@ class ProduitsSeeder extends Seeder
             $produits = [
                 [
                     'id_media' => '1',
-                    'id_categorie' => '1',
+                    'id_sousCategorie' => '2',
                     'id_tva' => '1',
                     'id_fournisseur' => '1',
                     'id_langue' => '1',

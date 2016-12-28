@@ -20,6 +20,7 @@ class SousCategoriesSeeder extends Seeder
                     'id_media' => '1',
                     'libelle' => 'Libelle'.$i,
                     'description' => 'Description'.$i,
+                    'route' => '/',
                     'status' => 'Actif'
                 ]
             ];

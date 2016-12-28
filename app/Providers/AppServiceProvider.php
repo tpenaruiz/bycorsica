@@ -29,7 +29,7 @@ class AppServiceProvider extends ServiceProvider
             $myPurchase = \DB::table('myPurchase')
                 ->join('produits', 'myPurchase.id_produit', '=', 'produits.id')
                 ->join('medias', 'produits.id_media', '=', 'medias.id')
-                ->join('categories', 'produits.id_categorie', '=', 'categories.id')
+                ->join('sousCategories', 'produits.id_sousCategorie', '=', 'sousCategories.id')
                 ->join('tva', 'produits.id_tva', '=', 'tva.id')
                 ->join('fournisseurs', 'produits.id_fournisseur', '=', 'fournisseurs.id')
                 ->join('langues', 'produits.id_langue', '=', 'langues.id')
@@ -40,11 +40,23 @@ class AppServiceProvider extends ServiceProvider
             $view->with('myPurchase', $myPurchase);
         });
 
-        // Categories And SubCategories
+        // Categories
         view()->composer('front.layout.header', function($view){
-            $categories = \App\SousCategories::with('langues', 'categories', 'medias')->get();
+           $categories = \App\Categories::with('langues', 'medias')
+               ->where('status', '=', 'Actif')
+               ->where('libelle', '!=', 'by corsica')
+               ->get();
 
             $view->with('categories', $categories);
+        });
+
+        // Categories And SubCategories
+        view()->composer('front.layout.header', function($view){
+            $souscategories = \App\SousCategories::with('langues', 'categories', 'medias')
+                ->where('status', '=', 'Actif')
+                ->get();
+
+            $view->with('souscategories', $souscategories);
         });
     }
 

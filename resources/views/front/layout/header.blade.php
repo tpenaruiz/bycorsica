@@ -131,100 +131,34 @@
                 <!-- <h2 class="nav-brand"><a href="#">Brand</a></h2> -->
 
                 <!-- Sample menu definition -->
-                {{dump($categories)}}
                 <ul id="main-menu" class="sm sm-blue">
-                    <li class="has-mega-menu"><a href="#">CAVE</a>
-                        <ul class="mega-menu">
-                            <li>
-                                <div class="column-1-3 text-center">
-                                    <span>VINS</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/vins.jpeg') }}"></div>
-                                    <ul>
-                                        <li><a href="#">Rouge</a></li>
-                                        <li><a href="#">Rosé</a></li>
-                                        <li><a href="#">Blanc</a></li>
-                                        <li><a href="#">Muscat</a></li>
-                                    </ul>
-                                </div>
-                                <div class="column-1-3 text-center">
-                                    <span>SPIRITUEUX ET LIQUEURS</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/spiritueux.jpeg') }}"></div>
-                                </div>
-                                 <div class="column-1-3 text-center">
-                                    <span>BIÈRES</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/bieres.jpeg') }}"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-mega-menu"><a href="http://www.smartmenus.org/download/">CHARCUTERIE & FROMAGES</a>
-                        <ul class="mega-menu">
-                            <li>
-                                <div class="column-1-3 text-center">
-                                    <span>LES FROMAGES</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/fromages.jpeg') }}"></div>
-                                </div>
-                                <div class="column-1-3 text-center">
-                                    <span>LA CHARCUTERIE</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/charcuterie.jpeg') }}"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-mega-menu"><a href="http://www.smartmenus.org/download/">EPICERIE FINE</a>
-                        <ul class="mega-menu">
-                            <li>
-                                <div class="column-1-3 text-center">
-                                    <span>PRODUITS APÉRITIFS & TERRINES</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/terrines.jpeg') }}"></div>
-                                     <ul>
-                                        <li><a href="#">Terrines</a></li>
-                                        <li><a href="#">Sauce et Tapas</a></li>
-                                    </ul>
-                                </div>
-                                <div class="column-1-3 text-center">
-                                    <span>MIELS & CONFITURES</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/confiture.jpeg') }}"></div>
-                                </div>
-                                <div class="column-1-3 text-center">
-                                    <span>BISCUITS & GATEAUX</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/gateaux.jpeg') }}"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-mega-menu"><a href="http://www.smartmenus.org/download/">SOINS DE BEAUTÉ</a>
-                        <ul class="mega-menu">
-                            <li>
-                                <div class="column-1-3 text-center">
-                                    <span>HUILES ESSENTIELLES</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/huiles_essentielles.jpeg') }}">></div>
-                                </div>
-                                <div class="column-1-3 text-center">
-                                    <span>EAUX FLORALES</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/eaux_florales.jpeg') }}"></div>
-                                </div>
-                                <div class="column-1-3 text-center">
-                                    <span>PRODUITS DE SOIN</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/produits_soins.jpeg') }}"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="has-mega-menu"><a href="http://www.smartmenus.org/download/">L'ART D'OFFRIR</a>
-                        <ul class="mega-menu">
-                            <li>
-                                <div class="column-1-3 text-center">
-                                    <span>LES FROMAGES</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/fromages.jpeg') }}"></div>
-                                </div>
-                                <div class="column-1-3 text-center">
-                                    <span>LA CHARCUTERIE</span>
-                                    <div class="mega-menu-sample-image"><img src="{{ asset('front/img/charcuterie.jpeg') }}"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+                    @foreach($categories as $x)
+                        <li class="has-mega-menu">
+                            <a href="#">{{$x->libelle}}</a>
+                            <ul class="mega-menu">
+                                <li>
+                                    @foreach($souscategories as $y)
+                                        @if($y->id_categorie === $x->id)
+                                            <div class="column-1-3 text-center">
+                                                <span>{{$y->libelle}}</span>
+                                                <a href="{{route('sousCategory', $y->id)}}">
+                                                    <div class="mega-menu-sample-image">
+                                                        <img src="{{asset($y->medias->chemin)}}">
+                                                    </div>
+                                                </a>
+                                                <ul> <!-- TODO Doit t'on faire ça, personnelement POURQUOI FAIRE, sinon c'est simple faut rajouter une table la liée avec sousCategorie et mettre les même champs -->
+                                                    <li><a href="#">Rouge</a></li>
+                                                    <li><a href="#">Rosé</a></li>
+                                                    <li><a href="#">Blanc</a></li>
+                                                    <li><a href="#">Muscat</a></li>
+                                                </ul>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                </li>
+                            </ul>
+                        </li>
+                    @endforeach
                 </ul>
             </nav>
         </div>
