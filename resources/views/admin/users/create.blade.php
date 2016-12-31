@@ -1,6 +1,6 @@
 @extends('admin.layout.home')
 @section('content')
-
+    
     <section class="content-header">
         <h1>
             Pages
@@ -60,6 +60,7 @@
                                                                 <select id="id_pays" name="id_pays"
                                                                         class="form-control">
                                                                     <option value="">-- Pays --</option>
+                                                                    <option id="firstSelector" value=""></option>
                                                                 </select>
                                                             </div>
 
