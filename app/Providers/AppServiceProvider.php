@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 
@@ -57,6 +58,14 @@ class AppServiceProvider extends ServiceProvider
                 ->get();
 
             $view->with('souscategories', $souscategories);
+        });
+
+        // Breadcrumbs
+        view()->composer('front.blocks.breadcrumbs', function($view){
+            $breadcrumbs = explode('/', $_SERVER['REQUEST_URI']);
+            $home = $breadcrumbs[2]; // Public
+            $suite = $breadcrumbs[3]; // After Public
+            $view->with('suite', $suite);
         });
     }
 
