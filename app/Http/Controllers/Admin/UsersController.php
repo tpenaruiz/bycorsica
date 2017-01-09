@@ -76,13 +76,13 @@ class UsersController extends Controller
     }
     public function statusOff(Request $request, $users)
     {
-        $user->status = 'Archivé';
-        $user->save();
+        $users->status = 'Archivé';
+        $users->save();
         // AJAX
-        $info = \App\Users::with('roles', 'villes')->where('id', '=', $user->id)->get();
+        $info = \App\Users::with('roles', 'villes')->where('id', '=', $users->id)->get();
         if ($request->ajax()) {
             return response()->json([
-                'id' => $user->id,
+                'id' => $users->id,
                 'info' => $info
             ]);
         }
