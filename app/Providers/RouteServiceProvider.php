@@ -29,6 +29,10 @@ class RouteServiceProvider extends ServiceProvider
             App::abort(500);
         });
 
+        Route::model('adresses', 'App\Adresses', function(){
+            App::abort(500);
+        });
+
         Route::model('cgu', 'App\Cgu', function(){
             App::abort(500);
         });

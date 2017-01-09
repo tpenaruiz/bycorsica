@@ -13,6 +13,27 @@ $(document).ready(function(){
 		return this.optional(element) || value.length>=6 && /\d/.test(value) && /[a-z]/i.test(value);
 	}, 'Your password must be at least 6 characters long and contain at least one number and char.');
 
+	$.validator.addMethod('dateEch', function(value, element){
+        var check = false;
+        var re = /^\d{1,2}\-\d{1,2}\-\d{4}$/;
+        if( re.test(value)){
+            var adata = value.split('-');
+            var dd = parseInt(adata[0],10);
+            var mm = parseInt(adata[1],10);
+            var yyyy = parseInt(adata[2],10);
+            var xdata = new Date(yyyy,mm-1,dd);
+            if ( ( xdata.getFullYear() === yyyy ) && ( xdata.getMonth () === mm - 1 ) && ( xdata.getDate() === dd ) ) {
+                check = true;
+            }
+            else {
+                check = false;
+            }
+        } else {
+            check = false;
+        }
+        return this.optional(element) || check;
+    }, "Date non valide");
+
 	/**
      * Header
      * Validation du formulaire
@@ -99,7 +120,7 @@ $(document).ready(function(){
      * Page account
      * Validation formulaire
      */	
-     $("#account_infos").validate({
+    $("#account_infos").validate({
      	rules: {
      		second_name: {
 				required: true,
@@ -113,7 +134,7 @@ $(document).ready(function(){
 			},
      		birthday: {
      			required: true,
-     			date:  true
+     			dateEch: true
      		},
      		email: {
      			required: true,
@@ -124,18 +145,19 @@ $(document).ready(function(){
      		var form = $("#account_infos");
      		var url = form.attr('action');
      		var data = form.serialize();
-     		console.log(url); 
+     		console.log(url);
      		$.ajax({
      			url: url,
      			type: 'POST',
      			data: data,
      			success: function(response){
-     				console.log("test ok");
+     				// Affichage du message avec notiJs
+                	$('#message_info').append(notie.alert(1, response.status, 5));
      			},
      			error: function(){
-     				console.log("test failed");
+     				sweetAlert('Oups...', 'Une erreur est survenue', 'error');
      			}
      		});
      	}
-     });
+    });
 });

@@ -8,6 +8,17 @@ $(document).ready(function(){
     });
 
     /**
+     * Page Account
+     * Jquery UI datepicker
+     */
+    $( "#birthday" ).datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-100:-10",
+        dateFormat: "dd-mm-yy"
+    });
+
+    /**
      * Visualisation du compteur purchase en temps réel PHP / JS
      */
     //Parsing du string en Int
@@ -118,7 +129,6 @@ $(document).ready(function(){
     if($('#Basket_codePromo').val().length === 0){
         $('.promoBtn').hide();
     }
-
 });
 
 /**

@@ -13,13 +13,16 @@ class Adresses extends Model
         'id_user',
         'id_pays',
         'id_ville',
+        'code_postal',
         'libelle',
+        'prenom',
+        'nom',
+        'company',
         'adresse',
         'adresse_suppl',
-        'telephone_port',
-        'telephone_fixe',
-        'complement',
         'telephone',
+        'telephone2',
+        'complement',
         'status'
     ];
 
