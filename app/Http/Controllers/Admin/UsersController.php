@@ -71,10 +71,10 @@ class UsersController extends Controller
     public function edit($user)
     {
     }
-    public function update(Request $request, $user)
+    public function update(Request $request, $users)
     {
     }
-    public function statusOff(Request $request, $user)
+    public function statusOff(Request $request, $users)
     {
         $user->status = 'Archivé';
         $user->save();
@@ -88,23 +88,24 @@ class UsersController extends Controller
         }
         return redirect()->route('users');
     }
-    public function statusOn(Request $request, $user)
+    public function statusOn(Request $request, $users)
     {
-        $user->status = 'Actif';
-        $user->save();
+        $users->status = 'Actif';
+        $users->save();
         // AJAX
-        $info = \App\Users::with('roles', 'villes')->where('id', '=', $user->id)->get();
+        $info = \App\Users::with('roles', 'villes')->where('id', '=', $users->id)->get();
         if ($request->ajax()) {
             return response()->json([
-                'id' => $user->id,
+                'id' => $users->id,
                 'info' => $info
             ]);
         }
         return redirect()->route('users');
     }
-    public function destroy(Request $request, $user)
+    public function destroy(Request $request, $users)
     {
-        $user->delete();
+        $u = \App\Users::find($users);
+        $u->delete();
         // AJAX
         // TODO Mettre en traduction les chaine de caractère ci-dessous !
         $message = 'Element supprimer !';

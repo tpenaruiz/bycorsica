@@ -77,17 +77,18 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.btn_del').click(function(e){
         e.preventDefault();
-        var row = $(this).parents('tr');
-        var id = row.data('id');
+        var id = $(this).parents('tr').data('id');
         var form = $('#form-del');
         var url = form.attr('action').replace(':USERS_ID', id);
         var data = form.serialize();
-
+        console.log(url);
+        console.log(data);
         $.ajax({
             url: url,
             type: 'DELETE',
             data: data,
             success: function(result){
+                console.log(result);
                 // Efface la ligne tr compléte
                 $('.usersLinter_'+id).fadeOut();
 
