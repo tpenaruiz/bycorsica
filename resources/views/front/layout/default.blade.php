@@ -17,13 +17,11 @@
         <script src="{{ asset('lib/AdminLTE-2.3.0/plugins/jQueryUI/jQueryUi1.11.4.min.js') }}"></script>
         <script src="{{ asset('lib/sweetalert/dist/sweetalert.min.js') }}"></script>
 
-
         <!-- Bootstrap -->
         <script src="{{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
 
         <script src="{{ asset('lib/html5shiv.min.js') }}"></script>
         <script src="{{ asset('lib/respond.min.js') }}"></script>
-
 
         <!-- Function JS Personnel -->
         <script src="{{asset('front/js/function.js')}}"></script>
@@ -38,6 +36,10 @@
         <!-- SmartMenus -->
         <script src="{{ asset('lib/smartMenus/js/jquery.smartmenus.min.js') }}"></script>
         <script src="{{ asset('lib/smartMenus/js/smartmenus.js') }}"></script>
+
+        <!-- Jquery UI 1.12.1 -->
+        <script src="{{ asset('lib/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
+
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}">
@@ -56,8 +58,10 @@
         <!-- Main -->
         <link rel="stylesheet" href="{{ asset('front/css/style.css') }}">
 
+        <link rel="stylesheet" href="{{ asset('lib/AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('lib/AdminLTE-2.3.0/dist/css/skins/_all-skins.min.css') }}">
+        <!-- Jquery UI 1.12.1 -->
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     </head>
     <body>
         <div>

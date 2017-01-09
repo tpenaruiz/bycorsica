@@ -36,6 +36,13 @@ class Users extends Model implements AuthenticatableContract, CanResetPasswordCo
     	return $this->belongsTo('\App\Villes', 'id_ville');
     }
 
+    /**
+     * @return bool|string
+     */
+    public function getBirthdayAttribute(){
+        return date('d-m-Y', date_timestamp_get(date_create($this->date_naissance)));
+    }
+
     public function getCreateddateAttribute(){
         return date('d/m/Y H\Hi', date_timestamp_get(date_create($this->created_at)));
     }
