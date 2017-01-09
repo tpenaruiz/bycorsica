@@ -119,4 +119,22 @@ class LoginController extends Controller
         }
         return redirect()->intended($this->redirectTo);
     }
+
+
+    /**
+     * Log the user out of the application.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->flush();
+
+        $request->session()->regenerate();
+
+        return redirect('/')->with('status', \Lang::get('auth.logout'));
+    }
 }

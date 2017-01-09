@@ -34,4 +34,5 @@ return [
     'account_confirmation' => "Vous avez besoin de confirmer votre compte. Nous vous avons envoyé un code d'activation , veuillez vérifier vos mails s'il vous plait.",
     'activate_account' => 'Félicitation, votre compte a été activé et vous êtes logé',
     'forgot_your_password' => 'Mot de passe oublié',
+    'logout' => 'Vous êtes deconnecté',
 ];

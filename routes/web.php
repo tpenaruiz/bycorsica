@@ -86,9 +86,17 @@ Route::get('/sousCategory/{sousCategory}', ['as' => 'sousCategory', 'uses' => 'F
 /**
  * Profil
  * Gestion du compte
+ * Consultation et maj infos
+ * Consutlation et maj adresses
  */
 Route::get('/account', ['as' => 'account', 'uses' => 'Front\AccountController@index']);
-
+Route::post('/account/infos/update', ['as' => 'account.infos.update', 'uses' => 'Front\AccountController@infosUpdate']);
+Route::get('/account/address/update/{addresse}', ['as' => 'account.address.update', 'uses' => 'Front\AccountController@addressEdit']);
+Route::post('account/address/update/{addresse}', ['as' => 'account.address.update', 'uses' => 'Front\AccountController@addressUpdate']);
+Route::get('account/address/create', ['as' => 'account.address.create', 'uses' => 'Front\AccountController@addressCreate']);
+Route::post('account/address/store', ['as' => 'account.address.store', 'uses' => 'Front\AccountController@addressStore']);
+Route::delete('account/address/destroy/{adresse}', ['as' => 'account.address.destroy', 'uses' => 'Front\AccountController@addressDestroy']);
+				
 /**
  * Panier
  */
@@ -130,8 +138,8 @@ Route::get('/mentionsLegal', ['as' => 'mentionsLegal', 'uses' => 'Front\LegalsCo
 |
 */
 Auth::routes();
-
 Route::get('/user/activation/{token}', ['as' => 'user/activation', 'uses' => 'Auth\AuthController@activateUser']);
+Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/home', 'HomeController@index');
 
 Route::get('/log', 'LogController@index');
