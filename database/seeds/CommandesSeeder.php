@@ -17,6 +17,7 @@ class CommandesSeeder extends Seeder
                 [
                     'id_user' => '1',
                     'id_tva' => '1',
+                    'id_produit' => '1',
                     'reference' => '000162'.$i,
                     'montant' => $i,
                     'status' => 'En cours'

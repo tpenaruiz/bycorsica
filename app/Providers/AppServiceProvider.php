@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,6 +18,7 @@ class AppServiceProvider extends ServiceProvider
         /**
          * Function appeler à chaque fois, qui permet de manipuler la vue
          */
+        // Purchase Product
         view()->composer('front.layout.header', function($view){
             $myIp = $_SERVER['REMOTE_ADDR'];
             if($myIp === "::1"){
@@ -28,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
             $myPurchase = \DB::table('myPurchase')
                 ->join('produits', 'myPurchase.id_produit', '=', 'produits.id')
                 ->join('medias', 'produits.id_media', '=', 'medias.id')
-                ->join('categories', 'produits.id_categorie', '=', 'categories.id')
+                ->join('sousCategories', 'produits.id_sousCategorie', '=', 'sousCategories.id')
                 ->join('tva', 'produits.id_tva', '=', 'tva.id')
                 ->join('fournisseurs', 'produits.id_fournisseur', '=', 'fournisseurs.id')
                 ->join('langues', 'produits.id_langue', '=', 'langues.id')
@@ -37,6 +39,33 @@ class AppServiceProvider extends ServiceProvider
                 ->get();
 
             $view->with('myPurchase', $myPurchase);
+        });
+
+        // Categories
+        view()->composer('front.layout.header', function($view){
+           $categories = \App\Categories::with('langues', 'medias')
+               ->where('status', '=', 'Actif')
+               ->where('libelle', '!=', 'by corsica')
+               ->get();
+
+            $view->with('categories', $categories);
+        });
+
+        // Categories And SubCategories
+        view()->composer('front.layout.header', function($view){
+            $souscategories = \App\SousCategories::with('langues', 'categories', 'medias')
+                ->where('status', '=', 'Actif')
+                ->get();
+
+            $view->with('souscategories', $souscategories);
+        });
+
+        // Breadcrumbs
+        view()->composer('front.blocks.breadcrumbs', function($view){
+            $breadcrumbs = explode('/', $_SERVER['REQUEST_URI']);
+            $home = $breadcrumbs[2]; // Public
+            $suite = $breadcrumbs[3]; // After Public
+            $view->with('suite', $suite);
         });
     }
 

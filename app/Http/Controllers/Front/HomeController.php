@@ -19,13 +19,35 @@ class HomeController extends Controller
     }
 
     public function index(){
+        // Récupération des catégories + médias pour la home
+        $categ = \App\Categories::with('langues', 'medias')
+            ->where('status', '=', 'Actif')
+            ->get();
 
-        // Populaire
+        $populaire = \DB::table('commandes')
+            ->join('users', 'commandes.id_user', '=', 'users.id')
+            ->join('tva', 'commandes.id_tva', '=', 'tva.id')
+            ->join('produits', 'commandes.id_produit', '=', 'produits.id')
+            ->join('medias', 'produits.id_media', '=', 'medias.id')
+            ->select('*', 'produits.id AS idProd', 'medias.libelle AS mediaLibelle', 'tva.id AS idTva, commandes.created_at AS commandes_created_at, commandes.status AS commandesStatus')
+            ->orderBy('commandes.created_at', 'desc')
+            ->groupBy('id_produit')
+            ->limit(8)
+            ->get();
 
+        $bestSellers = \DB::table('commandes')
+            ->join('users', 'commandes.id_user', '=', 'users.id')
+            ->join('tva', 'commandes.id_tva', '=', 'tva.id')
+            ->join('produits', 'commandes.id_produit', '=', 'produits.id')
+            ->join('medias', 'produits.id_media', '=', 'medias.id')
+            ->select('*', 'produits.id AS idProd', 'medias.libelle AS mediaLibelle', 'tva.id AS idTva, commandes.created_at AS commandes_created_at, commandes.status AS commandesStatus')
+            ->where('commandes.status', '=', 'Terminer')
+            ->orderBy('commandes.created_at', 'desc')
+            ->groupBy('id_produit')
+            ->limit(8)
+            ->get();
 
-        // Meilleures ventes
-
-        return view('front.home.index');
+        return view('front.home.index', compact('categ', 'populaire', 'bestSellers'));
     }
 
     /**

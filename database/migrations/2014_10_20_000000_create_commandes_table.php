@@ -17,6 +17,7 @@ class CreateCommandesTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->integer('id_tva')->unsigned()->nullable();
+            $table->integer('id_produit')->unsigned();
             $table->integer('reference');
             $table->float('montant');
             $table->enum('status', array('En cours', 'Terminer', 'Annuler', 'Erreur'));
@@ -24,6 +25,7 @@ class CreateCommandesTable extends Migration
 
             $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_tva')->references('id')->on('tva');
+            $table->foreign('id_produit')->references('id')->on('produits');
         });
     }
 

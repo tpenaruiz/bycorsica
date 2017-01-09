@@ -80,7 +80,8 @@ Route::post('/myPurchase/{myPurchase}', ['as' => 'myPurchase.destroy', 'uses' =>
 /**
  * Catégorie
  */
-Route::get('/category', ['as' => 'category', 'uses' => 'Front\CategoryController@index']);
+Route::get('/category/{category}', ['as' => 'category', 'uses' => 'Front\CategoryController@category']);
+Route::get('/sousCategory/{sousCategory}', ['as' => 'sousCategory', 'uses' => 'Front\CategoryController@sousCategory']);
 
 /**
  * Profil

@@ -14,7 +14,6 @@ class ProductForSurprise extends Model
         'id_produit'
     ];
 
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

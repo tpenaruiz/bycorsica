@@ -14,14 +14,24 @@ $(document).ready(function(){
     var lville = $('#id_ville');
     var url = window.location.href;
 
-    // Chargement des pays sur la listes déroulante
-    $.get(url, function(result){
-        $.each(result.pays, function(){
-            lpays.append('<option value="'+ this.id +'">'+ this.nom_fr_fr +'</option>');
+    // Chargement des pays sur la listes déroulante, récupération du pays de l'utilisateurs par default
+    $.getJSON('https://freegeoip.net/json/')
+        .done (function(location)
+        {
+            $.get(url, function(result){
+                $.each(result.pays, function(){
+                    if(this.nom_fr_fr === location.country_name){
+                        let idLocation = this.id;
+                        let nameLocation = this.nom_fr_fr;
+                        $('#firstSelector').val(idLocation);
+                        $('#firstSelector').text(nameLocation);
+                    }
+                    lpays.append('<option value="'+ this.id +'">'+ this.nom_fr_fr +'</option>');
+                });
+            }).fail(function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            });
         });
-    }).fail(function(){
-        sweetAlert('Oups...', 'Une erreur est survenue', 'error');
-    });
 
     // Chargement des villes selon le pays séléctionnée
     $('#id_pays').change(function(){
