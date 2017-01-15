@@ -36,9 +36,9 @@ $(document).ready(function(){
 		$.each(result.villes, function(){
 			if(this.pays.id == value){
 				if(this.id != id_ville){
-					list_ville.append('<option value="' + this.id + '">' + this.libelle + '</option');	
+					list_ville.append('<option value="' + this.id + '">' + this.libelle + '</option>');
 				}else{
-					list_ville.append('<option value="' + this.id + '" selected="selected" >' + this.libelle + '</option');
+					list_ville.append('<option value="' + this.id + '" selected="selected" >' + this.libelle + '</option>');
 				}
 			}
 		});
