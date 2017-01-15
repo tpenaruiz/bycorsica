@@ -32,7 +32,6 @@ $(document).ready(function(){
             type: 'POST',
             data: data,
             success: function(result){
-                console.log(result);
                 $.each(result.info, function(){
                     $('#innactif_'+this.id).toggle();
                     $('#actif_'+this.id).toggle();
@@ -60,7 +59,6 @@ $(document).ready(function(){
             type: 'POST',
             data: data,
             success: function(result){
-                console.log(result);
                 $.each(result.info, function(){
                     $('#actif_'+this.id).toggle();
                     $('#innactif_'+this.id).toggle();
@@ -77,18 +75,19 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.btn_del').click(function(e){
         e.preventDefault();
-        var id = $(this).parents('tr').data('id');
+        var row = $(this).parents('tr');
+        var id = row.data('id');
         var form = $('#form-del');
         var url = form.attr('action').replace(':USERS_ID', id);
         var data = form.serialize();
         console.log(url);
         console.log(data);
+
         $.ajax({
             url: url,
             type: 'DELETE',
             data: data,
             success: function(result){
-                console.log(result);
                 // Efface la ligne tr compléte
                 $('.usersLinter_'+id).fadeOut();
 

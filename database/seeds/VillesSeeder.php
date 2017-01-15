@@ -11,6 +11,19 @@ class VillesSeeder extends Seeder
      */
     public function run()
     {
-        // TODO Donnée Générer depuis un import sql externe
+        // TODO Donnée Générer depuis un import sql externe, (trouver une table complète des ville IMPORTANT)
+
+        $ville = [
+            [
+                'id_pays' => '75',
+                'libelle' => 'Paris',
+                'code_postal' => '75000',
+            ]
+        ];
+        DB::table('villes')->delete();
+        DB::table('villes')->truncate();
+        foreach($ville as $row){
+            \App\Users::create($row);
+        }
     }
 }

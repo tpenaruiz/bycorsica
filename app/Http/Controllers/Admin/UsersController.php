@@ -102,10 +102,9 @@ class UsersController extends Controller
         }
         return redirect()->route('users');
     }
-    public function destroy(Request $request, $users)
+    public function destroyUser(Request $request, $users)
     {
-        $u = \App\Users::find($users);
-        $u->delete();
+        $users->delete();
         // AJAX
         // TODO Mettre en traduction les chaine de caractère ci-dessous !
         $message = 'Element supprimer !';

@@ -22,7 +22,6 @@ class RolesSeeder extends Seeder
                 'description' => 'Administrateurs'
             ]
         ];
-
         DB::table('roles')->delete();
         DB::table('roles')->truncate();
         foreach($roles as $row){

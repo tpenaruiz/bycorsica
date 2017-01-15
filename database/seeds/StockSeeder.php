@@ -12,15 +12,12 @@ class StockSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1; $i<=10; $i++){
-            $stock = [
-                [
-                    'id_produit' => '1',
-                    'stock' => $i
-                ]
-            ];
-        }
-
+        $stock = [
+            [
+                'id_produit' => '1',
+                'stock' => 1
+            ]
+        ];
         DB::table('stock')->delete();
         DB::table('stock')->truncate();
         foreach($stock as $row){

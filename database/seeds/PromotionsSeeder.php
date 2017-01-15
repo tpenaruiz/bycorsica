@@ -12,17 +12,14 @@ class PromotionsSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $promotion = [
-                [
-                    'id_produit' => '1',
-                    'id_langue' => '1',
-                    'pourcentage' => $i,
-                    'description' => 'Description'.$i
-                ]
-            ];
-        }
-
+        $promotion = [
+            [
+                'id_produit' => '1',
+                'id_langue' => '1',
+                'pourcentage' => 1,
+                'description' => 'Description'
+            ]
+        ];
         DB::table('promotions')->delete();
         DB::table('promotions')->truncate();
         foreach($promotion as $row){
