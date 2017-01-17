@@ -160,4 +160,26 @@ $(document).ready(function(){
      		});
      	}
     });
+
+    /**
+     * Page account
+     * Validation formulaire
+     */	
+    $("#contact_form").validate({
+    	rules: {
+    		object: {
+    			required: true
+    		},
+    		reference_commande: {
+    			required: true
+    		},
+			email: {
+				required: true,
+				email: true
+			},
+			message: {
+				required: true
+			}
+		}
+    });
 });
