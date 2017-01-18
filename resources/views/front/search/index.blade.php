@@ -20,16 +20,12 @@
 			<!-- Tab panes -->
 			<div class="tab-content home-product-content">
 				<div role="tabpanel" class="tab-pane active" id="grille">
-					@foreach($searchEngine as $row)
-						@include('front.blocks.product_grille')
-					@endforeach
+					@include('front.blocks.product_grille')
 				</div>
 
 				<div role="tabpanel" class="tab-pane" id="liste">
 					<div class="col-md-10 col-md-offset-1">
-						@foreach($searchEngine as $row)
-							@include('front.blocks.product_liste')
-						@endforeach
+						@include('front.blocks.product_liste')
 					</div>
 				</div>
 			</div>

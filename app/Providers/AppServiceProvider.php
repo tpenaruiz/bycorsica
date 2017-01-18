@@ -34,10 +34,11 @@ class AppServiceProvider extends ServiceProvider
                 ->join('tva', 'produits.id_tva', '=', 'tva.id')
                 ->join('fournisseurs', 'produits.id_fournisseur', '=', 'fournisseurs.id')
                 ->join('langues', 'produits.id_langue', '=', 'langues.id')
-                ->select('*', 'produits.id AS idProd', 'medias.libelle AS mediaLibelle', 'myPurchase.id AS idPurchase')
+                ->select('*', 'produits.id AS idProd', 'medias.libelle AS mediaLibelle', 'myPurchase.id AS idPurchase', 'fournisseurs.nom AS fournisseurNom', 'tva.nom AS tvaNom', 'produits.nom AS produitNom')
                 ->where('ip', '=', $myIp)
                 ->get();
 
+            //dd($myPurchase);
             $view->with('myPurchase', $myPurchase);
         });
 
