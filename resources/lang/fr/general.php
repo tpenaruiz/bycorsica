@@ -50,5 +50,7 @@ return [
     'reference_commande_placeholder' => 'reference commande',
     'message' => 'Message *',
     'message_placeholder' => 'message',
-    'maListeDeCadeaux' => 'Voici votre listes de cadeaux'
+    'maListeDeCadeaux' => 'Voici votre listes de cadeaux',
+    'messageDeleteListCadeaux'=> 'élement supprimer avec succès !',
+    'emptyListCadeaux' => 'Vous avez pour le moment aucun cadeaux dans votre liste'
 ];

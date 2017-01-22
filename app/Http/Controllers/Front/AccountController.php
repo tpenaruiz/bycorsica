@@ -9,6 +9,7 @@ use App\Http\Requests\AddressFrontRequest;
 use Carbon\Carbon;
 use App\Adresses;
 use Auth;
+use Illuminate\Support\Facades\Lang;
 
 class AccountController extends Controller
 {
@@ -189,7 +190,7 @@ class AccountController extends Controller
         $maList->delete();
 
         // AJAX
-        $message_list_cadeaux = "élement supprimer avec succès !";
+        $message_list_cadeaux = Lang::get('general.messageDeleteListCadeaux');
         if($request->ajax()){
             return response()->json([
                 'message_list_cadeaux' => $message_list_cadeaux
