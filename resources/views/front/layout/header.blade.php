@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#"><i class="fa fa-truck" aria-hidden="true"></i> Livraison <span class="sr-only">(current)</span></a></li>
-                <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contactez-nous</a></li>
+                <li><a href="{{ url('contact') }}"><i class="fa fa-phone" aria-hidden="true"></i> Contactez-nous</a></li>
             </ul>
             {!! Form::open(['method' => 'post', 'url' => route('searchPost.searchEngine'), 'class' => 'navbar-form navbar-left']) !!}
                 <div class="input-group">
