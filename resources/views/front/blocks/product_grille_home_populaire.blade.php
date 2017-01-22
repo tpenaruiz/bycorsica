@@ -2,14 +2,14 @@
     @foreach($populaire as $row)
         <div class="col-md-3 col-xs-6 product-grille">
             <div class="image">
-                <a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->libelle}}" title="{{$row->libelle}}"></a>
+                <a href="{{url('produit/'.$row->id_produit)}}"><img src="{{ asset($row->chemin) }}" alt="{{$row->libelle}}" title="{{$row->libelle}}"></a>
             </div>
             <div class="description">
                 <h3 class="title">{{$row->nom}}</h3>
                 <div class="libelle">{{$row->description}}</div>
                 <div class="price" style="">{{Lang::get('general.price')}} {{$row->prix}} &euro;</div>
                 <div>
-                    <a href="" class="product-link">{{Lang::get('general.detail')}}</a>
+                    <a href="{{url('produit/'.$row->id_produit)}}" class="product-link">{{Lang::get('general.detail')}}</a>
                     <a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart_{{$row->id_produit}}">{{Lang::get('general.addBasket')}}</a>
                 </div>
             </div>
