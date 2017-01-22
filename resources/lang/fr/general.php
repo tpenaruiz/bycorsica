@@ -50,4 +50,5 @@ return [
     'reference_commande_placeholder' => 'reference commande',
     'message' => 'Message *',
     'message_placeholder' => 'message',
+    'maListeDeCadeaux' => 'Voici votre listes de cadeaux'
 ];

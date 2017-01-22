@@ -49,5 +49,6 @@ return [
     'reference_commande' => 'Reference order *',
     'reference_commande_placeholder' => 'reference order',
     'message' => 'Message *',
-    'message_placeholder' => 'message', 
+    'message_placeholder' => 'message',
+    'maListeDeCadeaux' => 'Voici votre listes de cadeaux'
 ];
