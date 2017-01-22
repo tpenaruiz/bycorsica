@@ -36,4 +36,18 @@ return [
     'aucune_ventePopulaire' => 'Aucune vente populaire pour l\'instant !',
     'sousCategorieDescNull' => 'Aucune description disponible pour l\'instant',
 
+    'contact_us' => 'Contactez-nous',
+    'object' => 'Objet *',
+    'object_placeholder' => 'objet',
+    'object_0' => 'Veuillez séléctionner un sujet',
+    'object_1' => 'Cadeau d\'entreprise',
+    'object_2' => 'Partenaire',
+    'object_3' => 'Presse',
+    'object_4' => 'Recrutement',
+    'object_5' => 'Service client',
+    'contactSent' => 'Votre demande de contact a été envoyée et sera traitée dans les meilleurs délais',
+    'reference_commande' => 'Reference commande *',
+    'reference_commande_placeholder' => 'reference commande',
+    'message' => 'Message *',
+    'message_placeholder' => 'message',
 ];

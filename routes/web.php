@@ -116,6 +116,12 @@ Route::get('/commande/phase3', ['as' => 'commandePhase3', 'uses' => 'Front\Comma
 Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\CommandeController@stepFour']);
 
 /**
+ * Contact
+ */
+Route::get('/contact', ['as' => 'contact', 'uses' => 'Front\ContactController@index']);
+Route::post('/contact', ['as' => 'contact', 'uses' => 'Front\ContactController@post']);
+
+/**
  * Legals
  * CGU
  * CGV

@@ -25,6 +25,7 @@
     Page Produit
     Page Categorie
     Page Account
+    Page Contact
     Page CGU
     Page CGV
     Page Mentions Legal
@@ -1963,9 +1964,6 @@ label {
     color:black;
 }
 
-
-
-
 .update-address-content {
     background-color: #222;
     margin-bottom: 20px;
@@ -1993,16 +1991,25 @@ label {
 }
 
 
+/*
+|--------------------------------------------------------------------------
+| Page Contact
+|--------------------------------------------------------------------------
+*/
 
+.contact-content {
+    background-color: #222;
+    margin-bottom: 20px;
+}
 
+.contact-content .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
 
-
-
-
-
-
-
-
+.contact-content .btn {
+    margin-top: 40px;
+}
 
 
 /*

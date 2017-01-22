@@ -36,4 +36,18 @@ return [
     'aucune_ventePopulaire' => 'Aucune vente populaire pour l\'instant !',
     'sousCategorieDescNull' => 'Aucune description disponible pour l\'instant',
 
+    'contact_us' => 'Contact us',
+    'object' => 'Object *',
+    'object_placeholder' => 'object',
+    'object_0' => 'Please select an object',
+    'object_1' => 'Business gift',
+    'object_2' => 'Partner',
+    'object_3' => 'Press',
+    'object_4' => 'Recruitment',
+    'object_5' => 'Customer service',
+    'contactSent' => 'Your contact request has been sent and will be processed as soon as possible.',
+    'reference_commande' => 'Reference order *',
+    'reference_commande_placeholder' => 'reference order',
+    'message' => 'Message *',
+    'message_placeholder' => 'message', 
 ];
