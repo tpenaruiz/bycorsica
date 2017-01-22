@@ -26,10 +26,9 @@
                             </div>
                         </div>
                         <div class="details col-md-5">
-                            <h3 class="product-title">Tapenade Noire</h3>
+                            <h3 class="product-title">{{ $produit->nom }}</h3>
                             <div class="rating">
-                                <p>Toute la méditerranée concentrée dans un pot !!
-                                    Notre tapenade aux saveurs incomparables enchantera vos apéritifs.</p>
+                                <p>{{ $produit->description }}</p>
                             </div>
                             <ul class="social">
                                 <li class="icon_facebook"><a href="#"> <i class="fa fa-facebook"> </i> </a></li>
@@ -41,7 +40,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="bloc">
-                                <h3 class="price"><span>$180</span></h3>
+                                <h3 class="price"><span>{{ str_replace('.', ',', $produit->prix) }}</span></h3>
 
                                 <div class="qte">
                                     {{--Form::open(['method' => 'post', 'url' => route('produit.store', 1)])--}}
