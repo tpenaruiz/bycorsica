@@ -7,12 +7,15 @@
 			<h3 class="title">{{$row->nom}}</h3>
 			<div class="libelle">{{$row->description}}</div>
 			<div class="price" style="">{{Lang::get('general.price')}} {{$row->prix}} &euro;</div>
-			<div><a href="" class="product-link">{{Lang::get('general.detail')}}</a><a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart">{{Lang::get('general.addBasket')}}</a></div>
+			<div>
+				<a href="" class="product-link">{{Lang::get('general.detail')}}</a>
+				<a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart_{{$row->id}}">{{Lang::get('general.addBasket')}}</a>
+			</div>
 		</div>
 	</div>
 
 	<!-- Modal Ajouter au panier-->
-	<div class="modal fade product-grille-modal" id="add_produc_cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal fade product-grille-modal" id="add_produc_cart_{{$row->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">

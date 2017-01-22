@@ -12,16 +12,13 @@ class FabriquantsSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++) {
-            $fabriquants = [
-                [
-                    'id_langue' => '1',
-                    'nom' => 'Nom '.$i,
-                    'description' => 'Description '.$i
-                ]
-            ];
-        }
-
+        $fabriquants = [
+            [
+                'id_langue' => '1',
+                'nom' => 'Nom ',
+                'description' => 'Description '
+            ]
+        ];
         DB::table('fabriquants')->delete();
         DB::table('fabriquants')->truncate();
         foreach($fabriquants as $row){

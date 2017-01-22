@@ -32,7 +32,6 @@ $(document).ready(function(){
             type: 'POST',
             data: data,
             success: function(result){
-                console.log(result);
                 $.each(result.info, function(){
                     $('#innactif_'+this.id).toggle();
                     $('#actif_'+this.id).toggle();
@@ -60,7 +59,6 @@ $(document).ready(function(){
             type: 'POST',
             data: data,
             success: function(result){
-                console.log(result);
                 $.each(result.info, function(){
                     $('#actif_'+this.id).toggle();
                     $('#innactif_'+this.id).toggle();
@@ -82,6 +80,8 @@ $(document).ready(function(){
         var form = $('#form-del');
         var url = form.attr('action').replace(':USERS_ID', id);
         var data = form.serialize();
+        console.log(url);
+        console.log(data);
 
         $.ajax({
             url: url,

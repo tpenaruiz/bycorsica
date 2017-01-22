@@ -12,16 +12,13 @@ class PanierSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $panier = [
-                [
-                    'id_commande' => '1',
-                    'id_produit' => '1',
-                    'quantite' => $i
-                ]
-            ];
-        }
-
+        $panier = [
+            [
+                'id_commande' => '1',
+                'id_produit' => '1',
+                'quantite' => 1
+            ]
+        ];
         DB::table('panier')->delete();
         DB::table('panier')->truncate();
         foreach($panier as $row){

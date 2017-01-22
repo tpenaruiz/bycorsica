@@ -14,9 +14,10 @@ class CreateUserActivationsTable extends Migration
     public function up()
     {
         Schema::create('user_activations', function (Blueprint $table) {
+            $table->increments('id')->unsigned();
             $table->integer('users_id')->unsigned();
             $table->string('token')->index();
-            $table->timestamp(); // TODO Pourquoi timestamp() ne fonctionne pas ? et timestamp(created_at) fonctionne !
+            //$table->timestamp(); // TODO, (je crois c'est parce qu'il manquer le id en primary key faudrai tester) Pourquoi timestamp() ne fonctionne pas ? et timestamp(created_at) fonctionne !
         });
     }
 

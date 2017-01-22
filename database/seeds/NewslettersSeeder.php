@@ -12,16 +12,13 @@ class NewslettersSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $newsletters = [
-                [
-                    'id_langue' => '1',
-                    'email' => 'email.random'.$i.'@gmail.com',
-                    'status' => 'Actif'
-                ]
-            ];
-        }
-
+        $newsletters = [
+            [
+                'id_langue' => '1',
+                'email' => 'email.random@gmail.com',
+                'status' => 'Actif'
+            ]
+        ];
         DB::table('newsletters')->delete();
         DB::table('newsletters')->truncate();
         foreach($newsletters as $row){

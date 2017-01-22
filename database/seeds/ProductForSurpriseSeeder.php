@@ -12,15 +12,12 @@ class ProductForSurpriseSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $myProductForSurprise = [
-                [
-                    'id_user' => '1',
-                    'id_produit' => '1'
-                ]
-            ];
-        }
-
+        $myProductForSurprise = [
+            [
+                'id_user' => '1',
+                'id_produit' => '1'
+            ]
+        ];
         DB::table('productForSurprise')->delete();
         DB::table('productForSurprise')->truncate();
         foreach($myProductForSurprise as $row){

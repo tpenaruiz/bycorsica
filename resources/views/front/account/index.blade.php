@@ -114,7 +114,7 @@
 	    			<p>Veuillez ajouter une <a href="{{ url('account/address/create') }}">première adresse</a></p>
 	    		</div>
 	    		@endif
-   		
+
     			@foreach ($adresses as $ad)
     			<div id="adress_details_{{ $ad->id }}" class="adress_details col-md-4  col-sm-6 address-details" data-id="{{ $ad->id }}">
     				<div class="bloc">
@@ -122,7 +122,7 @@
 	    				<div class="bloc-details">
 	    					<div class="name">{{ \Lang::get('general.name') }} : {{ $ad->prenom }} {{ $ad->nom }} </div>
 		    				<div class="addres">{{ \Lang::get('general.address') }} : {{ $ad->adresse }}</div>
-		    				<div class="adress2">{{ \Lang::get('general.address2') }} : @if (isset($ad->adresse_suppl) && !empty($ad->adresse_suppl)) {{ $ad->adresse_suppl }} @else  Non renseigné @endif</div>
+		    				<div class="adress2">{{ \Lang::get('general.address2') }} : {{$ad->adresse_suppl !== NULL || !empty($ad->adresse_suppl) ? $ad->adresse_suppl : 'Non renseigné' }} </div>
 		    				<div class="cpville">{{ \Lang::get('general.cpcity') }} : {{ $ad->villes->code_postal }} {{ $ad->villes->libelle }}</div>
 		    				<div class="country">{{ \Lang::get('general.country') }} : {{ $ad->pays->nom_fr_fr }}</div>
 		    				<div class="phone">{{ \Lang::get('general.phone') }} : @if (isset($ad->telephone)) {{ $ad->telephone }} @else  Non renseigné @endif</div>
@@ -131,7 +131,7 @@
 
 	    				</div>
 	    				<div class="bloc-btn">
-	    					<div class="row">		    					
+	    					<div class="row">
 	    						<div class="form-group col-xs-5 col-xs-offset-1">
 									<a href="{{ url('account/address/update/'.$ad->id) }}" class="btn btn-success btn-block">
                                         <i class="fa fa-refresh fa-lg" aria-hidden="true"></i> &nbsp Update
@@ -141,10 +141,10 @@
 	    							{!! Form::open(['method' => 'DEL', 'id'=>'form_address_destroy', 'route'=>['account.address.destroy', ':ID']]) !!}
 	    								<a href="#" class="btn_remove btn btn-danger btn-block">
 	                                        <i class="fa fa-trash" aria-hidden="true"></i> &nbsp Delete
-	                                    </a>	                       
+	                                    </a>
 	    							{!! Form::close() !!}
 	    						</div>
-    						</div>		    					
+    						</div>
     					</div>
 	    			</div>
     			</div>

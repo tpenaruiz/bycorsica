@@ -12,16 +12,13 @@ class CharteQSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $legals = [
-                [
-                    'id_langue' => '1',
-                    'title' => 'Titre '.$i,
-                    'contenue' => 'Contenue '.$i
-                ]
-            ];
-        }
-
+        $legals = [
+            [
+                'id_langue' => '1',
+                'title' => 'Titre ',
+                'contenue' => 'Contenue '
+            ]
+        ];
         DB::table('charteQ')->delete();
         DB::table('charteQ')->truncate();
         foreach($legals as $row){

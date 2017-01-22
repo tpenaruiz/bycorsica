@@ -92,7 +92,7 @@
                                             <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}">
                                                 <td class="image"><a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->mediaLibelle}}" title="{{$row->mediaLibelle}}"></a></td>
                                                 <td>
-                                                    <div>{{$row->nom}}</div>
+                                                    <div>{{$row->produitNom}}</div>
                                                     <div>{{$row->prix}} &euro;</div>
                                                 </td>
                                                 {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}

@@ -37,6 +37,14 @@
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
+
+            <div>
+                @include('admin.layout.error')
+                @include('admin.layout.errors_request')
+                @include('admin.layout.success')
+                <div id="message_info"></div>
+            </div>
+
             <!-- Header Haut -->
             <header class="main-header">
                 @include('admin.layout.header')
