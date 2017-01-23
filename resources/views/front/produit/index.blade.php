@@ -1,6 +1,15 @@
 @extends('front.layout.default')
 @section('content')
 
+
+
+<script type="text/javascript">
+    
+</script>
+
+
+
+
 <div class="container">
     <!-- Breadcrumbs -->
     @include('front.blocks.breadcrumbs')
@@ -40,7 +49,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="bloc">
-                                <h3 class="price"><span>{{ str_replace('.', ',', $produit->prix) }}</span></h3>
+                                <h3 class="price"><span>{{ str_replace('.', ',', $produit->prixttc) }}</span></h3>
 
                                 <div class="qte">
                                     {{--Form::open(['method' => 'post', 'url' => route('produit.store', 1)])--}}

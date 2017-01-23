@@ -101,6 +101,48 @@ $(document).ready(function(){
     $('.del_qte').on('click', function(){
         let newVal = parseInt($('._inputQte').val()) - 1;
         $('._inputQte').val(newVal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // Calcul du nouveau prix
+        let prix = $(".price span").html();
+        let nb = $('._inputQte').val();
+        let newPrix = (prix/(nb*1))*nb;
+        console.log(newPrix);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
+
     })
 
     // On ajoute +1 au value du input

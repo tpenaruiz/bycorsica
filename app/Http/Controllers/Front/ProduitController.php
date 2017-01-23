@@ -15,7 +15,7 @@ class ProduitController extends Controller
 
         $produit = \DB::table('produits')
         		->join('tva', 'produits.id_tva', '=', 'tva.id')
-        		->select('produits.id', 'produits.nom', 'produits.description', \DB::raw('sum(produits.prix+(produits.prix*tva.valeur)/100) AS prix'))
+        		->select('produits.id', 'produits.nom', 'produits.description', \DB::raw('produits.prix+(produits.prix*tva.valeur)/100 AS prixttc'))
         		->where('produits.id', '=', $produit->id)
         		->first(); 
 
