@@ -97,7 +97,9 @@ Route::post('account/address/update/{addresse}', ['as' => 'account.address.updat
 Route::get('account/address/create', ['as' => 'account.address.create', 'uses' => 'Front\AccountController@addressCreate']);
 Route::post('account/address/store', ['as' => 'account.address.store', 'uses' => 'Front\AccountController@addressStore']);
 Route::delete('account/address/destroy/{adresse}', ['as' => 'account.address.destroy', 'uses' => 'Front\AccountController@addressDestroy']);
-				
+
+Route::delete('account/liste_cadeaux/destroy/{list_cadeaux}', ['as' => 'account.list_cadeaux.destroy', 'uses' => 'Front\AccountController@list_cadeauxDestroy']);
+
 /**
  * Panier
  */
