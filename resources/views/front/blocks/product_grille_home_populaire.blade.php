@@ -7,7 +7,7 @@
             <div class="description">
                 <h3 class="title">{{$row->nom}}</h3>
                 <div class="libelle">{{$row->description}}</div>
-                <div class="price" style="">{{Lang::get('general.price')}} {{$row->prix}} &euro;</div>
+                <div class="price" style="">{{Lang::get('general.price')}} {{$row->prixttc}} &euro;</div>
                 <div>
                     <a href="{{url('produit/'.$row->id_produit)}}" class="product-link">{{Lang::get('general.detail')}}</a>
                     <a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart_{{$row->id_produit}}">{{Lang::get('general.addBasket')}}</a>

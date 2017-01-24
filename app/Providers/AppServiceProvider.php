@@ -43,7 +43,7 @@ class AppServiceProvider extends ServiceProvider
                 ->join('tva', 'produits.id_tva', '=', 'tva.id')
                 ->select(\DB::raw('sum(produits.prix+(produits.prix*tva.valeur)/100) as prixtotalttc'))
                 ->where('ip', '=', $myIp)
-                ->first();          
+                ->first();
 
             $view->with(compact('myPurchase', 'myPurchasePriceTTC'));
         });

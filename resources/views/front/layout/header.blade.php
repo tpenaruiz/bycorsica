@@ -89,7 +89,7 @@
                                 <table class="table table-condensed">
                                     <tbody>
                                         @foreach($myPurchase as $row)
-                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}">
+                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}" data-prixttc = "{{$row->prixttc}}">
                                                 <td class="image"><a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->mediaLibelle}}" title="{{$row->mediaLibelle}}"></a></td>
                                                 <td>
                                                     <div>{{$row->produitNom}}</div>
@@ -110,7 +110,7 @@
                             <div class="table-responsive">
                                 <table class="table table-condensed">
                                     <tbody>
-                                        <tr> 
+                                        <tr id="prixtotalttc" data-prixtotalttc="{{ $myPurchasePriceTTC->prixtotalttc }}"> 
                                             <td style="text-align: right; border: 0px">Total de la commande :</td>
                                             <td style="text-align: left; border: 0px">{{ $myPurchasePriceTTC->prixtotalttc }} euros</td>
                                         </tr>
