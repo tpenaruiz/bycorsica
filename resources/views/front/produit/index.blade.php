@@ -11,7 +11,7 @@
                     <div class="wrapper">
                         <div class="preview col-md-3">
                             <div class="preview-pic tab-content">
-                                <div class="tab-pane active" id="pic-1"><img class="image_product" src="http://bycorsica.fr/324-tm_thickbox_default/tapenade-noire-olives-noires-apero.jpg"/>
+                                <div class="tab-pane active" id="pic-1"><img class="image_product" src="{{ asset($produit->chemin) }}" alt="{{$produit->nom}}" title="{{$produit->nom}}" />
                                 </div>
                             </div>
                             <br>
@@ -40,17 +40,17 @@
                         </div>
                         <div class="col-md-4">
                             <div class="bloc">
-                                <h3 class="price"><span>{{ str_replace('.', ',', $produit->prix) }}</span></h3>
+                                <h3 class="price" data-price="{{$produit->prixttc}}"><span>{{ str_replace('.', ',', $produit->prixttc) }}</span></h3>
 
                                 <div class="qte">
                                     {{--Form::open(['method' => 'post', 'url' => route('produit.store', 1)])--}}
-                                    {!! Form::number('qte', '1', array('class'=>'_inputQte', 'name'=>'qte', 'placeholder' => '1')) !!}
+                                    {!! Form::text('qte', '1', array('class'=>'_inputQte', 'name'=>'qte', 'placeholder' => '1')) !!}
                                     <button id="del_qte" class="del_qte"> -</button>
                                     <button id="add_qte" class="add_qte"> +</button>
                                     {{--Form::close()--}}
                                 </div>
                                 <div class="panier">
-                                    <a class="ajax_panier"><span><i class="fa fa-shopping-cart fa-lg"></i>Ajouter au panier</span></a>
+                                    <a href="" class="ajax_panier" data-toggle="modal" data-target="#add_produc_cart_{{$produit->id}}"><span><i class="fa fa-shopping-cart fa-lg"></i>{{Lang::get('general.addBasket')}}</span></a>
                                 </div>
                                 <div class="cadeau">
                                     <a class="ajax_cadeau"><span><i class="fa fa-heart-o fa-lg"></i>Ajouter à ma liste de cadeaux</span></a>
@@ -151,6 +151,33 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Modal Ajouter au panier-->
+<div class="modal fade product-grille-modal" id="add_produc_cart_{{$produit->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">{{Lang::get('general.addArticBasket')}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1"><img src="{{ asset($produit->chemin) }}" class="img-responsive" alt="{{$produit->nom}}" title="{{$produit->nom}}" /></div>
+                    <div class="col-md-8 col-sm-8 col-xs-8"><h4>{{$produit->nom}} - {{Lang::get('general.price')}} {{$produit->prixttc}} &euro;</h4></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                {!! Form::open(['route'=>['searchPost.addBasketInRedirectHome', $produit->id]]) !!}
+                <button type="submit" style="float: right;" class="btn btn-default" value="{{$produit->id}}">{{Lang::get('general.continueAchat')}}</button>
+                {!! Form::close() !!}
+
+                {!! Form::open(['route'=>['searchPost.addBasketInRedirectBasket', $produit->id]]) !!}
+                <button type="submit" style="float: left;" class="btn btn-primary" value="{{$produit->id}}">{{Lang::get('general.commander')}}</button>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

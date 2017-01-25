@@ -73,7 +73,11 @@ $(document).ready(function(){
         let id = row.data('id');
         let form = $('#form-del');
         let url = form.attr('action').replace(':PURCHASE_ID', id);
-        let data = form.serialize();
+        let data = form.serialize(); 
+
+        let prixttc = parseFloat($(this).parents('tr').data('prixttc'));
+        let prixtotalttc = parseFloat($('#prixtotalttc').data('prixtotalttc'));
+        let newprixtotalttc = Number(Math.round((prixtotalttc - prixttc)+'e'+2)+'e-'+2);
 
         $.ajax({
             url:url,
@@ -82,9 +86,18 @@ $(document).ready(function(){
             success: function(result){
                 // Efface ligne du tableau
                 $('.purchaseLinter_'+id).fadeOut();
+                // Mise à jour du prix totat ttc
+                $('#prixtotalttc td:last').html(newprixtotalttc);
+
+
+
+                $('#prixtotalttc').data('prixtotalttc', newprixtotalttc);
+
+
 
                 // Affichage du message avec lib Notif.js
                 $('#message_info').append(notie.alert(3, result.message, 5));
+
             },
             error: function(){
                 sweetAlert('Oups...', 'Une erreur est survenue', 'error');
@@ -99,14 +112,32 @@ $(document).ready(function(){
      */
     // On retire -1 au value du input
     $('.del_qte').on('click', function(){
-        let newVal = parseInt($('._inputQte').val()) - 1;
-        $('._inputQte').val(newVal);
+        let val = parseInt($('._inputQte').val());
+        if (val>1) {
+            let newVal = val - 1;
+            // Calcul du nouveau prix
+            let prix = parseFloat($('.price').data('price'));
+            let newPrix = (prix/val)*newVal;
+            let newPrixFinal = Number(Math.round(newPrix+'e'+2)+'e-'+2);
+            // Update quantité, prix et data-price
+            $('._inputQte').val(newVal);
+            $('.price span').html(newPrixFinal);
+            $('.price').data('price', newPrixFinal);
+        }
     })
 
     // On ajoute +1 au value du input
     $('.add_qte').on('click', function(){
-        let newVal = parseInt($('._inputQte').val()) +1;
+        let val = parseInt($('._inputQte').val());
+        let newVal = val + 1;
+        // Calcul du nouveau prix
+        let prix = parseFloat($('.price').data('price'));
+        let newPrix = (prix/val)*newVal;
+        let newPrixFinal = Number(Math.round(newPrix+'e'+2)+'e-'+2);
+        // Update quantité, prix et data-price
         $('._inputQte').val(newVal);
+        $('.price span').html(newPrixFinal);
+        $('.price').data('price', newPrixFinal);
     })
 
     /**

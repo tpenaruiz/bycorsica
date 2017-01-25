@@ -89,11 +89,11 @@
                                 <table class="table table-condensed">
                                     <tbody>
                                         @foreach($myPurchase as $row)
-                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}">
+                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}" data-prixttc = "{{$row->prixttc}}">
                                                 <td class="image"><a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->mediaLibelle}}" title="{{$row->mediaLibelle}}"></a></td>
                                                 <td>
                                                     <div>{{$row->produitNom}}</div>
-                                                    <div>{{$row->prix}} &euro;</div>
+                                                    <div>{{$row->prixttc}} &euro;</div>
                                                 </td>
                                                 {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}
                                                     <td>
@@ -110,17 +110,9 @@
                             <div class="table-responsive">
                                 <table class="table table-condensed">
                                     <tbody>
-                                        <tr> 
-                                            <td style="text-align: right; border: 0px">Total des achats :</td>
-                                            <td style="text-align: left; border: 0px">? euros</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: right; border: 0px">Total frais de livraison :</td>
-                                            <td style="text-align: left; border: 0px">? euros</td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: right; border: 0px"><h4>Total de la commande :</h4></td>
-                                            <td style="text-align: left; border: 0px"><h4>? euros</h4></td>
+                                        <tr id="prixtotalttc" data-prixtotalttc="{{ $myPurchasePriceTTC->prixtotalttc }}"> 
+                                            <td style="text-align: right; border: 0px">Total de la commande :</td>
+                                            <td style="text-align: left; border: 0px">{{ $myPurchasePriceTTC->prixtotalttc }} euros</td>
                                         </tr>
                                     </tbody>
                                 </table>
