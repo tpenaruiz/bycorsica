@@ -88,13 +88,7 @@ $(document).ready(function(){
                 $('.purchaseLinter_'+id).fadeOut();
                 // Mise à jour du prix totat ttc
                 $('#prixtotalttc td:last').html(newprixtotalttc);
-
-
-
                 $('#prixtotalttc').data('prixtotalttc', newprixtotalttc);
-
-
-
                 // Affichage du message avec lib Notif.js
                 $('#message_info').append(notie.alert(3, result.message, 5));
 
@@ -156,6 +150,37 @@ $(document).ready(function(){
         let newVal = parseInt($('.cart_quantity_input').val()) +1;
         $('.cart_quantity_input').val(newVal);
     })
+
+    /**
+     * Page Basket
+     * Button (x)
+     * Delete a product
+     */
+    // On supprime un produit
+    $('.cart_quantity_delete').on('click', function(e){
+        e.preventDefault();
+        let row = $(this).parents('tr');
+        let idpurchase = row.data('idpurchase');
+        let form = $('#form-cart-delete');
+        let url = form.attr('action').replace(':PURCHASE_ID', idpurchase);
+        let data = form.serialize();
+
+        $.ajax({
+            url:url,
+            type:'POST',
+            data:data,
+            success: function(result){
+                // Efface ligne du tableau
+                $('.cart_'+idpurchase).fadeOut();
+                // Affichage du message avec lib Notif.js
+                $('#message_info').append(notie.alert(3, result.message, 5));
+
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
 
     /**
      * Page Basket

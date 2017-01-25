@@ -80,7 +80,7 @@
                 </li>
 
                 <!-- Panier au survol faire apparaitre une tooltip -->
-                <li id="icoPanierAjax"><a href="">{{Lang::get('general.basket')}}<span class="badge">{{count($myPurchase)}}</span></a></li>
+                <li id="icoPanierAjax"><a href="{{ url('/basket') }}">{{Lang::get('general.basket')}}<span class="badge">{{count($myPurchase)}}</span></a></li>
 
                 @if(count($myPurchase) > 0)
                     <div class="toolt_basket">
