@@ -12,16 +12,13 @@ class MyPurchaseSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $myPurchase = [
-                [
-                    'ip' => '192.168.1.15',
-                    'id_produit' => '1',
-                    'quantite' => $i
-                ]
-            ];
-        }
-
+        $myPurchase = [
+            [
+                'ip' => '192.168.1.15',
+                'id_produit' => '1',
+                'quantite' => 1
+            ]
+        ];
         DB::table('myPurchase')->delete();
         DB::table('myPurchase')->truncate();
         foreach($myPurchase as $row){

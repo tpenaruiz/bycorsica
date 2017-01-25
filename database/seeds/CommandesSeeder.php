@@ -12,23 +12,20 @@ class CommandesSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $commandes = [
-                [
-                    'id_user' => '1',
-                    'id_tva' => '1',
-                    'id_produit' => '1',
-                    'reference' => '000162'.$i,
-                    'montant' => $i,
-                    'status' => 'En cours'
-                ]
-            ];
-
-            DB::table('commandes')->delete();
-            DB::table('commandes')->truncate();
-            foreach($commandes as $row){
-                \App\Commandes::create($row);
-            }
+        $commandes = [
+            [
+                'id_user' => '1',
+                'id_tva' => '1',
+                'id_produit' => '1',
+                'reference' => '000162',
+                'montant' => 1,
+                'status' => 'En cours'
+            ]
+        ];
+        DB::table('commandes')->delete();
+        DB::table('commandes')->truncate();
+        foreach($commandes as $row){
+            \App\Commandes::create($row);
         }
     }
 }

@@ -43,16 +43,12 @@
 		<!-- Tab panes -->
 		<div class="tab-content home-product-content">
 			<div role="tabpanel" class="tab-pane active" id="grille">
-				@foreach($data as $row)
-					@include('front.blocks.product_grille_sousCategory')
-				@endforeach
+				@include('front.blocks.product_grille_sousCategory')
 			</div>
 
 			<div role="tabpanel" class="tab-pane" id="liste">
 				<div class="col-md-10 col-md-offset-1">
-					@foreach($data as $row)
-						@include('front.blocks.product_liste_sousCategory')
-					@endforeach
+					@include('front.blocks.product_liste_sousCategory')
 				</div>		
 			</div>
 		</div>

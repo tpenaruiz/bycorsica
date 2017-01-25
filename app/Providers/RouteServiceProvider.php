@@ -25,7 +25,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         parent::boot();
 
-        Route::model('user', 'App\Users', function(){
+        Route::model('users', 'App\Users', function(){
             App::abort(500);
         });
 
@@ -51,6 +51,10 @@ class RouteServiceProvider extends ServiceProvider
 
         Route::model('productForSurprise', 'App\ProductForSurprise', function(){
             App::abort(500);
+        });
+
+        Route::model('produit', 'App\Produits', function(){
+            App::abord(500);
         });
     }
 

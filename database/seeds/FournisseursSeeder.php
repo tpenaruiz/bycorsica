@@ -12,17 +12,14 @@ class FournisseursSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++) {
-            $fournisseurs = [
-                [
-                    'id_fabriquant' => '1',
-                    'id_langue' => '1',
-                    'nom' => 'Nom '.$i,
-                    'description' => 'Description '.$i
-                ]
-            ];
-        }
-
+        $fournisseurs = [
+            [
+                'id_fabriquant' => '1',
+                'id_langue' => '1',
+                'nom' => 'Nom ',
+                'description' => 'Description '
+            ]
+        ];
         DB::table('fournisseurs')->delete();
         DB::table('fournisseurs')->truncate();
         foreach($fournisseurs as $row){

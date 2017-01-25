@@ -22,7 +22,7 @@ class CreateAdressesTable extends Migration
             $table->string('libelle');
             $table->string('prenom');
             $table->string('nom');
-            $table_>string('company')->nullable();
+            $table->string('company')->nullable();
             $table->string('adresse');
             $table->string('adresse_suppl')->nullable();
             $table->string('telephone');

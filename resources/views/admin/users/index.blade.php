@@ -92,7 +92,7 @@
                                                         class="glyphicon glyphicon-edit"></span> Edit</a>
 
                                             <div id="del_<?=$row->id?>">
-                                                {!! Form::open(['route'=>['users.destroy', ':USERS_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}
+                                                {!! Form::open(['route'=>['users.del', ':USERS_ID'], 'method' => 'DEL', 'id'=>'form-del']) !!}
                                                 <a href="#" class="btn_del btn btn-danger btn-xs">
                                                     <span class="glyphicon glyphicon-remove"></span>
                                                     Del

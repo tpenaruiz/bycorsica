@@ -25,6 +25,7 @@
     Page Produit
     Page Categorie
     Page Account
+    Page Contact
     Page CGU
     Page CGV
     Page Mentions Legal
@@ -224,6 +225,7 @@ label {
     vertical-align: middle;
     font-size: 1.1em;
     border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 .tooltip_basket .table>tbody>tr:first-child>td {
@@ -1963,9 +1965,6 @@ label {
     color:black;
 }
 
-
-
-
 .update-address-content {
     background-color: #222;
     margin-bottom: 20px;
@@ -1993,16 +1992,25 @@ label {
 }
 
 
+/*
+|--------------------------------------------------------------------------
+| Page Contact
+|--------------------------------------------------------------------------
+*/
 
+.contact-content {
+    background-color: #222;
+    margin-bottom: 20px;
+}
 
+.contact-content .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
 
-
-
-
-
-
-
-
+.contact-content .btn {
+    margin-top: 40px;
+}
 
 
 /*

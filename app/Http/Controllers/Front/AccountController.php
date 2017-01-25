@@ -9,6 +9,7 @@ use App\Http\Requests\AddressFrontRequest;
 use Carbon\Carbon;
 use App\Adresses;
 use Auth;
+use Illuminate\Support\Facades\Lang;
 
 class AccountController extends Controller
 {
@@ -21,8 +22,16 @@ class AccountController extends Controller
     	$user = Auth::user();
         $pays = \App\Pays::pluck('nom_fr_fr', 'id');
         $ville = \App\Villes::pluck('libelle', 'id');
-    	$adresses = \App\Adresses::where('id_user', '=', Auth::user()->id)->get();    
-        
+    	$adresses = \App\Adresses::where('id_user', '=', Auth::user()->id)->get();
+
+        $listCadeaux = \DB::table('ProductForSurprise')
+            ->join('produits', 'ProductForSurprise.id_produit', '=', 'produits.id')
+            ->join('medias', 'produits.id_media', '=', 'medias.id')
+            ->join('users', 'ProductForSurprise.id_user', '=', 'users.id')
+            ->join('tva', 'produits.id_tva', '=', 'tva.id')
+            ->select('*', 'produits.id AS idProd', 'medias.libelle AS mediaLibelle', 'ProductForSurprise.id AS ProductForSurpriseId', 'users.id AS idUser', 'produits.nom AS produitNom', 'produits.description AS produitDescription')
+            ->get();
+
         // AJAX
         $list_pays = \App\Pays::orderBy('created_at', 'desc')->get();
         $list_ville = \App\Villes::with('pays')->orderBy('created_at', 'desc')->get();
@@ -33,7 +42,7 @@ class AccountController extends Controller
             ]);
         }
 
-        return view('front.account.index', compact('user', 'ville', 'pays', 'adresses'));        
+        return view('front.account.index', compact('user', 'ville', 'pays', 'adresses', 'listCadeaux'));
     }
 
     public function infosUpdate(UsersFrontRequest $request){
@@ -175,4 +184,19 @@ class AccountController extends Controller
 
         return redirect()->route('account');
     }
+
+    public function list_cadeauxDestroy(Request $request ,$list_cadeaux){
+        $maList = \App\ProductForSurprise::find($list_cadeaux);
+        $maList->delete();
+
+        // AJAX
+        $message_list_cadeaux = Lang::get('general.messageDeleteListCadeaux');
+        if($request->ajax()){
+            return response()->json([
+                'message_list_cadeaux' => $message_list_cadeaux
+            ]);
+        }
+        return redirect()->route('account');
+    }
+
 }

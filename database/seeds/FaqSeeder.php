@@ -12,17 +12,14 @@ class FaqSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $faq = [
-                [
-                    'id_langue' => '1',
-                    'question' => 'Question '.$i,
-                    'reponse' => 'Reponse '.$i,
-                    'ordre' => $i
-                ]
-            ];
-        }
-
+        $faq = [
+            [
+                'id_langue' => '1',
+                'question' => 'Question ',
+                'reponse' => 'Reponse ',
+                'ordre' => 1
+            ]
+        ];
         DB::table('faq')->delete();
         DB::table('faq')->truncate();
         foreach($faq as $row){

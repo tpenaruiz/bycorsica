@@ -29,6 +29,7 @@ Route::get('/administration', ['as' => 'administration', 'uses' => 'Admin\AdminC
  * Status Innactif - Actif (Ajax-)
  */
 Route::resource('administration/users', 'Admin\UsersController');
+Route::delete('administration/users/delete/{users}', ['as' => 'users.del', 'uses' => 'Admin\UsersController@destroyUser']);
 Route::post('administration/users/search', ['as' => 'users.search', 'uses' => 'Admin\UsersController@search']);
 Route::post('administration/users/statusOff/{users}', ['as' => 'users.statusOff', 'uses' => 'Admin\UsersController@statusOff']);
 Route::post('administration/users/statusOn/{users}', ['as' => 'users.statusOn', 'uses' => 'Admin\UsersController@statusOn']);
@@ -96,7 +97,9 @@ Route::post('account/address/update/{addresse}', ['as' => 'account.address.updat
 Route::get('account/address/create', ['as' => 'account.address.create', 'uses' => 'Front\AccountController@addressCreate']);
 Route::post('account/address/store', ['as' => 'account.address.store', 'uses' => 'Front\AccountController@addressStore']);
 Route::delete('account/address/destroy/{adresse}', ['as' => 'account.address.destroy', 'uses' => 'Front\AccountController@addressDestroy']);
-				
+
+Route::delete('account/liste_cadeaux/destroy/{list_cadeaux}', ['as' => 'account.list_cadeaux.destroy', 'uses' => 'Front\AccountController@list_cadeauxDestroy']);
+
 /**
  * Panier
  */
@@ -113,6 +116,12 @@ Route::get('/commande/phase1', ['as' => 'commandePhase1', 'uses' => 'Front\Comma
 Route::get('/commande/phase2', ['as' => 'commandePhase2', 'uses' => 'Front\CommandeController@stepTwo']);
 Route::get('/commande/phase3', ['as' => 'commandePhase3', 'uses' => 'Front\CommandeController@stepThree']);
 Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\CommandeController@stepFour']);
+
+/**
+ * Contact
+ */
+Route::get('/contact', ['as' => 'contact', 'uses' => 'Front\ContactController@index']);
+Route::post('/contact', ['as' => 'contact', 'uses' => 'Front\ContactController@post']);
 
 /**
  * Legals

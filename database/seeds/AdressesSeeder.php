@@ -12,23 +12,40 @@ class AdressesSeeder extends Seeder
      */
     public function run()
     {
-        for($i=1;$i<=10;$i++){
-            $adresses = [
-                [
-                    'id_user' => '1',
-                    'id_pays' => '1',
-                    'id_ville' => '1',
-                    'libelle' => 'Lorem Ipsum',
-                    'adresse' => 'Adresse '.$i,
-                    'adresse_suppl' => 'Adresse suppl '.$i,
-                    'telephone' => '0612345789',
-                    'telephone2' => '0112345789',
-                    'complement' => 'Complement '.$i,
-                    'status' => 'Actif'
-                ]
-            ];
-        }
-
+        $adresses = [
+            [
+                'id_user' => '1',
+                'id_pays' => '1',
+                'id_ville' => '1',
+                'code_postal' => '92800',
+                'libelle' => 'Lorem Ipsum',
+                'prenom' => 'Toto',
+                'nom' => 'Tata',
+                'company' => 'SocieteLa',
+                'adresse' => 'Adresse ',
+                'adresse_suppl' => 'Adresse suppl ',
+                'telephone' => '0612345789',
+                'telephone2' => '0112345789',
+                'complement' => 'Complement ',
+                'status' => 'Actif'
+            ],
+            [
+                'id_user' => '1',
+                'id_pays' => '1',
+                'id_ville' => '1',
+                'code_postal' => '92800',
+                'libelle' => 'Lorem Ipsum',
+                'prenom' => 'Toto',
+                'nom' => 'Tata',
+                'company' => 'SocieteLa',
+                'adresse' => 'Adresse ',
+                'adresse_suppl' => 'Adresse suppl ',
+                'telephone' => '0612345789',
+                'telephone2' => '0112345789',
+                'complement' => 'Complement ',
+                'status' => 'Actif'
+            ]
+        ];
         DB::table('adresses')->delete();
         DB::table('adresses')->truncate();
         foreach($adresses as $row){

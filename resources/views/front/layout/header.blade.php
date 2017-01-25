@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#"><i class="fa fa-truck" aria-hidden="true"></i> Livraison <span class="sr-only">(current)</span></a></li>
-                <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Contactez-nous</a></li>
+                <li><a href="{{ url('contact') }}"><i class="fa fa-phone" aria-hidden="true"></i> Contactez-nous</a></li>
             </ul>
             {!! Form::open(['method' => 'post', 'url' => route('searchPost.searchEngine'), 'class' => 'navbar-form navbar-left']) !!}
                 <div class="input-group">
@@ -89,11 +89,11 @@
                                 <table class="table table-condensed">
                                     <tbody>
                                         @foreach($myPurchase as $row)
-                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}">
+                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}" data-prixttc = "{{$row->prixttc}}">
                                                 <td class="image"><a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->mediaLibelle}}" title="{{$row->mediaLibelle}}"></a></td>
                                                 <td>
-                                                    <div>{{$row->nom}}</div>
-                                                    <div>{{$row->prix}} &euro;</div>
+                                                    <div>{{$row->produitNom}}</div>
+                                                    <div>{{$row->prixttc}} &euro;</div>
                                                 </td>
                                                 {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}
                                                     <td>
@@ -104,6 +104,16 @@
                                                 {!! Form::close() !!}
                                             </tr>
                                         @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <tbody>
+                                        <tr id="prixtotalttc" data-prixtotalttc="{{ $myPurchasePriceTTC->prixtotalttc }}"> 
+                                            <td style="text-align: right; border: 0px">Total de la commande :</td>
+                                            <td style="text-align: left; border: 0px">{{ $myPurchasePriceTTC->prixtotalttc }} euros</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

@@ -2,18 +2,21 @@
     @foreach($populaire as $row)
         <div class="col-md-3 col-xs-6 product-grille">
             <div class="image">
-                <a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->libelle}}" title="{{$row->libelle}}"></a>
+                <a href="{{url('produit/'.$row->id_produit)}}"><img src="{{ asset($row->chemin) }}" alt="{{$row->libelle}}" title="{{$row->libelle}}"></a>
             </div>
             <div class="description">
                 <h3 class="title">{{$row->nom}}</h3>
                 <div class="libelle">{{$row->description}}</div>
-                <div class="price" style="">{{Lang::get('general.price')}} {{$row->prix}} &euro;</div>
-                <div><a href="" class="product-link">{{Lang::get('general.detail')}}</a><a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart">{{Lang::get('general.addBasket')}}</a></div>
+                <div class="price" style="">{{Lang::get('general.price')}} {{$row->prixttc}} &euro;</div>
+                <div>
+                    <a href="{{url('produit/'.$row->id_produit)}}" class="product-link">{{Lang::get('general.detail')}}</a>
+                    <a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart_{{$row->id_produit}}">{{Lang::get('general.addBasket')}}</a>
+                </div>
             </div>
         </div>
 
         <!-- Modal Ajouter au panier-->
-        <div class="modal fade product-grille-modal" id="add_produc_cart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade product-grille-modal" id="add_produc_cart_{{$row->id_produit}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -27,12 +30,12 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        {!! Form::open(['route'=>['searchPost.addBasketInRedirectHome', $row->id]]) !!}
-                        <button type="submit" style="float: right;" class="btn btn-default" value="{{$row->id}}">{{Lang::get('general.continueAchat')}}</button>
+                        {!! Form::open(['route'=>['searchPost.addBasketInRedirectHome', $row->id_produit]]) !!}
+                        <button type="submit" style="float: right;" class="btn btn-default" value="{{$row->id_produit}}">{{Lang::get('general.continueAchat')}}</button>
                         {!! Form::close() !!}
 
-                        {!! Form::open(['route'=>['searchPost.addBasketInRedirectBasket', $row->id]]) !!}
-                        <button type="submit" style="float: left;" class="btn btn-primary" value="{{$row->id}}">{{Lang::get('general.commander')}}</button>
+                        {!! Form::open(['route'=>['searchPost.addBasketInRedirectBasket', $row->id_produit]]) !!}
+                        <button type="submit" style="float: left;" class="btn btn-primary" value="{{$row->id_produit}}">{{Lang::get('general.commander')}}</button>
                         {!! Form::close() !!}
                     </div>
                 </div>

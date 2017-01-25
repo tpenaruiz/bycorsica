@@ -22,7 +22,6 @@ class LanguesSeeder extends Seeder
                 'libelle' => 'English'
             ]
         ];
-
         DB::table('langues')->delete();
         DB::table('langues')->truncate();
         foreach($langues as $row){
