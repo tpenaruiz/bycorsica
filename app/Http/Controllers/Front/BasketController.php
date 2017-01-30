@@ -33,12 +33,9 @@ class BasketController extends Controller
         $myPurchasePriceTTC = \DB::table('myPurchase')
                 ->join('produits', 'myPurchase.id_produit', '=', 'produits.id')
                 ->join('tva', 'produits.id_tva', '=', 'tva.id')
-                // ->select(\DB::raw('sum(produits.prix+(produits.prix*tva.valeur)/100) as prixtotalttc'))
                 ->select(\DB::raw('sum((produits.prix+(produits.prix*tva.valeur)/100)*myPurchase.quantite) as prixtotalttc'))
                 ->where('ip', '=', $myIp)
                 ->first();
-
-        // dd($myPurchase);
         
         return view('front.basket.index')->with(compact('myPurchase', 'myPurchasePriceTTC'));
     }

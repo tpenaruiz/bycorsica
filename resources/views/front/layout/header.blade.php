@@ -95,6 +95,9 @@
                                                     <div>{{$row->produitNom}}</div>
                                                     <div>{{$row->prixttc}} &euro;</div>
                                                 </td>
+                                                <td>
+                                                    <span>X {{$row->quantite}}</span>
+                                                </td>
                                                 {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}
                                                     <td>
                                                         <a href="#" class="btn_del">

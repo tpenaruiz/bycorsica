@@ -120,6 +120,7 @@ $(document).ready(function(){
             $('._inputQte').val(newVal);
             $('.price span').html(newPrixFinal);
             $('.price').data('price', newPrixFinal);
+            $('#modal_qte').val(newVal);
         }
     })
 
@@ -135,6 +136,7 @@ $(document).ready(function(){
         $('._inputQte').val(newVal);
         $('.price span').html(newPrixFinal);
         $('.price').data('price', newPrixFinal);
+        $('#modal_qte').val(newVal);
     })
 
     /**
