@@ -24,7 +24,7 @@
                             </thead>
                             <tbody>
                                  @foreach($myPurchase as $row)
-                                <tr class="cart_{{$row->idPurchase}}" data-idpurchase="{{$row->idPurchase}}">                                 
+                                <tr id="purchase" class="cart_{{$row->idPurchase}}" data-idpurchase="{{$row->idPurchase}}">                                 
                                     <td class="cart_product">
                                         <a href=""><img
                                                     src="http://bycorsica.fr/324-tm_small_default/tapenade-noire-olives-noires-apero.jpg"
@@ -34,18 +34,20 @@
                                         <h4><a href="">{{$row->produitNom}}</a></h4><div class="break"></div>
                                         <p class="refPr">Référence : {{$row->reference}}</p>
                                     </td>
-                                    <td class="cart_price">
-                                        <p>{{$row->prixttc}}</p>
+                                    <td id="cart_price_{{$row->idPurchase}}" class="cart_price">
+                                        <p>{{$row->produitPrixTtc}}</p>
                                     </td>
-                                    <td class="cart_quantity">
-                                        <div class="cart_quantity_button">
-                                            <a class="cart_quantity_down"> - </a>
-                                            <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                            <a class="cart_quantity_up"> + </a>
-                                        </div>
-                                    </td>
-                                    <td class="cart_total">
-                                        <p>$59</p>
+                                    {!! Form::open(['route'=>['myPurchase.quantiteUpdate', ':PURCHASE_ID'], 'method' => 'POST', 'id' => 'form-cart-quantite-update-'.$row->idPurchase]) !!}
+                                        <td id="cart_quantity_{{$row->idPurchase}}" class="cart_quantity">
+                                            <div class="cart_quantity_button">
+                                                <a class="cart_quantity_down"> - </a>
+                                                <input id="cart_quantity_input_{{$row->idPurchase}}" class="cart_quantity_input" type="text" name="quantity" value="{{$row->quantite}}" autocomplete="off" size="2">
+                                                <a class="cart_quantity_up"> + </a>
+                                            </div>
+                                        </td>
+                                    {!! Form::close() !!}
+                                    <td id="cart_total_{{$row->idPurchase}}" class="cart_total">
+                                        <p>{{$row->prixProduitTotalTtc}}</p>
                                     </td>
                                     {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-cart-delete']) !!}
                                         <td class="cart_delete">
@@ -87,7 +89,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td class="cart_product">
+                                    <td id="cart_product_total" class="cart_product">
                                         <p>{{$myPurchasePriceTTC->prixtotalttc}}</p>
                                     </td>
                                     <td class="cart_price">

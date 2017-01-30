@@ -76,6 +76,7 @@ Route::post('/search/listSurprise/{produit}', ['as' => 'searchPost.addProductFor
 /**
  * Mes Achat, MyPurchase
  */
+Route::post('/myPurchase/quantiteUpdate/{myPurchase}', ['as' => 'myPurchase.quantiteUpdate', 'uses' => 'Front\MyPurchaseController@updateQuantite']);
 Route::post('/myPurchase/{myPurchase}', ['as' => 'myPurchase.destroy', 'uses' => 'Front\MyPurchaseController@destroy']);
 
 /**

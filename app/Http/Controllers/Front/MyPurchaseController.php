@@ -11,6 +11,19 @@ class MyPurchaseController extends Controller
     {
     }
 
+    public function updateQuantite(Request $request, $myPurchase){
+        $myPurchase->quantite = $request->quantity;
+        $myPurchase->save();
+
+        // AJAX
+        $message = \Lang::get('general.treatmentOk');
+        if($request->ajax()){
+            return response()->json([
+                'message' => $message
+            ]);
+        }
+    }
+
     public function destroy(Request $request, $myPurchase){
         $myPurchase->delete();
 
