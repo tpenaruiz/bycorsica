@@ -52,5 +52,7 @@ return [
     'message_placeholder' => 'message',
     'maListeDeCadeaux' => 'Voici votre listes de cadeaux',
     'messageDeleteListCadeaux'=> 'élement supprimer avec succès !',
-    'emptyListCadeaux' => 'Vous avez pour le moment aucun cadeaux dans votre liste'
+    'emptyListCadeaux' => 'Vous avez pour le moment aucun cadeaux dans votre liste',
+
+    'treatmentOk' => 'Treatment ok',
 ];

@@ -19,6 +19,7 @@ $(document).ready(function(){
     });
 
     /**
+     * Block Header Basket
      * Visualisation du compteur purchase en temps réel PHP / JS
      */
     //Parsing du string en Int
@@ -35,6 +36,7 @@ $(document).ready(function(){
     });
 
     /**
+     * Block Product
      * Add Product For Surprise AJAX
      */
     $('.btn_surpise').on('click', function(e){
@@ -65,6 +67,7 @@ $(document).ready(function(){
     });
 
     /**
+     * Block Header Basket
      * Delete purchase table raw AJAX
      */
     $('.btn_del').on('click', function(e){
@@ -88,13 +91,7 @@ $(document).ready(function(){
                 $('.purchaseLinter_'+id).fadeOut();
                 // Mise à jour du prix totat ttc
                 $('#prixtotalttc td:last').html(newprixtotalttc);
-
-
-
                 $('#prixtotalttc').data('prixtotalttc', newprixtotalttc);
-
-
-
                 // Affichage du message avec lib Notif.js
                 $('#message_info').append(notie.alert(3, result.message, 5));
 
@@ -146,16 +143,101 @@ $(document).ready(function(){
      * Delete or Add Quantity
      */
     // On retire -1 au value du input
+    // On met à jour la bdd et le prix
     $('.cart_quantity_down').on('click', function(){
-        let newVal = parseInt($('.cart_quantity_input').val()) - 1;
-        $('.cart_quantity_input').val(newVal);
+        let row = $(this).parents('tr');
+        let idpurchase = row.data('idpurchase');
+        let val = parseInt($('#cart_quantity_input_'+idpurchase).val());
+
+        if(val>1){
+            // Mise à jour de la quantité dans la vue
+            let newVal = val-1;
+            $('#cart_quantity_input_'+idpurchase).val(newVal);
+            // Mise à jour en bdd de la quantité, et mise à jour de la quantité, du prix total dans la vue
+            let form = $('#form-cart-quantite-update-'+idpurchase);
+            let url = form.attr('action').replace(':PURCHASE_ID', idpurchase);
+            let data = form.serialize();
+            
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                success: function(result){
+                    let prixProduitTotalTtc = parseFloat($('#cart_price_'+idpurchase).text())*newVal;
+                    let prixProdTotalTtc = Number(Math.round(prixProduitTotalTtc+'e'+2)+'e-'+2);
+                    $('#cart_total_'+idpurchase).children().text(prixProdTotalTtc);
+                    let prixProduitsTotalTtc = parseFloat($('#cart_product_total').children().text())-parseFloat($('#cart_price_'+idpurchase).text());
+                    let prixProdsTotalTtc = Number(Math.round(prixProduitsTotalTtc+'e'+2)+'e-'+2);
+                    $('#cart_product_total').children().text(prixProdsTotalTtc);
+                },
+                error: function(){
+                    sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+                }
+            })
+        }
     })
 
     // On ajoute +1 au value du input
+    // On met a jour la bdd et le prix
     $('.cart_quantity_up').on('click', function(){
-        let newVal = parseInt($('.cart_quantity_input').val()) +1;
-        $('.cart_quantity_input').val(newVal);
+        let row = $(this).parents('tr');
+        let idpurchase = row.data('idpurchase');
+        // Mise à jour de la quantité dans la vue
+        let newVal = parseInt($('#cart_quantity_input_'+idpurchase).val()) + 1;
+        $('#cart_quantity_input_'+idpurchase).val(newVal);
+        // Mise à jour en bdd de la quantité, et mise à jour de la quantité, du prix total dans la vue
+        let form = $('#form-cart-quantite-update-'+idpurchase);
+        let url = form.attr('action').replace(':PURCHASE_ID', idpurchase);
+        let data = form.serialize();
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function(result){                
+                let prixProduitTotalTtc = parseFloat($('#cart_price_'+idpurchase).text())*newVal;
+                let prixProdTotalTtc = Number(Math.round(prixProduitTotalTtc+'e'+2)+'e-'+2);
+                $('#cart_total_'+idpurchase).children().text(prixProdTotalTtc);
+                let prixProduitsTotalTtc = parseFloat($('#cart_product_total').children().text())+parseFloat($('#cart_price_'+idpurchase).text());
+                let prixProdsTotalTtc = Number(Math.round(prixProduitsTotalTtc+'e'+2)+'e-'+2);
+                $('#cart_product_total').children().text(prixProdsTotalTtc);
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        })
     })
+
+    /**
+     * Page Basket
+     * Button (x)
+     * Delete a product
+     */
+    // On supprime un produit
+    $('.cart_quantity_delete').on('click', function(e){
+        e.preventDefault();
+        let row = $(this).parents('tr');
+        let idpurchase = row.data('idpurchase');
+        let form = $('#form-cart-delete');
+        let url = form.attr('action').replace(':PURCHASE_ID', idpurchase);
+        let data = form.serialize();
+
+        $.ajax({
+            url:url,
+            type:'POST',
+            data:data,
+            success: function(result){
+                // Efface ligne du tableau
+                $('.cart_'+idpurchase).fadeOut();
+                // Affichage du message avec lib Notif.js
+                $('#message_info').append(notie.alert(3, result.message, 5));
+
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
 
     /**
      * Page Basket
