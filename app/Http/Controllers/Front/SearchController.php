@@ -41,6 +41,10 @@ class SearchController extends Controller
     /**
      * @param Produits $produit
      * @return $this
+     *
+     * On vérifie que le produit n'est pas déja existant dans le panier en fonction l'ip
+     * Si produit déja existant mise à jour de la quantité
+     * Si produit non existant on l'ajoute au panier
      */
     public function addBasketInRedirectHome(Request $request, Produits $produit){
         // Save Table MyPurchase
@@ -50,9 +54,25 @@ class SearchController extends Controller
         }else{
             $myPurchase->ip = $request->ip();
         }
-        $myPurchase->id_produit = $produit->id;
-        $myPurchase->quantite = 1;
-        $myPurchase->save();
+
+        // Gestion de la quantité
+        $quantite = (isset($request->modal_qte) && $request->modal_qte!=0) ? $request->modal_qte : 1;
+
+        // Vérification que le produit pas deja existant en bdd en fct ip
+        $existPurchase = $myPurchase::where('ip', '=', $myPurchase->ip)
+                            ->where('id_produit', '=', $produit->id)
+                            ->first();
+
+        // Si existant mise à jour de la quantité en bdd dans la table myPurchase
+        // Sinon ajout du produit en bdd dans la table myPurchase
+        if($existPurchase){
+            $existPurchase->quantite += $quantite;
+            $existPurchase->save(); 
+        }else{
+            $myPurchase->id_produit = $produit->id;
+            $myPurchase->quantite = $quantite;
+            $myPurchase->save();
+        }
 
         return redirect()->route('home');
     }
@@ -60,6 +80,10 @@ class SearchController extends Controller
     /**
      * @param Produits $produit
      * @return $this
+     *
+     * On vérifie que le produit n'est pas déja existant dans le panier en fonction l'ip
+     * Si produit déja existant mise à jour de la quantité
+     * Si produit non existant on l'ajoute au panier
      */
     public function addBasketInRedirectBasket(Request $request, Produits $produit){
         // Save Table MyPurchase
@@ -69,9 +93,25 @@ class SearchController extends Controller
         }else{
             $myPurchase->ip = $request->ip();
         }
-        $myPurchase->id_produit = $produit->id;
-        $myPurchase->quantite = 1;
-        $myPurchase->save();
+
+        // Gestion de la quantité
+        $quantite = (isset($request->modal_qte) && $request->modal_qte!=0) ? $request->modal_qte : 1;
+
+        // Vérification que le produit pas deja existant en bdd en fct ip
+        $existPurchase = $myPurchase::where('ip', '=', $myPurchase->ip)
+                            ->where('id_produit', '=', $produit->id)
+                            ->first();
+
+        // Si existant mise à jour de la quantité en bdd dans la table myPurchase
+        // Sinon ajout du produit en bdd dans la table myPurchase
+        if($existPurchase){
+            $existPurchase->quantite += $quantite;
+            $existPurchase->save(); 
+        }else{
+            $myPurchase->id_produit = $produit->id;
+            $myPurchase->quantite = $quantite;
+            $myPurchase->save();
+        }
 
         return redirect()->route('basket');
     }
