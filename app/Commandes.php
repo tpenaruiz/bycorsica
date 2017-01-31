@@ -12,7 +12,7 @@ class Commandes extends Model
     protected $fillable = [
         'id_user',
         'id_tva',
-        'id_produit',
+        'id_commande_produit_pivot',
         'reference',
         'montant',
         'status'
@@ -36,8 +36,8 @@ class Commandes extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function produits(){
-        return $this->belongsTo('\App\Produits', 'id_produit');
+    public function commandes_produits_pivot(){
+        return $this->belongsToMany('\App\Commandes_Produits_Pivot', 'id_commande_produit_pivot');
     }
 
     /**

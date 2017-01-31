@@ -13,7 +13,7 @@ class VillesSeeder extends Seeder
     {
         // TODO Donnée Générer depuis un import sql externe, (trouver une table complète des ville IMPORTANT)
 
-        $ville = [
+        /*$ville = [
             [
                 'id_pays' => '75',
                 'libelle' => 'Paris',
@@ -24,6 +24,6 @@ class VillesSeeder extends Seeder
         DB::table('villes')->truncate();
         foreach($ville as $row){
             \App\Users::create($row);
-        }
+        }*/
     }
 }
