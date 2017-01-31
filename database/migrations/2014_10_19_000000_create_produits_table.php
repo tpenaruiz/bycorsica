@@ -20,6 +20,7 @@ class CreateProduitsTable extends Migration
             $table->integer('id_tva')->unsigned();
             $table->integer('id_fournisseur')->unsigned();
             $table->integer('id_langue')->unsigned();
+            $table->string('reference');
             $table->string('nom');
             $table->text('description');
             $table->float('prix');

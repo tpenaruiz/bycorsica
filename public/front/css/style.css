@@ -225,6 +225,7 @@ label {
     vertical-align: middle;
     font-size: 1.1em;
     border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 .tooltip_basket .table>tbody>tr:first-child>td {

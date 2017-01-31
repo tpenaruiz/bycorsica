@@ -1,5 +1,6 @@
 @extends('front.layout.default')
 @section('content')
+
     <div class="container">
         @include('front.blocks.breadcrumbs')
 
@@ -12,72 +13,49 @@
                     <div class="col-md-12 table-responsive cart_info1">
                         <table class="table table-condensed">
                             <thead>
-                            <tr class="cart_menu">
-                                <td class="image">Produit</td>
-                                <td class="description">Description</td>
-                                <td class="">Prix</td>
-                                <td class="quantity">Quantity</td>
-                                <td class="total">Total</td>
-                                <td><span><i class="fa fa-trash-o fa-lg"></i></span></td>
-                            </tr>
+                                <tr class="cart_menu">
+                                    <td class="image">Produit</td>
+                                    <td class="description">Description</td>
+                                    <td class="">Prix</td>
+                                    <td class="quantity">Quantity</td>
+                                    <td class="total">Total</td>
+                                    <td><span><i class="fa fa-trash-o fa-lg"></i></span></td>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td class="cart_product">
-                                    <a href=""><img
-                                                src="http://bycorsica.fr/324-tm_small_default/tapenade-noire-olives-noires-apero.jpg"
-                                                alt=""></a>
-                                </td>
-                                <td class="cart_description">
-                                    <h4><a href="">TAPENADE NOIRE</a></h4><div class="break"></div>
-                                    <p class="refPr">Référence : BC_AP_0002</p>
-                                </td>
-                                <td class="cart_price">
-                                    <p>$59</p>
-                                </td>
-                                <td class="cart_quantity">
-                                    <div class="cart_quantity_button">
-                                        <a class="cart_quantity_down"> - </a>
-                                        <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                               autocomplete="off" size="2">
-                                        <a class="cart_quantity_up"> + </a>
-                                    </div>
-                                </td>
-                                <td class="cart_total">
-                                    <p>$59</p>
-                                </td>
-                                <td class="cart_delete">
-                                    <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="cart_product">
-                                    <a href=""><img
-                                                src="http://bycorsica.fr/324-tm_small_default/tapenade-noire-olives-noires-apero.jpg"
-                                                alt=""></a>
-                                </td>
-                                <td class="cart_description">
-                                    <h4><a href="">TAPENADE NOIRE</a></h4><div class="break"></div>
-                                    <p class="refPr">Référence : BC_AP_0002</p>
-                                </td>
-                                <td class="cart_price">
-                                    <p>$59</p>
-                                </td>
-                                <td class="cart_quantity">
-                                    <div class="cart_quantity_button">
-                                        <a class="cart_quantity_down"> - </a>
-                                        <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                               autocomplete="off" size="2">
-                                        <a class="cart_quantity_up"> + </a>
-                                    </div>
-                                </td>
-                                <td class="cart_total">
-                                    <p>$59</p>
-                                </td>
-                                <td class="cart_delete">
-                                    <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                                </td>
-                            </tr>
+                                 @foreach($myPurchase as $row)
+                                <tr id="purchase" class="cart_{{$row->idPurchase}}" data-idpurchase="{{$row->idPurchase}}">                                 
+                                    <td class="cart_product">
+                                        <a href=""><img
+                                                    src="http://bycorsica.fr/324-tm_small_default/tapenade-noire-olives-noires-apero.jpg"
+                                                    alt=""></a>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a href="">{{$row->produitNom}}</a></h4><div class="break"></div>
+                                        <p class="refPr">Référence : {{$row->reference}}</p>
+                                    </td>
+                                    <td id="cart_price_{{$row->idPurchase}}" class="cart_price">
+                                        <p>{{$row->produitPrixTtc}}</p>
+                                    </td>
+                                    {!! Form::open(['route'=>['myPurchase.quantiteUpdate', ':PURCHASE_ID'], 'method' => 'POST', 'id' => 'form-cart-quantite-update-'.$row->idPurchase]) !!}
+                                        <td id="cart_quantity_{{$row->idPurchase}}" class="cart_quantity">
+                                            <div class="cart_quantity_button">
+                                                <a class="cart_quantity_down"> - </a>
+                                                <input id="cart_quantity_input_{{$row->idPurchase}}" class="cart_quantity_input" type="text" name="quantity" value="{{$row->quantite}}" autocomplete="off" size="2">
+                                                <a class="cart_quantity_up"> + </a>
+                                            </div>
+                                        </td>
+                                    {!! Form::close() !!}
+                                    <td id="cart_total_{{$row->idPurchase}}" class="cart_total">
+                                        <p>{{$row->prixProduitTotalTtc}}</p>
+                                    </td>
+                                    {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-cart-delete']) !!}
+                                        <td class="cart_delete">
+                                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                                        </td>
+                                    {!! Form::close() !!}                                  
+                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -111,14 +89,14 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td class="cart_product">
-                                        <p>4,43$</p>
+                                    <td id="cart_product_total" class="cart_product">
+                                        <p>{{$myPurchasePriceTTC->prixtotalttc}}</p>
                                     </td>
                                     <td class="cart_price">
-                                        <p>8,98$</p>
+                                        <p>???$</p>
                                     </td>
                                     <td class="cart_total">
-                                        <p>13,41$</p>
+                                        <p>???$</p>
                                     </td>
                                 </tr>
                                 </tbody>
