@@ -1,5 +1,5 @@
 @if(count($bestSellers) > 0)
-    @foreach($bestSellers as $row)
+
         <div class="col-md-3 col-xs-6 product-grille">
             <div class="image">
                 <a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->libelle}}" title="{{$row->libelle}}"></a>
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-    @endforeach
+
 @else
     <p>{{\Lang::get('general.aucune_meilleuresVentes')}}</p>
 @endif
