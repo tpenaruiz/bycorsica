@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TvaSeeder::class);
         $this->call(CategoriesSeeder::class);
         $this->call(SousCategoriesSeeder::class);
+        $this->call(Commandes_produits_pivotSeeder::class);
         $this->call(CommandesSeeder::class);
         $this->call(FabriquantsSeeder::class);
         $this->call(FournisseursSeeder::class);
