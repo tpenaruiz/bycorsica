@@ -286,10 +286,10 @@
     border-left: 0;
   }
   .sm-blue ul {
-    border: 0px solid #a8a8a8;
+    border: 1px solid #454545;
     padding: 5px 0;
     /*background: #fff;*/
-    background: #222;
+    background: #2e2e2e;
     -moz-border-radius: 5px !important;
     -webkit-border-radius: 5px;
     border-radius: 5px !important;

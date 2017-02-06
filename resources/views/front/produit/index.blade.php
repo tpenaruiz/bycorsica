@@ -172,11 +172,12 @@
             </div>
             <div class="modal-footer">
                 {!! Form::open(['route'=>['searchPost.addBasketInRedirectHome', $produit->id]]) !!}
-                    {!! Form::hidden('modal_qte', 1, ['id' => 'modal_qte'])!!}
+                    {!! Form::hidden('modal_qte', 1, ['id' => 'modal_qte_redirectHome'])!!}
                     <button type="submit" style="float: right;" class="btn btn-default" value="{{$produit->id}}">{{Lang::get('general.continueAchat')}}</button>
                 {!! Form::close() !!}
 
                 {!! Form::open(['route'=>['searchPost.addBasketInRedirectBasket', $produit->id]]) !!}
+                    {!! Form::hidden('modal_qte', 1, ['id' => 'modal_qte_redirectBasket'])!!}
                     <button type="submit" style="float: left;" class="btn btn-primary" value="{{$produit->id}}">{{Lang::get('general.commander')}}</button>
                 {!! Form::close() !!}
             </div>

@@ -26,7 +26,7 @@
                                  @foreach($myPurchase as $row)
                                 <tr id="purchase" class="cart_{{$row->idPurchase}}" data-idpurchase="{{$row->idPurchase}}">                                 
                                     <td class="cart_product">
-                                        <a href=""><img
+                                        <a href="{{url('produit/'.$row->idProd)}}"><img
                                                     src="http://bycorsica.fr/324-tm_small_default/tapenade-noire-olives-noires-apero.jpg"
                                                     alt=""></a>
                                     </td>
@@ -90,13 +90,13 @@
                                 <tbody>
                                 <tr>
                                     <td id="cart_product_total" class="cart_product">
-                                        <p>{{$myPurchasePriceTTC->prixtotalttc}}</p>
+                                        <p>{{$myPurchasePriceTTC->prixtotalttc}} $</p>
                                     </td>
                                     <td class="cart_price">
-                                        <p>???$</p>
+                                        <p>0 $</p>
                                     </td>
                                     <td class="cart_total">
-                                        <p>???$</p>
+                                        <p>0 $</p>
                                     </td>
                                 </tr>
                                 </tbody>
