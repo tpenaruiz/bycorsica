@@ -58,6 +58,7 @@ Route::get('/', ['as' => 'home', 'uses' => 'Front\HomeController@index']);
  */
 Route::get('/produit/{produit}', ['as' => 'produit', 'uses' => 'Front\ProduitController@index']);
 Route::post('/produit/{produit}', ['as' => 'produit.store', 'uses' => 'Front\ProduitController@store']);
+Route::post('/produit/listSurprise/{produit}', ['as' => 'produit.addProductForSurprise', 'uses' => 'Front\ProduitController@addProductForSurprise']);
 
 /**
  * Inscription

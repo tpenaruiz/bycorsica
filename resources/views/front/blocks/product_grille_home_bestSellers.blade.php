@@ -1,5 +1,5 @@
 @if(count($bestSellers) > 0)
-
+    @foreach($bestSellers as $row)
         <div class="col-md-3 col-xs-6 product-grille">
             <div class="image">
                 <a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->libelle}}" title="{{$row->libelle}}"></a>
@@ -10,13 +10,13 @@
                 <div class="price" style="">{{Lang::get('general.price')}} {{$row->prixttc}} &euro;</div>
                 <div>
                     <a href="" class="product-link">{{Lang::get('general.detail')}}</a>
-                    <a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart_{{$row->idProd}}">{{Lang::get('general.addBasket')}}</a>
+                    <a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart_bestSellers_{{$row->idProd}}">{{Lang::get('general.addBasket')}}</a>
                 </div>
             </div>
         </div>
 
         <!-- Modal Ajouter au panier-->
-        <div class="modal fade product-grille-modal" id="add_produc_cart_{{$row->idProd}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade product-grille-modal" id="add_produc_cart_bestSellers_{{$row->idProd}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -26,7 +26,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1"><img src="{{ asset($row->chemin) }}" class="img-responsive" alt="{{$row->libelle}}" title="{{$row->libelle}}"></div>
-                            <div class="col-md-8 col-sm-8 col-xs-8"><h4>{{$row->nom}} - {{Lang::get('general.price')}} {{$row->prix}} &euro;</h4></div>
+                            <div class="col-md-8 col-sm-8 col-xs-8"><h4>{{$row->nom}} - {{Lang::get('general.price')}} {{$row->prixttc}} &euro;</h4></div>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-
+    @endforeach
 @else
     <p>{{\Lang::get('general.aucune_meilleuresVentes')}}</p>
 @endif

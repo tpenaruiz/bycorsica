@@ -1,6 +1,35 @@
 @extends('front.layout.default')
 @section('content')
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#add_gift').on('click', function(e){
+            e.preventDefault();            
+            let form = $('#form-add-gift');
+            let url = form.attr('action');
+            let data = form.serialize();
+
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                success: function(result){
+                    if(result.message.substring(0, 1) === '1'){
+                        // Affichage du message avec lib Notif.js
+                        $('#message_info').append(notie.alert(1, result.message.substring(2), 5));
+                    }else{
+                        // Affichage du message avec lib Notif.js
+                        $('#message_info').append(notie.alert(2, result.message.substring(2), 5));
+                    }
+                },
+                error: function(){
+                    sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+                }
+            });
+        });
+    });
+</script>
+
 <div class="container">
     <!-- Breadcrumbs -->
     @include('front.blocks.breadcrumbs')
@@ -52,9 +81,13 @@
                                 <div class="panier">
                                     <a href="" class="ajax_panier" data-toggle="modal" data-target="#add_produc_cart_{{$produit->id}}"><span><i class="fa fa-shopping-cart fa-lg"></i>{{Lang::get('general.addBasket')}}</span></a>
                                 </div>
-                                <div class="cadeau">
-                                    <a class="ajax_cadeau"><span><i class="fa fa-heart-o fa-lg"></i>Ajouter à ma liste de cadeaux</span></a>
-                                </div>
+                                @if(Auth::user() !== NULL)
+                                    {!! Form::open(['route'=>['searchPost.addProductForSurprise', $produit->id], 'method' => 'POST', 'id' => 'form-add-gift']) !!}
+                                        <div class="cadeau">
+                                            <a href="" class="ajax_cadeau" id="add_gift"><span><i class="fa fa-heart-o fa-lg"></i>Ajouter à ma liste de cadeaux</span></a>
+                                        </div>
+                                {!! Form::close() !!}
+                                @endif
                             </div>
                         </div>
                     </div>
