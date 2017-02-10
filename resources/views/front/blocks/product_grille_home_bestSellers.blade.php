@@ -12,6 +12,14 @@
                     <a href="" class="product-link">{{Lang::get('general.detail')}}</a>
                     <a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart_bestSellers_{{$row->idProd}}">{{Lang::get('general.addBasket')}}</a>
                 </div>
+
+                 @if(Auth::user() !== NULL)
+                    {!! Form::open(['route'=>['searchPost.addProductForSurprise', ':PRODUCT_ID'], 'method' => 'POST', 'id' => 'form-add-surprise-grille-home']) !!}
+                    <div class="text-right" data-id="{{$row->idProd}}">
+                        <a href="#" class="btn_surpise_grille_home">{{Lang::get('general.addListCadeaux')}}</a>
+                    </div>
+                    {!! Form::close() !!}
+                @endif
             </div>
         </div>
 

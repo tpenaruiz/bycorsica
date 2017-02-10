@@ -1,35 +1,6 @@
 @extends('front.layout.default')
 @section('content')
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#add_gift').on('click', function(e){
-            e.preventDefault();            
-            let form = $('#form-add-gift');
-            let url = form.attr('action');
-            let data = form.serialize();
-
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: data,
-                success: function(result){
-                    if(result.message.substring(0, 1) === '1'){
-                        // Affichage du message avec lib Notif.js
-                        $('#message_info').append(notie.alert(1, result.message.substring(2), 5));
-                    }else{
-                        // Affichage du message avec lib Notif.js
-                        $('#message_info').append(notie.alert(2, result.message.substring(2), 5));
-                    }
-                },
-                error: function(){
-                    sweetAlert('Oups...', 'Une erreur est survenue', 'error');
-                }
-            });
-        });
-    });
-</script>
-
 <div class="container">
     <!-- Breadcrumbs -->
     @include('front.blocks.breadcrumbs')

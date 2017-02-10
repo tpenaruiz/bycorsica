@@ -93,13 +93,50 @@ $(document).ready(function(){
                 // Mise à jour du prix totat ttc
                 $('#prixtotalttc td:last').html(newprixtotalttc);
                 $('#prixtotalttc').data('prixtotalttc', newprixtotalttc);
+
                 // Affichage du message avec lib Notif.js
                 $('#message_info').append(notie.alert(3, result.message, 5));
 
                 // Efface ligne correspondant au produit concerné dans page Basket
                 $('.cart_'+id).fadeOut();
-                //Mise à jour du prix dans page Basket
+                // Mise à jour du prix dans page Basket
                 $('#cart_product_total').html(newprixtotalttc);
+
+                // Affichage d'un message dans tableau si plus de produit
+                if(newprixtotalttc==0){
+                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">Aucun produit actuellement dans votre panier</td></tr>');
+                }
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
+
+    /**
+     * Page Home
+     * Add product to List Surprise
+     */
+     $('.btn_surpise_grille_home').on('click', function(e){
+        e.preventDefault();
+        let row = $(this).parent();
+        let id = row.data('id');
+        let form = $('#form-add-surprise-grille-home');
+        let url = form.attr('action').replace(':PRODUCT_ID', id);
+        let data = form.serialize();
+
+        $.ajax({
+            url:url,
+            type:'POST',
+            data:data,
+            success: function(result){
+                if(result.message.substring(0, 1) === '1'){
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(1, result.message.substring(2), 5));
+                }else{
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(2, result.message.substring(2), 5));
+                }
             },
             error: function(){
                 sweetAlert('Oups...', 'Une erreur est survenue', 'error');
@@ -111,6 +148,7 @@ $(document).ready(function(){
      * Page Produit
      * Button (-) and Button (+)
      * Add or delete quantity
+     * Add product to list for surprise
      */
     // On retire -1 au value du input
     $('.del_qte').on('click', function(){
@@ -145,6 +183,32 @@ $(document).ready(function(){
         $('#modal_qte_redirectHome').val(newVal);
         $('#modal_qte_redirectBasket').val(newVal);
     })
+
+    // On ajoute le produit à la liste de cadeaux
+    $('#add_gift').on('click', function(e){
+        e.preventDefault();            
+        let form = $('#form-add-gift');
+        let url = form.attr('action');
+        let data = form.serialize();
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function(result){
+                if(result.message.substring(0, 1) === '1'){
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(1, result.message.substring(2), 5));
+                }else{
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(2, result.message.substring(2), 5));
+                }
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
 
     /**
      * Page Basket
@@ -264,6 +328,15 @@ $(document).ready(function(){
                 // Mise à jour du prix dans block Basket Header
                 $('#prixtotalttc td:last').html(prixProdsTotalTtc);
                 $('#prixtotalttc').data('prixtotalttc', prixProdsTotalTtc);
+
+                // Mise à jour de la quantité dans icone Basket
+                let compteurPurchase = parseInt($('.badge').text());
+                $('.badge').text(compteurPurchase -1);
+
+                // Affichage d'un message dans tableau si plus de produit
+                if(prixProdsTotalTtc==0){
+                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">Aucun produit actuellement dans votre panier</td></tr>');
+                }
             },
             error: function(){
                 sweetAlert('Oups...', 'Une erreur est survenue', 'error');

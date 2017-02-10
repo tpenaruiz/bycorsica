@@ -1266,6 +1266,12 @@ label {
     margin-top: 5px;
 }
 
+.basket .no_product {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 1.2em;
+}
+
 
 /*
 |--------------------------------------------------------------------------
