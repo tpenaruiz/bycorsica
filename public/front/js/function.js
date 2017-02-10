@@ -79,8 +79,9 @@ $(document).ready(function(){
         let data = form.serialize(); 
 
         let prixttc = parseFloat($(this).parents('tr').data('prixttc'));
+        let quantite = parseFloat($(this).parents('tr').data('quantite'));
         let prixtotalttc = parseFloat($('#prixtotalttc').data('prixtotalttc'));
-        let newprixtotalttc = Number(Math.round((prixtotalttc - prixttc)+'e'+2)+'e-'+2);
+        let newprixtotalttc = Number(Math.round((prixtotalttc - (prixttc*quantite))+'e'+2)+'e-'+2);
 
         $.ajax({
             url:url,
@@ -92,9 +93,50 @@ $(document).ready(function(){
                 // Mise à jour du prix totat ttc
                 $('#prixtotalttc td:last').html(newprixtotalttc);
                 $('#prixtotalttc').data('prixtotalttc', newprixtotalttc);
+
                 // Affichage du message avec lib Notif.js
                 $('#message_info').append(notie.alert(3, result.message, 5));
 
+                // Efface ligne correspondant au produit concerné dans page Basket
+                $('.cart_'+id).fadeOut();
+                // Mise à jour du prix dans page Basket
+                $('#cart_product_total').html(newprixtotalttc);
+
+                // Affichage d'un message dans tableau si plus de produit
+                if(newprixtotalttc==0){
+                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">Aucun produit actuellement dans votre panier</td></tr>');
+                }
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
+
+    /**
+     * Page Home
+     * Add product to List Surprise
+     */
+     $('.btn_surpise_grille_home').on('click', function(e){
+        e.preventDefault();
+        let row = $(this).parent();
+        let id = row.data('id');
+        let form = $('#form-add-surprise-grille-home');
+        let url = form.attr('action').replace(':PRODUCT_ID', id);
+        let data = form.serialize();
+
+        $.ajax({
+            url:url,
+            type:'POST',
+            data:data,
+            success: function(result){
+                if(result.message.substring(0, 1) === '1'){
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(1, result.message.substring(2), 5));
+                }else{
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(2, result.message.substring(2), 5));
+                }
             },
             error: function(){
                 sweetAlert('Oups...', 'Une erreur est survenue', 'error');
@@ -106,6 +148,7 @@ $(document).ready(function(){
      * Page Produit
      * Button (-) and Button (+)
      * Add or delete quantity
+     * Add product to list for surprise
      */
     // On retire -1 au value du input
     $('.del_qte').on('click', function(){
@@ -120,7 +163,8 @@ $(document).ready(function(){
             $('._inputQte').val(newVal);
             $('.price span').html(newPrixFinal);
             $('.price').data('price', newPrixFinal);
-            $('#modal_qte').val(newVal);
+            $('#modal_qte_redirectHome').val(newVal);
+            $('#modal_qte_redirectBasket').val(newVal);
         }
     })
 
@@ -136,8 +180,35 @@ $(document).ready(function(){
         $('._inputQte').val(newVal);
         $('.price span').html(newPrixFinal);
         $('.price').data('price', newPrixFinal);
-        $('#modal_qte').val(newVal);
+        $('#modal_qte_redirectHome').val(newVal);
+        $('#modal_qte_redirectBasket').val(newVal);
     })
+
+    // On ajoute le produit à la liste de cadeaux
+    $('#add_gift').on('click', function(e){
+        e.preventDefault();            
+        let form = $('#form-add-gift');
+        let url = form.attr('action');
+        let data = form.serialize();
+
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: data,
+            success: function(result){
+                if(result.message.substring(0, 1) === '1'){
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(1, result.message.substring(2), 5));
+                }else{
+                    // Affichage du message avec lib Notif.js
+                    $('#message_info').append(notie.alert(2, result.message.substring(2), 5));
+                }
+            },
+            error: function(){
+                sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+            }
+        });
+    });
 
     /**
      * Page Basket
@@ -165,12 +236,18 @@ $(document).ready(function(){
                 type: 'POST',
                 data: data,
                 success: function(result){
+                    // Mise à jour du prix du produit
                     let prixProduitTotalTtc = parseFloat($('#cart_price_'+idpurchase).text())*newVal;
                     let prixProdTotalTtc = Number(Math.round(prixProduitTotalTtc+'e'+2)+'e-'+2);
                     $('#cart_total_'+idpurchase).children().text(prixProdTotalTtc);
+                    // Mise à jour du prix total des produits
                     let prixProduitsTotalTtc = parseFloat($('#cart_product_total').children().text())-parseFloat($('#cart_price_'+idpurchase).text());
                     let prixProdsTotalTtc = Number(Math.round(prixProduitsTotalTtc+'e'+2)+'e-'+2);
                     $('#cart_product_total').children().text(prixProdsTotalTtc);
+                    // Mise à jour de la quantité et du prix total du Block Header Basket
+                    $('#quantite_'+idpurchase).text('X '+newVal);
+                    $('#prixtotalttc td:last').html(prixProdsTotalTtc);
+                    $('#prixtotalttc').data('prixtotalttc', prixProdsTotalTtc);
                 },
                 error: function(){
                     sweetAlert('Oups...', 'Une erreur est survenue', 'error');
@@ -196,13 +273,19 @@ $(document).ready(function(){
             url: url,
             type: 'POST',
             data: data,
-            success: function(result){                
+            success: function(result){
+                // Mise à jour du prix du produit                
                 let prixProduitTotalTtc = parseFloat($('#cart_price_'+idpurchase).text())*newVal;
                 let prixProdTotalTtc = Number(Math.round(prixProduitTotalTtc+'e'+2)+'e-'+2);
                 $('#cart_total_'+idpurchase).children().text(prixProdTotalTtc);
+                // Mise à jour du prix total des produits
                 let prixProduitsTotalTtc = parseFloat($('#cart_product_total').children().text())+parseFloat($('#cart_price_'+idpurchase).text());
                 let prixProdsTotalTtc = Number(Math.round(prixProduitsTotalTtc+'e'+2)+'e-'+2);
                 $('#cart_product_total').children().text(prixProdsTotalTtc);
+                // Mise à jour de la qunatité et du prix total du Block Header Basket
+                $('#quantite_'+idpurchase).text('X '+newVal);
+                $('#prixtotalttc td:last').html(prixProdsTotalTtc);
+                $('#prixtotalttc').data('prixtotalttc', prixProdsTotalTtc);
             },
             error: function(){
                 sweetAlert('Oups...', 'Une erreur est survenue', 'error');
@@ -229,11 +312,31 @@ $(document).ready(function(){
             type:'POST',
             data:data,
             success: function(result){
-                // Efface ligne du tableau
+                // Efface ligne du tableau dans Page Basket
                 $('.cart_'+idpurchase).fadeOut();
                 // Affichage du message avec lib Notif.js
                 $('#message_info').append(notie.alert(3, result.message, 5));
 
+                // Efface ligne du tableau dans block Basket Header
+                $('.purchaseLinter_'+idpurchase).fadeOut();
+                // Mise à jour du prix dans Page Basket
+                let prixProduitsTotalTtc = parseFloat($('#cart_product_total').children().text());
+                let prixProduitTotalTtc = parseFloat($('#cart_total_'+idpurchase).children().text());
+                prixProduitsTotalTtc = prixProduitsTotalTtc - prixProduitTotalTtc;
+                let prixProdsTotalTtc = Number(Math.round(prixProduitsTotalTtc+'e'+2)+'e-'+2);
+                $('#cart_product_total').children().text(prixProdsTotalTtc)
+                // Mise à jour du prix dans block Basket Header
+                $('#prixtotalttc td:last').html(prixProdsTotalTtc);
+                $('#prixtotalttc').data('prixtotalttc', prixProdsTotalTtc);
+
+                // Mise à jour de la quantité dans icone Basket
+                let compteurPurchase = parseInt($('.badge').text());
+                $('.badge').text(compteurPurchase -1);
+
+                // Affichage d'un message dans tableau si plus de produit
+                if(prixProdsTotalTtc==0){
+                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">Aucun produit actuellement dans votre panier</td></tr>');
+                }
             },
             error: function(){
                 sweetAlert('Oups...', 'Une erreur est survenue', 'error');

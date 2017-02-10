@@ -52,9 +52,13 @@
                                 <div class="panier">
                                     <a href="" class="ajax_panier" data-toggle="modal" data-target="#add_produc_cart_{{$produit->id}}"><span><i class="fa fa-shopping-cart fa-lg"></i>{{Lang::get('general.addBasket')}}</span></a>
                                 </div>
-                                <div class="cadeau">
-                                    <a class="ajax_cadeau"><span><i class="fa fa-heart-o fa-lg"></i>Ajouter à ma liste de cadeaux</span></a>
-                                </div>
+                                @if(Auth::user() !== NULL)
+                                    {!! Form::open(['route'=>['searchPost.addProductForSurprise', $produit->id], 'method' => 'POST', 'id' => 'form-add-gift']) !!}
+                                        <div class="cadeau">
+                                            <a href="" class="ajax_cadeau" id="add_gift"><span><i class="fa fa-heart-o fa-lg"></i>Ajouter à ma liste de cadeaux</span></a>
+                                        </div>
+                                {!! Form::close() !!}
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -172,11 +176,12 @@
             </div>
             <div class="modal-footer">
                 {!! Form::open(['route'=>['searchPost.addBasketInRedirectHome', $produit->id]]) !!}
-                    {!! Form::hidden('modal_qte', 1, ['id' => 'modal_qte'])!!}
+                    {!! Form::hidden('modal_qte', 1, ['id' => 'modal_qte_redirectHome'])!!}
                     <button type="submit" style="float: right;" class="btn btn-default" value="{{$produit->id}}">{{Lang::get('general.continueAchat')}}</button>
                 {!! Form::close() !!}
 
                 {!! Form::open(['route'=>['searchPost.addBasketInRedirectBasket', $produit->id]]) !!}
+                    {!! Form::hidden('modal_qte', 1, ['id' => 'modal_qte_redirectBasket'])!!}
                     <button type="submit" style="float: left;" class="btn btn-primary" value="{{$produit->id}}">{{Lang::get('general.commander')}}</button>
                 {!! Form::close() !!}
             </div>
