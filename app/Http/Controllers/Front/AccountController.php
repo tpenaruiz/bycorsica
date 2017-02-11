@@ -17,7 +17,7 @@ class AccountController extends Controller
     	//code
     }
 
-    public function index(Request $request){
+    public function index(Request $request, $anchor){
 
     	$user = Auth::user();
         $pays = \App\Pays::pluck('nom_fr_fr', 'id');
@@ -42,7 +42,7 @@ class AccountController extends Controller
             ]);
         }
 
-        return view('front.account.index', compact('user', 'ville', 'pays', 'adresses', 'listCadeaux'));
+        return view('front.account.index', compact('user', 'ville', 'pays', 'adresses', 'listCadeaux', 'anchor'));
     }
 
     public function infosUpdate(UsersFrontRequest $request){
@@ -198,5 +198,4 @@ class AccountController extends Controller
         }
         return redirect()->route('account');
     }
-
 }

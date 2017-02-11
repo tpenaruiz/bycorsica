@@ -1,5 +1,5 @@
 <!-- Debut Panel Liste Cadeaux -->
-<div role="tabpanel" class="tab-pane listCadeaux" id="listCadeaux">
+<div role="tabpanel" @if($anchor=='listCadeaux') class="tab-pane listCadeaux active" @else class="tab-pane listCadeaux" @endif id="listCadeaux">
     <div class="col-md-12 libelle">
         <p>{{ \Lang::get('general.maListeDeCadeaux') }}</p>
     </div>

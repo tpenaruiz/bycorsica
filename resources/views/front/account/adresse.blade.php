@@ -1,5 +1,5 @@
 <!-- Debut Panel Adresse -->
-<div role="tabpanel" class="tab-pane address" id="address">
+<div role="tabpanel" @if($anchor=='address') class="tab-pane address active" @else class="tab-pane address" @endif id="address">
     <div class="col-md-12 libelle">
         <p>{{ \Lang::get('general.addressLibelle') }}</p>
     </div>

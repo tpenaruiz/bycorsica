@@ -1,5 +1,5 @@
 <!-- Debut Panel info -->
-<div role="tabpanel" class="tab-pane infos active" id="infos">
+<div role="tabpanel" @if($anchor=='infos') class="tab-pane infos active" @else  class="tab-pane infos" @endif id="infos">
     {!! Form::open(['method' => 'post','id' => 'account_infos', 'url' => route('account.infos.update')]) !!}
     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
         <div class="form-group {{ $errors->has('firstname') ? ' has-error' : '' }} col-md-12 col-sm-12">
