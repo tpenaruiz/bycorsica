@@ -24,7 +24,7 @@ class HomeController extends Controller
             ->where('status', '=', 'Actif')
             ->get();
 
-        /*$populaire = \DB::table('commandes')
+        $populaire = \DB::table('commandes')
             ->join('users', 'commandes.id_user', '=', 'users.id')
             ->join('tva', 'commandes.id_tva', '=', 'tva.id')
             ->join('produits', 'commandes.id_produit', '=', 'produits.id')
@@ -45,7 +45,7 @@ class HomeController extends Controller
             ->orderBy('commandes.created_at', 'desc')
             ->groupBy('id_produit')
             ->limit(8)
-            ->get();*/
+            ->get();
         $populaire = 0;
         $bestSellers = 0;
 
