@@ -89,14 +89,14 @@
                                 <table class="table table-condensed">
                                     <tbody>
                                         @foreach($myPurchase as $row)
-                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}" data-prixttc = "{{$row->prixttc}}">
+                                            <tr class="purchaseLinter_{{$row->idPurchase}}" data-id="{{$row->idPurchase}}" data-prixttc = "{{$row->prixttc}}" data-quantite="{{$row->quantite}}">
                                                 <td class="image"><a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->mediaLibelle}}" title="{{$row->mediaLibelle}}"></a></td>
                                                 <td>
                                                     <div>{{$row->produitNom}}</div>
                                                     <div>{{$row->prixttc}} &euro;</div>
                                                 </td>
                                                 <td>
-                                                    <span>X {{$row->quantite}}</span>
+                                                    <span id="quantite_{{$row->idPurchase}}">X {{$row->quantite}}</span>
                                                 </td>
                                                 {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-del']) !!}
                                                     <td>

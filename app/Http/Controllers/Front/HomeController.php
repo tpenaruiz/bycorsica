@@ -24,7 +24,7 @@ class HomeController extends Controller
             ->where('status', '=', 'Actif')
             ->get();
 
-        $populaire = \DB::table('commandes')
+        /*$populaire = \DB::table('commandes')
             ->join('users', 'commandes.id_user', '=', 'users.id')
             ->join('tva', 'commandes.id_tva', '=', 'tva.id')
             ->join('produits', 'commandes.id_produit', '=', 'produits.id')
@@ -45,9 +45,27 @@ class HomeController extends Controller
             ->orderBy('commandes.created_at', 'desc')
             ->groupBy('id_produit')
             ->limit(8)
-            ->get();
-        $populaire = 0;
-        $bestSellers = 0;
+            ->get();*/
+
+        $populaire = \DB::table('commandes_produits_pivot')
+                    ->join('commandes', 'commandes_produits_pivot.id_commande', '=', 'commandes.id')
+                    ->join('produits', 'commandes_produits_pivot.id_produit', '=', 'produits.id')
+                    ->join('medias', 'produits.id_media', '=', 'medias.id')
+                    ->join('tva', 'commandes.id_tva', '=', 'tva.id')
+                    ->select('commandes_produits_pivot.id_produit as id_produit', 'medias.chemin as chemin', 'medias.libelle as libelle', 'produits.nom as nom', 'produits.description as description',  'produits.prix as prix', \DB::raw('produits.prix+(produits.prix*tva.valeur)/100 as prixttc'), \DB::raw('count(commandes_produits_pivot.id_produit) as quantiteProduit'))
+                    ->groupBy('commandes_produits_pivot.id_produit')
+                    ->limit(8)
+                    ->get();
+
+        $bestSellers = \DB::table('commandes_produits_pivot')
+                    ->join('commandes', 'commandes_produits_pivot.id_commande', '=', 'commandes.id')
+                    ->join('produits', 'commandes_produits_pivot.id_produit', '=', 'produits.id')
+                    ->join('medias', 'produits.id_media', '=', 'medias.id')
+                    ->join('tva', 'commandes.id_tva', '=', 'tva.id')
+                    ->select('commandes_produits_pivot.id_produit as idProd', 'medias.chemin as chemin', 'medias.libelle as libelle', 'produits.nom as nom', 'produits.description as description',  'produits.prix as prix', \DB::raw('produits.prix+(produits.prix*tva.valeur)/100 as prixttc'), \DB::raw('count(commandes_produits_pivot.id_produit) as quantiteProduit'))
+                    ->groupBy('commandes_produits_pivot.id_produit')
+                    ->limit(8)
+                    ->get();
 
         return view('front.home.index', compact('categ', 'populaire', 'bestSellers'));
     }

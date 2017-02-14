@@ -22,4 +22,26 @@ class ProduitController extends Controller
 
         return view('front.produit.index', compact('produit', $produit));
     }
+
+    public function addProductForSurprise(Request $request, Produits $produit){
+
+        $mesList = \App\ProductForSurprise::where('id_user', '=', \Auth::user()->id)->where('id_produit', '=', $produit->id)->count();
+        if($mesList === 0){
+            $produitForSurprise = new \App\ProductForSurprise;
+            $produitForSurprise->id_user = \Auth::user()->id;
+            $produitForSurprise->id_produit = $produit->id;
+            $produitForSurprise->save();
+            $message = \Lang::get('general.addSurpise');
+        }else{
+            $message = \Lang::get('general.WarningSurpise');
+        }
+        // AJAX
+        if($request->ajax()){
+            return response()->json([
+                'message' => $message
+            ]);
+        }
+        
+        return redirect()->route('produit/'.$produit->id);
+    }
 }
