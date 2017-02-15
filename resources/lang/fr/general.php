@@ -55,4 +55,5 @@ return [
     'emptyListCadeaux' => 'Vous avez pour le moment aucun cadeaux dans votre liste',
 
     'treatmentOk' => 'Traitement ok',
+    'cleanBasket' => 'Aucun produit actuellement dans votre panier'
 ];

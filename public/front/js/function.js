@@ -104,7 +104,7 @@ $(document).ready(function(){
 
                 // Affichage d'un message dans tableau si plus de produit
                 if(newprixtotalttc==0){
-                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">Aucun produit actuellement dans votre panier</td></tr>');
+                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">result.cleanBasket</td></tr>');
                 }
             },
             error: function(){
@@ -335,7 +335,7 @@ $(document).ready(function(){
 
                 // Affichage d'un message dans tableau si plus de produit
                 if(prixProdsTotalTtc==0){
-                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">Aucun produit actuellement dans votre panier</td></tr>');
+                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">result.cleanBasket</td></tr>');
                 }
             },
             error: function(){

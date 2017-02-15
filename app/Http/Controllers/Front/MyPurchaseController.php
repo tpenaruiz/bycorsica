@@ -17,9 +17,11 @@ class MyPurchaseController extends Controller
 
         // AJAX
         $message = \Lang::get('general.treatmentOk');
+        $cleanBasket = \Lang::get('general.cleanBasket');
         if($request->ajax()){
             return response()->json([
-                'message' => $message
+                'message' => $message,
+                'cleanBasket' => $cleanBasket
             ]);
         }
     }
@@ -29,9 +31,11 @@ class MyPurchaseController extends Controller
 
         // AJAX
         $message = \Lang::get('general.deletePurchase');
+        $cleanBasket = \Lang::get('general.cleanBasket');
         if($request->ajax()){
             return response()->json([
-                'message' => $message
+                'message' => $message,
+                'cleanBasket' => $cleanBasket
             ]);
         }
         return redirect()->route('home');
