@@ -18,6 +18,7 @@
     Page Search
     Page Forgot Pass
     Page Basket
+    Page Commande
     Page Commande Step 1
     Page Commande Step 2
     Page Commande Step 3
@@ -1273,6 +1274,113 @@ label {
 }
 
 
+
+/*
+|--------------------------------------------------------------------------
+| Page Commande 
+|--------------------------------------------------------------------------
+*/
+
+.commande {
+    background-color: #222;
+    margin-bottom: 20px;
+}
+
+.commande .panel {
+    background-color: #222;
+    margin-bottom: 0;
+}
+
+.commande .panel-heading {
+    padding: 0;
+}
+
+.commande h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.commande .table {
+    margin-bottom: 0px;
+}
+
+.commande  .commande_infos {
+    border: 1px solid #B79332;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.commande .commande_infos thead tr {
+    background: #B79332;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.commande .commande_infos tbody td {
+    padding-top: 15px;
+}
+
+
+
+.commande  .produits_infos {
+    border: 1px solid #B79332;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.commande .produits_infos thead tr{
+    background: #B79332;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.commande .table p,
+.commande .table h4 {
+    margin: 0;
+}
+
+.commande .produits_infos table tr td {
+    border-top: 0 none;
+    vertical-align: inherit;
+}
+
+.commande .produits_infos .table.table-condensed tr {
+    border-bottom: 1px solid #B79332;
+}
+
+.commande .produits_infos .table.table-condensed tr:last-child {
+    border-bottom: 0
+}
+
+.commande .produits_infos .cmd_product {
+    display: block;
+    font-size: 1.4em;
+}
+
+.commande .produits_infos .image {
+    padding-left: 30px;
+}
+
+.commande .produits_infos .cmd_description h4 {
+    margin-bottom: 0
+}
+
+.commande .produits_infos .cmd_description h4 a {
+    color: #fff;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.commande .produits_infos .cmd_description p {
+    color:#CECCCC;
+    font-size: 0.9em;
+}
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Page Commande Step 1
@@ -1996,6 +2104,32 @@ label {
 
 .update-address-content .btn {
     margin-top: 40px;
+}
+
+.commandes thead{
+    background-color: #E6E6E6;
+    color: black;
+}
+.commandes tr.even{
+    background-color: white;
+    color: black;
+}
+.commandes tr.odd{
+    color: black;
+}
+
+.commandes .table {
+    border: 2px ridge #E0C868;
+}
+
+.commandes .pagination>.active>a {
+    background-color: #E0C868;
+    border-color: #E0C868;
+}
+
+.commandes .pagination>.active>a:hover {
+    background-color: #A48226;
+    border-color: #A48226;
 }
 
 

@@ -11,6 +11,12 @@ class CommandeController extends Controller
     {
     }
 
+    public function index(Request $request, $commande){
+
+        $commande = \App\Commandes::find($commande);
+        return view('front.commande.index', compact('commande'));
+    }
+
     public function stepOne(){
         return view('front.commande.stepOne');
     }

@@ -99,7 +99,6 @@ Route::post('account/address/update/{addresse}', ['as' => 'account.address.updat
 Route::get('account/address/create', ['as' => 'account.address.create', 'uses' => 'Front\AccountController@addressCreate']);
 Route::post('account/address/store', ['as' => 'account.address.store', 'uses' => 'Front\AccountController@addressStore']);
 Route::delete('account/address/destroy/{adresse}', ['as' => 'account.address.destroy', 'uses' => 'Front\AccountController@addressDestroy']);
-
 Route::delete('account/liste_cadeaux/destroy/{list_cadeaux}', ['as' => 'account.list_cadeaux.destroy', 'uses' => 'Front\AccountController@list_cadeauxDestroy']);
 
 /**
@@ -118,6 +117,7 @@ Route::get('/commande/phase1', ['as' => 'commandePhase1', 'uses' => 'Front\Comma
 Route::get('/commande/phase2', ['as' => 'commandePhase2', 'uses' => 'Front\CommandeController@stepTwo']);
 Route::get('/commande/phase3', ['as' => 'commandePhase3', 'uses' => 'Front\CommandeController@stepThree']);
 Route::get('/commande/phase4', ['as' => 'commandePhase4', 'uses' => 'Front\CommandeController@stepFour']);
+Route::get('/commande/{commande}', ['as' => 'commande', 'uses' => 'Front\CommandeController@index']);
 
 /**
  * Contact
