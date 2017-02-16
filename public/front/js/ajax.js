@@ -1,7 +1,6 @@
 /**
  * Created by bilel on 28/01/2017.
  */
-// TODO METTRE TOUS LES FONCTIONS AJAX SUR CE FICHIER !!
 
 class Ajax {
 
@@ -286,6 +285,53 @@ class Ajax {
                     sweetAlert('Oups...', 'Une erreur est survenue', 'error');
                 }
             })
+        });
+    }
+
+    account_validate_form(){
+        /**
+         * Page account
+         * Validation formulaire
+         */
+        $("#account_infos").validate({
+            rules: {
+                second_name: {
+                    required: true,
+                    nowhitespace: true,
+                    lettersonly: true
+                },
+                first_name: {
+                    required: true,
+                    nowhitespace: true,
+                    lettersonly: true
+                },
+                birthday: {
+                    required: true,
+                    dateEch: true
+                },
+                email: {
+                    required: true,
+                    email: true
+                }
+            },
+            submitHandler: function(form){
+                var form = $("#account_infos");
+                var url = form.attr('action');
+                var data = form.serialize();
+                console.log(url);
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: data,
+                    success: function(response){
+                        // Affichage du message avec notiJs
+                        $('#message_info').append(notie.alert(1, response.status, 5));
+                    },
+                    error: function(){
+                        sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+                    }
+                });
+            }
         });
     }
 
@@ -580,7 +626,5 @@ class Ajax {
             });
         });
     }
-
-
 
 }
