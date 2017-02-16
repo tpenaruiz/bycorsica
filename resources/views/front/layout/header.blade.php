@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     @if(Auth::check())
-                    <a href="{{ url('account') }}" class="myaccount">Mon Compte</a><a href="{{ url('logout') }}" class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>                    
+                    <a href="{{ url('account/infos') }}" class="myaccount">Mon Compte</a><a href="{{ url('logout') }}" class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i></a>                    
                     @else
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="login-deconnect">Mon Compte <span class="caret"></span></a>
                     <ul class="dropdown-menu" id="login-dp">
