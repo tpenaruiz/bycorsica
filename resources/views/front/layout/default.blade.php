@@ -23,6 +23,9 @@
         <script src="{{ asset('lib/html5shiv.min.js') }}"></script>
         <script src="{{ asset('lib/respond.min.js') }}"></script>
 
+        <!-- Class Ajax, on retrouve toutes les méthodes ajax uniquement -->
+        <script src="{{asset('front/js/ajax.js')}}"></script>
+
         <!-- Function JS Personnel -->
         <script src="{{asset('front/js/function.js')}}"></script>
 
@@ -39,6 +42,7 @@
 
         <!-- Jquery UI 1.12.1 -->
         <script src="{{ asset('lib/jquery-ui-1.12.1/jquery-ui.min.js') }}"></script>
+
 
 
         <!-- Bootstrap -->

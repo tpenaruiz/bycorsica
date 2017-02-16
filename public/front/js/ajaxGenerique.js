@@ -7,6 +7,8 @@
  <a href="posts/2" data-method="delete" data-confirm="Are you sure?">
  */
 
+// TODO C'est un fichier de test que je suis en train de faire quand j'ai le temps pour rendre générique toutes les appel ajax quand à besoin de faire NE PAS Y TOUCHER SVP By Bilel
+
 $(function() {
 
     var laravel = {

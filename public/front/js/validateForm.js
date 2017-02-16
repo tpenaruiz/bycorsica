@@ -1,3 +1,8 @@
+/**
+ * Library Validate de Jquery, celle ci permet
+ * de pouvoir gérer les validation formulaire on l'utilise avec Ajax
+ */
+
 $(document).ready(function(){
 	$.validator.setDefaults({
 		errorClass: 'help-block',
