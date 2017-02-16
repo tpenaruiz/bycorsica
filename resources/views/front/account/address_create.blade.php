@@ -136,7 +136,7 @@
 
       					<div class="col-md-12 col-sm-12">
 							<div class="form-group col-md-offset-3 col-md-3 col-sm-offset-3 col-sm-3 col-xs-6" >
-								{!! Form::submit(Lang::get('auth.cancel'), ['class' => 'btn btn-primary btn-block']) !!}
+								<a class="btn btn-primary btn-block" href="{{ url('/account/address') }}">Cancel</a>
 							</div>
 							<div class="form-group col-md-3 col-sm-3 col-xs-6" >
 								{!! Form::submit(Lang::get('auth.validate'), ['class' => 'btn btn-primary btn-block']) !!}

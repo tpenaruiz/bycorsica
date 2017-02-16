@@ -66,6 +66,13 @@
 
         <!-- Jquery UI 1.12.1 -->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <!-- Jquery DataTables-->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('plugins/DataTables-1.10.13/media/css/dataTables.bootstrap.min.css') }}">
+        <script type="text/javascript" src="{{ asset('plugins/DataTables-1.10.13/media/js/jquery.dataTables.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('plugins/DataTables-1.10.13/media/js/dataTables.bootstrap.min.js') }}"></script>
+        <script src="{{ asset('front/js/jqueryDatatables.js') }}"></script>
     </head>
     <body>
         <div>

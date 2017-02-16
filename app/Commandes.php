@@ -36,15 +36,14 @@ class Commandes extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function commandes_produits_pivot(){
-        return $this->belongsToMany('\App\Commandes_Produits_Pivot', 'id_commande_produit_pivot');
+    public function produits(){
+        return $this->belongsToMany('\App\Produits', 'commandes_produits_pivot', 'id_commande', 'id_produit');
     }
 
     /**
      * @return bool|string
      */
     public function getCreateddateAttribute(){
-        return date('d/m/Y H\Hi', date_timestamp_get(date_create($this->created_at)));
+        return date('d/m/Y', date_timestamp_get(date_create($this->created_at)));
     }
-
 }

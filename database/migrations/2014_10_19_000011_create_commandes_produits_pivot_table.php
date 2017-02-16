@@ -17,6 +17,7 @@ class CreateCommandesProduitsPivotTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('id_commande')->unsigned()->nullable();
             $table->integer('id_produit')->unsigned()->nullable();
+            $table->integer('quantite');
             $table->timestamps();
         });
     }

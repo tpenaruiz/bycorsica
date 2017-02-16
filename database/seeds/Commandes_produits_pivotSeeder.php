@@ -15,7 +15,8 @@ class Commandes_produits_pivotSeeder extends Seeder
         $commandesProduitPivot = [
             [
                 'id_commande' => '1',
-                'id_produit' => '1'
+                'id_produit' => '1',
+                'quantite' => 1
             ]
         ];
         DB::table('commandes_produits_pivot')->delete();

@@ -17,12 +17,13 @@ class AccountController extends Controller
     	//code
     }
 
-    public function index(Request $request){
+    public function index(Request $request, $anchor){
 
     	$user = Auth::user();
         $pays = \App\Pays::pluck('nom_fr_fr', 'id');
         $ville = \App\Villes::pluck('libelle', 'id');
     	$adresses = \App\Adresses::where('id_user', '=', Auth::user()->id)->get();
+        $listCommandes = \App\Commandes::where('id_user', '=', Auth::user()->id)->get();
 
         $listCadeaux = \DB::table('ProductForSurprise')
             ->join('produits', 'ProductForSurprise.id_produit', '=', 'produits.id')
@@ -42,7 +43,7 @@ class AccountController extends Controller
             ]);
         }
 
-        return view('front.account.index', compact('user', 'ville', 'pays', 'adresses', 'listCadeaux'));
+        return view('front.account.index', compact('user', 'ville', 'pays', 'adresses', 'listCommandes', 'listCadeaux', 'anchor'));
     }
 
     public function infosUpdate(UsersFrontRequest $request){
@@ -198,5 +199,4 @@ class AccountController extends Controller
         }
         return redirect()->route('account');
     }
-
 }
