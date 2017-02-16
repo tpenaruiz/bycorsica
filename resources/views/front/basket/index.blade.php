@@ -115,9 +115,11 @@
                             <input type="submit" class="btn btn-primary btn-block pull-right"
                                    value="Continuer mes Achats"/>
                         </div>
-                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                            <input type="submit" class="btn btn-primary btn-block" value="Commander"/>
-                        </div>
+                        @if(count($myPurchase) !== 0)
+                            <div class="btn_commander form-group col-md-6 col-sm-6 col-xs-12">
+                                <input type="submit" class="btn btn-primary btn-block" value="Commander"/>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

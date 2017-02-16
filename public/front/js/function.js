@@ -76,13 +76,14 @@ $(document).ready(function(){
         let id = row.data('id');
         let form = $('#form-del');
         let url = form.attr('action').replace(':PURCHASE_ID', id);
-        let data = form.serialize(); 
+        let data = form.serialize();
 
         let prixttc = parseFloat($(this).parents('tr').data('prixttc'));
         let quantite = parseFloat($(this).parents('tr').data('quantite'));
         let prixtotalttc = parseFloat($('#prixtotalttc').data('prixtotalttc'));
         let newprixtotalttc = Number(Math.round((prixtotalttc - (prixttc*quantite))+'e'+2)+'e-'+2);
 
+        console.log(url);
         $.ajax({
             url:url,
             type:'POST',
@@ -104,7 +105,8 @@ $(document).ready(function(){
 
                 // Affichage d'un message dans tableau si plus de produit
                 if(newprixtotalttc==0){
-                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">result.cleanBasket</td></tr>');
+                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">Aucun produit actuellement dans votre panier</td></tr>');
+                    $('.btn_commander').fadeOut();
                 }
             },
             error: function(){
@@ -335,7 +337,8 @@ $(document).ready(function(){
 
                 // Affichage d'un message dans tableau si plus de produit
                 if(prixProdsTotalTtc==0){
-                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">result.cleanBasket</td></tr>');
+                    $('#purchase').after('<tr><td colspan="6" class="text-center no_product">Aucun produit actuellement dans votre panier</td></tr>');
+                    $('.btn_commander').fadeOut();
                 }
             },
             error: function(){
