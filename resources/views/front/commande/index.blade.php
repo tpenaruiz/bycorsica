@@ -59,7 +59,7 @@
                                         <p class="refPr">Référence : {{$row->reference}}</p>
                                     </td>
                                     <td class="cmd_quantity">
-                                        <p>X </p>
+                                        <p>X {{$row->pivot->quantite}}</p>
                                     </td>                               
                                 </tr>
                                 @endforeach   
