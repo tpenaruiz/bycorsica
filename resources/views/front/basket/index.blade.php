@@ -27,9 +27,7 @@
                                     @foreach($myPurchase as $row)
                                     <tr id="purchase" class="cart_{{$row->idPurchase}}" data-idpurchase="{{$row->idPurchase}}">                                 
                                         <td class="cart_product">
-                                            <a href="{{url('produit/'.$row->idProd)}}"><img
-                                                        src="http://bycorsica.fr/324-tm_small_default/tapenade-noire-olives-noires-apero.jpg"
-                                                        alt=""></a>
+                                            <a href="{{url('produit/'.$row->idProd)}}"><img src="{{asset($row->chemin)}}"></a>
                                         </td>
                                         <td class="cart_description">
                                             <h4><a href="">{{$row->produitNom}}</a></h4><div class="break"></div>
