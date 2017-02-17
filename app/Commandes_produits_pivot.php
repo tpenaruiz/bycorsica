@@ -11,7 +11,8 @@ class Commandes_Produits_Pivot extends Model
     protected $table = 'commandes_produits_pivot';
     protected $fillable = [
         'id_commande',
-        'id_produit'
+        'id_produit',
+        'quantite'
     ];
 
 

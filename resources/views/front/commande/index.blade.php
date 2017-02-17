@@ -52,14 +52,14 @@
                                 @foreach($commande->produits as $row)
                                 <tr>                                 
                                     <td class="cmd_product">
-                                        <a href="{{url('produit/'.$row->id)}}"><img src="{{$row->medias->chemin}}" alt="{{$row->nom}}" title="{{$row->nom}}" /></a>
+                                        <a href="{{url('produit/'.$row->id)}}"><img src="{{asset($row->medias->chemin)}}" alt="{{$row->nom}}" title="{{$row->nom}}" /></a>
                                     </td>
                                     <td class="cmd_description">
                                         <h4><a href="">{{$row->nom}}</a></h4><div class="break"></div>
                                         <p class="refPr">Référence : {{$row->reference}}</p>
                                     </td>
                                     <td class="cmd_quantity">
-                                        <p>X 4</p>
+                                        <p>X {{$row->pivot->quantite}}</p>
                                     </td>                               
                                 </tr>
                                 @endforeach   

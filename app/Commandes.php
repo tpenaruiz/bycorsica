@@ -37,7 +37,7 @@ class Commandes extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function produits(){
-        return $this->belongsToMany('\App\Produits', 'commandes_produits_pivot', 'id_commande', 'id_produit');
+        return $this->belongsToMany('\App\Produits', 'commandes_produits_pivot', 'id_commande', 'id_produit')->withPivot('quantite');
     }
 
     /**
