@@ -14,30 +14,30 @@
                         <table class="table table-condensed">
                             <thead>
                                 <tr class="cart_menu">
-                                    <td class="image">Produit</td>
-                                    <td class="description">Description</td>
-                                    <td class="">Prix</td>
-                                    <td class="quantity">Quantity</td>
-                                    <td class="total">Total</td>
-                                    <td><span><i class="fa fa-trash-o fa-lg"></i></span></td>
+                                    <td class="col-sm-1 text-center image">Produit</td>
+                                    <td class="col-sm-3 text-center description">Description</td>
+                                    <td class="col-sm-2 text-center">Prix</td>
+                                    <td class="col-sm-2 text-center quantity">Quantity</td>
+                                    <td class="col-sm-2 text-center total">Total</td>
+                                    <td class="col-sm-2 text-center"><span><i class="fa fa-trash-o fa-lg"></i></span></td>
                                 </tr>
                             </thead>
                             <tbody>
                                 @if(count($myPurchase)>0)
                                     @foreach($myPurchase as $row)
                                     <tr id="purchase" class="cart_{{$row->idPurchase}}" data-idpurchase="{{$row->idPurchase}}">                                 
-                                        <td class="cart_product">
+                                        <td class="text-center cart_product">
                                             <a href="{{url('produit/'.$row->idProd)}}"><img src="{{asset($row->chemin)}}"></a>
                                         </td>
-                                        <td class="cart_description">
+                                        <td class="text-center cart_description">
                                             <h4><a href="">{{$row->produitNom}}</a></h4><div class="break"></div>
                                             <p class="refPr">Référence : {{$row->reference}}</p>
                                         </td>
-                                        <td id="cart_price_{{$row->idPurchase}}" class="cart_price">
-                                            <p>{{$row->produitPrixTtc}}</p>
+                                        <td id="cart_price_{{$row->idPurchase}}" class="text-center cart_price">
+                                            <p>{{number_format($row->produitPrixTtc, 2, ',', ' ')}}</p>
                                         </td>
                                         {!! Form::open(['route'=>['myPurchase.quantiteUpdate', ':PURCHASE_ID'], 'method' => 'POST', 'id' => 'form-cart-quantite-update-'.$row->idPurchase]) !!}
-                                            <td id="cart_quantity_{{$row->idPurchase}}" class="cart_quantity">
+                                            <td id="cart_quantity_{{$row->idPurchase}}" class="text-center cart_quantity">
                                                 <div class="cart_quantity_button">
                                                     <a class="cart_quantity_down"> - </a>
                                                     <input id="cart_quantity_input_{{$row->idPurchase}}" class="cart_quantity_input" type="text" name="quantity" value="{{$row->quantite}}" autocomplete="off" size="2">
@@ -45,11 +45,11 @@
                                                 </div>
                                             </td>
                                         {!! Form::close() !!}
-                                        <td id="cart_total_{{$row->idPurchase}}" class="cart_total">
-                                            <p>{{$row->prixProduitTotalTtc}}</p>
+                                        <td id="cart_total_{{$row->idPurchase}}" class="text-center cart_total">
+                                            <p>{{number_format($row->prixProduitTotalTtc, 2, ',', ' ')}}</p>
                                         </td>
                                         {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-cart-delete']) !!}
-                                            <td class="cart_delete">
+                                            <td class="text-center cart_delete">
                                                 <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
                                             </td>
                                         {!! Form::close() !!}                                  
@@ -94,7 +94,7 @@
                                 <tbody>
                                 <tr>
                                     <td id="cart_product_total" class="cart_product">
-                                        <p>{{$myPurchasePriceTTC->prixtotalttc}} $</p>
+                                        <p>{{number_format($myPurchasePriceTTC->prixtotalttc, 2, ',', ' ')}} $</p>
                                     </td>
                                     <td class="cart_price">
                                         <p>0 $</p>
