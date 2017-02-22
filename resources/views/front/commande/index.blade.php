@@ -11,26 +11,45 @@
                 </div>
                 <div class="panel-body">
                     <div class="raw">
-                        <div class="col-md-6 col-sm-12 col-md-offset-3">
+                        <div class="col-md-6 col-sm-12">
                             <div class="table-responsive commande_infos">
                                 <table class="table table-condensed text-center">
                                     <thead>
                                         <tr>
-                                            <td class="description">Date</td>
-                                            <td class="description">Montant</td>
-                                            <td class="description">Status</td>
+                                            <td>Date</td>
+                                            <td>Montant</td>
+                                            <td>Status</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td id="cmd_date">
+                                                <p>{{$commande->getCreateddateAttribute()}}</p>
+                                            </td>
+                                            <td class="cmd_montant">
+                                                <p>{{$commande->montant}} $</p>
+                                            </td>
+                                            <td class="cmd_total">
+                                                <p>{{$commande->status}}</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-12">
+                            <div class="table-responsive commande_adresse">
+                                <table class="table table-condensed text-center">
+                                    <thead>
+                                        <tr>
+                                            <td class="description">Adresse de livraison</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td id="cart_product_total" class="cart_product">
                                                 <p>{{$commande->getCreateddateAttribute()}}</p>
-                                            </td>
-                                            <td class="cart_price">
-                                                <p>{{$commande->montant}} $</p>
-                                            </td>
-                                            <td class="cart_total">
-                                                <p>{{$commande->status}}</p>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -43,22 +62,22 @@
                         <table class="table table-condensed">
                             <thead>
                                 <tr class="cart_menu">
-                                    <td class="image">Produit</td>
-                                    <td class="description">Libelllé</td>
-                                    <td class="quantity">Quantity</td>
+                                    <td class="col-sm-2 text-center image">Produit</td>
+                                    <td class="col-sm-5 text-center description">Libelllé</td>
+                                    <td class="col-sm-5 text-center quantity">Quantity</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($commande->produits as $row)
                                 <tr>                                 
-                                    <td class="cmd_product">
-                                        <a href="{{url('produit/'.$row->id)}}"><img src="{{asset($row->medias->chemin)}}" alt="{{$row->nom}}" title="{{$row->nom}}" /></a>
+                                    <td class="text-center cmd_product">
+                                        <a href="{{url('produit/'.$row->id)}}"><img style="width:100%" src="{{asset($row->medias->chemin)}}" alt="{{$row->nom}}" title="{{$row->nom}}" /></a>
                                     </td>
-                                    <td class="cmd_description">
+                                    <td class="text-center cmd_description">
                                         <h4><a href="">{{$row->nom}}</a></h4><div class="break"></div>
                                         <p class="refPr">Référence : {{$row->reference}}</p>
                                     </td>
-                                    <td class="cmd_quantity">
+                                    <td class="text-center cmd_quantity">
                                         <p>X {{$row->pivot->quantite}}</p>
                                     </td>                               
                                 </tr>

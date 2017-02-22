@@ -34,7 +34,7 @@
                                             <p class="refPr">Référence : {{$row->reference}}</p>
                                         </td>
                                         <td id="cart_price_{{$row->idPurchase}}" class="text-center cart_price">
-                                            <p>{{number_format($row->produitPrixTtc, 2, ',', ' ')}}</p>
+                                            <p>{{$row->produitPrixTtc}}</p>
                                         </td>
                                         {!! Form::open(['route'=>['myPurchase.quantiteUpdate', ':PURCHASE_ID'], 'method' => 'POST', 'id' => 'form-cart-quantite-update-'.$row->idPurchase]) !!}
                                             <td id="cart_quantity_{{$row->idPurchase}}" class="text-center cart_quantity">
@@ -46,7 +46,7 @@
                                             </td>
                                         {!! Form::close() !!}
                                         <td id="cart_total_{{$row->idPurchase}}" class="text-center cart_total">
-                                            <p>{{number_format($row->prixProduitTotalTtc, 2, ',', ' ')}}</p>
+                                            <p>{{$row->prixProduitTotalTtc}}</p>
                                         </td>
                                         {!! Form::open(['route'=>['myPurchase.destroy', ':PURCHASE_ID'], 'method' => 'DEL', 'id' => 'form-cart-delete']) !!}
                                             <td class="text-center cart_delete">
@@ -94,7 +94,7 @@
                                 <tbody>
                                 <tr>
                                     <td id="cart_product_total" class="cart_product">
-                                        <p>{{number_format($myPurchasePriceTTC->prixtotalttc, 2, ',', ' ')}} $</p>
+                                        <p>{{$myPurchasePriceTTC->prixtotalttc}} $</p>
                                     </td>
                                     <td class="cart_price">
                                         <p>0 $</p>
