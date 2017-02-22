@@ -16,6 +16,7 @@ class CommandesSeeder extends Seeder
             [
                 'id_user' => '1',
                 'id_tva' => '1',
+                'id_adresse' => '1',
                 'reference' => '000162',
                 'montant' => 1,
                 'status' => 'En cours'
@@ -23,6 +24,7 @@ class CommandesSeeder extends Seeder
             [
                 'id_user' => '1',
                 'id_tva' => '1',
+                'id_adresse' => '1',
                 'reference' => '000163',
                 'montant' => 1,
                 'status' => 'En cours'
@@ -30,6 +32,7 @@ class CommandesSeeder extends Seeder
             [
                 'id_user' => '1',
                 'id_tva' => '1',
+                'id_adresse' => '1',
                 'reference' => '000163',
                 'montant' => 1,
                 'status' => 'En cours'

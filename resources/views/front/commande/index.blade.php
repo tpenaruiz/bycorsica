@@ -43,13 +43,13 @@
                                 <table class="table table-condensed text-center">
                                     <thead>
                                         <tr>
-                                            <td class="description">Adresse de livraison</td>
+                                            <td class="description">Livraison : {{$commande->adresse->libelle}}</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td id="cart_product_total" class="cart_product">
-                                                <p>{{$commande->getCreateddateAttribute()}}</p>
+                                                <p>{{$commande->adresse->pays->nom_fr_fr}} - {{$commande->adresse->villes->code_postal}} {{$commande->adresse->villes->libelle}} - {{$commande->adresse->adresse}}</p>
                                             </td>
                                         </tr>
                                     </tbody>
