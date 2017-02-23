@@ -343,7 +343,7 @@ class Ajax {
      ********************************************************/
     add_product_for_surpise(){
         /**
-         * Block Product
+         * Block Product_list_category
          * Add Product For Surprise AJAX
          */
         $('.btn_surpise').on('click', function(e){
@@ -372,6 +372,36 @@ class Ajax {
                 }
             });
         });
+
+        /**
+         * Block Product_grille_category
+         * Add Product For Surprise AJAX
+         */
+         $(".btn_surpise_grille_category").on('click', function(e){
+            e.preventDefault();
+            let row = $(this).parent();
+            let id = row.data('id');
+            let form = $('#form-add-surprise');
+            let url = form.attr('action').replace(':PRODUCT_ID', id);            
+            let data = form.serialize();
+            $.ajax({
+                url:url,
+                type:'POST',
+                data:data,
+                success: function(result){
+                    if(result.message.substring(0, 1) === '1'){
+                        // Affichage du message avec lib Notif.js
+                        $('#message_info').append(notie.alert(1, result.message.substring(2), 5));
+                    }else{
+                        // Affichage du message avec lib Notif.js
+                        $('#message_info').append(notie.alert(2, result.message.substring(2), 5));
+                    }
+                },
+                error: function(){
+                    sweetAlert('Oups...', 'Une erreur est survenue', 'error');
+                }
+            });
+        })
     }
 
     delete_purchase_table_row(){

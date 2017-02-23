@@ -57,7 +57,7 @@
                                         <div class="cadeau">
                                             <a href="" class="ajax_cadeau" id="add_gift"><span><i class="fa fa-heart-o fa-lg"></i>Ajouter à ma liste de cadeaux</span></a>
                                         </div>
-                                {!! Form::close() !!}
+                                    {!! Form::close() !!}
                                 @endif
                             </div>
                         </div>

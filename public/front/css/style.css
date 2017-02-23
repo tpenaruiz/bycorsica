@@ -1102,8 +1102,12 @@ label {
     vertical-align: inherit;
 }
 
-.basket .cart_info1 .image {
+/*.basket .cart_info1 .image {
     padding-left: 30px;
+}*/
+
+.basket .cart_info1 .cart_product img {
+    width: 100%;
 }
 
 .basket .cart_info1 .cart_description h4 {
@@ -1190,24 +1194,29 @@ label {
     display: inline-block;
     font-size: 1.35em;
     height: 28px;
-    overflow: hidden;
     text-align: center;
     width: 35px;
-    float: left;
+    /*overflow: hidden;*/
+    /*float: left;*/
 }
 
 .basket .cart_quantity_input {
     color: #B79332;
-    float: left;
     font-size: 16px; /* Input text */
     text-align: center;
     font-family: 'Roboto',sans-serif;
+    display: inline-block;
+    margin-left: -5px;
+    margin-right: -5px;
+    vertical-align: top;
+    width: 35px;
+    /*overflow: hidden;*/
 
 }
 
 .basket .cart_delete  {
     display: block;
-    margin-right: -12px;
+    /*margin-right: -12px;*/
     overflow: hidden;
 }
 
@@ -1321,8 +1330,6 @@ label {
 .commande .commande_infos tbody td {
     padding-top: 15px;
 }
-
-
 
 .commande  .produits_infos {
     border: 1px solid #B79332;
@@ -1969,7 +1976,7 @@ label {
 
 /*
 |--------------------------------------------------------------------------
-| Page Account
+| Page Account - General
 |--------------------------------------------------------------------------
 */
 
@@ -1979,7 +1986,7 @@ label {
 }
 
 .account .title {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .account ul {
@@ -2030,6 +2037,13 @@ label {
 .account .infos .btn {
     margin-top: 40px;
 }
+
+
+/*
+|--------------------------------------------------------------------------
+| Page Account - Onglet Adresse
+|--------------------------------------------------------------------------
+*/
 
 .account .address .address-details {
     padding-top: 20px;
@@ -2106,20 +2120,59 @@ label {
     margin-top: 40px;
 }
 
-.commandes thead{
+/*
+|--------------------------------------------------------------------------
+| Page Account - Onglet Commande
+|--------------------------------------------------------------------------
+*/
+
+/*.commandes thead{
     background-color: #E6E6E6;
     color: black;
-}
-.commandes tr.even{
-    background-color: white;
-    color: black;
-}
-.commandes tr.odd{
-    color: black;
-}
+}*/
 
 .commandes .table {
-    border: 2px ridge #E0C868;
+    border: 1px solid #B79332;
+}
+
+.commandes .table thead tr {
+    background-color: #B79332;
+}
+
+.commandes .table-bordered>thead>tr {
+    background: #B79332;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.commandes .table-bordered>thead>tr>td {
+    border: 1px solid #B79332;
+}
+
+.commandes table.dataTable thead .sorting_asc:after,
+.commandes table.dataTable thead .sorting_desc:after,
+.commandes table.dataTable thead .sorting:after {
+    color: black;
+}
+.commandes table.dataTable thead .sorting:after{
+    opacity: 0.3;
+}
+
+.commandes table.table-bordered.dataTable tbody td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.commandes .table-striped>tbody>tr:nth-of-type(even),
+.commandes .table-striped>tbody>tr:nth-of-type(odd)
+{
+    background-color: #222;
+}
+
+.commandes table.table-bordered.dataTable tbody td {
+    border: 0 none;
+    border-bottom: 1px solid #B79332;
 }
 
 .commandes .pagination>.active>a {

@@ -4,19 +4,19 @@
     	<table id="commandes_tab" class="table table-striped table-bordered" cellspacing="0" width="100%">
     		<thead>
     			<tr>
-    				<td>Référence :</td>
-                    <td>Passé le :</td>
-    				<td>Montant (€) :</td>
-    				<td>Status :</td>
+    				<td class="text-center">Référence</td>
+                    <td class="text-center">Passé le</td>
+    				<td class="text-center">Montant</td>
+    				<td class="text-center">Status</td>
     			</tr>
     		</thead>
             <tbody>
                 @foreach($listCommandes as $row)
                     <tr>
-                        <td><a href="{{ url('/commande/'.$row->id)}}">{{$row->reference}}</a></td>
-                        <td>{{$row->created_at}}</td>
-                        <td>{{$row->montant}}</td>
-                        <td>{{$row->status}}</td>
+                        <td class="text-center"><a href="{{ url('/commande/'.$row->id)}}">{{$row->reference}}</a></td>
+                        <td class="text-center">{{$row->getCreateddateAttribute()}}</td>
+                        <td class="text-center">{{number_format($row->montant, 2, ',', ' ')}}</td>
+                        <td class="text-center">{{$row->status}}</td>
                     </tr>
                 @endforeach
             </tbody>
