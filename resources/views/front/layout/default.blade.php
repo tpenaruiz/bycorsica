@@ -78,7 +78,6 @@
         <div>
             @include('front.layout.authentification_request_message')
             @include('front.layout.error')
-            @include('front.layout.errors_request')
             @include('front.layout.success')
             <div id="message_info"></div>
         </div>
