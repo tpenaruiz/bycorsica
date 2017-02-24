@@ -1370,10 +1370,6 @@ label {
     font-size: 1.4em;
 }
 
-.commande .produits_infos .image {
-    padding-left: 30px;
-}
-
 .commande .produits_infos .cmd_description h4 {
     margin-bottom: 0
 }
@@ -1391,6 +1387,7 @@ label {
 .commande .commande_adresse td,
 .commande .produits_infos td  {
     font-size: 1.2em;
+    padding-bottom: 15px;
 }
 
 

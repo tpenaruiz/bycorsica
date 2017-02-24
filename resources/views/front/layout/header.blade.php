@@ -131,7 +131,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3 text-center">
-            <img src="{{ asset('front/img/logo_big.jpeg') }}" style="width: 200px">
+            <a href="{{url('/')}}"><img src="{{ asset('front/img/logo_big.jpeg') }}" style="width: 200px"></a>
         </div>
         <div class="col-md-9">
             <nav class="main-nav" role="navigation">
