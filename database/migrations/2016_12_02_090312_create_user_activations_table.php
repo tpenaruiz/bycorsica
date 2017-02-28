@@ -17,7 +17,7 @@ class CreateUserActivationsTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('users_id')->unsigned();
             $table->string('token')->index();
-            //$table->timestamp(); // TODO, (je crois c'est parce qu'il manquer le id en primary key faudrai tester) Pourquoi timestamp() ne fonctionne pas ? et timestamp(created_at) fonctionne !
+            //$table->timestamp(); /// TODO, ici bug du framework Laravel (modifier manuellement, le timestamp createdAt et updatedAt => timestamp) !!!
         });
     }
 
