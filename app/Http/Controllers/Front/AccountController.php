@@ -30,6 +30,7 @@ class AccountController extends Controller
             ->join('medias', 'produits.id_media', '=', 'medias.id')
             ->join('users', 'ProductForSurprise.id_user', '=', 'users.id')
             ->join('tva', 'produits.id_tva', '=', 'tva.id')
+            ->where('users.id', '=', Auth::user()->id)
             ->select('*', 'produits.id AS idProd', 'medias.libelle AS mediaLibelle', 'ProductForSurprise.id AS ProductForSurpriseId', 'users.id AS idUser', 'produits.nom AS produitNom', 'produits.description AS produitDescription')
             ->get();
 
