@@ -1314,20 +1314,23 @@ label {
     margin-bottom: 0px;
 }
 
-.commande  .commande_infos {
+.commande  .commande_infos,
+.commande  .commande_adresse {
     border: 1px solid #B79332;
     padding: 0;
     margin-bottom: 40px;
 }
 
-.commande .commande_infos thead tr {
+.commande .commande_infos thead tr,
+.commande  .commande_adresse thead tr {
     background: #B79332;
     color: #fff;
     font-size: 1.2em;
     font-weight: normal;
 }
 
-.commande .commande_infos tbody td {
+.commande .commande_infos tbody td,
+.commande  .commande_adresse tbody td {
     padding-top: 15px;
 }
 
@@ -1367,25 +1370,25 @@ label {
     font-size: 1.4em;
 }
 
-.commande .produits_infos .image {
-    padding-left: 30px;
-}
-
 .commande .produits_infos .cmd_description h4 {
     margin-bottom: 0
 }
 
 .commande .produits_infos .cmd_description h4 a {
     color: #fff;
-    font-size: 1em;
     font-weight: normal;
 }
 
 .commande .produits_infos .cmd_description p {
     color:#CECCCC;
-    font-size: 0.9em;
 }
 
+.commande .commande_infos td,
+.commande .commande_adresse td,
+.commande .produits_infos td  {
+    font-size: 1.2em;
+    padding-bottom: 15px;
+}
 
 
 /*

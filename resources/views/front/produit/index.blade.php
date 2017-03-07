@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="bloc">
-                                <h3 class="price" data-price="{{$produit->prixttc}}"><span>{{ str_replace('.', ',', $produit->prixttc) }}</span></h3>
+                                <h3 class="price" data-price="{{$produit->prixttc}}" data-priceoneproduct="{{$produit->prixttc}}"><span>{{ str_replace('.', ',', $produit->prixttc) }}</span></h3>
 
                                 <div class="qte">
                                     {{--Form::open(['method' => 'post', 'url' => route('produit.store', 1)])--}}

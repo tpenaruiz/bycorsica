@@ -15,7 +15,7 @@
                     <tr>
                         <td class="text-center"><a href="{{ url('/commande/'.$row->id)}}">{{$row->reference}}</a></td>
                         <td class="text-center">{{$row->getCreateddateAttribute()}}</td>
-                        <td class="text-center">{{number_format($row->montant, 2, ',', ' ')}}</td>
+                        <td class="text-center">{{$row->montant}}</td>
                         <td class="text-center">{{$row->status}}</td>
                     </tr>
                 @endforeach
