@@ -79,7 +79,7 @@ Route::get('/sousCategory/{sousCategory}', ['as' => 'sousCategory', 'uses' => 'F
  * Consultation et maj infos
  * Consutlation et maj adresses
  */
-Route::get('/account/{anchor}', ['as' => 'account', 'uses' => 'Front\AccountController@index']);
+Route::get('/account/{anchor}', ['as' => 'account', 'uses' => 'Front\AccountController@index'])->middleware('auth');;
 Route::post('/account/infos/update', ['as' => 'account.infos.update', 'uses' => 'Front\AccountController@infosUpdate']);
 Route::get('/account/address/update/{addresse}', ['as' => 'account.address.update', 'uses' => 'Front\AccountController@addressEdit']);
 Route::post('account/address/update/{addresse}', ['as' => 'account.address.update', 'uses' => 'Front\AccountController@addressUpdate']);

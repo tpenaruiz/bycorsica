@@ -7,7 +7,7 @@
             <div class="description">
                 <h3 class="title">{{$row->nom}}</h3>
                 <div class="libelle">{{$row->description}}</div>
-                <div class="price" style="">{{Lang::get('general.price')}} {{number_format($row->prixttc, 2, ',', ' ')}} &euro;</div>
+                <div class="price" style="">{{Lang::get('general.price')}} {{$row->prixttc}} &euro;</div>
                 <div>
                     <a href="" class="product-link">{{Lang::get('general.detail')}}</a>
                     <a href="" class="cart" data-toggle="modal" data-target="#add_produc_cart_bestSellers_{{$row->idProd}}">{{Lang::get('general.addBasket')}}</a>
@@ -34,7 +34,7 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1"><img src="{{ asset($row->chemin) }}" class="img-responsive" alt="{{$row->libelle}}" title="{{$row->libelle}}"></div>
-                            <div class="col-md-8 col-sm-8 col-xs-8"><h4>{{$row->nom}} - {{Lang::get('general.price')}} {{number_format($row->prixttc, 2, ',', ' ')}} &euro;</h4></div>
+                            <div class="col-md-8 col-sm-8 col-xs-8"><h4>{{$row->nom}} - {{Lang::get('general.price')}} {{$row->prixttc}} &euro;</h4></div>
                         </div>
                     </div>
                     <div class="modal-footer">

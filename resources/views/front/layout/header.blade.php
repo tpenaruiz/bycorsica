@@ -93,7 +93,7 @@
                                                 <td class="image"><a href=""><img src="{{ asset($row->chemin) }}" alt="{{$row->mediaLibelle}}" title="{{$row->mediaLibelle}}"></a></td>
                                                 <td>
                                                     <div>{{$row->produitNom}}</div>
-                                                    <div>{{number_format($row->prixttc, 2, ',', ' ')}} &euro;</div>
+                                                    <div>{{$row->prixttc}} &euro;</div>
                                                 </td>
                                                 <td>
                                                     <span id="quantite_{{$row->idPurchase}}">X {{$row->quantite}}</span>
@@ -115,7 +115,7 @@
                                     <tbody>
                                         <tr id="prixtotalttc" data-prixtotalttc="{{ $myPurchasePriceTTC->prixtotalttc }}"> 
                                             <td style="text-align: right; border: 0px">Total de la commande :</td>
-                                            <td style="text-align: left; border: 0px">{{number_format($myPurchasePriceTTC->prixtotalttc, 2, ',', ' ')}} euros</td>
+                                            <td style="text-align: left; border: 0px">{{$myPurchasePriceTTC->prixtotalttc}} euros</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -131,7 +131,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3 text-center">
-            <img src="{{ asset('front/img/logo_big.jpeg') }}" style="width: 200px">
+            <a href="{{url('/')}}"><img src="{{ asset('front/img/logo_big.jpeg') }}" style="width: 200px"></a>
         </div>
         <div class="col-md-9">
             <nav class="main-nav" role="navigation">

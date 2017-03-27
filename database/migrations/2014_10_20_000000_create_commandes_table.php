@@ -17,6 +17,7 @@ class CreateCommandesTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->integer('id_tva')->unsigned()->nullable();
+            $table->integer('id_adresse')->unsigned();
             $table->integer('reference');
             $table->float('montant');
             $table->enum('status', array('En cours', 'Terminer', 'Annuler', 'Erreur'));

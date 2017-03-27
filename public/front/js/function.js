@@ -63,7 +63,7 @@ $(document).ready(function(){
 
     /**
      * Page Produit
-     * Button (-) and Button (+)
+     * Button (-) and Button (+), and Input
      * Add or delete quantity
      * Add product to list for surprise
      */
@@ -100,6 +100,20 @@ $(document).ready(function(){
         $('#modal_qte_redirectHome').val(newVal);
         $('#modal_qte_redirectBasket').val(newVal);
     });
+
+    // On modifie directement la valeur dans l'Input
+    $('._inputQte').keyup(function(){
+        // Calcul du nouveau prix
+        let value = $('._inputQte').val();
+        let prix = parseFloat($('.price').data('priceoneproduct'));
+        let newPrix = prix*value;
+        let newPrixFinal = Number(Math.round(newPrix+'e'+2)+'e-'+2);   
+        // Update quantité, prix et data-price
+        $('.price span').html(newPrixFinal);
+        $('.price').data('price', newPrixFinal);
+        $('#modal_qte_redirectHome').val(value);
+        $('#modal_qte_redirectBasket').val(value);   
+    })
 
     /**
      * Page Basket

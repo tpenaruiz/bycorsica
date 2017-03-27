@@ -13,7 +13,7 @@ class CommandeController extends Controller
 
     public function index(Request $request, $commande){
 
-        $commande = \App\Commandes::find($commande);
+        $commande = \App\Commandes::with('adresse')->find($commande);
         return view('front.commande.index', compact('commande'));
     }
 
