@@ -17,7 +17,6 @@ class CreateUserActivationsTable extends Migration
             $table->increments('id')->unsigned();
             $table->integer('users_id')->unsigned();
             $table->string('token')->index();
-            //$table->timestamp(); /// TODO, ici bug du framework Laravel (modifier manuellement, le timestamp createdAt et updatedAt => timestamp) !!!
         });
     }
 

@@ -14,4 +14,6 @@ class UserActivations extends Model
     	'users_id',
         'token'
     ];
+
+   protected $timestamp = null;
 }

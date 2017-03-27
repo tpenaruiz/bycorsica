@@ -59,7 +59,7 @@
 
 <div class="footer-bottom">
     <div class="container">
-        <p class="pull-left"> Copyright © Footer 2014. All right reserved. </p>
+        <p class="pull-left"> Copyright &copy; Footer {{date('Y')}}. All right reserved. </p>
         <div class="pull-right">
             <ul class="nav nav-pills payments">
                 <li><i class="fa fa-cc-visa"></i></li>
