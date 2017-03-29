@@ -4,8 +4,8 @@
         <input type="text" class="ts-sidebar-search" placeholder="Search here...">
     </li>
     <li class="ts-label">Main</li>
-    <li class="open"><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="#"><i class="fa fa-user"></i> Users</a></li>
+    <li class="open"><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+    <li><a href="{{route('user.index')}}"><i class="fa fa-user"></i> Users</a></li>
 
     <li><a href="#"><i class="fa fa-desktop"></i>Categorie 2 étages</a>
         <ul>
