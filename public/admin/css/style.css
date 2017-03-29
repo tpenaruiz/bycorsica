@@ -16,6 +16,11 @@
 html {
   font-size: 14px;
 }
+
+a {
+  cursor: pointer;
+}
+
 @media only screen and (min-width: 480px) {
   html {
     font-size: 17px;
@@ -744,4 +749,18 @@ li {
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+
+/** Gestion User **/
+.user_eyes {
+  color: #0a568c;
+}
+
+#form-user-delete {
+  display: inline;
+}
+
+.user_delete {
+  color: #843534;
 }

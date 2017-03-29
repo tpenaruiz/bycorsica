@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Users;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Lang;
 
 class UserController extends Controller
 {
@@ -79,8 +82,17 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Users $user, Request $request)
     {
-        //
+        $user->delete();
+
+        // AJAX
+        $message = Lang::get('general.delete');
+        if($request->ajax()){
+            return response()->json([
+                'message' => $message
+            ]);
+        }
+        return redirect()->route('user.index');
     }
 }

@@ -5,7 +5,7 @@
  ********************************************************/
 $(document).ready(function () {
     let ajax = new Ajax();
-
+    ajax.delete_user_row();
 });
 
 

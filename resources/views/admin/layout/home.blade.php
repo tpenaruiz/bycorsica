@@ -2,6 +2,7 @@
 <html class="no-js">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <meta name="description" content="">
@@ -74,6 +75,8 @@
 <script src="{{ asset('admin/js/fileinput.js') }}"></script>
 <script src="{{ asset('admin/js/chartData.js') }}"></script>
 <script src="{{ asset('admin/js/main.js') }}"></script>
+<script src="{{ asset('admin/js/ajax.js') }}"></script>
+<script src="{{ asset('admin/js/function.js') }}"></script>
 
 <!-- Fonction chart dashboard -->
 <script src="{{ asset('admin/js/fonctionChart.js') }}"></script>

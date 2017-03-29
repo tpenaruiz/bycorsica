@@ -36,7 +36,7 @@
                         </tfoot>
                         <tbody>
                         @foreach($user as $row)
-                            <tr>
+                            <tr id="user" class="user_{{$row->id}}" data-id="{{$row->id}}">
                                 <td>{{$row->roles->libelle}}</td>
                                 <td>{{$row->villes->libelle}}</td>
                                 <td>{{$row->nom}}</td>
@@ -46,8 +46,12 @@
 
                                 <td>
                                     <!-- Action -->
-                                    <a href="#"><i style="color: #0a568c" class="fa fa-eye fa-2x"></i></a>
-                                    <a href="#"><i style="color:#843534" class="fa fa-trash fa-2x"></i></a>
+                                    <a href="#" class="user_eyes"><i class="fa fa-eye fa-2x"></i></a>
+
+                                    {!! Form::open(['route'=>['user.destroy', ':USER_ID'], 'method' => 'DEL', 'id' => 'form-user-delete']) !!}
+                                        <a class="user_delete"><i class="fa fa-trash fa-2x"></i></a>
+                                    {!! Form::close() !!}
+
                                 </td>
                             </tr>
                         @endforeach
