@@ -18,8 +18,8 @@
 | BACKS OFFICES
 |
 */
-
-
+Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
+Route::resource('/user', 'Admin\UserController');
 
 
 /*
