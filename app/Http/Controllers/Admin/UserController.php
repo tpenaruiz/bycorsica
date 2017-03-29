@@ -14,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index');
+        $user = \App\Users::with('roles', 'villes')->where('status', '=', 'Actif')->get();
+        return view('admin.user.index', compact('user'));
     }
 
     /**
