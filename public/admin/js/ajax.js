@@ -22,7 +22,7 @@ class Ajax {
 
             $.ajax({
                 url:url,
-                type:'DELETE',
+                type:'PUT',
                 data:data,
                 success: function(result){
                     // Efface ligne du tableau

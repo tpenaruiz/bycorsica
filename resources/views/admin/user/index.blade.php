@@ -9,9 +9,10 @@
 
             <!-- Zero Configuration Table -->
             <div class="panel panel-default">
-                <div class="panel-heading">Liste utilisateurs</div>
+                <div class="panel-heading">Liste utilisateurs actif</div>
                 <div class="panel-body">
-                    <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+                    <table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0"
+                           width="100%">
                         <thead>
                         <tr>
                             <th>role</th>
@@ -46,12 +47,11 @@
 
                                 <td>
                                     <!-- Action -->
-                                    <a href="#" class="user_eyes"><i class="fa fa-eye fa-2x"></i></a>
+                                    <a href="{{route('user.show', $row->id)}}" class="user_eyes"><i class="fa fa-eye fa-2x"></i></a>
 
                                     {!! Form::open(['route'=>['user.destroy', ':USER_ID'], 'method' => 'DEL', 'id' => 'form-user-delete']) !!}
-                                        <a class="user_delete"><i class="fa fa-trash fa-2x"></i></a>
+                                    <a class="user_delete"><i class="fa fa-trash fa-2x"></i></a>
                                     {!! Form::close() !!}
-
                                 </td>
                             </tr>
                         @endforeach

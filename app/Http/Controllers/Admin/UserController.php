@@ -48,9 +48,12 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        $user = \App\Users::with('roles', 'villes')->where('id', '=', $user->id)->first();
+        $pays = \App\Pays::where('id', '=', $user->villes->id_pays)->first();
+        $adresse = \App\Adresses::with('users', 'pays', 'villes')->where('id_user', '=', $user->id)->first();
+        return view('admin.user.show', compact('user', 'pays', 'adresse'));
     }
 
     /**
@@ -84,7 +87,8 @@ class UserController extends Controller
      */
     public function destroy(Users $user, Request $request)
     {
-        $user->delete();
+        $user->status = 'Archivé';
+        $user->save();
 
         // AJAX
         $message = Lang::get('general.delete');
