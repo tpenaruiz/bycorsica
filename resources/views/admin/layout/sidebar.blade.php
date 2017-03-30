@@ -4,9 +4,22 @@
         <input type="text" class="ts-sidebar-search" placeholder="Search here...">
     </li>
     <li class="ts-label">Main</li>
-    <li class="open"><a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-    <li><a href="{{route('user.index')}}"><i class="fa fa-user"></i> Users</a></li>
 
+    <li class="dashboard">
+        <a href="{{route('admin.dashboard')}}"><i class="fa fa-dashboard"></i>Dashboard</a>
+    </li>
+
+    <li class="user">
+        <a href="{{route('user.index')}}"><i class="fa fa-user"></i>User</a>
+    </li>
+
+
+
+
+
+
+
+    <!-- TODO Les models 1 étage et 2 étages -->
     <li><a href="#"><i class="fa fa-desktop"></i>Categorie 2 étages</a>
         <ul>
             <li><a href="#">Sous categorie 1</a></li>
