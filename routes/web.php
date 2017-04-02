@@ -20,6 +20,7 @@
 */
 Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
 Route::resource('/user', 'Admin\UserController');
+Route::get('/user/detail_commande/{commande}', ['as' => 'user.detail_commande', 'uses' => 'Admin\UserController@detailCommande']);
 
 
 /*
