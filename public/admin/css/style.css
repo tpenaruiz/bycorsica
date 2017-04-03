@@ -755,7 +755,7 @@ li {
 }
 
 
-/** Gestion User **/
+/** Gestion Couleur Back-Office **/
 .user_eyes {
   color: #0a568c;
 }
@@ -765,5 +765,9 @@ li {
 }
 
 .user_delete {
+  color: #843534;
+}
+
+.newsletter_delete{
   color: #843534;
 }

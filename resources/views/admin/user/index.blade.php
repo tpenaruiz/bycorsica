@@ -49,7 +49,7 @@
                                     <!-- Action -->
                                     <a href="{{route('user.show', $row->id)}}" class="user_eyes"><i class="fa fa-eye fa-2x"></i></a>
 
-                                    {!! Form::open(['route'=>['user.destroy', ':USER_ID'], 'method' => 'DEL', 'id' => 'form-user-delete']) !!}
+                                    {!! Form::open(['route'=>['user.archive', ':USER_ID'], 'method' => 'DEL', 'id' => 'form-user-delete']) !!}
                                     <a class="user_delete"><i class="fa fa-trash fa-2x"></i></a>
                                     {!! Form::close() !!}
                                 </td>

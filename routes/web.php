@@ -18,9 +18,20 @@
 | BACKS OFFICES
 |
 */
+// Dashboard
 Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
-Route::resource('/user', 'Admin\UserController');
+
+// User
+Route::resource('/user', 'Admin\UserController', ['only' => ['index', 'show']]);
+Route::put('/user/{user}', ['as' => 'user.archive', 'uses' => 'Admin\UserController@archive']);
 Route::get('/user/detail_commande/{commande}', ['as' => 'user.detail_commande', 'uses' => 'Admin\UserController@detailCommande']);
+
+// Newsletter
+Route::get('/newsletter', ['as' => 'newsletter.index', 'uses' => 'Admin\NewsletterController@index']);
+Route::put('/newsletter/{newsletter}', ['as' => 'newsletter.archive', 'uses' => 'Admin\NewsletterController@archive']);
+
+// Gestion Mail
+Route::get('/patternMail', ['as' => 'pattern.index', 'uses' => 'Admin\PatternMailController@index']);
 
 
 /*

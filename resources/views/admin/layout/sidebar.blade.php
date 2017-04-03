@@ -13,6 +13,14 @@
         <a href="{{route('user.index')}}"><i class="fa fa-user"></i>User</a>
     </li>
 
+    <li class="newsletter">
+        <a href="{{route('newsletter.index')}}"><i class="fa fa-newspaper-o"></i>Newsletter</a>
+    </li>
+
+    <li class="patternMail">
+        <a href="{{route('pattern.index')}}"><i class="fa fa-send"></i>Pattern E-mail</a>
+    </li>
+
 
 
 
