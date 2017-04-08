@@ -56,5 +56,6 @@ return [
 
     'treatmentOk' => 'Treatment ok',
     'cleanBasket' => 'Aucun produit actuellement dans votre panier',
-    'delete' => 'Suppression éffectué avec succès !'
+    'delete' => 'Suppression éffectué avec succès !',
+    'success' => 'Création éffectué avec succès !'
 ];

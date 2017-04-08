@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\PatternMailRequest;
+use App\Http\Requests\TypeMailRequest;
+use App\PatternMail;
+use App\TypeMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Lang;
 
 class PatternMailController extends Controller
 {
@@ -14,7 +19,9 @@ class PatternMailController extends Controller
      */
     public function index()
     {
-        return view('admin.patternMail.index');
+        $type = \App\TypeMail::get();
+        $patternMail = \App\PatternMail::with('langues', 'type')->where('status', '=', 'Actif')->get();
+        return view('admin.patternMail.index', compact('type', 'patternMail'));
     }
 
     /**
@@ -24,7 +31,9 @@ class PatternMailController extends Controller
      */
     public function create()
     {
-        //
+        $langue = \App\Langues::pluck('libelle', 'id');
+        $type = \App\TypeMail::pluck('type', 'id');
+        return view('admin.patternMail.create', compact('langue', 'type'));
     }
 
     /**
@@ -33,9 +42,27 @@ class PatternMailController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PatternMailRequest $request)
     {
-        //
+        $patternMail = new \App\PatternMail;
+        $patternMail->id_langue = $request->id_langue;
+        $patternMail->id_type = $request->id_type;
+        $patternMail->expediteur = $request->expediteur;
+        $patternMail->destinateur = $request->destinateur;
+        $patternMail->objet = $request->objet;
+        $patternMail->contenu = $request->contenu;
+        $patternMail->status = $request->status;
+        $patternMail->save();
+
+        return redirect('patternMail')->withFlashMessage(Lang::get('general.success'));
+    }
+
+    public function storeType(TypeMailRequest $request){
+        $type = new TypeMail;
+        $type->type = $request->type;
+        $type->save();
+
+        return redirect('patternMail')->withFlashMessage(Lang::get('general.success'));
     }
 
     /**
@@ -78,8 +105,30 @@ class PatternMailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(PatternMail $patternMail, Request $request)
     {
-        //
+        $patternMail->delete();
+
+        // AJAX
+        $message = Lang::get('general.delete');
+        if($request->ajax()){
+            return response()->json([
+                'message' => $message
+            ]);
+        }
+        return redirect()->route('patternMail');
+    }
+
+    public function destroyType(TypeMail $typeMail, Request $request){
+        $typeMail->delete();
+
+        // AJAX
+        $message = Lang::get('general.delete');
+        if($request->ajax()){
+            return response()->json([
+                'message' => $message
+            ]);
+        }
+        return redirect()->route('patternMail');
     }
 }

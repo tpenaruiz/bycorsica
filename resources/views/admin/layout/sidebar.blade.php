@@ -18,7 +18,7 @@
     </li>
 
     <li class="patternMail">
-        <a href="{{route('pattern.index')}}"><i class="fa fa-send"></i>Pattern E-mail</a>
+        <a href="{{route('patternMail.index')}}"><i class="fa fa-send"></i>Pattern E-mail</a>
     </li>
 
 

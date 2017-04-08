@@ -39,7 +39,7 @@
                                     <td>
                                         <!-- Action -->
                                         {!! Form::open(['route'=>['newsletter.archive', ':NEWSLETTER_ID'], 'method' => 'DEL', 'id' => 'form-newsletter-delete']) !!}
-                                        <a class="newsletter_delete"><i class="fa fa-trash fa-2x"></i></a>
+                                        <a class="ico_delete newsletter_delete"><i class="fa fa-trash fa-2x"></i></a>
                                         {!! Form::close() !!}
                                     </td>
                                 </tr>

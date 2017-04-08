@@ -31,8 +31,9 @@ Route::get('/newsletter', ['as' => 'newsletter.index', 'uses' => 'Admin\Newslett
 Route::put('/newsletter/{newsletter}', ['as' => 'newsletter.archive', 'uses' => 'Admin\NewsletterController@archive']);
 
 // Gestion Mail
-Route::get('/patternMail', ['as' => 'pattern.index', 'uses' => 'Admin\PatternMailController@index']);
-
+Route::resource('/patternMail', 'Admin\PatternMailController');
+Route::delete('/typeMail/{typeMail}', ['as' => 'typeMail.destroy', 'uses' => 'Admin\PatternMailController@destroyType']);
+Route::post('/typeMail', ['as' => 'typeMail.store', 'uses' => 'Admin\PatternMailController@storeType']);
 
 /*
 |--------------------------------------------------------------------------

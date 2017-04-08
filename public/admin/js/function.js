@@ -7,6 +7,8 @@ $(document).ready(function () {
     let ajax = new Ajax();
     ajax.delete_user_row();
     ajax.delete_newsletter_row();
+    ajax.delete_typeMail_row();
+    ajax.delete_patternMail_row();
 });
 
 
