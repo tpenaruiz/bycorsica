@@ -47,7 +47,6 @@ Route::put('/newsletter/{newsletter}', ['as' => 'newsletter.archive', 'uses' => 
 Route::resource('/patternMail', 'Admin\PatternMailController');
 Route::delete('/typeMail/{typeMail}', ['as' => 'typeMail.destroy', 'uses' => 'Admin\PatternMailController@destroyType']);
 Route::post('/typeMail', ['as' => 'typeMail.store', 'uses' => 'Admin\PatternMailController@storeType']);
->>>>>>> master
 
 /*
 |--------------------------------------------------------------------------
