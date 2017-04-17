@@ -20,7 +20,13 @@
 */
 Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
 Route::resource('/user', 'Admin\UserController');
+Route::resource('/fournisseurs', 'Admin\FournisseursController');
 
+Route::get('/languages', ['as' => 'admin.languages', 'uses' => 'Admin\LanguagesController@index']);
+Route::get('/languages/create', ['as' => 'admin.languages.create', 'uses' =>'Admin\LanguagesController@create']);
+Route::post('/languages/store', ['as' => 'admin.languages.store', 'uses' => 'Admin\LanguagesController@store']);
+Route::put('/languages/udpate/{key}', ['as' => 'admin.languages.update', 'uses' => 'Admin\LanguagesController@update']);
+Route::delete('/languages/destroy/{key}', ['as' => 'admin.languages.destroy', 'uses' => 'Admin\LanguagesController@destroy']);
 
 /*
 |--------------------------------------------------------------------------

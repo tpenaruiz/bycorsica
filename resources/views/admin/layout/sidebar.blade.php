@@ -13,11 +13,9 @@
         <a href="{{route('user.index')}}"><i class="fa fa-user"></i>User</a>
     </li>
 
-
-
-
-
-
+    <li class="fournisseurs">
+        <a href="{{route('fournisseurs.index')}}"><i class="fa fa-user"></i>Fournisseurs</a>
+    </li>
 
     <!-- TODO Les models 1 étage et 2 étages -->
     <li><a href="#"><i class="fa fa-desktop"></i>Categorie 2 étages</a>
@@ -39,5 +37,9 @@
                 </ul>
             </li>
         </ul>
+    </li>
+
+    <li class="languages">
+        <a href="{{route('admin.languages')}}"><i class="fa fa-user"></i>Languages</a>
     </li>
 </ul>
