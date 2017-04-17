@@ -77,6 +77,8 @@
 <script src="{{ asset('admin/js/main.js') }}"></script>
 <script src="{{ asset('admin/js/ajax.js') }}"></script>
 <script src="{{ asset('admin/js/function.js') }}"></script>
+<script src="{{ asset('plugins/tinymce/jquery.tinymce.min.js') }}"></script>
+<script src="{{ asset('plugins/tinymce/tinymce.min.js') }}"></script>
 
 <!-- Fonction chart dashboard -->
 <script src="{{ asset('admin/js/fonctionChart.js') }}"></script>

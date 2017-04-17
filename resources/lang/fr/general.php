@@ -10,7 +10,6 @@ return [
     'commander' => 'Commander',
     'addListCadeaux' => 'Ajouter à ma liste de cadeaux',
     'basket' => 'Panier',
-
     'success_update' => 'Mise à jour effectuée avec succes',
     'phoneRequired' => 'Au moins un numéro de téléphone est requis',
     'addressLibelle' => 'Choisissez vos adresses de facturation. Ces dernières seront présélectionnées lors de vos commandes. Vous pouvez également ajouter d\'autres adresses, ce qui est particulièrement intéressant pour envoyer des cadeaux ou recevoir votre commande au bureau.',
@@ -26,7 +25,6 @@ return [
     'phone2' => 'Téléphone supplémentaire ',
     'infosupp' => 'Complément',
     'processingError' => 'Une erreur est survenue pendant le traitement',
-
     'addSurpise' => '1.Votre produit à bien été ajouté sur la liste des produits à offrir !',
     'WarningSurpise' => '2.Houlaaa, il se trouve que vous posséder déjà ce produit dans votre list de cadeaux',
     'deletePurchase' => 'Element Supprimer avec succès !',
@@ -35,7 +33,6 @@ return [
     'aucune_meilleuresVentes' => 'Aucune meilleures ventes pour l\'instant !',
     'aucune_ventePopulaire' => 'Aucune vente populaire pour l\'instant !',
     'sousCategorieDescNull' => 'Aucune description disponible pour l\'instant',
-
     'contact_us' => 'Contactez-nous',
     'object' => 'Objet *',
     'object_placeholder' => 'objet',
@@ -53,7 +50,6 @@ return [
     'maListeDeCadeaux' => 'Voici votre listes de cadeaux',
     'messageDeleteListCadeaux'=> 'élement supprimer avec succès !',
     'emptyListCadeaux' => 'Vous avez pour le moment aucun cadeaux dans votre liste',
-
     'treatmentOk' => 'Traitement ok',
     'cleanBasket' => 'Aucun produit actuellement dans votre panier',
     'delete' => 'Suppression éffectué avec succès !',
