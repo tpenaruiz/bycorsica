@@ -18,15 +18,36 @@
 | BACKS OFFICES
 |
 */
+// Dashboard
 Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
+
 Route::resource('/user', 'Admin\UserController');
+
+// Fournisseurs
 Route::resource('/fournisseurs', 'Admin\FournisseursController');
 
+// Languages
 Route::get('/languages', ['as' => 'admin.languages', 'uses' => 'Admin\LanguagesController@index']);
 Route::get('/languages/create', ['as' => 'admin.languages.create', 'uses' =>'Admin\LanguagesController@create']);
 Route::post('/languages/store', ['as' => 'admin.languages.store', 'uses' => 'Admin\LanguagesController@store']);
 Route::put('/languages/udpate/{key}', ['as' => 'admin.languages.update', 'uses' => 'Admin\LanguagesController@update']);
 Route::delete('/languages/destroy/{key}', ['as' => 'admin.languages.destroy', 'uses' => 'Admin\LanguagesController@destroy']);
+
+
+// User
+Route::resource('/user', 'Admin\UserController', ['only' => ['index', 'show']]);
+Route::put('/user/{user}', ['as' => 'user.archive', 'uses' => 'Admin\UserController@archive']);
+Route::get('/user/detail_commande/{commande}', ['as' => 'user.detail_commande', 'uses' => 'Admin\UserController@detailCommande']);
+
+// Newsletter
+Route::get('/newsletter', ['as' => 'newsletter.index', 'uses' => 'Admin\NewsletterController@index']);
+Route::put('/newsletter/{newsletter}', ['as' => 'newsletter.archive', 'uses' => 'Admin\NewsletterController@archive']);
+
+// Gestion Mail
+Route::resource('/patternMail', 'Admin\PatternMailController');
+Route::delete('/typeMail/{typeMail}', ['as' => 'typeMail.destroy', 'uses' => 'Admin\PatternMailController@destroyType']);
+Route::post('/typeMail', ['as' => 'typeMail.store', 'uses' => 'Admin\PatternMailController@storeType']);
+>>>>>>> master
 
 /*
 |--------------------------------------------------------------------------

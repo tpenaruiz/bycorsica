@@ -17,6 +17,15 @@
         <a href="{{route('fournisseurs.index')}}"><i class="fa fa-user"></i>Fournisseurs</a>
     </li>
 
+    <li class="newsletter">
+        <a href="{{route('newsletter.index')}}"><i class="fa fa-newspaper-o"></i>Newsletter</a>
+    </li>
+
+    <li class="patternMail">
+        <a href="{{route('patternMail.index')}}"><i class="fa fa-send"></i>Pattern E-mail</a>
+    </li>
+
+
     <!-- TODO Les models 1 étage et 2 étages -->
     <li><a href="#"><i class="fa fa-desktop"></i>Categorie 2 étages</a>
         <ul>

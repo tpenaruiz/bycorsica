@@ -80,28 +80,44 @@
                             <thead>
                             <tr>
                                 <th>
-                                    Produit
+                                    TVA
                                 </th>
                                 <th>
-                                    Prix
+                                    reférence
+                                </th>
+                                <th>
+                                    Montant
                                 </th>
                                 <th>
                                     Status
                                 </th>
+                                <th>
+                                    crée le:
+                                </th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="active">
-                                <td>
-                                    MacBook
-                                </td>
-                                <td>
-                                    2800€
-                                </td>
-                                <td>
-                                    Success
-                                </td>
-                            </tr>
+                            @foreach($commandeProduit as $row)
+                                <tr class="active">
+                                    <td>
+                                        {{$row->tva->multiplicate}}
+                                    </td>
+                                    <td>
+                                        <a href="{{route('user.detail_commande', $row->id)}}">
+                                            {{$row->reference}}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        {{$row->montant.('€')}}
+                                    </td>
+                                    <td>
+                                        {{$row->status}}
+                                    </td>
+                                    <td>
+                                        {{$row->getCreateddateAttribute()}}
+                                    </td>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -110,6 +126,11 @@
 
             <!-- TOTAL -->
             <div class="col-md-12">
+
+                <div class="alert alert-danger">
+                    <span><i class="fa fa-warning"></i>&nbsp; Attention pour les frais de port faudra créer une table !</span>
+                </div>
+
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-calculator fa-2x">&nbsp;</i>Total</h3>
@@ -120,24 +141,40 @@
                             <thead>
                             <tr>
                                 <th>
-                                    TTC
+                                    HT
                                 </th>
                                 <th>
-                                    TOTAL
+                                    TVA
+                                </th>
+                                <th>
+                                    Frais de port
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr class="active">
-                                <td>
-                                    1903€
-                                </td>
-                                <td>
-                                    2903€
-                                </td>
-                            </tr>
+                            @foreach($commandeProduit as $row)
+                                @foreach($row->produits as $p)
+                                    <!-- Calcul Hort Taxe -->
+                                    <tr class="active">
+                                        <td>
+                                            {{$ht.'€'}}
+                                        </td>
+                                        <td>
+                                            {{$tva.'%'}}
+                                        </td>
+                                        <td>
+                                            {{$fraisPort.'€'}}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @endforeach
                             </tbody>
                         </table>
+
+                        <div class="totalTtc">
+                            <h2>TOTAL TTC</h2>
+                            <span>{{$ttc.'€'}}</span>
+                        </div>
                     </div>
                 </div>
             </div>
